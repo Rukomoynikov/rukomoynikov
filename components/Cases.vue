@@ -1,0 +1,74 @@
+<template>
+  <div>
+    <div class="case">
+      <Case>
+        <template v-slot:image>
+          <img src="~assets/images/cases/excursions.jpg">
+        </template>
+        <template v-slot:label>Сайт</template>
+        <template v-slot:title>Экскурсия по району Хамовники на бегу</template>
+        <template v-slot:description>
+          Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.
+        </template>
+        <template v-slot:link>Работа на Behance</template>
+      </Case>
+    </div>
+
+    <div class="case">
+      <Case>
+        <template v-slot:image>
+          <img src="~assets/images/cases/presentations.jpg">
+        </template>
+        <template v-slot:label>Сайт</template>
+        <template v-slot:title>Курсы по презентациям</template>
+        <template v-slot:description>
+          Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.
+        </template>
+        <template v-slot:link>Работа на Behance</template>
+      </Case>
+    </div>
+
+    <div class="case">
+      <Case>
+        <template v-slot:image>
+          <img src="~assets/images/cases/wool.jpg">
+        </template>
+        <template v-slot:label>Сайт</template>
+        <template v-slot:title>Верстка статьи про овечью шерсть</template>
+        <template v-slot:description>
+          Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.
+        </template>
+        <template v-slot:link>Работа на Behance</template>
+      </Case>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Header from '~/components/Header.vue'
+import Case from '~/components/Case.vue'
+
+export default Vue.extend({})
+</script>
+
+<style type="text/css" scoped>
+.cases {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.title--h2 {
+  margin: 0;
+  padding: 0;
+  color: #c91010;
+  font: 300 20px IBM Plex Sans, sans-serif;
+  margin-bottom: 20px;
+}
+
+.case {
+  margin-bottom: 36px;
+}
+</style>
