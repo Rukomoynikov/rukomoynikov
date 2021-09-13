@@ -2,13 +2,19 @@
   <div>
     <Header />
     <div class="cases">
-      <h2 class="title--h2">Сайты и мобильные приложения</h2>
+      <h2 class="title--h2">
+        Сайты и мобильные приложения
+      </h2>
       <Cases />
-      <div class="quote-block"><Quote /></div>
+      <div class="quote-block">
+        <Quote />
+      </div>
     </div>
 
     <div class="cases">
-      <h2 class="title--h2">Моя история</h2>
+      <h2 class="title--h2">
+        Моя история
+      </h2>
       <History />
     </div>
   </div>

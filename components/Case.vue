@@ -1,12 +1,18 @@
 <template>
   <div class="case">
     <div>
-      <slot name="image"></slot>
+      <slot name="image" />
     </div>
     <div class="case__text">
-      <div class="label"><slot name="label" /></div>
-      <div class="title"><slot name="title" /></div>
-      <div class="description"><slot name="description" /></div>
+      <div class="label">
+        <slot name="label" />
+      </div>
+      <div class="title">
+        <slot name="title" />
+      </div>
+      <div class="description">
+        <slot name="description" />
+      </div>
       <slot name="link" />
     </div>
   </div>

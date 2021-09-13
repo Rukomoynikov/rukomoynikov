@@ -1,5 +1,7 @@
 <template>
-  <blockquote class="quote">Чертовски крутое чувство, чего&mdash;то не&nbsp;было во&nbsp;вселенной, и&nbsp;&laquo;бац&raquo; появилось</blockquote>
+  <blockquote class="quote">
+    Чертовски крутое чувство, чего&mdash;то не&nbsp;было во&nbsp;вселенной, и&nbsp;&laquo;бац&raquo; появилось
+  </blockquote>
 </template>
 
 <style scoped>

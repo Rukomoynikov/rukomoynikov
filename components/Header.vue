@@ -1,7 +1,11 @@
 <template>
   <div class="header">
-    <div class="logo">Максим<br />Рукомойников</div>
-    <div class="slogan">Люблю что&mdash;то создавать. Работал программистом, ищу работу дизайнером.</div>
+    <div class="logo">
+      Максим<br>Рукомойников
+    </div>
+    <div class="slogan">
+      Люблю что&mdash;то создавать. Работал программистом, ищу работу дизайнером.
+    </div>
     <div class="links">
       <a class="link" href="#">твиттер</a>
       <a class="link" href="#">вконтакте</a>
