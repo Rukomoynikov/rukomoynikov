@@ -74,14 +74,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Header from '~/components/Header.vue'
-import Case from '~/components/Case.vue'
-
-export default Vue.extend({})
-</script>
-
 <style type="text/css" scoped>
 .cases {
   max-width: 1200px;

@@ -30,7 +30,7 @@
           <source srcset="~assets/images/myphotos/black-portrait.jpg 1x, ~assets/images/myphotos/black-portrait@2x.jpg 2x" loading="lazy">
           <img src="~assets/images/myphotos/black-portrait@2x.jpg" loading="lazy">
         </picture>
-        <div class="foto-container__line"></div>
+        <div class="foto-container__line" />
       </div>
     </div>
   </div>

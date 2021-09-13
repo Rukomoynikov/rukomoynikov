@@ -26,7 +26,9 @@ import Header from '~/components/Header.vue'
 import Cases from '~/components/Cases.vue'
 import History from '~/components/History.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: { Cases, Header, History }
+})
 </script>
 
 <style type="text/css" scoped>
