@@ -7,7 +7,7 @@
       <div class="label"><slot name="label" /></div>
       <div class="title"><slot name="title" /></div>
       <div class="description"><slot name="description" /></div>
-      <a href="#" class="link"><slot name="link" /></a>
+      <slot name="link" />
     </div>
   </div>
 </template>

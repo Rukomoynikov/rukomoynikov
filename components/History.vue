@@ -23,6 +23,10 @@
   max-width: 370px;
 }
 
+.column:not(:last-of-type) {
+  margin-right: 50px;
+}
+
 .subtitle {
   font: 500 20px IBM Plex Sans, sans-serif;
   margin-bottom: 14px;

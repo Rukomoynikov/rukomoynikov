@@ -3,42 +3,54 @@
     <div class="case">
       <Case>
         <template v-slot:image>
-          <img src="~assets/images/cases/excursions.jpg">
+          <picture>
+            <source srcset="~assets/images/cases/excursions.jpg 1x, ~assets/images/cases/excursions@2x.jpg 2x" loading="lazy">
+            <source srcset="~assets/images/cases/excursions@2x.webp" type="image/webp" loading="lazy">
+            <img src="~assets/images/cases/excursions.jpg" loading="lazy">
+          </picture>
         </template>
         <template v-slot:label>Сайт</template>
         <template v-slot:title>Экскурсия по району Хамовники на бегу</template>
         <template v-slot:description>
           Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.
         </template>
-        <template v-slot:link>Работа на Behance</template>
+        <template v-slot:link><a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">Работа на Behance</a></template>
       </Case>
     </div>
 
     <div class="case">
       <Case>
         <template v-slot:image>
-          <img src="~assets/images/cases/presentations.jpg">
+          <picture>
+            <source srcset="~assets/images/cases/presentations.jpg 1x, ~assets/images/cases/presentations@2x.jpg 2x" loading="lazy">
+            <source srcset="~assets/images/cases/presentations@2x.webp" type="image/webp" loading="lazy">
+            <img src="~assets/images/cases/presentations.jpg" loading="lazy">
+          </picture>
         </template>
         <template v-slot:label>Сайт</template>
         <template v-slot:title>Курсы по презентациям</template>
         <template v-slot:description>
           Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.
         </template>
-        <template v-slot:link>Работа на Behance</template>
+        <template v-slot:link><a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">Джипег</a></template>
       </Case>
     </div>
 
     <div class="case">
       <Case>
         <template v-slot:image>
-          <img src="~assets/images/cases/wool.jpg">
+          <picture>
+            <source srcset="~assets/images/cases/wool.jpg 1x, ~assets/images/cases/wool@2x.jpg 2x" loading="lazy">
+            <source srcset="~assets/images/cases/wool@2x.webp" type="image/webp" loading="lazy">
+            <img src="~assets/images/cases/wool.jpg" loading="lazy">
+          </picture>
         </template>
         <template v-slot:label>Сайт</template>
         <template v-slot:title>Верстка статьи про овечью шерсть</template>
         <template v-slot:description>
           Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.
         </template>
-        <template v-slot:link>Работа на Behance</template>
+        <template v-slot:link><a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">Джипег</a></template>
       </Case>
     </div>
   </div>
