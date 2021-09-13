@@ -14,17 +14,17 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=1200px, initial-scale=1' },
+      { name: 'viewport', content: 'width=1200, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
-      { rel: 'manifest', href: '/favicons/site.webmanifest' },
-      { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#5bbad5' }
+      { rel: 'icon', type: 'image/x-icon', href: '/rukomoynikov/favicons/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/rukomoynikov/favicons/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/rukomoynikov/favicons/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/rukomoynikov/favicons/favicon-16x16.png' },
+      { rel: 'manifest', href: '/rukomoynikov/favicons/site.webmanifest' },
+      { rel: 'mask-icon', href: '/rukomoynikov/favicons/safari-pinned-tab.svg', color: '#5bbad5' }
     ]
   },
 
