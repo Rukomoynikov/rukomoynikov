@@ -23,6 +23,16 @@
         Напишите мне в&nbsp;Telegram если у&nbsp;вас есть вакансия дизайнера.
       </div>
     </div>
+
+    <div class="column">
+      <div class="foto-container">
+        <picture>
+          <source srcset="~assets/images/myphotos/black-portrait.jpg 1x, ~assets/images/myphotos/black-portrait@2x.jpg 2x" loading="lazy">
+          <img src="~assets/images/myphotos/black-portrait@2x.jpg" loading="lazy">
+        </picture>
+        <div class="foto-container__line"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,5 +57,18 @@
 .text {
   font: 400 20px/25px IBM Plex Sans, sans-serif;
   margin-bottom: 20px;
+}
+
+.foto-container {
+  position: relative;
+}
+
+.foto-container__line {
+  position: absolute;
+  height: 1px;
+  width: calc(100% + 20px);
+  left: calc(0% - 10px);
+  bottom: 4px;
+  background: black;
 }
 </style>

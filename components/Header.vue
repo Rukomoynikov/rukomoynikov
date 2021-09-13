@@ -7,9 +7,9 @@
       Люблю что&mdash;то создавать. Работал программистом, ищу работу дизайнером.
     </div>
     <div class="links">
-      <a class="link" href="#">твиттер</a>
-      <a class="link" href="#">вконтакте</a>
-      <a class="link" href="#">фейсбук</a>
+      <a class="link" href="https://twitter.com/Rukomoynikov">твиттер</a>
+      <a class="link" href="https://www.facebook.com/rukomoynikov">фейсбук</a>
+      <a class="link" href="https://www.behance.net/ruq">беханс</a>
     </div>
   </div>
 </template>
