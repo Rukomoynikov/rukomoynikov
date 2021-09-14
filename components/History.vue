@@ -22,6 +22,10 @@
       <div class="text">
         Напишите мне в&nbsp;Telegram если у&nbsp;вас есть вакансия дизайнера.
       </div>
+
+      <div class="text">
+        <a href="t.me/rukomoynikov">t.me/rukomoynikov</a>
+      </div>
     </div>
 
     <div class="column">
