@@ -1,5 +1,10 @@
 <template>
   <div>
+    <SocialHead
+      :title="'Рукомойников Максим'"
+      :description="'Моя большая цель на 5 лет — научиться делать полезные и удобные продукты. Для этого я тренируюсь на своих задачах, много смотрю работы разных студий, учусь дизайну в Бюро Горбунова.'"
+      :image="'/rukomoynikov/og_image.jpg'"
+    />
     <Header />
     <div class="cases">
       <h2 class="title--h2">
@@ -25,6 +30,7 @@ import Vue from 'vue'
 import Header from '~/components/Header.vue'
 import Cases from '~/components/Cases.vue'
 import History from '~/components/History.vue'
+import SocialHead from '~/components/SocialHead.vue'
 
 export default Vue.extend({
   components: { Cases, Header, History }
