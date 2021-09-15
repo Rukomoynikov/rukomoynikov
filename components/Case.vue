@@ -1,6 +1,6 @@
 <template>
   <div class="case">
-    <div>
+    <div class="image__container">
       <slot name="image" />
     </div>
     <div class="case__text">
@@ -53,6 +53,10 @@
   background-color: #f9edc3;
   display: inline-block;
   padding: 0 10px;
+  border-radius: 6px;
+}
+
+.image__container {
   border-radius: 6px;
 }
 </style>

@@ -71,6 +71,30 @@
         </template>
       </Case>
     </div>
+
+    <div class="case">
+      <Case>
+        <template #image>
+          <picture>
+            <source srcset="~assets/images/cases/documents.jpg 1x, ~assets/images/cases/documents@2x.jpg 2x" loading="lazy">
+            <img src="~assets/images/cases/documents@2x.jpg" loading="lazy">
+          </picture>
+        </template>
+        <template #label>
+          Мобильное приложение
+        </template>
+        <template #title>
+          Доки в кармане
+        </template>
+        <template #description>
+          Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.
+        </template>
+        <template #link>
+          <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">Джипег</a>
+        </template>
+      </Case>
+    </div>
+
   </div>
 </template>
 

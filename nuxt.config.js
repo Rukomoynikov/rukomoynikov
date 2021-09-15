@@ -46,7 +46,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,5 +61,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  image: {
+    dir: 'assets/images',
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    },
   }
 }
