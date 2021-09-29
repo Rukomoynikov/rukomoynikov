@@ -29,6 +29,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  max-width: 380px;
 }
 
 .link {
@@ -39,7 +40,7 @@
 }
 
 .description {
-  font: 300 20px IBM Plex Sans, sans-serif;
+  font: 300 18px IBM Plex Sans, sans-serif;
   margin-top: 8px;
 }
 
@@ -56,7 +57,13 @@
   border-radius: 6px;
 }
 
-.image__container {
+.case__image {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   border-radius: 6px;
+
+  /* flex: 1; */
 }
 </style>

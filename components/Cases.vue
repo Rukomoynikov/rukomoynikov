@@ -3,11 +3,41 @@
     <div class="case">
       <Case>
         <template #image>
-          <picture>
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+            <img class="case__image" src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
+          </a>
+          <!-- <picture>
+            <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
+            <source srcset="~assets/images/cases/vue-boilerpate.webp" type="image/webp" loading="lazy">
+            <img src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
+          </picture> -->
+        </template>
+        <template #label>
+          Сайт
+        </template>
+        <template #title>
+          Шаблон для джаваскрипт приложений
+        </template>
+        <template #description>
+          Сайт и набор скриптов для создания приложений на Джаваскрипт.
+        </template>
+        <template #link>
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">Работа на Behance</a>
+        </template>
+      </Case>
+    </div>
+
+    <div class="case">
+      <Case>
+        <template #image>
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+            <img class="case__image" src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
+          </a>
+          <!-- <picture>
             <source srcset="~assets/images/cases/excursions.jpg 1x, ~assets/images/cases/excursions@2x.jpg 2x" loading="lazy">
             <source srcset="~assets/images/cases/excursions@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/excursions.jpg" loading="lazy">
-          </picture>
+            <img src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
+          </picture> -->
         </template>
         <template #label>
           Сайт
@@ -27,11 +57,14 @@
     <div class="case">
       <Case>
         <template #image>
-          <picture>
+          <!-- <picture>
             <source srcset="~assets/images/cases/presentations.jpg 1x, ~assets/images/cases/presentations@2x.jpg 2x" loading="lazy">
             <source srcset="~assets/images/cases/presentations@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/presentations.jpg" loading="lazy">
-          </picture>
+            <img src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
+          </picture> -->
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+            <img class="case__image" src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
+          </a>
         </template>
         <template #label>
           Сайт
@@ -51,11 +84,14 @@
     <div class="case">
       <Case>
         <template #image>
-          <picture>
+<!--           <picture>
             <source srcset="~assets/images/cases/wool.jpg 1x, ~assets/images/cases/wool@2x.jpg 2x" loading="lazy">
             <source srcset="~assets/images/cases/wool@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/wool.jpg" loading="lazy">
-          </picture>
+            <img src="~assets/images/cases/wool@2x.jpg" loading="lazy">
+          </picture> -->
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+            <img class="case__image" src="~assets/images/cases/wool@2x.jpg" loading="lazy">
+          </a>
         </template>
         <template #label>
           Сайт
@@ -75,13 +111,16 @@
     <div class="case">
       <Case>
         <template #image>
-          <picture>
+          <!-- <picture>
             <source srcset="~assets/images/cases/documents.jpg 1x, ~assets/images/cases/documents@2x.jpg 2x" loading="lazy">
             <img src="~assets/images/cases/documents@2x.jpg" loading="lazy">
-          </picture>
+          </picture> -->
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+            <img class="case__image" src="~assets/images/cases/documents@2x.jpg" loading="lazy">
+          </a>
         </template>
         <template #label>
-          Мобильное приложение
+          Приложение
         </template>
         <template #title>
           Доки в кармане
