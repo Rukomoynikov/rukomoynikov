@@ -22,6 +22,10 @@
       </h2>
       <History />
     </div>
+
+    <div class="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -30,9 +34,10 @@ import Vue from 'vue'
 import Cases from '~/components/Cases.vue'
 import History from '~/components/History.vue'
 import SocialHead from '~/components/SocialHead.vue'
+import Footer from '~/components/Footer.vue'
 
 export default Vue.extend({
-  components: { Cases, History, SocialHead }
+  components: { Cases, History, SocialHead, Footer }
 })
 </script>
 
@@ -61,4 +66,7 @@ export default Vue.extend({
   margin: 70px 0;
 }
 
+.footer {
+  margin-top: 60px;
+}
 </style>

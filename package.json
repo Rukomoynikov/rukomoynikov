@@ -16,11 +16,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/i18n": "^7.0.3",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@intlify/vue-i18n-loader": "^3.2.0",
     "@nuxt/image": "^0.6.0",
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",

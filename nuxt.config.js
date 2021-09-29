@@ -51,8 +51,29 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxt/image'
+    '@nuxt/image',
+    ['@nuxtjs/i18n', {
+      vueI18nLoader: true
+    }]
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English version'
+      },
+      {
+        code: 'ru',
+        name: 'Русская версия'
+      }
+    ],
+    defaultLocale: 'ru',
+    vueI18n: {
+      fallbackLocale: 'ru',
+      messages: {}
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

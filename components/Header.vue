@@ -1,15 +1,27 @@
+<i18n lang="yaml">
+en:
+  Максим: "Maxim"
+  Рукомойников: "Rukomoynikov"
+  Слоган: "I love to create. Worked as a programmer, looking for a job as a designer."
+  твиттер: twiiter
+  фейсбук: facebook
+  беханс: behance
+ru:
+  Слоган: "Люблю что–то создавать. Работал программистом, ищу работу дизайнером."
+</i18n>
+
 <template>
   <div class="header">
     <div class="logo">
-      Максим<br>Рукомойников
+      {{ $t('Максим') }}<br>{{ $t('Рукомойников') }}
     </div>
     <div class="slogan">
-      Люблю что&mdash;то создавать. Работал программистом, ищу работу дизайнером.
+      {{ $t('Слоган') }}
     </div>
     <div class="links">
-      <a class="link" href="https://twitter.com/Rukomoynikov">твиттер</a>
-      <a class="link" href="https://www.facebook.com/rukomoynikov">фейсбук</a>
-      <a class="link" href="https://www.behance.net/ruq">беханс</a>
+      <a class="link" href="https://twitter.com/Rukomoynikov">{{ $t('twitter') }}</a>
+      <a class="link" href="https://www.facebook.com/rukomoynikov">{{ $t('facebook') }}</a>
+      <a class="link" href="https://www.behance.net/ruq">{{ $t('behance') }}</a>
     </div>
   </div>
 </template>
@@ -39,6 +51,7 @@
   font: 300 20px/27px IBM Plex Sans, sans-serif;
   max-width: 271px;
   margin-top: 7px;
+  margin-left: auto;
 }
 
 @media only screen and (max-width: 595px) {
@@ -48,7 +61,6 @@
 }
 
 .links {
-  margin-left: auto;
   margin-top: 9px;
 }
 
