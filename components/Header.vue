@@ -23,6 +23,16 @@
   margin-bottom: 69px;
 }
 
+@media only screen and (max-width: 595px) {
+  /*  .header {
+    height: 100vh;
+  }  */
+
+  .slogan {
+    display: none;
+  }
+}
+
 .logo {
   font: 400 50px/54px IBM Plex Sans, sans-serif;
   margin-right: 33px;

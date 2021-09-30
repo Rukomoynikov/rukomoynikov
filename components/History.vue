@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="column">
+    <div class="column column-foto">
       <div class="foto-container">
         <picture>
           <source srcset="~assets/images/myphotos/black-portrait.jpg 1x, ~assets/images/myphotos/black-portrait@2x.jpg 2x" loading="lazy">
@@ -45,8 +45,21 @@
   display: flex;
 }
 
+@media only screen and (max-width: 595px) {
+  .columns {
+    flex-direction: column;
+  }
+}
+
 .column {
   max-width: 370px;
+  order: 2;
+}
+
+@media only screen and (max-width: 595px) {
+  .column-foto {
+    order: 1;
+  }
 }
 
 .column:not(:last-of-type) {

@@ -4,7 +4,11 @@
       <Case>
         <template #image>
           <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-            <img class="case__image" src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
+            <img
+              width="954px"
+              height="597px"
+              class="case__image"
+              src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
           </a>
           <!-- <picture>
             <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
@@ -31,7 +35,10 @@
       <Case>
         <template #image>
           <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-            <img class="case__image" src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
+            <img
+              width="954px"
+              height="597px"
+              class="case__image" src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
           </a>
           <!-- <picture>
             <source srcset="~assets/images/cases/excursions.jpg 1x, ~assets/images/cases/excursions@2x.jpg 2x" loading="lazy">
@@ -63,7 +70,10 @@
             <img src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
           </picture> -->
           <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-            <img class="case__image" src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
+            <img
+              width="954px"
+              height="597px"
+              class="case__image" src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
           </a>
         </template>
         <template #label>
@@ -90,7 +100,10 @@
             <img src="~assets/images/cases/wool@2x.jpg" loading="lazy">
           </picture> -->
           <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
-            <img class="case__image" src="~assets/images/cases/wool@2x.jpg" loading="lazy">
+            <img
+              width="954px"
+              height="597px"
+            class="case__image" src="~assets/images/cases/wool@2x.jpg" loading="lazy">
           </a>
         </template>
         <template #label>
@@ -116,7 +129,10 @@
             <img src="~assets/images/cases/documents@2x.jpg" loading="lazy">
           </picture> -->
           <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
-            <img class="case__image" src="~assets/images/cases/documents@2x.jpg" loading="lazy">
+            <img
+              width="954px"
+              height="597px"
+              class="case__image" src="~assets/images/cases/documents@2x.jpg" loading="lazy">
           </a>
         </template>
         <template #label>
@@ -155,5 +171,11 @@
 
 .case {
   margin-bottom: 36px;
+}
+
+@media only screen and (max-width: 595px) {
+  .case {
+    margin-bottom: 56px;
+  }
 }
 </style>

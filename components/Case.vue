@@ -23,6 +23,12 @@
   display: flex;
 }
 
+@media only screen and (max-width: 595px) {
+  .case {
+    flex-direction: column;
+  }
+}
+
 .case__text {
   margin-left: 20px;
   display: flex;
@@ -65,5 +71,11 @@
   border-radius: 6px;
 
   /* flex: 1; */
+}
+
+@media only screen and (max-width: 595px) {
+  .case__image {
+    margin-bottom: 20px;
+  }
 }
 </style>

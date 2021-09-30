@@ -11,6 +11,13 @@
   position: relative;
 }
 
+@media only screen and (max-width: 595px) {
+  .quote {
+    margin-left: 0;
+    font: 400 50px/60px IBM Plex Sans, sans-serif;
+  }
+}
+
 .quote::before {
   content: "«";
   position: absolute;
