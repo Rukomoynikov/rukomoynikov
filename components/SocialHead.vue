@@ -21,7 +21,7 @@ export default {
     }
   },
 
-  head() {
+  head () {
     return {
       meta: [
         {

@@ -35,7 +35,7 @@ import History from '~/components/History.vue'
 import SocialHead from '~/components/SocialHead.vue'
 
 export default Vue.extend({
-  components: { Cases, Header, History }
+  components: { Cases, Header, History, SocialHead }
 })
 </script>
 

@@ -8,7 +8,9 @@
               width="954px"
               height="597px"
               class="case__image"
-              src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
+              src="~assets/images/cases/vue-boilerpate@2x.jpg"
+              loading="lazy"
+            >
           </a>
           <!-- <picture>
             <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
@@ -38,7 +40,10 @@
             <img
               width="954px"
               height="597px"
-              class="case__image" src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
+              class="case__image"
+              src="~assets/images/cases/excursions@2x.jpg"
+              loading="lazy"
+            >
           </a>
           <!-- <picture>
             <source srcset="~assets/images/cases/excursions.jpg 1x, ~assets/images/cases/excursions@2x.jpg 2x" loading="lazy">
@@ -73,7 +78,10 @@
             <img
               width="954px"
               height="597px"
-              class="case__image" src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
+              class="case__image"
+              src="~assets/images/cases/presentations@2x.jpg"
+              loading="lazy"
+            >
           </a>
         </template>
         <template #label>
@@ -94,7 +102,7 @@
     <div class="case">
       <Case>
         <template #image>
-<!--           <picture>
+          <!--           <picture>
             <source srcset="~assets/images/cases/wool.jpg 1x, ~assets/images/cases/wool@2x.jpg 2x" loading="lazy">
             <source srcset="~assets/images/cases/wool@2x.webp" type="image/webp" loading="lazy">
             <img src="~assets/images/cases/wool@2x.jpg" loading="lazy">
@@ -103,7 +111,10 @@
             <img
               width="954px"
               height="597px"
-            class="case__image" src="~assets/images/cases/wool@2x.jpg" loading="lazy">
+              class="case__image"
+              src="~assets/images/cases/wool@2x.jpg"
+              loading="lazy"
+            >
           </a>
         </template>
         <template #label>
@@ -132,7 +143,10 @@
             <img
               width="954px"
               height="597px"
-              class="case__image" src="~assets/images/cases/documents@2x.jpg" loading="lazy">
+              class="case__image"
+              src="~assets/images/cases/documents@2x.jpg"
+              loading="lazy"
+            >
           </a>
         </template>
         <template #label>
@@ -149,7 +163,6 @@
         </template>
       </Case>
     </div>
-
   </div>
 </template>
 

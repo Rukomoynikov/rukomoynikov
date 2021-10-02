@@ -47,7 +47,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxt/image',
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -73,6 +73,6 @@ export default {
       xl: 1280,
       xxl: 1536,
       '2xl': 1536
-    },
+    }
   }
 }
