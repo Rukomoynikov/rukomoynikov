@@ -1,6 +1,6 @@
 <template>
   <blockquote class="quote">
-    Чертовски крутое чувство, чего&mdash;то не&nbsp;было во&nbsp;вселенной, и&nbsp;&laquo;бац&raquo; появилось
+    Чертовски крутое чувство, чего&mdash;то не&nbsp;было во&nbsp;вселенной, и&nbsp;<nobr>&laquo;<img class="icon" src="~assets/images/icons/magic-wand.svg" />бац&raquo;</nobr> появилось
   </blockquote>
 </template>
 
@@ -42,4 +42,11 @@
   }
 }
 
+.icon {
+  width: auto;
+  height: 60px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 </style>
