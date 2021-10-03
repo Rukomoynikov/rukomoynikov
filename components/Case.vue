@@ -38,6 +38,13 @@
   max-width: 380px;
 }
 
+@media only screen and (max-width: 595px) {
+  .case__text {
+    margin-left: 5px;
+    max-width: 80%;
+  }
+}
+
 .link {
   color: #4f6ebf;
   font: 300 20px IBM Plex Sans, sans-serif;

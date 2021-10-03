@@ -29,13 +29,7 @@
     </div>
 
     <div class="column column-foto">
-      <div class="foto-container">
-        <picture>
-          <source srcset="~assets/images/myphotos/black-portrait.jpg 1x, ~assets/images/myphotos/black-portrait@2x.jpg 2x" loading="lazy">
-          <img src="~assets/images/myphotos/black-portrait@2x.jpg" loading="lazy">
-        </picture>
-        <div class="foto-container__line" />
-      </div>
+      <img src="~assets/images/myphotos/transparent-photo-in-black@2x.png" loading="lazy" class="foto">
     </div>
   </div>
 </template>
@@ -76,16 +70,24 @@
   margin-bottom: 20px;
 }
 
-.foto-container {
-  position: relative;
+@media only screen and (max-width: 595px) {
+  .text {
+    margin-left: 5px;
+    max-width: 80%;
+  }
 }
 
-.foto-container__line {
-  position: absolute;
-  height: 1px;
-  width: calc(100% + 20px);
-  left: calc(0% - 10px);
-  bottom: 4px;
-  background: black;
+.foto {
+  width: 50%;
+  background-color: #efd85c;
+  border-radius: 50%;
+  margin-top: 35px;
+}
+
+@media only screen and (max-width: 595px) {
+  .foto {
+    width: 120px;
+    margin-bottom: 22px;
+  }
 }
 </style>

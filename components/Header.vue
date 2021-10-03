@@ -19,18 +19,8 @@
   display: flex;
   max-width: 1200px;
   width: 100%;
-  margin: auto;
-  margin-bottom: 69px;
-}
-
-@media only screen and (max-width: 595px) {
-  /*  .header {
-    height: 100vh;
-  }  */
-
-  .slogan {
-    display: none;
-  }
+  margin: 0 auto 69px auto;
+  padding: 0 10px;
 }
 
 .logo {
@@ -38,10 +28,23 @@
   margin-right: 33px;
 }
 
+@media only screen and (max-width: 595px) {
+  .logo {
+    font: 400 40px/42px IBM Plex Sans, sans-serif;
+    margin-right: 0;
+  }
+}
+
 .slogan {
   font: 300 20px/27px IBM Plex Sans, sans-serif;
   max-width: 271px;
   margin-top: 7px;
+}
+
+@media only screen and (max-width: 595px) {
+  .slogan {
+    display: none;
+  }
 }
 
 .links {
@@ -54,5 +57,11 @@
   color: #3a4a6a;
   display: block;
   margin-bottom: 3px;
+}
+
+@media only screen and (max-width: 595px) {
+  .link {
+    font: 300 17px/21px IBM Plex Sans, sans-serif;
+  }
 }
 </style>

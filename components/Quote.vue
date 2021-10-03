@@ -13,8 +13,8 @@
 
 @media only screen and (max-width: 595px) {
   .quote {
-    margin-left: 0;
-    font: 400 50px/60px IBM Plex Sans, sans-serif;
+    margin-left: 30px;
+    font: 400 40px IBM Plex Sans, sans-serif;
   }
 }
 
@@ -34,4 +34,12 @@
   position: absolute;
   margin-left: 10px;
 }
+
+@media only screen and (max-width: 595px) {
+  .quote::before,
+  .quote::after {
+    display: none;
+  }
+}
+
 </style>

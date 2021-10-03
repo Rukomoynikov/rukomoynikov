@@ -6,8 +6,6 @@
       :image="'/rukomoynikov/facebook_share_2.jpg'"
     />
 
-    <Header />
-
     <div class="cases">
       <h2 class="title--h2">
         Сайты и мобильные приложения
@@ -29,13 +27,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Header from '~/components/Header.vue'
 import Cases from '~/components/Cases.vue'
 import History from '~/components/History.vue'
 import SocialHead from '~/components/SocialHead.vue'
 
 export default Vue.extend({
-  components: { Cases, Header, History, SocialHead }
+  components: { Cases, History, SocialHead }
 })
 </script>
 
@@ -43,16 +40,20 @@ export default Vue.extend({
 .cases {
   max-width: 1200px;
   width: 100%;
-  margin: auto;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+}
+
+@media only screen and (max-width: 595px) {
+  .cases {
+    padding: 0 10px;
+  }
 }
 
 .title--h2 {
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 0;
   color: #c91010;
   font: 300 20px IBM Plex Sans, sans-serif;
-  margin-bottom: 20px;
 }
 
 .quote-block {

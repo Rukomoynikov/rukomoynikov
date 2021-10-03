@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--    <NuxtLink to="cases/boilerplate" />-->
     <div class="case">
       <Case>
         <template #image>

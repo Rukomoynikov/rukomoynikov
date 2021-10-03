@@ -6,6 +6,10 @@ export default {
     base: '/rukomoynikov/'
   },
 
+  server: {
+    host: '0' // default: localhost
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'rukomoynikov.ru',
