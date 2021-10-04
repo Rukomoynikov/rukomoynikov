@@ -39,16 +39,16 @@ export default {
           name: 'twitter:description',
           content: this.description
         },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.image
-        },
-        {
-          hid: 'twitter:image:alt',
-          name: 'twitter:image:alt',
-          content: this.title
-        },
+        // {
+        //   hid: 'twitter:image',
+        //   name: 'twitter:image',
+        //   content: this.image
+        // },
+        // {
+        //   hid: 'twitter:image:alt',
+        //   name: 'twitter:image:alt',
+        //   content: this.title
+        // },
         {
           hid: 'og:title',
           property: 'og:title',
