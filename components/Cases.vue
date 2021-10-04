@@ -168,21 +168,6 @@
 </template>
 
 <style type="text/css" scoped>
-.cases {
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.title--h2 {
-  margin: 0;
-  padding: 0;
-  color: #c91010;
-  font: 300 20px IBM Plex Sans, sans-serif;
-  margin-bottom: 20px;
-}
-
 .case {
   margin-bottom: 36px;
 }

@@ -41,6 +41,7 @@ export default Vue.extend({
   max-width: 1200px;
   width: 100%;
   margin: 0 auto 20px auto;
+  padding: 0 10px;
 }
 
 @media only screen and (max-width: 595px) {

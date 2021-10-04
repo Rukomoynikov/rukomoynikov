@@ -78,7 +78,7 @@
 }
 
 .foto {
-  width: 50%;
+  width: 100%;
   background-color: #efd85c;
   border-radius: 50%;
   margin-top: 35px;
