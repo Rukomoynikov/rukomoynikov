@@ -22,10 +22,6 @@
       </h2>
       <History />
     </div>
-
-    <div class="footer">
-      <Footer />
-    </div>
   </div>
 </template>
 
@@ -64,9 +60,5 @@ export default Vue.extend({
 
 .quote-block {
   margin: 70px 0;
-}
-
-.footer {
-  margin-top: 60px;
 }
 </style>
