@@ -2,6 +2,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  generate: {
+    routes: ['/cases/alfa']
+  },
+
   router: {
     base: '/rukomoynikov/'
   },
