@@ -20,7 +20,7 @@
           </picture> -->
         </template>
         <template #label>
-          Сайт
+          Дизайн и верстка
         </template>
         <template #title>
           Шаблон для джаваскрипт приложений
@@ -53,7 +53,7 @@
           </picture> -->
         </template>
         <template #label>
-          Сайт
+          Дизайн
         </template>
         <template #title>
           Экскурсия по району Хамовники на бегу
@@ -86,7 +86,7 @@
           </a>
         </template>
         <template #label>
-          Сайт
+          Дизайн
         </template>
         <template #title>
           Курсы по презентациям
@@ -119,7 +119,7 @@
           </a>
         </template>
         <template #label>
-          Сайт
+          Дизайн
         </template>
         <template #title>
           Верстка статьи про овечью шерсть
@@ -151,7 +151,7 @@
           </a>
         </template>
         <template #label>
-          Приложение
+          Дизайн
         </template>
         <template #title>
           Доки в кармане
