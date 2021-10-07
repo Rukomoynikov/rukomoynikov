@@ -7,7 +7,7 @@ en:
   фейсбук: facebook
   беханс: behance
 ru:
-  Слоган: "Люблю что–то создавать. Работал программистом, ищу работу дизайнером."
+  Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
 </i18n>
 
 <template>
@@ -16,7 +16,7 @@ ru:
       {{ $t('Максим') }}<br>{{ $t('Рукомойников') }}
     </div>
     <div class="slogan">
-      {{ $t('Слоган') }}
+      {{ $t('Слоган', ['&mdash;', '&nbsp;']) }}
     </div>
     <div class="links">
       <a class="link" href="https://twitter.com/Rukomoynikov">{{ $t('twitter') }}</a>
@@ -37,13 +37,12 @@ ru:
 
 .logo {
   font: 400 50px/54px IBM Plex Sans, sans-serif;
-  margin-right: 33px;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 595px) {
   .logo {
     font: 400 40px/42px IBM Plex Sans, sans-serif;
-    margin-right: 0;
   }
 }
 
@@ -51,7 +50,6 @@ ru:
   font: 300 20px/27px IBM Plex Sans, sans-serif;
   max-width: 271px;
   margin-top: 7px;
-  margin-left: auto;
 }
 
 @media only screen and (max-width: 595px) {
