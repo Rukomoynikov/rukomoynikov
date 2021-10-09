@@ -1,3 +1,17 @@
+<i18n lang="yaml">
+en:
+  text_1: "Maxim"
+  Рукомойников: "Rukomoynikov"
+  Слоган: "I love to create. Worked as a programmer, looking for a job as a designer."
+  твиттер: "twiiter"
+  фейсбук: "facebook"
+  беханс: "behance"
+ru:
+  Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
+  твиттер: "твиттер"
+  фейсбук: "фейсбук"
+</i18n>
+
 <template>
   <div class="columns">
     <div class="column">

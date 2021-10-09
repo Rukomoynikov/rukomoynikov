@@ -3,11 +3,13 @@ en:
   Максим: "Maxim"
   Рукомойников: "Rukomoynikov"
   Слоган: "I love to create. Worked as a programmer, looking for a job as a designer."
-  твиттер: twiiter
-  фейсбук: facebook
-  беханс: behance
+  твиттер: "twiiter"
+  фейсбук: "facebook"
+  беханс: "behance"
 ru:
   Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
+  twitter: "твиттер"
+  фейсбук: "фейсбук"
 </i18n>
 
 <template>
@@ -19,9 +21,9 @@ ru:
       {{ $t('Слоган', ['&mdash;', '&nbsp;']) }}
     </div>
     <div class="links">
-      <a class="link" href="https://twitter.com/Rukomoynikov">{{ $t('twitter') }}</a>
-      <a class="link" href="https://www.facebook.com/rukomoynikov">{{ $t('facebook') }}</a>
-      <a class="link" href="https://www.behance.net/ruq">{{ $t('behance') }}</a>
+      <a class="link" href="https://twitter.com/Rukomoynikov">{{ $t('твиттер') }}</a>
+      <a class="link" href="https://www.facebook.com/rukomoynikov">{{ $t('фейсбук') }}</a>
+      <a class="link" href="https://www.behance.net/ruq">{{ $t('беханс') }}</a>
     </div>
   </div>
 </template>

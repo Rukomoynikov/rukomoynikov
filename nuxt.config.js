@@ -71,7 +71,8 @@ export default {
     defaultLocale: 'ru',
     vueI18n: {
       fallbackLocale: 'ru',
-      messages: {}
+      messages: {
+      }
     }
   },
 
