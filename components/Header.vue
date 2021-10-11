@@ -2,14 +2,15 @@
 en:
   Максим: "Maxim"
   Рукомойников: "Rukomoynikov"
-  Слоган: "I love to create. Worked as a programmer, looking for a job as a designer."
+  Слоган: "I love to create. Worked as{1}a{1}programmer, looking for a{1}designer job."
   твиттер: "twiiter"
   фейсбук: "facebook"
   беханс: "behance"
 ru:
   Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
-  twitter: "твиттер"
+  твиттер: "твиттер"
   фейсбук: "фейсбук"
+  беханс: "беханс"
 </i18n>
 
 <template>
@@ -52,6 +53,7 @@ ru:
   font: 300 20px/27px IBM Plex Sans, sans-serif;
   max-width: 271px;
   margin-top: 7px;
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 595px) {

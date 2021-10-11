@@ -1,3 +1,11 @@
+<i18n lang="yaml">
+en:
+  Сайты и мобильные приложения: "Sites and mobile apps"
+  Моя история: "My history is like"
+ru:
+  Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
+</i18n>
+
 <template>
   <div>
     <SocialHead
@@ -8,7 +16,7 @@
 
     <div class="cases">
       <h2 class="title--h2">
-        Сайты и мобильные приложения
+        {{ $t('Сайты и мобильные приложения') }}
       </h2>
       <Cases />
       <div class="quote-block">
@@ -18,7 +26,7 @@
 
     <div class="cases">
       <h2 class="title--h2">
-        Моя история
+        {{ $t('Моя история') }}
       </h2>
       <History />
     </div>

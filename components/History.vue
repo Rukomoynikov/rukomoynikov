@@ -1,40 +1,37 @@
 <i18n lang="yaml">
 en:
-  text_1: "Maxim"
-  Рукомойников: "Rukomoynikov"
-  Слоган: "I love to create. Worked as a programmer, looking for a job as a designer."
-  твиттер: "twiiter"
-  фейсбук: "facebook"
-  беханс: "behance"
+  Прошлое: Past
+  Прошлое часть 1: For the last 6 years I have been working as a backend and frontend programmer. I've made websites, bots, and a couple of mobile apps.
+  Прошлое часть 2: Before programming, I worked as a project manager for several years. It's interesting to manage the process, but I like to create on my own more. So I started programming. It’s a damn cool feeling when something wasn’t in the universe and bam it's appeared.
+  Настоящее и будущее: Modern era and future
 ru:
-  Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
-  твиттер: "твиттер"
-  фейсбук: "фейсбук"
+  Прошлое часть 1: "Последние 6{0}лет я{0}работал бэкенд и{0}фронтенд программистом. Я{0}делал сайты, боты, и{0}пару мобильных приложений."
+  Прошлое часть 2: "До{0}программирования, я{0}несколько лет проработал менеджером интернет{1}проектов. Управлять процессом интересно, но{0}создавать самому мне нравится больше. Поэтому я{0}начал программировать. Это чертовски крутое чувство, когда чего-то не{0}было во{0}вселенной, и{0}бац появилось."
 </i18n>
 
 <template>
   <div class="columns">
     <div class="column">
       <div class="subtitle">
-        Прошлое
+        {{ $t('Прошлое') }}
       </div>
       <div class="text">
-        Последние 6&nbsp;лет я&nbsp;работал бэкенд и&nbsp;фронтенд программистом. Я&nbsp;делал сайты, боты, и&nbsp;пару мобильных приложений.
+        {{ $t('Прошлое часть 1', ["&nbsp;"]) }}
       </div>
       <div class="text">
-        До&nbsp;программирования, я&nbsp;несколько лет проработал менеджером интернет&mdash;проектов. Управлять процессом интересно, но&nbsp;создавать самому мне нравится больше. Поэтому я&nbsp;начал программировать. Это чертовски крутое чувство, когда чего-то не&nbsp;было во&nbsp;вселенной, и&nbsp;бац появилось.
+        {{ $t('Прошлое часть 2', ["&nbsp;", "&mdash;"]) }}
       </div>
     </div>
 
     <div class="column">
       <div class="subtitle">
-        Настоящее и будущее
+        {{ $t('Настоящее и будущее') }}
       </div>
       <div class="text">
-        Моя большая цель на&nbsp;5&nbsp;лет&nbsp;&mdash; научиться делать полезные и&nbsp;удобные продукты. Для этого я&nbsp;тренируюсь на&nbsp;своих задачах, много смотрю работы разных студий, учусь дизайну в&nbsp;Бюро Горбунова.
+        {{ $t('Моя большая цель на&nbsp;5&nbsp;лет&nbsp;&mdash; научиться делать полезные и&nbsp;удобные продукты. Для этого я&nbsp;тренируюсь на&nbsp;своих задачах, много смотрю работы разных студий, учусь дизайну в&nbsp;Бюро Горбунова.') }}
       </div>
       <div class="text">
-        Напишите мне в&nbsp;Telegram если у&nbsp;вас есть вакансия дизайнера.
+        {{ $t('Напишите мне в&nbsp;Telegram если у&nbsp;вас есть вакансия дизайнера.') }}
       </div>
 
       <div class="text">

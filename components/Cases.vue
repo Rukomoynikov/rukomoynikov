@@ -2,6 +2,8 @@
 en:
   Дизайн и верстка: "Design"
   Дизайн: "Design"
+  Шаблон для джаваскрипт приложений: "Template for javascript apps"
+  Сайт и набор скриптов для создания приложений на Джаваскрипт.: "Boilerplate for Vue.js apps. And a promo site with documentation and examples of using."
 ru:
   Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
 </i18n>
@@ -28,13 +30,13 @@ ru:
           </picture> -->
         </template>
         <template #label>
-          Дизайн и верстка
+          {{ $t('Дизайн и верстка') }}
         </template>
         <template #title>
-          Шаблон для джаваскрипт приложений
+          {{ $t('Шаблон для джаваскрипт приложений') }}
         </template>
         <template #description>
-          Сайт и набор скриптов для создания приложений на Джаваскрипт.
+          {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
         </template>
         <template #link>
           <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">Работа на Behance</a>
@@ -61,16 +63,18 @@ ru:
           </picture> -->
         </template>
         <template #label>
-          Дизайн
+          {{ $t('Дизайн') }}
         </template>
         <template #title>
-          Экскурсия по району Хамовники на бегу
+          {{ $t('Экскурсия по району Хамовники на бегу') }}
         </template>
         <template #description>
-          Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.
+          {{ $t('Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.') }}
         </template>
         <template #link>
-          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">Работа на Behance</a>
+          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
+          {{ $t('Работа на Behance') }}
+          </a>
         </template>
       </Case>
     </div>
@@ -94,16 +98,18 @@ ru:
           </a>
         </template>
         <template #label>
-          Дизайн
+          {{ $t('Дизайн') }}
         </template>
         <template #title>
-          Курсы по презентациям
+          {{ $t('Курсы по презентациям') }}
         </template>
         <template #description>
-          Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.
+          {{ $t('Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.') }}
         </template>
         <template #link>
-          <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">Джипег</a>
+          <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
+          {{ $t('Джипег') }}
+          </a>
         </template>
       </Case>
     </div>
@@ -127,16 +133,18 @@ ru:
           </a>
         </template>
         <template #label>
-          Дизайн
+          {{ $t('Дизайн') }}
         </template>
         <template #title>
-          Верстка статьи про овечью шерсть
+          {{ $t('Верстка статьи про овечью шерсть') }}
         </template>
         <template #description>
-          Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.
+          {{ $t('Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.') }}
         </template>
         <template #link>
-          <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">Джипег</a>
+          <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
+            {{ $t('Джипег') }}
+          </a>
         </template>
       </Case>
     </div>
@@ -159,16 +167,18 @@ ru:
           </a>
         </template>
         <template #label>
-          Дизайн
+          {{ $t('Дизайн') }}
         </template>
         <template #title>
-          Доки в кармане
+          {{ $t('Доки в кармане') }}
         </template>
         <template #description>
-          Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.
+          {{ $t('Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.') }}
         </template>
         <template #link>
-          <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">Джипег</a>
+          <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
+            {{ $t('Джипег') }}
+          </a>
         </template>
       </Case>
     </div>
