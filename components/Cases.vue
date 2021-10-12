@@ -4,6 +4,10 @@ en:
   Дизайн: "Design"
   Шаблон для джаваскрипт приложений: "Template for javascript apps"
   Сайт и набор скриптов для создания приложений на Джаваскрипт.: "Boilerplate for Vue.js apps. And a promo site with documentation and examples of using."
+  Работа на Behance: Open on Behance
+  Сайт: Site
+  Экскурсия по району Хамовники на бегу: Excursion around the Khamovniki district on the run
+  Курсы по презентациям: Presentation courses
 ru:
   Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
 </i18n>
@@ -39,7 +43,8 @@ ru:
           {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
         </template>
         <template #link>
-          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">Работа на Behance</a>
+          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
+          </a>
         </template>
       </Case>
     </div>

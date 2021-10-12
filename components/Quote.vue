@@ -1,7 +1,22 @@
+<i18n lang="yaml">
+en:
+  quote: Damn cool feeling, something was not in the universe, and "{image}bam" appeared
+ru:
+  quote: Чертовски крутое чувство, чего{mdash}то не{nbsp}было во{nbsp}вселенной, и{nbsp}"{image}бац" появилось
+</i18n>
+
+
 <template>
-  <blockquote class="quote">
-    Чертовски крутое чувство, чего&mdash;то не&nbsp;было во&nbsp;вселенной, и&nbsp;<nobr>&laquo;<img class="icon" src="~assets/images/icons/magic-wand.svg" />бац&raquo;</nobr> появилось
-  </blockquote>
+  <i18n path="quote" tag="blockquote" class="quote">
+    <template #image>
+      <img src="~assets/images/icons/magic-wand.svg" class="icon" />
+    </template>
+    <template #nbsp>&nbsp;</template>
+    <template #mdash>&mdash;</template>
+  </i18n>
+<!-- <div>
+  {{ $t('quote', ['&nbsp;', '&mdash;']) }}
+</div> -->
 </template>
 
 <style scoped>
