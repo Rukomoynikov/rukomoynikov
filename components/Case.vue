@@ -35,7 +35,8 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  max-width: 380px;
+  max-width: 220px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 595px) {

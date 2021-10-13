@@ -7,48 +7,15 @@ en:
   Работа на Behance: Open on Behance
   Сайт: Site
   Экскурсия по району Хамовники на бегу: Excursion around the Khamovniki district on the run
-  Курсы по презентациям: Presentation courses
+  Сайт для курсов по презентациям: Presentation courses
+  Статья про овечью шерсть: An article about sheep's wool
+  Доки в кармане: Docs in the pocket
 ru:
   Слоган: "Люблю что{0}то{1}создавать. Работал программистом, ищу работу дизайнером."
 </i18n>
 
 <template>
   <div>
-    <!--    <NuxtLink to="cases/boilerplate" />-->
-    <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/vue-boilerpate@2x.jpg"
-              loading="lazy"
-            >
-          </a>
-          <!-- <picture>
-            <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
-            <source srcset="~assets/images/cases/vue-boilerpate.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
-          </picture> -->
-        </template>
-        <template #label>
-          {{ $t('Дизайн и верстка') }}
-        </template>
-        <template #title>
-          {{ $t('Шаблон для джаваскрипт приложений') }}
-        </template>
-        <template #description>
-          {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
-        </template>
-        <template #link>
-          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
-          </a>
-        </template>
-      </Case>
-    </div>
-
     <div class="case">
       <Case>
         <template #image>
@@ -106,7 +73,7 @@ ru:
           {{ $t('Дизайн') }}
         </template>
         <template #title>
-          {{ $t('Курсы по презентациям') }}
+          {{ $t('Сайт для курсов по презентациям') }}
         </template>
         <template #description>
           {{ $t('Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.') }}
@@ -141,7 +108,7 @@ ru:
           {{ $t('Дизайн') }}
         </template>
         <template #title>
-          {{ $t('Верстка статьи про овечью шерсть') }}
+          {{ $t('Статья про овечью шерсть') }}
         </template>
         <template #description>
           {{ $t('Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.') }}
@@ -187,6 +154,41 @@ ru:
         </template>
       </Case>
     </div>
+
+    <div class="case">
+      <Case>
+        <template #image>
+          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
+            <img
+              width="954px"
+              height="597px"
+              class="case__image"
+              src="~assets/images/cases/vue-boilerpate@2x.jpg"
+              loading="lazy"
+            >
+          </a>
+          <!-- <picture>
+            <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
+            <source srcset="~assets/images/cases/vue-boilerpate.webp" type="image/webp" loading="lazy">
+            <img src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
+          </picture> -->
+        </template>
+        <template #label>
+          {{ $t('Дизайн и верстка') }}
+        </template>
+        <template #title>
+          {{ $t('Шаблон для джаваскрипт приложений') }}
+        </template>
+        <template #description>
+          {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
+        </template>
+        <template #link>
+          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
+          </a>
+        </template>
+      </Case>
+    </div>
+
   </div>
 </template>
 
