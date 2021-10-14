@@ -38,10 +38,9 @@ import Vue from 'vue'
 import Cases from '~/components/Cases.vue'
 import History from '~/components/History.vue'
 import SocialHead from '~/components/SocialHead.vue'
-import Footer from '~/components/Footer.vue'
 
 export default Vue.extend({
-  components: { Cases, History, SocialHead, Footer }
+  components: { Cases, History, SocialHead }
 })
 </script>
 

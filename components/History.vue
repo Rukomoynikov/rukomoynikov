@@ -32,12 +32,20 @@ ru:
         {{ $t('Настоящее и будущее') }}
       </div>
       <i18n path="Настоящее часть 1" tag="div" class="text">
-        <template #nbsp>&nbsp;</template>
-        <template #mdash>&mdash;</template>
+        <template #nbsp>
+&nbsp;
+        </template>
+        <template #mdash>
+          &mdash;
+        </template>
       </i18n>
       <i18n path="Настоящее часть 2" tag="div" class="text">
-        <template #nbsp>&nbsp;</template>
-        <template #mdash>&mdash;</template>
+        <template #nbsp>
+&nbsp;
+        </template>
+        <template #mdash>
+          &mdash;
+        </template>
       </i18n>
       <div class="text">
         <a href="t.me/rukomoynikov">t.me/rukomoynikov</a>

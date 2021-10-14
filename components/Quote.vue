@@ -7,14 +7,10 @@ ru:
   quote_1: Чертовски крутое чувство, чего–то не&nbsp;было во&nbsp;вселенной,
 </i18n>
 
-
 <template>
   <blockquote class="quote">
-    <span v-html="$t('quote_1')"/> <span class="nobreak">и&nbsp;<img src="~assets/images/icons/magic-wand.svg" class="icon" />{{ $t('бац') }}</span> {{ $t('появилось') }}
+    <span v-html="$t('quote_1')" /> <span class="nobreak">и&nbsp;<img src="~assets/images/icons/magic-wand.svg" class="icon">{{ $t('бац') }}</span> {{ $t('появилось') }}<!-- eslint-disable-line vue/no-v-html-->
   </blockquote>
-<!-- <div>
-  {{ $t('quote', ['&nbsp;', '&mdash;']) }}
-</div> -->
 </template>
 
 <style scoped>

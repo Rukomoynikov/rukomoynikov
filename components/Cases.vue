@@ -45,7 +45,7 @@ ru:
         </template>
         <template #link>
           <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-          {{ $t('Работа на Behance') }}
+            {{ $t('Работа на Behance') }}
           </a>
         </template>
       </Case>
@@ -80,7 +80,7 @@ ru:
         </template>
         <template #link>
           <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-          {{ $t('Джипег') }}
+            {{ $t('Джипег') }}
           </a>
         </template>
       </Case>
@@ -188,7 +188,6 @@ ru:
         </template>
       </Case>
     </div>
-
   </div>
 </template>
 
