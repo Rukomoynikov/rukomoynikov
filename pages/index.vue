@@ -35,12 +35,13 @@ ru:
 
 <script lang="ts">
 import Vue from 'vue'
-import Cases from '~/components/Cases.vue'
-import History from '~/components/History.vue'
+import Cases from '~/components/home/Cases.vue'
+import Quote from '~/components/home/Quote.vue'
+import History from '~/components/home/History.vue'
 import SocialHead from '~/components/SocialHead.vue'
 
 export default Vue.extend({
-  components: { Cases, History, SocialHead }
+  components: { Cases, History, SocialHead, Quote }
 })
 </script>
 

@@ -21,9 +21,9 @@ ru:
         <template #image>
           <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
             <picture>
-              <source srcset="~assets/images/cases/excursions/excursions.webp 1x, ~assets/images/cases/excursions/excursions@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/excursions/excursions.jpg 1x, ~assets/images/cases/excursions/excursions@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/excursions/excursions@2x.jpg" loading="lazy" class="case__image">
+              <source srcset="~assets/images/cases/excursions/cover/excursions.webp 1x, ~assets/images/cases/excursions/cover/excursions@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/excursions/cover/excursions.jpg 1x, ~assets/images/cases/excursions/cover/excursions@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/excursions/cover/excursions@2x.jpg" loading="lazy" class="case__image">
             </picture>
           </a>
         </template>
@@ -168,3 +168,12 @@ ru:
   }
 }
 </style>
+
+<script lang="ts">
+import Vue from 'vue'
+import Case from '~/components/home/Case.vue'
+
+export default Vue.extend({
+  components: { Case }
+})
+</script>
