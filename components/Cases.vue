@@ -20,19 +20,12 @@ ru:
       <Case>
         <template #image>
           <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/excursions@2x.jpg"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="~assets/images/cases/excursions/excursions.webp 1x, ~assets/images/cases/excursions/excursions@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/excursions/excursions.jpg 1x, ~assets/images/cases/excursions/excursions@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/excursions/excursions@2x.jpg" loading="lazy" class="case__image">
+            </picture>
           </a>
-          <!-- <picture>
-            <source srcset="~assets/images/cases/excursions.jpg 1x, ~assets/images/cases/excursions@2x.jpg 2x" loading="lazy">
-            <source srcset="~assets/images/cases/excursions@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/excursions@2x.jpg" loading="lazy">
-          </picture> -->
         </template>
         <template #label>
           {{ $t('Дизайн') }}
@@ -54,19 +47,12 @@ ru:
     <div class="case">
       <Case>
         <template #image>
-          <!-- <picture>
-            <source srcset="~assets/images/cases/presentations.jpg 1x, ~assets/images/cases/presentations@2x.jpg 2x" loading="lazy">
-            <source srcset="~assets/images/cases/presentations@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/presentations@2x.jpg" loading="lazy">
-          </picture> -->
           <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/presentations@2x.jpg"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="~assets/images/cases/presentations/presentations.webp 1x, ~assets/images/cases/presentations/presentations@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/presentations/presentations.jpg 1x, ~assets/images/cases/presentations/presentations@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/presentations/presentations@2x.jpg" loading="lazy" class="case__image">
+            </picture>
           </a>
         </template>
         <template #label>
@@ -89,19 +75,12 @@ ru:
     <div class="case">
       <Case>
         <template #image>
-          <!--           <picture>
-            <source srcset="~assets/images/cases/wool.jpg 1x, ~assets/images/cases/wool@2x.jpg 2x" loading="lazy">
-            <source srcset="~assets/images/cases/wool@2x.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/wool@2x.jpg" loading="lazy">
-          </picture> -->
           <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/wool@2x.jpg"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="~assets/images/cases/wool/wool.webp 1x, ~assets/images/cases/wool/wool@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/wool/wool.jpg 1x, ~assets/images/cases/wool/wool@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/wool/wool@2x.jpg" loading="lazy" class="case__image">
+            </picture>
           </a>
         </template>
         <template #label>
@@ -124,18 +103,12 @@ ru:
     <div class="case">
       <Case>
         <template #image>
-          <!-- <picture>
-            <source srcset="~assets/images/cases/documents.jpg 1x, ~assets/images/cases/documents@2x.jpg 2x" loading="lazy">
-            <img src="~assets/images/cases/documents@2x.jpg" loading="lazy">
-          </picture> -->
           <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/documents@2x.jpg"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="~assets/images/cases/documents/documents.webp 1x, ~assets/images/cases/documents/documents@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/documents/documents.jpg 1x, ~assets/images/cases/documents/documents@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/documents/documents@2x.jpg" loading="lazy" class="case__image">
+            </picture>
           </a>
         </template>
         <template #label>
@@ -159,19 +132,12 @@ ru:
       <Case>
         <template #image>
           <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-            <img
-              width="954px"
-              height="597px"
-              class="case__image"
-              src="~assets/images/cases/vue-boilerpate@2x.jpg"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.webp 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.webp 2x" type="image/webp" loading="lazy">
+              <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg 2x" loading="lazy">
+              <img src="~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg" loading="lazy" class="case__image">
+            </picture>
           </a>
-          <!-- <picture>
-            <source srcset="~assets/images/cases/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate@2x.jpg 2x" loading="lazy">
-            <source srcset="~assets/images/cases/vue-boilerpate.webp" type="image/webp" loading="lazy">
-            <img src="~assets/images/cases/vue-boilerpate@2x.jpg" loading="lazy">
-          </picture> -->
         </template>
         <template #label>
           {{ $t('Дизайн и верстка') }}

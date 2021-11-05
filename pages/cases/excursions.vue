@@ -17,7 +17,7 @@
     </div>
 
     <div class="case-footer">
-      <h3 class="case-footer">1Еще один рассказ и все😉</h3>
+      <h3 class="case-footer">Еще один рассказ и все😉</h3>
     </div>
   </div>
 </template>

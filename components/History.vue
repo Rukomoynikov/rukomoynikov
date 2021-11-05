@@ -53,7 +53,11 @@ ru:
     </div>
 
     <div class="column column-foto">
-      <img src="~assets/images/myphotos/transparent-photo-in-black@2x.png" loading="lazy" class="foto">
+      <picture>
+        <source srcset="~assets/images/myphotos/transparent-photo-in-black.webp 1x, ~assets/images/myphotos/transparent-photo-in-black@2x.webp 2x" type="image/webp" loading="lazy">
+        <source srcset="~assets/images/myphotos/transparent-photo-in-black.png 1x, ~assets/images/myphotos/transparent-photo-in-black@2x.png 2x" loading="lazy">
+        <img src="~assets/images/myphotos/transparent-photo-in-black@2x.png" loading="lazy" class="foto">
+      </picture>
     </div>
   </div>
 </template>

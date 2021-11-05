@@ -1,8 +1,6 @@
 <template>
   <div class="case">
-    <div class="image__container">
-      <slot name="image" />
-    </div>
+    <slot name="image" />
     <div class="case__text">
       <div class="label">
         <slot name="label" />
@@ -21,6 +19,7 @@
 <style scoped>
 .case {
   display: flex;
+  align-items: flex-end;
 }
 
 @media only screen and (max-width: 595px) {
@@ -51,6 +50,7 @@
   font: 300 20px IBM Plex Sans, sans-serif;
   margin-bottom: 3px;
   margin-top: 10px;
+  flex: 1;
 }
 
 .description {
