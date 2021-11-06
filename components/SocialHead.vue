@@ -23,6 +23,7 @@ export default {
 
   head () {
     return {
+      title: this.title,
       meta: [
         {
           hid: 'twitter:card',
