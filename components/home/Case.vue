@@ -25,6 +25,7 @@
 @media only screen and (max-width: 595px) {
   .case {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
