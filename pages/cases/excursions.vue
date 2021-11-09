@@ -32,72 +32,85 @@
         </div>
       </div>
     </div>
-<!--      <div class="case-description">-->
-<!--        <div class="block-with-photo case-description__block">-->
-<!--          <picture>-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-1.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-1@2x.webp 2x" type="image/webp" loading="lazy">-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-1.jpg 1x, ~assets/images/cases/excursions/detailed/detailed-part-1@2x.jpg 2x" loading="lazy">-->
-<!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-1@2x.jpg" loading="lazy" class="block-with-photo__photo">-->
-<!--          </picture>-->
-<!--          <div class="block-with-photo__paragraph">-->
-<!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
-<!--          </div>-->
-<!--        </div>-->
+    <!--      <div class="case-description">-->
+    <!--        <div class="block-with-photo case-description__block">-->
+    <!--          <picture>-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-1.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-1@2x.webp 2x" type="image/webp" loading="lazy">-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-1.jpg 1x, ~assets/images/cases/excursions/detailed/detailed-part-1@2x.jpg 2x" loading="lazy">-->
+    <!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-1@2x.jpg" loading="lazy" class="block-with-photo__photo">-->
+    <!--          </picture>-->
+    <!--          <div class="block-with-photo__paragraph">-->
+    <!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
+    <!--          </div>-->
+    <!--        </div>-->
 
-<!--        <div class="block-with-photo case-description__block">-->
-<!--          <picture>-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-2.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-2@2x.webp 2x" type="image/webp" loading="lazy">-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-2.jpg 1x, ~assets/images/cases/excursions/detailed/detailed-part-2@2x.jpg 2x" loading="lazy">-->
-<!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-2@2x.jpg" loading="lazy" class="block-with-photo__photo">-->
-<!--          </picture>-->
-<!--          <div class="block-with-photo__paragraph">-->
-<!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
-<!--          </div>-->
-<!--        </div>-->
+    <!--        <div class="block-with-photo case-description__block">-->
+    <!--          <picture>-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-2.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-2@2x.webp 2x" type="image/webp" loading="lazy">-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-2.jpg 1x, ~assets/images/cases/excursions/detailed/detailed-part-2@2x.jpg 2x" loading="lazy">-->
+    <!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-2@2x.jpg" loading="lazy" class="block-with-photo__photo">-->
+    <!--          </picture>-->
+    <!--          <div class="block-with-photo__paragraph">-->
+    <!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
+    <!--          </div>-->
+    <!--        </div>-->
 
-<!--        <div class="block-with-photo case-description__block">-->
-<!--          <picture>-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-3.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-3@2x.webp 2x" type="image/webp" loading="lazy">-->
-<!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-3.png 1x, ~assets/images/cases/excursions/detailed/detailed-part-3@2x.png 2x" loading="lazy">-->
-<!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-3@2x.png" loading="lazy" class="block-with-photo__photo">-->
-<!--          </picture>-->
-<!--          <div class="block-with-photo__paragraph">-->
-<!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
-<!--          </div>-->
-<!--        </div>-->
+    <!--        <div class="block-with-photo case-description__block">-->
+    <!--          <picture>-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-3.webp 1x, ~assets/images/cases/excursions/detailed/detailed-part-3@2x.webp 2x" type="image/webp" loading="lazy">-->
+    <!--            <source srcset="~assets/images/cases/excursions/detailed/detailed-part-3.png 1x, ~assets/images/cases/excursions/detailed/detailed-part-3@2x.png 2x" loading="lazy">-->
+    <!--            <img src="~assets/images/cases/excursions/detailed/detailed-part-3@2x.png" loading="lazy" class="block-with-photo__photo">-->
+    <!--          </picture>-->
+    <!--          <div class="block-with-photo__paragraph">-->
+    <!--            На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.-->
+    <!--          </div>-->
+    <!--        </div>-->
 
-      <div class="container">
-        <div class="case-footer">
-          <Title :level="2">Еще один рассказик и все😉</Title>
-          <CaseSmall>
-            <template #image>
-              <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-                <picture>
-                  <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.webp 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.webp 2x" type="image/webp" loading="lazy">
-                  <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg 2x" loading="lazy">
-                  <img src="~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg" loading="lazy" class="case__image">
-                </picture>
-              </a>
-            </template>
-            <template #label>
-              {{ $t('Дизайн и верстка') }}
-            </template>
-            <template #title>
-              {{ $t('Шаблон для джаваскрипт приложений') }}
-            </template>
-            <template #description>
-              {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
-            </template>
-            <template #link>
-              <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
-              </a>
-            </template>
-          </CaseSmall>
-        </div>
+    <div class="container">
+      <div class="case-footer">
+        <Title :level="2">
+          Еще один рассказик и все😉
+        </Title>
+        <CaseSmall>
+          <template #image>
+            <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
+              <picture>
+                <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.webp 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.webp 2x" type="image/webp" loading="lazy">
+                <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg 2x" loading="lazy">
+                <img src="~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg" loading="lazy" class="case__image">
+              </picture>
+            </a>
+          </template>
+          <template #label>
+            {{ $t('Дизайн и верстка') }}
+          </template>
+          <template #title>
+            {{ $t('Шаблон для джаваскрипт приложений') }}
+          </template>
+          <template #description>
+            {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
+          </template>
+          <template #link>
+            <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
+            </a>
+          </template>
+        </CaseSmall>
       </div>
-
+    </div>
   </CaseDescription>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import CaseDescription from '~/components/cases/CaseDescription.vue'
+import CaseSmall from '~/components/home/Case.vue'
+import HeroTitle from '~/components/cases/HeroTitle.vue'
+import Title from '~/components/Title.vue'
+
+export default Vue.extend({
+  components: { CaseDescription, HeroTitle, CaseSmall, Title }
+})
+</script>
 
 <style type="text/css">
 .container {
@@ -128,15 +141,3 @@
   width: 100%;
 }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-import CaseDescription from '~/components/cases/CaseDescription.vue'
-import CaseSmall from '~/components/home/Case.vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
-import Title from '~/components/Title.vue'
-
-export default Vue.extend({
-  components: { CaseDescription, HeroTitle, CaseSmall, Title }
-})
-</script>

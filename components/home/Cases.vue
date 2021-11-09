@@ -157,18 +157,6 @@ ru:
   </div>
 </template>
 
-<style type="text/css" scoped>
-.case {
-  margin-bottom: 36px;
-}
-
-@media only screen and (max-width: 595px) {
-  .case {
-    margin-bottom: 56px;
-  }
-}
-</style>
-
 <script lang="ts">
 import Vue from 'vue'
 import Case from '~/components/home/Case.vue'
@@ -177,3 +165,15 @@ export default Vue.extend({
   components: { Case }
 })
 </script>
+
+<style type="text/css" scoped>
+  .case {
+    margin-bottom: 36px;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .case {
+      margin-bottom: 56px;
+    }
+  }
+</style>

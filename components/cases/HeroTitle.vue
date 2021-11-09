@@ -1,18 +1,47 @@
 <template>
   <div class="hero-title">
     <div class="hero-title_container">
-      <div class="hero-title__tag" v-for="tag in tags" :key="tag">
-        {{tag}}
+      <div v-for="tag in tags" :key="tag" class="hero-title__tag">
+        {{ tag }}
       </div>
       <h2 class="hero-title__title">
-        {{title}}
+        {{ title }}
       </h2>
-      <div class="hero-title__subtitle" v-if="subtitle">
-        {{subtitle}}
+      <div v-if="subtitle" class="hero-title__subtitle">
+        {{ subtitle }}
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    tags: {
+      type: Array,
+      required: false,
+      default () {
+        return []
+      }
+    },
+    title: {
+      type: String,
+      default () {
+        return null
+      }
+    },
+    subtitle: {
+      type: String,
+      required: false,
+      default () {
+        return null
+      }
+    }
+  }
+})
+</script>
 
 <style>
   .hero-title {
@@ -48,21 +77,3 @@
     font: 300 34px IBM Plex Sans, sans-serif;
   }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    tags: {
-      type: Array,
-      required: false
-    },
-    title: String,
-    subtitle: {
-      type: String,
-      required: false
-    }
-  }
-})
-</script>

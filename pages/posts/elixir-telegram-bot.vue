@@ -41,6 +41,15 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+import HeroTitle from '~/components/cases/HeroTitle.vue'
+
+export default Vue.extend({
+  components: { HeroTitle }
+})
+</script>
+
 <style scoped>
   .container {
     max-width: 1200px;
@@ -72,12 +81,3 @@
     padding: 0;
   }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
-
-export default Vue.extend({
-  components: { HeroTitle }
-})
-</script>
