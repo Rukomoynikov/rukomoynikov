@@ -2,10 +2,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  generate: {
-    routes: ['/cases/alfa']
-  },
-
   server: {
     host: '0' // default: localhost
   },
