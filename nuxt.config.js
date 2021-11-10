@@ -31,6 +31,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'assets/fonts/ibm_plex_sans/stylesheet.css',
+    'assets/fonts/ibm_plex_mono/stylesheet.css',
     'assets/css/global.css'
   ],
 
@@ -75,7 +76,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-highlightjs'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

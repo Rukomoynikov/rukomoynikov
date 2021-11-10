@@ -35,6 +35,47 @@
       </div>
 
       <pre>
+        <code v-highlight class="elixir">
+defmodule TelegramBotElixir.Worker do
+  use GenServer
+
+  def start_link(args) do
+    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
+  end
+
+  @impl true
+  def init(:ok) do
+    get_updates()
+    {:ok, %{}}
+  end
+
+  def get_updates(offset \\ nil) do
+    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
+           TelegramBotElixir.Endpoints.updates_url(offset) |> HTTPoison.get(),
+         {:ok, data} = Jason.decode(body) do
+      parse_messages(data["result"], offset)
+    end
+  end
+
+  defp parse_messages(_messages = [], offset) do
+    get_updates(offset)
+  end
+
+  defp parse_messages(messages, _offset) do
+    Enum.each(messages, fn message ->
+      TelegramBotElixir.Database.save_user(message)
+      |> TelegramBotElixir.MessagesRouter.answer_to_message()
+    end)
+
+    List.last(messages)
+    |> Map.fetch!("update_id")
+    |> get_updates()
+  end
+end
+        </code>
+      </pre>
+
+      <pre class="code">
 defmodule TelegramBotElixir.Worker do
   use GenServer
 
@@ -118,5 +159,12 @@ export default Vue.extend({
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  .code {
+    background: white;
+    padding: 18px 12px;
+    overflow-x: scroll;
+    font-family: "IBM Plex Mono", sans-serif;
   }
 </style>
