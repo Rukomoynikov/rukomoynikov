@@ -34,6 +34,45 @@
         <p>Я буду постепенно усложнять приложение. Начну с эхо–бота, бота который в ответ на сообщение присылает его обратно. Дальше добавлю сохранение пользователей в базу данных. А в конце попробую сделать его немного полезным — по запросу от пользователя бот будет отправлять сводную информацию о рынке акций.</p>
       </div>
 
+      <pre>
+defmodule TelegramBotElixir.Worker do
+  use GenServer
+
+  def start_link(args) do
+    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
+  end
+
+  @impl true
+  def init(:ok) do
+    get_updates()
+    {:ok, %{}}
+  end
+
+  def get_updates(offset \\ nil) do
+    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
+           TelegramBotElixir.Endpoints.updates_url(offset) |> HTTPoison.get(),
+         {:ok, data} = Jason.decode(body) do
+      parse_messages(data["result"], offset)
+    end
+  end
+
+  defp parse_messages(_messages = [], offset) do
+    get_updates(offset)
+  end
+
+  defp parse_messages(messages, _offset) do
+    Enum.each(messages, fn message ->
+      TelegramBotElixir.Database.save_user(message)
+      |> TelegramBotElixir.MessagesRouter.answer_to_message()
+    end)
+
+    List.last(messages)
+    |> Map.fetch!("update_id")
+    |> get_updates()
+  end
+end
+      </pre>
+
       <h3>Создание скелета приложения и установка необходимых инструментов</h3>
       <h3>Получение сообщений и ответ пользователю</h3>
       <h3>Сохранение пользователей в базу данных</h3>
