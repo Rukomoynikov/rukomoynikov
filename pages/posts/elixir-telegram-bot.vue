@@ -70,8 +70,8 @@ end
       </div>
 
       <h3>Отправка запросов в Телеграм</h3>
-
-      <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex '">
+      <div class="content-container">
+        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex '">
 defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
 
@@ -87,7 +87,7 @@ defmodule StocksBot do
     @basic_url <> "getUpdates"
   end
 end
-      </CodeSinppet>
+        </CodeSinppet>
 
       <p>Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды</p>
 
@@ -103,26 +103,26 @@ StocksBot.get_updates()
   %{
     "message" => %{
       "chat" => %{
-      "first_name" => "Maksim",
-      "id" => 120407271,
-      "last_name" => "Rukomoynikov",
-      "type" => "private",
-      "username" => "rukomoynikov"
+        "first_name" => "Maksim",
+        "id" => 120407271,
+        "last_name" => "Rukomoynikov",
+        "type" => "private",
+        "username" => "rukomoynikov"
+      },
+      "date" => 1636549063,
+      "from" => %{
+        "first_name" => "Maksim",
+        "id" => 120407271,
+        "is_bot" => false,
+        "language_code" => "ru",
+        "last_name" => "Rukomoynikov",
+        "username" => "rukomoynikov"
+      },
+      "message_id" => 1142,
+      "text" => "Hello"
     },
-    "date" => 1636549063,
-    "from" => %{
-      "first_name" => "Maksim",
-      "id" => 120407271,
-      "is_bot" => false,
-      "language_code" => "ru",
-      "last_name" => "Rukomoynikov",
-      "username" => "rukomoynikov"
-    },
-    "message_id" => 1142,
-    "text" => "Hello"
-  },
-  "update_id" => 475896056
-}
+    "update_id" => 475896056
+  }
 ]
     </CodeSinppet>
 
@@ -168,7 +168,7 @@ defmodule TelegramBotElixir do
   end
 end
   </CodeSinppet>
-
+      </div>
 <!--      <h3>Получение сообщений и ответ пользователю</h3>-->
 
 <!--      <h3>Сохранение пользователей в базу данных</h3>-->
