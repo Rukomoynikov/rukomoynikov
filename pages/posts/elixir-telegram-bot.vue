@@ -25,6 +25,7 @@
       </ul>
 
       <h2>Эликсир</h2>
+
       <div class="content-container">
         <p>Эликсир — это функциональный язык программирования. Работает на базе другого языка программирования Эрланга. Основное преимущество Эликсира — умение управлять огромным количеством процессов. Эти процессы тоже сделаны особым образом поэтому они занимают существенно меньше памяти и времени процессора, чем обычные процессы компьютера.</p>
       </div>
@@ -34,89 +35,144 @@
         <p>Я буду постепенно усложнять приложение. Начну с эхо–бота, бота который в ответ на сообщение присылает его обратно. Дальше добавлю сохранение пользователей в базу данных. А в конце попробую сделать его немного полезным — по запросу от пользователя бот будет отправлять сводную информацию о рынке акций.</p>
       </div>
 
-      <pre>
-        <code v-highlight class="elixir">
-defmodule TelegramBotElixir.Worker do
-  use GenServer
-
-  def start_link(args) do
-    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
-  end
-
-  @impl true
-  def init(:ok) do
-    get_updates()
-    {:ok, %{}}
-  end
-
-  def get_updates(offset \\ nil) do
-    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
-           TelegramBotElixir.Endpoints.updates_url(offset) |> HTTPoison.get(),
-         {:ok, data} = Jason.decode(body) do
-      parse_messages(data["result"], offset)
-    end
-  end
-
-  defp parse_messages(_messages = [], offset) do
-    get_updates(offset)
-  end
-
-  defp parse_messages(messages, _offset) do
-    Enum.each(messages, fn message ->
-      TelegramBotElixir.Database.save_user(message)
-      |> TelegramBotElixir.MessagesRouter.answer_to_message()
-    end)
-
-    List.last(messages)
-    |> Map.fetch!("update_id")
-    |> get_updates()
-  end
-end
-        </code>
-      </pre>
-
-      <pre class="code">
-defmodule TelegramBotElixir.Worker do
-  use GenServer
-
-  def start_link(args) do
-    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
-  end
-
-  @impl true
-  def init(:ok) do
-    get_updates()
-    {:ok, %{}}
-  end
-
-  def get_updates(offset \\ nil) do
-    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
-           TelegramBotElixir.Endpoints.updates_url(offset) |> HTTPoison.get(),
-         {:ok, data} = Jason.decode(body) do
-      parse_messages(data["result"], offset)
-    end
-  end
-
-  defp parse_messages(_messages = [], offset) do
-    get_updates(offset)
-  end
-
-  defp parse_messages(messages, _offset) do
-    Enum.each(messages, fn message ->
-      TelegramBotElixir.Database.save_user(message)
-      |> TelegramBotElixir.MessagesRouter.answer_to_message()
-    end)
-
-    List.last(messages)
-    |> Map.fetch!("update_id")
-    |> get_updates()
-  end
-end
-      </pre>
-
       <h3>Создание скелета приложения и установка необходимых инструментов</h3>
-      <h3>Получение сообщений и ответ пользователю</h3>
-      <h3>Сохранение пользователей в базу данных</h3>
+
+      <div class="content-container">
+        <CodeSinppet :short="true">mix new stocks_bot --sup</CodeSinppet>
+
+        <p>Для начала надо создать новое приложение. Опция <i>--sup</i> добавляет в приложение супервизор и запускает его при старте. После создание структура приложения выглядит примерно так:</p>
+
+        <CodeSinppet>
+stocks_bot
+├── README.md
+├── lib
+│   ├── stocks_bot
+│   │   └── application.ex
+│   └── stocks_bot.ex
+├── mix.exs
+└── test
+├── stocks_bot_test.exs
+└── test_helper.exs
+        </CodeSinppet>
+
+        <p>Дополнительно надо установить HTTPoison для отпрвки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.</p>
+
+        <CodeSinppet :file-name="'stocks_bot/mix.exs'">
+...
+
+defp deps do
+  [
+    {:httpoison, "~> 1.8"},
+    {:jason, "~> 1.2"}
+  ]
+end
+        </CodeSinppet>
+      </div>
+
+      <h3>Отправка запросов в Телеграм</h3>
+
+      <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex '">
+defmodule StocksBot do
+  @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
+
+  def get_updates(offset \\ nil) do
+    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
+           updates_url(offset) |> HTTPoison.get(),
+         {:ok, data} = Jason.decode(body) do
+      IO.inspect(data["result"])
+    end
+  end
+
+  defp updates_url(_offset = nil) do
+    @basic_url <> "getUpdates"
+  end
+end
+      </CodeSinppet>
+
+      <p>Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды</p>
+
+      <CodeSinppet>
+iex -S mix
+StocksBot.get_updates()
+      </CodeSinppet>
+
+      <p>Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма. </p>
+
+      <CodeSinppet>
+[
+  %{
+    "message" => %{
+      "chat" => %{
+      "first_name" => "Maksim",
+      "id" => 120407271,
+      "last_name" => "Rukomoynikov",
+      "type" => "private",
+      "username" => "rukomoynikov"
+    },
+    "date" => 1636549063,
+    "from" => %{
+      "first_name" => "Maksim",
+      "id" => 120407271,
+      "is_bot" => false,
+      "language_code" => "ru",
+      "last_name" => "Rukomoynikov",
+      "username" => "rukomoynikov"
+    },
+    "message_id" => 1142,
+    "text" => "Hello"
+  },
+  "update_id" => 475896056
+}
+]
+    </CodeSinppet>
+
+    <p>Если снова попробовать получить сообщения, то ответ будет таким же. Это происходит потому, что надо указать телеграму какие сообщения уже получены. Для этого надо взять <i>update_id</i> последнего сообщения, добавить единицу и использовать это как гет–параметр для получения новых сообщений. Да и сейчас скрипт получает одно сообщение и прекращает, а надо чтобы слушал. Сейчас я это исправлю.</p>
+
+  <CodeSinppet>
+defmodule TelegramBotElixir do
+  @basic_url "https://api.telegram.org/bot167028316:AAHC6XHgTAiYqon6GTgPan6jhC_jF3CFIXk/"
+
+  def get_updates(offset \\ nil) do
+    with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
+           updates_url(offset) |> HTTPoison.get(),
+         {:ok, data} = Jason.decode(body) do
+
+      parse_messages(data["result"])
+      |> get_last_update_id()
+      |> get_updates()
+    end
+  end
+
+  defp parse_messages(messages) do
+    Enum.each(messages, fn message ->
+      IO.inspect(message)
+    end)
+
+    messages
+  end
+
+  defp get_last_update_id(_messages = []) do
+    nil
+  end
+
+  defp get_last_update_id(messages) do
+    List.last(messages) |> Map.fetch!("update_id")
+  end
+
+  defp updates_url(_offset = nil) do
+    @basic_url <> "getUpdates"
+  end
+
+  defp updates_url(offset) do
+    @basic_url <> "getUpdates?offset=#{offset + 1}"
+  end
+end
+  </CodeSinppet>
+
+<!--      <h3>Получение сообщений и ответ пользователю</h3>-->
+
+<!--      <h3>Сохранение пользователей в базу данных</h3>-->
+
     </div>
   </div>
 </template>
@@ -124,9 +180,10 @@ end
 <script lang="ts">
 import Vue from 'vue'
 import HeroTitle from '~/components/cases/HeroTitle.vue'
+import CodeSinppet from '~/components/CodeSinppet.vue'
 
 export default Vue.extend({
-  components: { HeroTitle }
+  components: { HeroTitle, CodeSinppet }
 })
 </script>
 
