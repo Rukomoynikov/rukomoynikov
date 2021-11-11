@@ -11,7 +11,7 @@ ru:
     <SocialHead
       :title="'Рукомойников Максим'"
       :description="'Моя большая цель на 5 лет — научиться делать полезные и удобные продукты. Для этого я тренируюсь на своих задачах, много смотрю работы разных студий, учусь дизайну в Бюро Горбунова.'"
-      :image="'https://rukomoynikov.ru/facebook_share_2.jpg'"
+      :image="require('/assets/images/facebook_share_2.jpg')"
     />
 
     <div class="cases">
