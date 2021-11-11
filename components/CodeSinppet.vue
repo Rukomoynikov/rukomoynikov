@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="fileName" class="code-block__filename">
-      <img src="~/assets/images/icons/file.svg" class="code-block__file-icon">
+      <img src="~/assets/images/icons/file-2.svg" class="code-block__file-icon">
       {{ fileName }}
     </div>
     <pre :class="['code-block', {'code-block_short': short}]"><slot /></pre>
@@ -32,7 +32,7 @@ export default Vue.extend({
 <style>
 .code-block {
   background: white;
-  padding: 0 12px;
+  padding: 10px 12px;
   overflow-x: scroll;
   margin: 0;
   color: rgb(21, 21, 119);
@@ -43,8 +43,8 @@ export default Vue.extend({
 }
 
 .code-block__filename {
-  background: #c7c7c7;
-  padding: 5px 12px;
+  background: #dbf0ff;
+  padding: 6px 12px;
   display: flex;
   align-items: center;
   font-weight: normal;

@@ -1,9 +1,15 @@
 <template>
   <div>
+    <SocialHead
+      :title="'Дизайн для сайта «Экскурсия по району Хамовники на бегу»'"
+      :description="'Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом, ребята решили попробовать сделать это в Москве'"
+      :image="'https://rukomoynikov.ru/facebook_share_2.jpg'"
+    />
+
     <HeroTitle
       :tags="['Телеграм', 'Эликсир']"
-      :title="'Как написать бота для Телеграма на Эликсире'"
-    />
+      :title="'Как написать бота для Телеграма на Эликсире'">
+    </HeroTitle>
 
     <div class="container">
       <h2>Часть про Телеграм и АПИ</h2>
@@ -18,11 +24,19 @@
 
       <ul class="links-list">
         <li>
-          <a href="" class="link">
-            Документация по Телеграм АПИ
+          <a href="https://core.telegram.org/bots/api#getting-updates" class="link">
+            Документация по Телеграм ботам
           </a>
         </li>
       </ul>
+
+      <h3>Получение токена для запросов в Телеграм</h3>
+
+      <div class="content-container">
+        <video controls loop class="post__video">
+          <source :src='require("/assets/videos/posts/elixir-telegram-bot/api_token.mp4")' type="video/mp4" />
+        </video>
+      </div>
 
       <h2>Эликсир</h2>
 
@@ -57,21 +71,21 @@ stocks_bot
 
         <p>Дополнительно надо установить HTTPoison для отпрвки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.</p>
 
-        <CodeSinppet :file-name="'stocks_bot/mix.exs'">
-...
+
+        <CodeSinppet :file-name="'stocks_bot/mix.exs'">...
 
 defp deps do
   [
     {:httpoison, "~> 1.8"},
     {:jason, "~> 1.2"}
   ]
-end
-        </CodeSinppet>
+end</CodeSinppet>
       </div>
 
-      <h3>Отправка запросов в Телеграм</h3>
+      <h3>Получение сообщение пользователя</h3>
+
       <div class="content-container">
-        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex '">
+        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
 defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
 
@@ -93,8 +107,7 @@ end
 
       <CodeSinppet>
 iex -S mix
-StocksBot.get_updates()
-      </CodeSinppet>
+StocksBot.get_updates()</CodeSinppet>
 
       <p>Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма. </p>
 
@@ -128,9 +141,9 @@ StocksBot.get_updates()
 
     <p>Если снова попробовать получить сообщения, то ответ будет таким же. Это происходит потому, что надо указать телеграму какие сообщения уже получены. Для этого надо взять <i>update_id</i> последнего сообщения, добавить единицу и использовать это как гет–параметр для получения новых сообщений. Да и сейчас скрипт получает одно сообщение и прекращает, а надо чтобы слушал. Сейчас я это исправлю.</p>
 
-  <CodeSinppet>
-defmodule TelegramBotElixir do
-  @basic_url "https://api.telegram.org/bot167028316:AAHC6XHgTAiYqon6GTgPan6jhC_jF3CFIXk/"
+<CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
+defmodule StocksBot do
+  @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
 
   def get_updates(offset \\ nil) do
     with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
@@ -166,13 +179,74 @@ defmodule TelegramBotElixir do
   defp updates_url(offset) do
     @basic_url <> "getUpdates?offset=#{offset + 1}"
   end
-end
-  </CodeSinppet>
+end</CodeSinppet>
       </div>
-<!--      <h3>Получение сообщений и ответ пользователю</h3>-->
 
-<!--      <h3>Сохранение пользователей в базу данных</h3>-->
+      <h3>Ответ пользователю</h3>
+      <div class="content-container">
+      <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">...
+defp parse_messages(messages) do
+  Enum.each(messages, fn message ->
+    answer_to_message(message)
+  end)
 
+  messages
+end
+
+defp answer_to_message(message) do
+  %{
+    "message" => %{
+      "chat" => %{"id" => chat_id},
+      "text" => original_text
+    }
+  } = message
+
+  answer = %{
+    text: "Hello: #{original_text}",
+    chat_id: chat_id
+  }
+
+  HTTPoison.post(
+    "https://api.telegram.org/bot167028316:AAHC6XHgTAiYqon6GTgPan6jhC_jF3CFIXk/sendMessage",
+    Jason.encode!(answer),
+    [{"Content-Type", "application/json"}]
+  )
+end</CodeSinppet>
+      </div>
+
+      <h3>Запуск приложения в супервизоре</h3>
+      <div class="content-container">
+        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">defmodule StocksBot do
+  use GenServer
+  @basic_url "https://api.telegram.org/bot167028316:AAHC6XHgTAiYqon6GTgPan6jhC_jF3CFIXk/"
+
+  def start_link(args) do
+    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
+  end
+
+  @impl true
+  def init(:ok) do
+    get_updates()
+    {:ok, %{}}
+  end
+...</CodeSinppet>
+
+<CodeSinppet :file-name="'stocks_bot/lib/stocks_bot/application.ex '">defmodule StocksBot.Application do
+  use Application
+
+  @impl true
+  def start(_type, _args) do
+    children = [ StocksBot ]
+
+    opts = [strategy: :one_for_one, name: StocksBot.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+end</CodeSinppet>
+
+        <video controls loop class="post__video">
+          <source :src='require("/assets/videos/posts/elixir-telegram-bot/demo_of_bot.mp4")' type="video/mp4" />
+        </video>
+      </div>
     </div>
   </div>
 </template>
@@ -206,10 +280,12 @@ export default Vue.extend({
 
   .link::before {
     content: ' ';
-    background-image: url('~/assets/images/icons/link.svg');
+    background-image: url('~/assets/images/icons/link-2.svg');
+    margin-right: 4px;
+    margin-top: 2px;
     display: block;
-    width: 1.1em;
-    height: 1.1em;
+    width: 1em;
+    height: 1em;
   }
 
   .links-list {
@@ -218,10 +294,7 @@ export default Vue.extend({
     padding: 0;
   }
 
-  .code {
-    background: white;
-    padding: 18px 12px;
-    overflow-x: scroll;
-    font-family: "IBM Plex Mono", sans-serif;
+  .post__video {
+    width: 100%;
   }
 </style>

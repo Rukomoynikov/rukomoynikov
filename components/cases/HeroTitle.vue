@@ -1,6 +1,6 @@
 <template>
   <div class="hero-title">
-    <div class="hero-title_container">
+    <div class="hero-title__container">
       <div v-for="tag in tags" :key="tag" class="hero-title__tag">
         {{ tag }}
       </div>
@@ -46,7 +46,6 @@ export default Vue.extend({
 <style>
   .hero-title {
     background: #f9dddc;
-    padding: 55px 0 76px;
   }
 
   .hero-title__tag {
@@ -62,18 +61,19 @@ export default Vue.extend({
   }
 
   .hero-title__title {
-    font: normal 96px/110px IBM Plex Sans, sans-serif;
-    margin: 6px 0 34px 0;
+    font: normal 62px/68px IBM Plex Sans, sans-serif;
+    margin: 18px 0 0 0;
   }
 
-  .hero-title_container {
+  .hero-title__container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding: 0 10px;
+    padding: 55px 0 60px;
   }
 
   .hero-title__subtitle {
+    margin-top: 34px;
     font: 300 34px IBM Plex Sans, sans-serif;
   }
 </style>
