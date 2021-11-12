@@ -33,15 +33,35 @@
       <h3>Получение токена для запросов в Телеграм</h3>
 
       <div class="content-container">
+        <p>Токен для запросов в Телеграм нужно получить у бота BotFather.</p>
+
         <video controls loop class="post__video">
           <source :src='require("/assets/videos/posts/elixir-telegram-bot/api_token.mp4")' type="video/mp4" />
         </video>
+
+        <ul class="links-list">
+          <li>
+            <a href="https://t.me/botfather" class="link">
+              BotFather
+            </a>
+          </li>
+        </ul>
       </div>
 
       <h2>Эликсир</h2>
 
       <div class="content-container">
         <p>Эликсир — это функциональный язык программирования. Работает на базе другого языка программирования Эрланга. Основное преимущество Эликсира — умение управлять огромным количеством процессов. Эти процессы тоже сделаны особым образом поэтому они занимают существенно меньше памяти и времени процессора, чем обычные процессы компьютера.</p>
+
+        <ul class="links-list">
+          <li><a href="https://elixir-lang.org/install.html" class="link">
+              Инструкция по установке на elixir-lang.org
+            </a></li>
+
+          <li><a href="https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817" class="link">
+            Установка при помощи asdf
+          </a></li>
+        </ul>
       </div>
 
       <h2>Приложение</h2>
@@ -56,8 +76,7 @@
 
         <p>Для начала надо создать новое приложение. Опция <i>--sup</i> добавляет в приложение супервизор и запускает его при старте. После создание структура приложения выглядит примерно так:</p>
 
-        <CodeSinppet>
-stocks_bot
+        <CodeSinppet>stocks_bot
 ├── README.md
 ├── lib
 │   ├── stocks_bot
@@ -66,11 +85,9 @@ stocks_bot
 ├── mix.exs
 └── test
 ├── stocks_bot_test.exs
-└── test_helper.exs
-        </CodeSinppet>
+└── test_helper.exs</CodeSinppet>
 
         <p>Дополнительно надо установить HTTPoison для отпрвки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.</p>
-
 
         <CodeSinppet :file-name="'stocks_bot/mix.exs'">...
 
@@ -82,11 +99,19 @@ defp deps do
 end</CodeSinppet>
       </div>
 
+      <ul class="links-list">
+        <li>
+          <a href="https://hex.pm/packages/httpoison" class="link">HTTPoisin</a>
+        </li>
+        <li>
+          <a href="https://hex.pm/packages/jason" class="link">Jason</a>
+        </li>
+      </ul>
+
       <h3>Получение сообщение пользователя</h3>
 
       <div class="content-container">
-        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
-defmodule StocksBot do
+        <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
 
   def get_updates(offset \\ nil) do
@@ -100,19 +125,16 @@ defmodule StocksBot do
   defp updates_url(_offset = nil) do
     @basic_url <> "getUpdates"
   end
-end
-        </CodeSinppet>
+end</CodeSinppet>
 
       <p>Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды</p>
 
-      <CodeSinppet>
-iex -S mix
+      <CodeSinppet>iex -S mix
 StocksBot.get_updates()</CodeSinppet>
 
       <p>Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма. </p>
 
-      <CodeSinppet>
-[
+      <CodeSinppet>[
   %{
     "message" => %{
       "chat" => %{
@@ -136,13 +158,11 @@ StocksBot.get_updates()</CodeSinppet>
     },
     "update_id" => 475896056
   }
-]
-    </CodeSinppet>
+]</CodeSinppet>
 
     <p>Если снова попробовать получить сообщения, то ответ будет таким же. Это происходит потому, что надо указать телеграму какие сообщения уже получены. Для этого надо взять <i>update_id</i> последнего сообщения, добавить единицу и использовать это как гет–параметр для получения новых сообщений. Да и сейчас скрипт получает одно сообщение и прекращает, а надо чтобы слушал. Сейчас я это исправлю.</p>
 
-<CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
-defmodule StocksBot do
+<CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot<Токен от Botfather>>/"
 
   def get_updates(offset \\ nil) do
@@ -216,6 +236,8 @@ end</CodeSinppet>
 
       <h3>Запуск приложения в супервизоре</h3>
       <div class="content-container">
+        <p>Первое что надо сделать — преобразовать приложение в Генсервер (Genserver).</p>
+
         <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">defmodule StocksBot do
   use GenServer
   @basic_url "https://api.telegram.org/bot167028316:AAHC6XHgTAiYqon6GTgPan6jhC_jF3CFIXk/"
@@ -231,6 +253,8 @@ end</CodeSinppet>
   end
 ...</CodeSinppet>
 
+        <p>Потом этот Генсервер добавить в СупервизорТри (Supervisor Tree).</p>
+
 <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot/application.ex '">defmodule StocksBot.Application do
   use Application
 
@@ -242,10 +266,15 @@ end</CodeSinppet>
     Supervisor.start_link(children, opts)
   end
 end</CodeSinppet>
+      </div>
 
+      <h2>Демо</h2>
+      <div class="content-container">
         <video controls loop class="post__video">
           <source :src='require("/assets/videos/posts/elixir-telegram-bot/demo_of_bot.mp4")' type="video/mp4" />
         </video>
+
+        <p>Да, пока что бот не обладает супер–интеллектом. В следующей части я добавлю хранение пользовательей в базе данных при помощи и научу бота отправлять информацию о курсе акций. </p>
       </div>
     </div>
   </div>

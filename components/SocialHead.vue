@@ -63,12 +63,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image
+          content: `https://rukomoynikov.ru${this.image}`
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image
+          content: `https://rukomoynikov.ru${this.image}`
         },
         {
           hid: 'og:image:alt',
