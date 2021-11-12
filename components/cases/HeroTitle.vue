@@ -45,6 +45,7 @@ export default Vue.extend({
 
 <style>
   .hero-title {
+    /* url('~/assets/images/title_background.webp') */
     background: #f9dddc;
   }
 
@@ -69,7 +70,7 @@ export default Vue.extend({
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding: 55px 0 60px;
+    padding: 35px 0 60px;
   }
 
   .hero-title__subtitle {

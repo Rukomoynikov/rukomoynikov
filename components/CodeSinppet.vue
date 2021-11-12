@@ -1,11 +1,10 @@
 <template>
   <div>
     <div v-if="fileName" class="code-block__filename">
-      <img src="~/assets/images/icons/file-2.svg" class="code-block__file-icon">
+      <img :src="iconSrc" class="code-block__file-icon">
       {{ fileName }}
     </div>
     <pre :class="['code-block', {'code-block_short': short}]"><slot /></pre>
-    {{ content }}
   </div>
 </template>
 
@@ -25,6 +24,21 @@ export default Vue.extend({
       default () {
         return false
       }
+    },
+    icon: {
+      type: String,
+      default () {
+        return null
+      }
+    }
+  },
+  computed: {
+    iconSrc () {
+      if (!this.icon) {
+        return require('~/assets/images/icons/file-2.svg')
+      }
+
+      return require(`~/assets/images/icons/${this.icon}.svg`)
     }
   }
 })

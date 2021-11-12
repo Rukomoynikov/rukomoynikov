@@ -91,7 +91,7 @@
 ├── stocks_bot_test.exs
 └── test_helper.exs</CodeSinppet>
 
-            <p class="post__paragraph">Дополнительно надо установить HTTPoison для отпрвки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.</p>
+            <p class="post__paragraph">Дополнительно надо установить HTTPoison для отправки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.</p>
 
         <CodeSinppet :file-name="'stocks_bot/mix.exs'">...
 
@@ -131,7 +131,7 @@ end</CodeSinppet>
 
       <p class="post__paragraph">Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды</p>
 
-      <CodeSinppet>iex -S mix
+      <CodeSinppet :file-name="'Консоль'" :icon="'console'">iex -S mix
 StocksBot.get_updates()</CodeSinppet>
 
       <p class="post__paragraph">Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма. </p>
@@ -307,7 +307,7 @@ export default Vue.extend({
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding-top: 50px;
+    padding: 50px 10px 0 10px;
   }
 
   .content-container {
