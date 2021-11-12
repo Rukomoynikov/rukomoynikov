@@ -76,5 +76,6 @@ export default Vue.extend({
   .hero-title__subtitle {
     margin-top: 34px;
     font: 300 34px IBM Plex Sans, sans-serif;
+    max-width: 800px;
   }
 </style>

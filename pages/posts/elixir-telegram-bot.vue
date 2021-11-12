@@ -307,7 +307,13 @@ export default Vue.extend({
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding: 50px 10px 0 10px;
+    padding-top: 50px;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .post__container {
+      padding: 50px 10px 0 10px;
+    }
   }
 
   .content-container {
