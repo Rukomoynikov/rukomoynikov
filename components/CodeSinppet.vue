@@ -5,6 +5,7 @@
       {{ fileName }}
     </div>
     <pre :class="['code-block', {'code-block_short': short}]"><slot /></pre>
+    {{ content }}
   </div>
 </template>
 
@@ -34,7 +35,7 @@ export default Vue.extend({
   background: white;
   padding: 10px 12px;
   overflow-x: scroll;
-  margin: 0;
+  margin: 0 0 18px 0;
   color: rgb(21, 21, 119);
 }
 
