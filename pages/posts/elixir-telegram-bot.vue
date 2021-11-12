@@ -3,7 +3,7 @@
     <SocialHead
       :title="'Основа для бота — получение сообщение и ответ пользователю'"
       :description="'Это первая часть их трех в серии «Как написать Телеграм—бота на Эликсире»'"
-      :image="require('/assets/images/facebook_share_2.jpg')"
+      :image="require('/assets/images/posts/elixir-telegram-bot/elixir-telegram-bot-share-cover.jpg')"
     />
 
     <HeroTitle
