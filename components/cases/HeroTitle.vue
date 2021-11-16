@@ -64,13 +64,21 @@ export default Vue.extend({
   .hero-title__title {
     font: normal 62px/68px IBM Plex Sans, sans-serif;
     margin: 18px 0 0 0;
+    max-width: 1000px;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .hero-title__title {
+      font: normal 54px/58px IBM Plex Sans, sans-serif;
+      margin: 18px 0 0 0;
+    }
   }
 
   .hero-title__container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding: 35px 0 60px;
+    padding: 35px 10px 60px 10px;
   }
 
   .hero-title__subtitle {
