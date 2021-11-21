@@ -1,7 +1,7 @@
 <template>
   <div>
     <SocialHead
-      :title="'Основа для бота — получение сообщение и ответ пользователю'"
+      :title="'Как написать Телеграм-бота на Эликсире'"
       :description="'Это первая часть их трех в серии «Как написать Телеграм—бота на Эликсире»'"
       :image="require('/assets/images/posts/elixir-telegram-bot/elixir-telegram-bot-share-cover.jpg')"
     />
@@ -52,12 +52,12 @@
             </p>
 
             <video controls loop class="post__video">
-              <source :src="require(&quot;/assets/videos/posts/elixir-telegram-bot/api_token.mp4&quot;)" type="video/mp4">
+              <source :src="require('/assets/videos/posts/elixir-telegram-bot/api_token.mp4')" type="video/mp4">
             </video>
 
             <ul class="links-list">
               <li>
-                <a href="https://t.me/botfather" class="links-list__link">BotFather</a>
+                <a href="https://t.me/botfather" class="links-list__link">Botfather для управления ботами</a>
               </li>
             </ul>
           </div>
@@ -97,9 +97,7 @@
           </h3>
 
           <div class="content-container">
-            <CodeSinppet :short="true">
-              mix new stocks_bot --sup
-            </CodeSinppet>
+            <CodeSinppet :short="true"><CSCreatingNewApp/></CodeSinppet>
 
             <p class="post__paragraph">
               Для начала надо создать новое приложение. Опция <i>--sup</i> добавляет в приложение супервизор и запускает его при старте. После создание структура приложения выглядит примерно так:
@@ -136,10 +134,7 @@
               Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды
             </p>
 
-            <CodeSinppet :file-name="'Консоль'" :icon="'console'">
-              iex -S mix
-              StocksBot.get_updates()
-            </CodeSinppet>
+            <CodeSinppet :file-name="'Консоль'" :icon="'console'"><CSConsole /></CodeSinppet>
 
             <p class="post__paragraph">
               Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма.
@@ -166,6 +161,10 @@
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSAnswerToAUser />
             </CodeSinppet>
+
+            <p class="post__paragraph">
+              Функция <i>answer_to_message</i> при помощи паттерн-матчинга забирает имя отправителя и текст входящего сообщения, чтобы отправить это обратно пользователю пост-запросом.
+            </p>
           </div>
         </section>
 
@@ -190,6 +189,14 @@
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot/application.ex '">
               <CSSupervisor />
             </CodeSinppet>
+
+            <ul class="links-list">
+              <li>
+                <a href="https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html" class="links-list__link">
+                  Статья с примерами суперивизоров от AppSignal
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
       </section>
@@ -200,7 +207,7 @@
 
         <div class="content-container">
           <video controls loop class="post__video">
-            <source :src="require(&quot;/assets/videos/posts/elixir-telegram-bot/demo_of_bot.mp4&quot;)" type="video/mp4">
+            <source :src="require('/assets/videos/posts/elixir-telegram-bot/demo_of_bot.mp4')" type="video/mp4">
           </video>
 
           <p class="post__paragraph">
@@ -225,6 +232,8 @@ import CSAnswerToAUser from '~/posts/elixir-telegram-bot/code_snippets/answer_to
 import CSSupervisor from '~/posts/elixir-telegram-bot/code_snippets/supervisor.vue'
 import CSGenserver from '~/posts/elixir-telegram-bot/code_snippets/genserver.vue'
 import CSReceivingMessages from '~/posts/elixir-telegram-bot/code_snippets/receiving_messages.vue'
+import CSCreatingNewApp from '~/posts/elixir-telegram-bot/code_snippets/creating_new_app.vue'
+import CSConsole from '~/posts/elixir-telegram-bot/code_snippets/console.vue'
 
 export default Vue.extend({
   components: {
@@ -237,7 +246,9 @@ export default Vue.extend({
     CSAnswerToAUser,
     CSSupervisor,
     CSGenserver,
-    CSReceivingMessages
+    CSReceivingMessages,
+    CSCreatingNewApp,
+    CSConsole
   }
 })
 </script>
@@ -285,7 +296,7 @@ export default Vue.extend({
   }
 
   .post__title_h2 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
     margin: 0 0 22px 0;
   }
