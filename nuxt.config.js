@@ -25,6 +25,9 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
       { rel: 'manifest', href: '/favicon/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: '#5bbad5' }
+    ],
+    script: [
+      { src: 'https://plausible.io/js/plausible.js', defer: true, "data-domain": "rukomoynikov.ru" }
     ]
   },
 
