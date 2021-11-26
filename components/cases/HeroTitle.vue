@@ -1,14 +1,19 @@
 <template>
   <div class="hero-title">
     <div class="hero-title__container">
-      <div v-for="tag in tags" :key="tag" class="hero-title__tag">
-        {{ tag }}
+      <div class="hero-title__text-container">
+        <div v-for="tag in tags" :key="tag" class="hero-title__tag">
+          {{ tag }}
+        </div>
+        <h2 class="hero-title__title">
+          {{ title }}
+        </h2>
+        <div v-if="subtitle" class="hero-title__subtitle">
+          {{ subtitle }}
+        </div>
       </div>
-      <h2 class="hero-title__title">
-        {{ title }}
-      </h2>
-      <div v-if="subtitle" class="hero-title__subtitle">
-        {{ subtitle }}
+      <div class="hero-title__image-container"  v-if="image">
+        <img :src="image" class="hero-title__image" />
       </div>
     </div>
   </div>
@@ -33,6 +38,13 @@ export default Vue.extend({
       }
     },
     subtitle: {
+      type: String,
+      required: false,
+      default () {
+        return null
+      }
+    },
+    image: {
       type: String,
       required: false,
       default () {
@@ -78,12 +90,28 @@ export default Vue.extend({
     max-width: 1200px;
     width: 100%;
     margin: 0 auto 20px auto;
-    padding: 35px 10px 60px 10px;
+    display: flex;
+    align-items: flex-end;
   }
 
   .hero-title__subtitle {
     margin-top: 34px;
-    font: 300 34px IBM Plex Sans, sans-serif;
+    font: 300 28px/29px IBM Plex Sans, sans-serif;
     max-width: 800px;
+  }
+
+  .hero-title__image {
+    margin-left: 20px;
+    max-width: 400px;
+    padding-top: 35px;
+    width: 100%;
+  }
+
+  .hero-title__image-container {
+    display: flex;
+  }
+
+  .hero-title__text-container {
+    padding: 35px 10px 60px 10px;
   }
 </style>

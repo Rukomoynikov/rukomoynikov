@@ -10,8 +10,8 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     level: {
-      type: String,
-      default: '2'
+      type: Number,
+      default: 2
     }
   },
   computed: {
