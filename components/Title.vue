@@ -1,5 +1,5 @@
 <template>
-  <component :is="htmlTag" :class="`title--h${level}`">
+  <component :is="htmlTag" :class="`title_h${level}`">
     <slot />
   </component>
 </template>
@@ -23,10 +23,16 @@ export default Vue.extend({
 </script>
 
 <style>
-  .title--h2 {
-    margin: 0 0 20px 0;
+  .title_h2 {
+    margin: 0 0 22px 0;
     padding: 0;
     color: #c91010;
-    font: 300 20px IBM Plex Sans, sans-serif;
+    font: bold 28px IBM Plex Sans, sans-serif;
+  }
+
+  .title_h3 {
+    font-size: 26px;
+    font-weight: normal;
+    margin: 0 0 16px 0;
   }
 </style>

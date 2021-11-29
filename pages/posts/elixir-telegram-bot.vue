@@ -11,211 +11,226 @@
       :title="'Как написать бота для Телеграма на Эликсире'"
     />
 
-    <div class="post__container">
-      <section class="post__section">
-        <h2 class="post__title_h2">
+    <Container :type="'common'">
+      <section>
+        <Title level="2">
           Часть про Телеграм и АПИ
-        </h2>
+        </Title>
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Обмен сообщениями с сервером Телеграма
-          </h3>
+          </Title>
 
-          <div class="content-container">
-            <p class="post__paragraph">
+          <Container :type="'content'">
+            <Paragraph>
               Телеграм поддерживает два типа интеграции: веб–хуки и поллинг. Веб–хуки это когда Телеграм сам сообщает о получении новых сообщений от пользователей. Другими словами в случае с веб–хуками это ответственность Телеграма передать вам сообщение. Но, для того чтобы получать эти сообщения вам понадобится сервер с адресом доступным в интернете. Это может быть и просто айпи–адресс или урл mysite.ru. Для локальной разработки можно использовать ngrock.
-            </p>
+            </Paragraph>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Поллинг — это постоянное опрашивание сервера Телеграма есть ли там новые сообщения. Для полллинга не нужен сервер и адрес в интернете, достаточно приложения которое без остановки отправляет запросы на сервер Телеграма.
-            </p>
+            </Paragraph>
 
-            <ul class="links-list">
-              <li>
-                <a href="https://core.telegram.org/bots/api#getting-updates" class="links-list__link">
-                  Документация по Телеграм ботам
-                </a>
-              </li>
-            </ul>
-          </div>
+            <LinksList
+              :links="[
+                ['Документация по Телеграм ботам', 'https://core.telegram.org/bots/api#getting-updates'],
+              ]"
+            />
+          </Container>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Получение токена для запросов в Телеграм
-          </h3>
+          </Title>
 
-          <div class="content-container">
-            <p class="post__paragraph">
+          <Container :type="'content'">
+            <Paragraph>
               Токен для запросов в Телеграм нужно получить у бота BotFather.
-            </p>
+            </Paragraph>
 
             <video controls loop class="post__video">
               <source :src="require('/assets/videos/posts/elixir-telegram-bot/api_token.mp4')" type="video/mp4">
             </video>
 
-            <ul class="links-list">
-              <li>
-                <a href="https://t.me/botfather" class="links-list__link">Botfather для управления ботами</a>
-              </li>
-            </ul>
-          </div>
+            <LinksList
+              :links="[
+                ['Botfather для управления ботами', 'https://t.me/botfather'],
+              ]"
+            />
+          </Container>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
       </section>
-      <section class="post__section">
-        <h2 class="post__title_h2">
+      <Spacing :type="'vertical-section'" />
+      <section>
+        <Title level="2">
           Эликсир
-        </h2>
+        </Title>
 
-        <section class="post__sub-section">
-          <div class="content-container">
-            <p class="post__paragraph">
+        <section>
+          <Container :type="'content'">
+            <Paragraph>
               Эликсир — это функциональный язык программирования. Работает на базе другого языка программирования Эрланга. Основное преимущество Эликсира — умение управлять огромным количеством процессов. Эти процессы тоже сделаны особым образом поэтому они занимают существенно меньше памяти и времени процессора, чем обычные процессы компьютера.
-            </p>
+            </Paragraph>
 
-            <ul class="links-list">
-              <li><a href="https://elixir-lang.org/install.html" class="links-list__link">Инструкция по установке на elixir-lang.org</a></li>
-              <li><a href="https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817" class="links-list__link">Установка при помощи asdf</a></li>
-            </ul>
-          </div>
+            <LinksList
+              :links="[
+                ['Инструкция по установке на elixir-lang.org', 'https://elixir-lang.org/install.html'],
+                ['Установка при помощи asdf', 'https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817'],
+              ]"
+            />
+          </Container>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
       </section>
-      <section class="post__section">
-        <h2 class="post__title_h2">
+      <Spacing :type="'vertical-section'" />
+      <section>
+        <Title level="2">
           Приложение
-        </h2>
-        <div class="content-container">
-          <p class="post__paragraph">
+        </Title>
+        <Container :type="'content'">
+          <Paragraph>
             Я буду постепенно усложнять приложение. Начну с бота который в ответ на сообщение присылает его обратно. Дальше добавлю сохранение пользователей в базу данных. А в конце попробую сделать его немного полезным — по запросу от пользователя бот будет отправлять сводную информацию о рынке акций.
-          </p>
-        </div>
+          </Paragraph>
+        </Container>
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Создание скелета приложения и установка необходимых инструментов
-          </h3>
+          </Title>
 
           <div class="content-container">
-            <CodeSinppet :short="true"><CSCreatingNewApp/></CodeSinppet>
+            <CodeSinppet :short="true">
+              <CSCreatingNewApp />
+            </CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Для начала надо создать новое приложение. Опция <i>--sup</i> добавляет в приложение супервизор и запускает его при старте. После создание структура приложения выглядит примерно так:
-            </p>
+            </Paragraph>
 
             <CodeSinppet><CSFileTree /></CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Дополнительно надо установить HTTPoison для отправки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.
-            </p>
+            </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/mix.exs'">
               <CSDeps />
             </CodeSinppet>
           </div>
 
-          <ul class="links-list">
-            <li><a href="https://hex.pm/packages/httpoison" class="links-list__link">HTTPoisin — эйчтитипи клиент для Эликсира</a></li>
-            <li><a href="https://hex.pm/packages/jason" class="links-list__link">Jason — модуль для работы с джейсон-файлами</a></li>
-          </ul>
+          <LinksList
+            :links="[
+              ['HTTPoisin — эйчтитипи клиент для Эликсира', 'https://hex.pm/packages/httpoison'],
+              ['Jason — модуль для работы с джейсон-файлами', 'https://hex.pm/packages/jason'],
+            ]"
+          />
         </section>
+        <Spacing :type="'vertical-section_sub'" />
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Получение сообщение пользователя
-          </h3>
+          </Title>
 
-          <div class="content-container">
+          <Container :type="'content'">
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSReceivingMessages />
             </CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды
-            </p>
+            </Paragraph>
 
-            <CodeSinppet :file-name="'Консоль'" :icon="'console'"><CSConsole /></CodeSinppet>
+            <CodeSinppet :file-name="'Консоль'" :icon="'console'">
+              <CSConsole />
+            </CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма.
-            </p>
+            </Paragraph>
 
             <CodeSinppet><CSMEssageJson /></CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Если снова попробовать получить сообщения, то ответ будет таким же. Это происходит потому, что надо указать телеграму какие сообщения уже получены. Для этого надо взять <i>update_id</i> последнего сообщения, добавить единицу и использовать это как гет–параметр для получения новых сообщений. Пока что скрипт получает одно сообщение и прекращает работу, а надо чтобы продолжал слушать новые сообщения. Сейчас я это исправлю.
-            </p>
+            </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSRecursiveGetUpdates />
             </CodeSinppet>
-          </div>
+          </Container>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Ответ пользователю
-          </h3>
+          </Title>
 
           <div class="content-container">
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSAnswerToAUser />
             </CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Функция <i>answer_to_message</i> при помощи паттерн-матчинга забирает имя отправителя и текст входящего сообщения, чтобы отправить это обратно пользователю пост-запросом.
-            </p>
+            </Paragraph>
           </div>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
 
-        <section class="post__sub-section">
-          <h3 class="post__title_h3">
+        <section>
+          <Title level="3">
             Запуск приложения в супервизоре
-          </h3>
+          </Title>
 
-          <div class="content-container">
-            <p class="post__paragraph">
+          <Container :type="'content'">
+            <Paragraph>
               Первое что надо сделать — преобразовать приложение в Генсервер (Genserver).
-            </p>
+            </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSGenserver />
             </CodeSinppet>
 
-            <p class="post__paragraph">
+            <Paragraph>
               Потом этот Генсервер добавить в СупервизорТри (Supervisor Tree).
-            </p>
+            </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot/application.ex '">
               <CSSupervisor />
             </CodeSinppet>
 
-            <ul class="links-list">
-              <li>
-                <a href="https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html" class="links-list__link">
-                  Статья с примерами суперивизоров от AppSignal
-                </a>
-              </li>
-            </ul>
-          </div>
+            <LinksList
+              :links="[
+                ['Статья с примерами суперивизоров от AppSignal', 'https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html'],
+              ]"
+            />
+          </Container>
         </section>
+        <Spacing :type="'vertical-section_sub'" />
       </section>
-      <section class="post__section">
+      <Spacing :type="'vertical-section'" />
+      <section>
         <h2 class="post__title_h2">
           Демо
         </h2>
 
-        <div class="content-container">
+        <Container :type="'content'">
           <video controls loop class="post__video">
             <source :src="require('/assets/videos/posts/elixir-telegram-bot/demo_of_bot.mp4')" type="video/mp4">
           </video>
 
-          <p class="post__paragraph">
+          <Paragraph>
             Да, пока что бот не обладает суперинтеллектом. В следующей части я добавлю хранение пользовательей в базе данных и научу бота отправлять информацию о курсе акций.
-          </p>
-        </div>
+          </Paragraph>
+        </Container>
       </section>
-    </div>
+      <Spacing :type="'vertical-section'" />
+    </Container>
   </div>
 </template>
 
@@ -223,6 +238,11 @@
 import Vue from 'vue'
 import HeroTitle from '~/components/cases/HeroTitle.vue'
 import CodeSinppet from '~/components/CodeSinppet.vue'
+import LinksList from '~/components/links-list.vue'
+import Title from '~/components/Title.vue'
+import Paragraph from '~/components/Paragraph.vue'
+import Container from '~/components/Container.vue'
+import Spacing from '~/components/Spacing.vue'
 
 import CSFileTree from '~/posts/elixir-telegram-bot/code_snippets/file_tree.vue'
 import CSDeps from '~/posts/elixir-telegram-bot/code_snippets/deps.vue'
@@ -248,71 +268,20 @@ export default Vue.extend({
     CSGenserver,
     CSReceivingMessages,
     CSCreatingNewApp,
-    CSConsole
+    CSConsole,
+    LinksList,
+    Title,
+    Paragraph,
+    Container,
+    Spacing
   }
 })
 </script>
 
 <style scoped>
-  .post__container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto 20px auto;
-    padding: 50px 10px 0 10px;
-  }
-
-  .content-container {
-    max-width: 800px;
-  }
-
-  .links-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .links-list__link {
-    color: #b66e6e;
-    display: flex;
-  }
-
-  .links-list > li {
-    margin-bottom: 10px;
-  }
-
-  .links-list__link::before {
-    content: ' ';
-    background-image: url('~/assets/images/icons/link-2.svg');
-    margin-right: 4px;
-    margin-top: 2px;
-    display: block;
-    width: 1em;
-    height: 1em;
-  }
-
   .post__video {
     width: 100%;
     margin-bottom: 18px;
-  }
-
-  .post__title_h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0 0 22px 0;
-  }
-
-  .post__title_h3 {
-    font-size: 26px;
-    font-weight: normal;
-    margin: 0 0 16px 0;
-  }
-
-  .post__paragraph {
-    font-size: 18px;
-  }
-
-  .post__section {
-    margin-bottom: 40px;
   }
 
   .post__sub-section {
