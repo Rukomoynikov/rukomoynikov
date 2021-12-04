@@ -16,6 +16,21 @@
   </div>
 </template>
 
+<!-- <script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    imageSrc: String,
+    caseHref: String,
+    tags: Array,
+    title: String,
+    description: String,
+    hrefTitle: String
+  }
+})
+</script> -->
+
 <style scoped>
 .case {
   display: flex;
@@ -72,16 +87,6 @@
   border-radius: 6px;
 }
 
-.case__image {
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  border-radius: 6px;
-
-  /* flex: 1; */
-}
-
 @media only screen and (max-width: 595px) {
   .case__image {
     margin-bottom: 20px;
@@ -93,4 +98,16 @@
     min-width: 33%;
   }
 }
+</style>
+
+<style type="text/css">
+  .case__image {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    border-radius: 6px;
+
+    /* flex: 1; */
+  }
 </style>

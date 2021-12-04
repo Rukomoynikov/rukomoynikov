@@ -20,11 +20,7 @@ ru:
       <Case>
         <template #image>
           <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-            <picture>
-              <source srcset="~assets/images/cases/excursions/cover/excursions.webp 1x, ~assets/images/cases/excursions/cover/excursions@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/excursions/cover/excursions.jpg 1x, ~assets/images/cases/excursions/cover/excursions@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/excursions/cover/excursions@2x.jpg" loading="lazy" class="case__image">
-            </picture>
+            <UnifiedPicture :src="'cases/excursions/cover/excursions'" :cssClass="'case__image'" />
           </a>
         </template>
         <template #label>
@@ -48,11 +44,7 @@ ru:
       <Case>
         <template #image>
           <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-            <picture>
-              <source srcset="~assets/images/cases/presentations/presentations.webp 1x, ~assets/images/cases/presentations/presentations@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/presentations/presentations.jpg 1x, ~assets/images/cases/presentations/presentations@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/presentations/presentations@2x.jpg" loading="lazy" class="case__image">
-            </picture>
+            <UnifiedPicture :src="'cases/presentations/presentations'" :cssClass="'case__image'" />
           </a>
         </template>
         <template #label>
@@ -76,11 +68,7 @@ ru:
       <Case>
         <template #image>
           <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
-            <picture>
-              <source srcset="~assets/images/cases/wool/wool.webp 1x, ~assets/images/cases/wool/wool@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/wool/wool.jpg 1x, ~assets/images/cases/wool/wool@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/wool/wool@2x.jpg" loading="lazy" class="case__image">
-            </picture>
+            <UnifiedPicture :src="'cases/wool/wool'" :cssClass="'case__image'" />
           </a>
         </template>
         <template #label>
@@ -104,11 +92,7 @@ ru:
       <Case>
         <template #image>
           <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
-            <picture>
-              <source srcset="~assets/images/cases/documents/documents.webp 1x, ~assets/images/cases/documents/documents@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/documents/documents.jpg 1x, ~assets/images/cases/documents/documents@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/documents/documents@2x.jpg" loading="lazy" class="case__image">
-            </picture>
+            <UnifiedPicture :src="'cases/documents/documents'" :cssClass="'case__image'" />
           </a>
         </template>
         <template #label>
@@ -132,11 +116,7 @@ ru:
       <Case>
         <template #image>
           <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-            <picture>
-              <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.webp 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.webp 2x" type="image/webp" loading="lazy">
-              <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg 2x" loading="lazy">
-              <img src="~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg" loading="lazy" class="case__image">
-            </picture>
+            <UnifiedPicture :src="'cases/vue-boilerpate/vue-boilerpate'" :cssClass="'case__image'" />
           </a>
         </template>
         <template #label>
@@ -160,9 +140,10 @@ ru:
 <script lang="ts">
 import Vue from 'vue'
 import Case from '~/components/home/Case.vue'
+import UnifiedPicture from '~/components/UnifiedPicture.vue'
 
 export default Vue.extend({
-  components: { Case }
+  components: { Case, UnifiedPicture }
 })
 </script>
 
