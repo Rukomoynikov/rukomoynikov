@@ -71,7 +71,7 @@
         <Title :level="2">
           Еще один рассказик и все😉
         </Title>
-        <CaseSmall>
+        <Case>
           <template #image>
             <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
               <picture>
@@ -94,7 +94,7 @@
             <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
             </a>
           </template>
-        </CaseSmall>
+        </Case>
       </div>
     </div>
   </CaseDescription>
@@ -103,12 +103,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import CaseDescription from '~/components/cases/CaseDescription.vue'
-import CaseSmall from '~/components/home/Case.vue'
+import Case from '~/components/home/Case.vue'
 import HeroTitle from '~/components/cases/HeroTitle.vue'
 import Title from '~/components/Title.vue'
 
 export default Vue.extend({
-  components: { CaseDescription, HeroTitle, CaseSmall, Title }
+  components: { CaseDescription, HeroTitle, Case, Title }
 })
 </script>
 

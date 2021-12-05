@@ -1,22 +1,22 @@
 <template>
   <div class="case">
-    <slot name="image" />
+    <a :href="caseHref" class="link">
+      <UnifiedPicture :src="imageSrc" :cssClass="'case__image'" />
+    </a>
     <div class="case__text">
-      <div class="label">
-        <slot name="label" />
+      <div v-for="tag in tags" class="label">
+        {{ tag }}
       </div>
-      <div class="title">
-        <slot name="title" />
-      </div>
-      <div class="description">
-        <slot name="description" />
-      </div>
-      <slot name="link" />
+      <div class="title" v-html="title" />
+      <div class="description" v-html="description" />
+      <a :href="caseHref" class="link">
+        {{ hrefTitle }}
+      </a>
     </div>
   </div>
 </template>
 
-<!-- <script lang="ts">
+<script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -29,7 +29,7 @@ export default Vue.extend({
     hrefTitle: String
   }
 })
-</script> -->
+</script>
 
 <style scoped>
 .case {

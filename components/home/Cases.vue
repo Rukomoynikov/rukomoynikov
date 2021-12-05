@@ -17,122 +17,53 @@ ru:
 <template>
   <div>
     <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-            <UnifiedPicture :src="'cases/excursions/cover/excursions'" :cssClass="'case__image'" />
-          </a>
-        </template>
-        <template #label>
-          {{ $t('Дизайн') }}
-        </template>
-        <template #title>
-          {{ $t('Экскурсия по району Хамовники на бегу') }}
-        </template>
-        <template #description>
-          {{ $t('Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.') }}
-        </template>
-        <template #link>
-          <a href="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy" class="link">
-            {{ $t('Работа на Behance') }}
-          </a>
-        </template>
-      </Case>
+      <Case
+        :tags="['Дизайн']"
+        :description="$t('Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.')"
+        :hrefTitle="'Работа на Behance'"
+        :title="$t('Экскурсия по району Хамовники на бегу')"
+        :imageSrc="'cases/excursions/cover/excursions'"
+        :caseHref="'https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy'" />
     </div>
 
     <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-            <UnifiedPicture :src="'cases/presentations/presentations'" :cssClass="'case__image'" />
-          </a>
-        </template>
-        <template #label>
-          {{ $t('Дизайн') }}
-        </template>
-        <template #title>
-          {{ $t('Сайт для курсов по презентациям') }}
-        </template>
-        <template #description>
-          {{ $t('Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.') }}
-        </template>
-        <template #link>
-          <a href="https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png" class="link">
-            {{ $t('Джипег') }}
-          </a>
-        </template>
-      </Case>
+      <Case
+        :tags="['Дизайн']"
+        :description="$t('Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.')"
+        :hrefTitle="'Джипег'"
+        :title="$t('Сайт для курсов по презентациям')"
+        :imageSrc="'cases/presentations/presentations'"
+        :caseHref="'https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png'" />
     </div>
 
     <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
-            <UnifiedPicture :src="'cases/wool/wool'" :cssClass="'case__image'" />
-          </a>
-        </template>
-        <template #label>
-          {{ $t('Дизайн') }}
-        </template>
-        <template #title>
-          {{ $t('Статья про овечью шерсть') }}
-        </template>
-        <template #description>
-          {{ $t('Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.') }}
-        </template>
-        <template #link>
-          <a href="https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png" class="link">
-            {{ $t('Джипег') }}
-          </a>
-        </template>
-      </Case>
+      <Case
+        :tags="['Дизайн']"
+        :description="$t('Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.')"
+        :hrefTitle="'Джипег'"
+        :title="$t('Статья про овечью шерсть')"
+        :imageSrc="'cases/wool/wool'"
+        :caseHref="'https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png'" />
     </div>
 
     <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
-            <UnifiedPicture :src="'cases/documents/documents'" :cssClass="'case__image'" />
-          </a>
-        </template>
-        <template #label>
-          {{ $t('Дизайн') }}
-        </template>
-        <template #title>
-          {{ $t('Доки в кармане') }}
-        </template>
-        <template #description>
-          {{ $t('Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.') }}
-        </template>
-        <template #link>
-          <a href="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg" class="link">
-            {{ $t('Джипег') }}
-          </a>
-        </template>
-      </Case>
+      <Case
+        :tags="['Дизайн']"
+        :description="$t('Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.')"
+        :hrefTitle="'Джипег'"
+        :title="$t('Доки в кармане')"
+        :imageSrc="'cases/documents/documents'"
+        :caseHref="'https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg'" />
     </div>
 
     <div class="case">
-      <Case>
-        <template #image>
-          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-            <UnifiedPicture :src="'cases/vue-boilerpate/vue-boilerpate'" :cssClass="'case__image'" />
-          </a>
-        </template>
-        <template #label>
-          {{ $t('Дизайн и верстка') }}
-        </template>
-        <template #title>
-          {{ $t('Шаблон для джаваскрипт приложений') }}
-        </template>
-        <template #description>
-          {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
-        </template>
-        <template #link>
-          <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
-          </a>
-        </template>
-      </Case>
+      <Case
+        :tags="['Дизайн и верстка']"
+        :description="$t('Сайт и набор скриптов для создания приложений на Джаваскрипт.')"
+        :hrefTitle="'Сайт'"
+        :title="$t('Шаблон для джаваскрипт приложений')"
+        :imageSrc="'cases/vue-boilerpate/vue-boilerpate'"
+        :caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'" />
     </div>
   </div>
 </template>
