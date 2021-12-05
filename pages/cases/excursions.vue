@@ -71,30 +71,13 @@
         <Title :level="2">
           Еще один рассказик и все😉
         </Title>
-        <Case>
-          <template #image>
-            <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link">
-              <picture>
-                <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.webp 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.webp 2x" type="image/webp" loading="lazy">
-                <source srcset="~assets/images/cases/vue-boilerpate/vue-boilerpate.jpg 1x, ~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg 2x" loading="lazy">
-                <img src="~assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg" loading="lazy" class="case__image">
-              </picture>
-            </a>
-          </template>
-          <template #label>
-            {{ $t('Дизайн и верстка') }}
-          </template>
-          <template #title>
-            {{ $t('Шаблон для джаваскрипт приложений') }}
-          </template>
-          <template #description>
-            {{ $t('Сайт и набор скриптов для создания приложений на Джаваскрипт.') }}
-          </template>
-          <template #link>
-            <a href="https://rukomoynikov.github.io/vue-webpack-boilerplate/" class="link"> {{ $t('Сайт') }}
-            </a>
-          </template>
-        </Case>
+        <Case
+          :tags="['Дизайн и верстка']"
+          :description="$t('Сайт и набор скриптов для создания приложений на Джаваскрипт.')"
+          :hrefTitle="'Сайт'"
+          :title="$t('Шаблон для джаваскрипт приложений')"
+          :imageSrc="'cases/vue-boilerpate/vue-boilerpate'"
+          :caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'" />
       </div>
     </div>
   </CaseDescription>
