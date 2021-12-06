@@ -17,7 +17,7 @@
 
     <Container :type="'common'">
       <section>
-        <Title level="2">
+        <Title :level="2">
           Задача
         </Title>
 
@@ -49,7 +49,7 @@
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title level="2">
+        <Title :level="2">
           Что получилось в итоге
         </Title>
 
@@ -85,7 +85,7 @@
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title level="2">
+        <Title :level="2">
           Технические подробности
         </Title>
 

@@ -29,11 +29,11 @@ ru:
     <div class="case">
       <Case
         :tags="['Дизайн']"
-        :description="$t('Учебная работа для курса в&nbsp;Бюро Горбунова. Якорные объекты, модульность, чередование ритма, написание текстов в&nbsp;инфо&mdash;стиле. Все&nbsp;там.')"
-        :hrefTitle="'Джипег'"
-        :title="$t('Сайт для курсов по презентациям')"
-        :imageSrc="'cases/presentations/presentations'"
-        :caseHref="'https://bureau.ru/classroom/tasks/text/prodayuschaya-stranitsa-update/1606/results/40909/Продающая_страница_курса_по_презентациям.png'" />
+        :description="$t('Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.')"
+        :hrefTitle="'Рассказ'"
+        :title="$t('Сайт и баннеры для «Черной пятницы»')"
+        :imageSrc="'cases/digitaldeals/cover/digitaldeals'"
+        :caseHref="'/cases/digitaldeals/'" />
     </div>
 
     <div class="case">
