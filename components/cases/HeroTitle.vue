@@ -57,8 +57,10 @@ export default Vue.extend({
 
 <style>
   .hero-title {
-    /* url('~/assets/images/title_background.webp') */
-    background: #f9dddc;
+    /* background-color: #fbab7e; */
+
+    /* background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
+    background-color: #f9dddc;
   }
 
   .hero-title__tag {

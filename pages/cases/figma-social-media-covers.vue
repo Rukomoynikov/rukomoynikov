@@ -2,11 +2,14 @@
   <CaseDescription>
     <template #header>
       <HeroTitle
-        :title="'Скидки на «Чёрную пятницу»'"
+        :title="'Figma template for social media covers'"
         :subtitle="'Черная пятница — это часто обман, цены на обычные товары наоборот растут. А вот с цифровыми товарами, все работает так как надо. Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.'"
         :tags="['дизайн сайта']"
-        :image="heroImage"
       />
+    </template>
+
+    <template #contents>
+      <h1>111</h1>
     </template>
 
     <SocialHead
@@ -22,36 +25,18 @@
         </Title>
 
         <Container :type="'content'">
-          <Paragraph>Хотелось сделать что-то простое. По примеру Producthunt. Мне нравятся такие мини-проекты, простые и понятные.</Paragraph>
+          <Paragraph>Сделать инструмент которым можно пользоваться в работе. Отправить его в ПродактХант.</Paragraph>
         </Container>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">
-          Референсы
-        </Title>
-
-        <div class="gallery gallery_safari-screenshots">
-          <a href="https://anytype.io/en" class="gallery__block gallery__block-half">
-            <img src="~assets/images/cases/digitaldeals/anytype.webp" loading="lazy">
-          </a>
-
-          <a href="gallery_safari-screenshots" class="gallery__block gallery__block-half">
-            <img src="~assets/images/cases/digitaldeals/sprout.webp" loading="lazy">
-          </a>
-
-          <a href="https://l.netology.ru/issledovanie-dizajna" class="gallery__block gallery__block-half">
-            <img src="~assets/images/cases/digitaldeals/netology.webp" loading="lazy">
-          </a>
-        </div>
+        <Title :level="2">Результаты</Title>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">
-          Что получилось в итоге
-        </Title>
+        <Title :level="2">ПродактХант</Title>
 
         <Container :type="'content'">
           <Paragraph>
@@ -59,7 +44,7 @@
           </Paragraph>
           <div class="imageWithDescription">
             <a href="http://digitaldeals.today" class="gallery__block gallery__block-full">
-              <img src="~assets/images/cases/digitaldeals/digitaldeals-fullpage.webp" loading="lazy" />
+              <img src="~assets/images/cases/digitaldeals/digitaldeals-fullpage.webp" loading="lazy" class="case__image">
             </a>
             <div class="imageWithDescription__description">
               Сайт digitaldeals.today
@@ -71,7 +56,7 @@
 
       <section>
         <Title :level="2">
-          Технические подробности
+          Что дальше
         </Title>
 
         <Container :type="'content'">
