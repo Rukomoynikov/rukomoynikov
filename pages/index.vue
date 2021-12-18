@@ -9,15 +9,13 @@ ru:
 <template>
   <div>
     <SocialHead
-      :title="'Рукомойников Максим'"
-      :description="'Моя большая цель на 5 лет — научиться делать полезные и удобные продукты. Для этого я тренируюсь на своих задачах, много смотрю работы разных студий, учусь дизайну в Бюро Горбунова.'"
+      :title="'Rukomoynikov Maxim'"
+      :description="'My big goal for 5 years is to learn how to make products that solve people\'s problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.'"
       :image="require('/assets/images/facebook_share_2.jpg')"
     />
 
     <div class="cases">
-      <h2 class="title--h2">
-        {{ $t('Сайты и мобильные приложения') }}
-      </h2>
+      <h2 class="title--h2">Sites and mobile apps</h2>
       <Cases />
       <div class="quote-block">
         <Quote />
@@ -25,8 +23,7 @@ ru:
     </div>
 
     <div class="cases">
-      <h2 class="title--h2">
-        {{ $t('Моя история') }}
+      <h2 class="title--h2">My history is like
       </h2>
       <History />
     </div>

@@ -57,10 +57,9 @@ export default Vue.extend({
 
 <style>
   .hero-title {
-    /* background-color: #fbab7e; */
+    /* background-color: #fbab7e; #f9dddc; background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
 
-    /* background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
-    background-color: #f9dddc;
+    background-color: rgba(0, 0, 0, 0.84);
   }
 
   .hero-title__tag {
@@ -79,6 +78,7 @@ export default Vue.extend({
     font: normal 62px/68px IBM Plex Sans, sans-serif;
     margin: 18px 0 0 0;
     max-width: 1000px;
+    color: white;
   }
 
   @media only screen and (max-width: 595px) {
@@ -91,15 +91,16 @@ export default Vue.extend({
   .hero-title__container {
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto 20px auto;
+    margin: auto;
     display: flex;
     align-items: flex-end;
   }
 
   .hero-title__subtitle {
-    margin-top: 34px;
-    font: 300 28px/29px IBM Plex Sans, sans-serif;
+    margin-top: 22px;
+    font: 300 28px/33px IBM Plex Sans, sans-serif;
     max-width: 800px;
+    color: rgba(255, 255, 255, 0.73);
   }
 
   .hero-title__image {

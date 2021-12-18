@@ -2,34 +2,33 @@
   <CaseDescription>
     <template #header>
       <HeroTitle
-        :title="'Скидки на «Чёрную пятницу»'"
-        :subtitle="'Черная пятница — это часто обман, цены на обычные товары наоборот растут. А вот с цифровыми товарами, все работает так как надо. Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.'"
-        :tags="['дизайн сайта']"
-        :image="heroImage"
+        :title="'Digital discounts on «Black Friday»'"
+        :subtitle="'Black Friday in most cases is a cheating. Prices go up. But, when we talk about digital discounts it works fine. Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site.'"
+        :tags="['design', 'makgin site']"
       />
     </template>
 
     <SocialHead
-      :title="'Скидки на «Чёрную пятницу»'"
-      :description="'Черная пятница — это часто обман, цены на обычные товары наоборот растут. А вот с цифровыми товарами, все работает так как надо. Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.'"
+      :title="'Digital discounts on «Black Friday»'"
+      :description="'Black Friday in most cases is a cheating. Prices go up. But, when we talk about digital discounts it works fine. Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site.'"
       :image="require('/assets/images/cases/digitaldeals/social.jpg')"
     />
 
     <Container :type="'common'">
       <section>
         <Title :level="2">
-          Задача
+          Task
         </Title>
 
         <Container :type="'content'">
-          <Paragraph>Хотелось сделать что-то простое. По примеру Producthunt. Мне нравятся такие мини-проекты, простые и понятные.</Paragraph>
+          <Paragraph>I wanted to make something simple. On the Producthunt you will plenty of simple projects, but they are profitable and popular.</Paragraph>
         </Container>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
         <Title :level="2">
-          Референсы
+          Inspiration
         </Title>
 
         <div class="gallery gallery_safari-screenshots">
@@ -50,19 +49,19 @@
 
       <section>
         <Title :level="2">
-          Что получилось в итоге
+          In the result
         </Title>
 
         <Container :type="'content'">
           <Paragraph>
-            Получилось, наверное даже слишком просто. Но, это была крутая практика, особенно понравилось делать эти маленькие баннеры. Из-за того, что макет простой все отлично выглядит на всех разрешениях.
+            The result is probably even too simple. But, it was a cool practice, I especially liked making these small banners. Because the layout is simple, everything looks great at all resolutions.
           </Paragraph>
           <div class="imageWithDescription">
             <a href="http://digitaldeals.today" class="gallery__block gallery__block-full">
               <img src="~assets/images/cases/digitaldeals/digitaldeals-fullpage.webp" loading="lazy" />
             </a>
             <div class="imageWithDescription__description">
-              Сайт digitaldeals.today
+              https://digitaldeals.today
             </div>
           </div>
         </Container>
@@ -71,18 +70,18 @@
 
       <section>
         <Title :level="2">
-          Технические подробности
+          Few technical details
         </Title>
 
         <Container :type="'content'">
           <Paragraph>
-            Когда думал о проекте, хотелось попробовать что-то новое. В обычном случае я бы взял, накст, или свою заготовку на вью или руби-он-рейлс. Вобшем, решил попробовать астро. Астро — это сборщик статических сайтов, с поддержкой современных фреймворков и возможностью гридатации.
+            When I thought about the project, I wanted to try something new. In the usual case, I would take, nuxt, or my template for vuew apps or ruby-on-rails. I decided to try Astro. Astro is a static site builder with support for modern frameworks.
           </Paragraph>
 
           <LinksList
             :links="[
-              ['Сборщик сайтов Астро', 'https://astro.build'],
-              ['Сайт со скидками на Гитхабе', 'https://github.com/Rukomoynikov/digitaldeals.today']
+              ['Astro framework', 'https://astro.build'],
+              ['Repository of the digitaldeals.today on the Github', 'https://github.com/Rukomoynikov/digitaldeals.today']
             ]"
           />
         </Container>

@@ -9,7 +9,9 @@ ru:
 
 <template>
   <blockquote class="quote">
-    <span v-html="$t('quote_1')" /> <span class="nobreak">и&nbsp;<img src="~assets/images/icons/magic-wand.svg" class="icon">{{ $t('бац') }}</span> {{ $t('появилось') }}<!-- eslint-disable-line vue/no-v-html-->
+    <span>Damn cool feeling, when something was not in&nbsp;the&nbsp;universe,</span>
+    <span class="nobreak">and «<img src="~assets/images/icons/magic-wand.svg" class="icon">bam»</span>
+    <span>appeared</span>
   </blockquote>
 </template>
 

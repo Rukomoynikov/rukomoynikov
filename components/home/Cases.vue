@@ -18,50 +18,50 @@ ru:
   <div>
     <div class="case">
       <Case
-        :tags="['Дизайн']"
-        :description="$t('Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом. Ребята решили попробовать сделать это в&nbsp;Москве.')"
-        :hrefTitle="'Работа на Behance'"
-        :title="$t('Экскурсия по району Хамовники на бегу')"
+        :tags="['Design']"
+        :description="$t('Site for an excursion agency. The agency organizes running tours with locals. Such guides are popular abroad. The guys decided to try to do it in Moscow.')"
+        :hrefTitle="'Case at Behance'"
+        :title="$t('Running tour around Khamovniki')"
         :imageSrc="'cases/excursions/cover/excursions'"
         :caseHref="'https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy'" />
     </div>
 
     <div class="case">
       <Case
-        :tags="['Дизайн']"
-        :description="$t('Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.')"
-        :hrefTitle="'Рассказ'"
-        :title="$t('Сайт и баннеры для «Черной пятницы»')"
+        :tags="['Site']"
+        :description="$t('Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site.')"
+        :hrefTitle="'Story'"
+        :title="$t('Site and banners for Black Friday')"
         :imageSrc="'cases/digitaldeals/cover/digitaldeals'"
         :caseHref="'/cases/digitaldeals/'" />
     </div>
 
     <div class="case">
       <Case
-        :tags="['Дизайн']"
-        :description="$t('Тоже учебная работа. Здорово получилось взять скучную статью из&nbsp;Википедии и&nbsp;сделать ее&nbsp;интерснее.')"
-        :hrefTitle="'Джипег'"
-        :title="$t('Статья про овечью шерсть')"
+        :tags="['Design']"
+        :description="$t('Also an educational work. It was great to tale a boring article from Wikipedia and make it interesting')"
+        :hrefTitle="'Image file'"
+        :title="$t('Article about whool history')"
         :imageSrc="'cases/wool/wool'"
         :caseHref="'https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png'" />
     </div>
 
     <div class="case">
       <Case
-        :tags="['Дизайн']"
-        :description="$t('Приложение для хранения документов всей семьи. Когда подойдет срок действия приложение подскажет как обновить. Данными можно делиться с&nbsp;другими приложениями.')"
-        :hrefTitle="'Джипег'"
-        :title="$t('Доки в кармане')"
+        :tags="['Design']"
+        :description="$t('Applciation for storing documents of the whole family. When the expiration date comes up, the application will tell you how and when to update documents.')"
+        :hrefTitle="'Image file'"
+        :title="$t('Documents in the pocket')"
         :imageSrc="'cases/documents/documents'"
         :caseHref="'https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg'" />
     </div>
 
     <div class="case">
       <Case
-        :tags="['Дизайн и верстка']"
-        :description="$t('Сайт и набор скриптов для создания приложений на Джаваскрипт.')"
-        :hrefTitle="'Сайт'"
-        :title="$t('Шаблон для джаваскрипт приложений')"
+        :tags="['Design']"
+        :description="$t('Site and boilerplate for creatting Vue applciations. Design of the site based on technical specifications familiar for every javascript developer.')"
+        :hrefTitle="'Site'"
+        :title="$t('Boilerplate for Vue apps')"
         :imageSrc="'cases/vue-boilerpate/vue-boilerpate'"
         :caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'" />
     </div>

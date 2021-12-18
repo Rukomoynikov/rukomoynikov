@@ -2,9 +2,6 @@
   <div>
     <Header />
     <Nuxt />
-    <div class="footer">
-      <Footer />
-    </div>
   </div>
 </template>
 
@@ -17,9 +14,3 @@ export default Vue.extend({
   components: { Header, Footer }
 })
 </script>
-
-<style type="text/css" scoped>
-.footer {
-  margin-top: 60px;
-}
-</style>

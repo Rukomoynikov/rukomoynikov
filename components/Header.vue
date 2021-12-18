@@ -16,15 +16,15 @@ ru:
 <template>
   <div class="header">
     <div class="logo">
-      {{ $t('Максим') }}<br>{{ $t('Рукомойников') }}
+      Maxim<br />Rukomoynikov
     </div>
     <div class="slogan">
-      {{ $t('Слоган', ['&mdash;', '&nbsp;']) }}
+      I love to create. Developer and designer. Looking forward to make cool things.
     </div>
     <div class="links">
-      <a class="link" href="https://twitter.com/Rukomoynikov">{{ $t('твиттер') }}</a>
-      <a class="link" href="https://www.facebook.com/rukomoynikov">{{ $t('фейсбук') }}</a>
-      <a class="link" href="https://www.behance.net/ruq">{{ $t('беханс') }}</a>
+      <a class="link" href="https://twitter.com/Rukomoynikov">twitter</a>
+      <a class="link" href="https://www.facebook.com/rukomoynikov">facebook</a>
+      <a class="link" href="https://www.behance.net/ruq">behance</a>
     </div>
   </div>
 </template>

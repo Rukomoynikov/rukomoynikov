@@ -17,36 +17,26 @@ ru:
   <div class="columns">
     <div class="column">
       <div class="subtitle">
-        {{ $t('Прошлое') }}
+        Past
       </div>
       <div class="text">
-        {{ $t('Прошлое часть 1', ["&nbsp;"]) }}
+        For the last 6 years I have been working as a backend and frontend programmer. I've made websites, bots, and a couple of mobile apps.
       </div>
       <div class="text">
-        {{ $t('Прошлое часть 2', ["&nbsp;", "&mdash;"]) }}
+        Before programming, I worked as a project manager for several years. It's interesting to manage the process, but I like to create on my own more. So I started programming. It’s a damn cool feeling when something wasn’t in the universe and bam it's appeared.
       </div>
     </div>
 
     <div class="column">
       <div class="subtitle">
-        {{ $t('Настоящее и будущее') }}
+        Modern era and future
       </div>
-      <i18n path="Настоящее часть 1" tag="div" class="text">
-        <template #nbsp>
-&nbsp;
-        </template>
-        <template #mdash>
-          &mdash;
-        </template>
-      </i18n>
-      <i18n path="Настоящее часть 2" tag="div" class="text">
-        <template #nbsp>
-&nbsp;
-        </template>
-        <template #mdash>
-          &mdash;
-        </template>
-      </i18n>
+      <div class="text">
+        My big goal for 5 years is to learn how to make convenient digital products. To do this, I train on my tasks, watch the work of different studios a lot, study design at the Gorbunov Bureau.
+      </div>
+      <div class="text">
+        Drop me a letter in Telegram if you have an open designer position.
+      </div>
       <div class="text">
         <a href="t.me/rukomoynikov">t.me/rukomoynikov</a>
       </div>

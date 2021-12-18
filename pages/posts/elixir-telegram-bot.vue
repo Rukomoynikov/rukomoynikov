@@ -1,39 +1,39 @@
 <template>
   <div>
     <SocialHead
-      :title="'Как написать Телеграм-бота на Эликсире'"
-      :description="'Это первая часть их трех в серии «Как написать Телеграм—бота на Эликсире»'"
+      :title="'How to make a Telegram bot in Elixir'"
+      :description="'This is the first part of three in the series. There you will find creating foundation and answering to users.'"
       :image="require('/assets/images/posts/elixir-telegram-bot/elixir-telegram-bot-share-cover.jpg')"
     />
 
     <HeroTitle
-      :tags="['Телеграм', 'Эликсир']"
-      :title="'Как написать бота для Телеграма на Эликсире'"
+      :tags="['Telegram', 'Elixir']"
+      :title="'How to make a Telegram bot in Elixir'"
     />
 
     <Container :type="'common'">
       <section>
         <Title level="2">
-          Часть про Телеграм и АПИ
+          Introduction to Telegram Bots API
         </Title>
 
         <section>
           <Title level="3">
-            Обмен сообщениями с сервером Телеграма
+            Exchanging messages with Telegram
           </Title>
 
           <Container :type="'content'">
             <Paragraph>
-              Телеграм поддерживает два типа интеграции: веб–хуки и поллинг. Веб–хуки это когда Телеграм сам сообщает о получении новых сообщений от пользователей. Другими словами в случае с веб–хуками это ответственность Телеграма передать вам сообщение. Но, для того чтобы получать эти сообщения вам понадобится сервер с адресом доступным в интернете. Это может быть и просто айпи–адресс или урл mysite.ru. Для локальной разработки можно использовать ngrock.
+              Telegram supports two types of integration: webhooks and polling. Webhooks it's a type when Telegram sends request to your server whenever bot recevied a message from the user. There pros and cons of that type of integration. Webhooks are more sustainable in general. For webhooks it's necessary to have web-server with external IP adress. This server will receive new messages through get requests from Telegram. During development you can use ngrock.
             </Paragraph>
 
             <Paragraph>
-              Поллинг — это постоянное опрашивание сервера Телеграма есть ли там новые сообщения. Для полллинга не нужен сервер и адрес в интернете, достаточно приложения которое без остановки отправляет запросы на сервер Телеграма.
+              Polling is a constant polling of the Telegram server for new messages. For polling, you do not need a server and an external address. Simple application that sends requests to the Telegram server without stopping is enough.
             </Paragraph>
 
             <LinksList
               :links="[
-                ['Документация по Телеграм ботам', 'https://core.telegram.org/bots/api#getting-updates'],
+                ['Documentation about Telegram bots', 'https://core.telegram.org/bots/api#getting-updates'],
               ]"
             />
           </Container>
@@ -42,12 +42,12 @@
 
         <section>
           <Title level="3">
-            Получение токена для запросов в Телеграм
+            Obtaining a token from Telegram
           </Title>
 
           <Container :type="'content'">
             <Paragraph>
-              Токен для запросов в Телеграм нужно получить у бота BotFather.
+              The token for Telegram requests must be obtained from the BotFather bot.
             </Paragraph>
 
             <video controls loop class="post__video">
@@ -56,7 +56,7 @@
 
             <LinksList
               :links="[
-                ['Botfather для управления ботами', 'https://t.me/botfather'],
+                ['Botfather', 'https://t.me/botfather'],
               ]"
             />
           </Container>
@@ -66,19 +66,19 @@
       <Spacing :type="'vertical-section'" />
       <section>
         <Title level="2">
-          Эликсир
+          Elixir
         </Title>
 
         <section>
           <Container :type="'content'">
             <Paragraph>
-              Эликсир — это функциональный язык программирования. Работает на базе другого языка программирования Эрланга. Основное преимущество Эликсира — умение управлять огромным количеством процессов. Эти процессы тоже сделаны особым образом поэтому они занимают существенно меньше памяти и времени процессора, чем обычные процессы компьютера.
+              Elixir is a functional programming language. Based on the another programming language Erlang. The main advantage of Elixir is the ability to manage a huge number of processes. These processes are also made in a special way, so they take up significantly less memory and processor time than normal computer processes.
             </Paragraph>
 
             <LinksList
               :links="[
-                ['Инструкция по установке на elixir-lang.org', 'https://elixir-lang.org/install.html'],
-                ['Установка при помощи asdf', 'https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817'],
+                ['How to install Elixir one elixir-lang.org', 'https://elixir-lang.org/install.html'],
+                ['Installing with asdf package manager', 'https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817'],
               ]"
             />
           </Container>
@@ -88,51 +88,52 @@
       <Spacing :type="'vertical-section'" />
       <section>
         <Title level="2">
-          Приложение
+          The application
         </Title>
         <Container :type="'content'">
           <Paragraph>
-            Я буду постепенно усложнять приложение. Начну с бота который в ответ на сообщение присылает его обратно. Дальше добавлю сохранение пользователей в базу данных. А в конце попробую сделать его немного полезным — по запросу от пользователя бот будет отправлять сводную информацию о рынке акций.
+            I will gradually complicate the application. I'll start with a echo bot that sends a message back in response to a message. Next, I will add saving users to the database. And in the end, I'll try to make it a little useful - upon request from the user, the bot will send summary information about the stock market.
           </Paragraph>
+
+          <section>
+            <Title level="3">
+              Creation of the skeleton of the application and installation of the necessary tools
+            </Title>
+
+            <div class="content-container">
+              <CodeSinppet :short="true">
+                <CSCreatingNewApp />
+              </CodeSinppet>
+
+              <Paragraph>
+                First you need to create a new application. The <i> --sup </i> option adds a supervisor to the application and starts it at startup. After creation, the structure of the application should look like this:
+              </Paragraph>
+
+              <CodeSinppet><CSFileTree /></CodeSinppet>
+
+              <Paragraph>
+                Additionally, you need to install HTTPoison to send requests and Jason to work with Jason in responses from the Telegram server.
+              </Paragraph>
+
+              <CodeSinppet :file-name="'stocks_bot/mix.exs'">
+                <CSDeps />
+              </CodeSinppet>
+            </div>
+
+            <LinksList
+              :links="[
+                ['HTTPoisin — http-client for Elixir', 'https://hex.pm/packages/httpoison'],
+                ['Jason — library for working with JSON', 'https://hex.pm/packages/jason'],
+              ]"
+            />
+          </section>
         </Container>
 
-        <section>
-          <Title level="3">
-            Создание скелета приложения и установка необходимых инструментов
-          </Title>
-
-          <div class="content-container">
-            <CodeSinppet :short="true">
-              <CSCreatingNewApp />
-            </CodeSinppet>
-
-            <Paragraph>
-              Для начала надо создать новое приложение. Опция <i>--sup</i> добавляет в приложение супервизор и запускает его при старте. После создание структура приложения выглядит примерно так:
-            </Paragraph>
-
-            <CodeSinppet><CSFileTree /></CodeSinppet>
-
-            <Paragraph>
-              Дополнительно надо установить HTTPoison для отправки запросов и Jason для работы с джейсонами в ответах от сервера Телеграм.
-            </Paragraph>
-
-            <CodeSinppet :file-name="'stocks_bot/mix.exs'">
-              <CSDeps />
-            </CodeSinppet>
-          </div>
-
-          <LinksList
-            :links="[
-              ['HTTPoisin — эйчтитипи клиент для Эликсира', 'https://hex.pm/packages/httpoison'],
-              ['Jason — модуль для работы с джейсон-файлами', 'https://hex.pm/packages/jason'],
-            ]"
-          />
-        </section>
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
           <Title level="3">
-            Получение сообщение пользователя
+            Receiving user message
           </Title>
 
           <Container :type="'content'">
@@ -141,22 +142,24 @@
             </CodeSinppet>
 
             <Paragraph>
-              Теперь можно поробовать как это работает. Отправьте своему боту сообщение. Потом откройте консоль и введите эти команды
+              Now you can try how it works. Send your bot a message. Then open your terminal and enter these commands.
             </Paragraph>
 
-            <CodeSinppet :file-name="'Консоль'" :icon="'console'">
+            <CodeSinppet :file-name="'Termial'" :icon="'console'">
               <CSConsole />
             </CodeSinppet>
 
             <Paragraph>
-              Консоль напечатает сообщение которые вы отправили боту и потом получили от апи Телеграма.
+              In the terminal you will see incoming message.
             </Paragraph>
 
             <CodeSinppet><CSMEssageJson /></CodeSinppet>
 
             <Paragraph>
-              Если снова попробовать получить сообщения, то ответ будет таким же. Это происходит потому, что надо указать телеграму какие сообщения уже получены. Для этого надо взять <i>update_id</i> последнего сообщения, добавить единицу и использовать это как гет–параметр для получения новых сообщений. Пока что скрипт получает одно сообщение и прекращает работу, а надо чтобы продолжал слушать новые сообщения. Сейчас я это исправлю.
+              If you try to receive messages again, the answer will be the same. This happens because it is necessary to indicate to the telegram which messages have already been received. To do this, take the <i> update_id </i> of the last message, increase it to one and use it as a get parameter to receive new messages.
             </Paragraph>
+
+            <Paragraph>So far, the script receives one message and stops working, but it needs to continue listening to new messages. I'll fix it now.</Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSRecursiveGetUpdates />
@@ -167,29 +170,29 @@
 
         <section>
           <Title level="3">
-            Ответ пользователю
+            Polite answer
           </Title>
 
-          <div class="content-container">
+          <Container :type="'content'">
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
               <CSAnswerToAUser />
             </CodeSinppet>
 
             <Paragraph>
-              Функция <i>answer_to_message</i> при помощи паттерн-матчинга забирает имя отправителя и текст входящего сообщения, чтобы отправить это обратно пользователю пост-запросом.
+              The <i> answer_to_message </i> function uses pattern matching to pick up the sender's name and the text of the incoming message to send it back to the user as a post-request.
             </Paragraph>
-          </div>
+          </Container>
         </section>
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
           <Title level="3">
-            Запуск приложения в супервизоре
+            Using supervisor for the application
           </Title>
 
           <Container :type="'content'">
             <Paragraph>
-              Первое что надо сделать — преобразовать приложение в Генсервер (Genserver).
+              First step is converting app to a Genserver.
             </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot.ex'">
@@ -197,7 +200,7 @@
             </CodeSinppet>
 
             <Paragraph>
-              Потом этот Генсервер добавить в СупервизорТри (Supervisor Tree).
+              Then this Genserver need to be added to Supervisor Tree.
             </Paragraph>
 
             <CodeSinppet :file-name="'stocks_bot/lib/stocks_bot/application.ex '">
@@ -206,7 +209,7 @@
 
             <LinksList
               :links="[
-                ['Статья с примерами суперивизоров от AppSignal', 'https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html'],
+                ['Article from AppSignal with good examples', 'https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html'],
               ]"
             />
           </Container>
@@ -215,9 +218,9 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <h2 class="post__title_h2">
-          Демо
-        </h2>
+        <Title level="2">
+          Demo time
+        </Title>
 
         <Container :type="'content'">
           <video controls loop class="post__video">
@@ -225,7 +228,7 @@
           </video>
 
           <Paragraph>
-            Да, пока что бот не обладает суперинтеллектом. В следующей части я добавлю хранение пользовательей в базе данных и научу бота отправлять информацию о курсе акций.
+            Yes, the bot does not yet have superintelligence. In the next part, I will add user storage in the database and teach the bot to send stock price information.
           </Paragraph>
         </Container>
       </section>
@@ -286,5 +289,12 @@ export default Vue.extend({
 
   .post__sub-section {
     margin-bottom: 30px;
+  }
+
+  .i-span {
+    padding: 1px 4px;
+    border-radius: 20px;
+    background: rgba(69, 156, 193, 0.24);
+    color: white;
   }
 </style>

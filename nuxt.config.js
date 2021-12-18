@@ -57,25 +57,6 @@ export default {
     }]
   ],
 
-  i18n: {
-    locales: [
-      {
-        code: 'en',
-        name: 'English version'
-      },
-      {
-        code: 'ru',
-        name: 'Русская версия'
-      }
-    ],
-    defaultLocale: 'ru',
-    vueI18n: {
-      fallbackLocale: 'ru',
-      messages: {
-      }
-    }
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
