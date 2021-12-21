@@ -3,7 +3,7 @@
     <SocialHead
       :title="'How to make a Telegram bot in Elixir'"
       :description="'This is the first part of three in the series. There you will find creating foundation and answering to users.'"
-      :image="require('/assets/images/posts/elixir-telegram-bot/elixir-telegram-bot-share-cover.jpg')"
+      :image="require('/assets/images/posts/elixir-telegram-bot/facebook-share.jpg')"
     />
 
     <HeroTitle

@@ -15,9 +15,9 @@ ru:
 
 <template>
   <div class="header">
-    <div class="logo">
+    <NuxtLink to="/" class="logo">
       Maxim<br />Rukomoynikov
-    </div>
+    </NuxtLink>
     <div class="slogan">
       I love to create. Developer and designer. Looking forward to make cool things.
     </div>
@@ -41,6 +41,8 @@ ru:
 .logo {
   font: 400 50px/54px IBM Plex Sans, sans-serif;
   margin-right: auto;
+  color: black;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 595px) {
