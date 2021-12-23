@@ -3,40 +3,39 @@
     <template #header>
       <HeroTitle
         :title="'Figma template for social media covers'"
-        :subtitle="'Черная пятница — это часто обман, цены на обычные товары наоборот растут. А вот с цифровыми товарами, все работает так как надо. Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.'"
-        :tags="['дизайн сайта']"
+        :subtitle="'Being Featured at producthunt is most desirable thing for new startup. There are many examples how simple idea turned out into a popular product. I decided to try this experience out on myself.'"
+        :tags="['producthunt', 'design', 'web']"
       />
     </template>
 
-    <template #contents>
-      <h1>111</h1>
-    </template>
-
     <SocialHead
-      :title="'Скидки на «Чёрную пятницу»'"
-      :description="'Черная пятница — это часто обман, цены на обычные товары наоборот растут. А вот с цифровыми товарами, все работает так как надо. Каждый год в эту неделю, я обновляю подписку на книги, покупаю какие-то приложения. В этот год, решил сделать список предложений в виде отдельного сайта.'"
+      :title="'Figma template for social media covers'"
+      :description="'Being Featured at producthunt is most desirable thing for new startup. There are many examples how simple idea turned out into a popular product. I decided to try this experience out on myself.'"
       :image="require('/assets/images/cases/digitaldeals/social.jpg')"
     />
 
     <Container :type="'common'">
       <section>
         <Title :level="2">
-          Задача
+          Idea
         </Title>
 
         <Container :type="'content'">
-          <Paragraph>Сделать инструмент которым можно пользоваться в работе. Отправить его в ПродактХант.</Paragraph>
+          <Paragraph>Every time when i need to create social media cover i google sizes. And i thought wouldn't it be cool to create a template where i can create picture and put it on right away?</Paragraph>
         </Container>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">Результаты</Title>
+        <Title :level="2">Process</Title>
+        <Container :type="'content'">
+          <Paragraph>Entrice process took about 2 weeks. Since task was not just frames with sizes but also recreate interfaces. </Paragraph>
+        </Container>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">ПродактХант</Title>
+        <Title :level="2">Result</Title>
 
         <Container :type="'content'">
           <Paragraph>
@@ -56,12 +55,12 @@
 
       <section>
         <Title :level="2">
-          Что дальше
+          What next?
         </Title>
 
         <Container :type="'content'">
           <Paragraph>
-            Когда думал о проекте, хотелось попробовать что-то новое. В обычном случае я бы взял, накст, или свою заготовку на вью или руби-он-рейлс. Вобшем, решил попробовать астро. Астро — это сборщик статических сайтов, с поддержкой современных фреймворков и возможностью гридатации.
+            I want to continue development: add more examples, maybe add web application.
           </Paragraph>
 
           <LinksList

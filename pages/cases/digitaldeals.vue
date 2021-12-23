@@ -100,9 +100,10 @@ import LinksList from '~/components/links-list.vue'
 import Container from '~/components/Container.vue'
 import Paragraph from '~/components/Paragraph.vue'
 import heroImage from '~/assets/images/cases/digitaldeals/hero-title.svg'
+import { VueAgile } from 'vue-agile'
 
 export default Vue.extend({
-  components: { CaseDescription, HeroTitle, Title, LinksList, Container, Paragraph },
+  components: { CaseDescription, HeroTitle, Title, LinksList, Container, Paragraph, VueAgile },
   data () {
     return {
       heroImage
