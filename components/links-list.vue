@@ -37,11 +37,13 @@ export default Vue.extend({
 
   .links-list > li {
     margin-bottom: 10px;
+    font-size: 16px;
   }
 
   .links-list__link::before {
     content: ' ';
     background-image: url('~/assets/images/icons/link-2.svg');
+    background-repeat: no-repeat;
     margin-right: 4px;
     margin-top: 2px;
     display: block;

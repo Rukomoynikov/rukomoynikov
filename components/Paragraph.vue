@@ -6,10 +6,10 @@
 
 <style>
   .paragraph {
-    font-size: 18px;
+    font-size: 19px;
   }
 
-  /* .paragraph:first-of-type {
+  .paragraph:first-of-type {
     margin-top: 0;
-  } */
+  }
 </style>

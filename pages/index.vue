@@ -18,7 +18,11 @@ ru:
       <h2 class="title--h2">Sites and mobile apps</h2>
       <Cases />
       <div class="quote-block">
-        <Quote />
+        <Quote>
+          <span>Damn cool feeling, when something was not in&nbsp;the&nbsp;universe,</span>
+          <span class="nobreak">and «<img src="~assets/images/icons/magic-wand.svg" class="icon">bam»</span>
+          <span>appeared</span>
+        </Quote>
       </div>
     </div>
 

@@ -13,12 +13,12 @@
 
     <Container :type="'common'">
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Introduction to Telegram Bots API
         </Title>
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Exchanging messages with Telegram
           </Title>
 
@@ -41,7 +41,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Obtaining a token from Telegram
           </Title>
 
@@ -65,7 +65,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Elixir
         </Title>
 
@@ -87,7 +87,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           The application
         </Title>
         <Container :type="'content'">
@@ -96,7 +96,7 @@
           </Paragraph>
 
           <section>
-            <Title level="3">
+            <Title :level="'3'">
               Creation of the skeleton of the application and installation of the necessary tools
             </Title>
 
@@ -132,7 +132,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Receiving user message
           </Title>
 
@@ -169,7 +169,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Polite answer
           </Title>
 
@@ -186,7 +186,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Using supervisor for the application
           </Title>
 
@@ -218,7 +218,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Demo time
         </Title>
 

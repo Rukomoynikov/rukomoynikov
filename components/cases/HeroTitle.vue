@@ -1,6 +1,7 @@
 <template>
   <div class="hero-title">
     <div class="hero-title__container">
+      <UnifiedPicture :src="image" v-if="image" :css-class="'hero-title__image'" />
       <div class="hero-title__text-container">
         <div v-for="tag in tags" :key="tag" class="hero-title__tag">
           {{ tag }}
@@ -12,17 +13,16 @@
           {{ subtitle }}
         </div>
       </div>
-      <div class="hero-title__image-container"  v-if="image">
-        <img :src="image" class="hero-title__image" />
-      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import UnifiedPicture from "~/components/UnifiedPicture.vue"
 
 export default Vue.extend({
+  components: { UnifiedPicture },
   props: {
     tags: {
       type: Array,
@@ -59,13 +59,17 @@ export default Vue.extend({
   .hero-title {
     /* background-color: #fbab7e; #f9dddc; background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
 
-    background-color: rgba(0, 0, 0, 0.84);
+    min-height: calc(100vh - 148px);
+    background-color: #ebec96;
+    opacity: 0.8;
+    background-image: radial-gradient(#14164a 1px, #ebec96 1px), linear-gradient(0deg, transparent 0%, transparent 100%);
+    background-size: 40px 40px;
   }
 
   .hero-title__tag {
     padding: 12px 17px;
     font: 600 17px IBM Plex Sans, sans-serif;
-    background: white;
+    background-color: white;
     display: inline-flex;
     border-radius: 12px;
   }
@@ -78,7 +82,7 @@ export default Vue.extend({
     font: normal 62px/68px IBM Plex Sans, sans-serif;
     margin: 18px 0 0 0;
     max-width: 1000px;
-    color: white;
+    color: black;
   }
 
   @media only screen and (max-width: 595px) {
@@ -92,26 +96,19 @@ export default Vue.extend({
     max-width: 1200px;
     width: 100%;
     margin: auto;
-    display: flex;
-    align-items: flex-end;
   }
 
   .hero-title__subtitle {
     margin-top: 22px;
     font: 300 28px/33px IBM Plex Sans, sans-serif;
     max-width: 800px;
-    color: rgba(255, 255, 255, 0.73);
+    color: black;
   }
 
   .hero-title__image {
-    margin-left: 20px;
-    max-width: 400px;
-    padding-top: 35px;
-    width: 100%;
-  }
-
-  .hero-title__image-container {
-    display: flex;
+    margin-top: 59px;
+    border: 10px solid white;
+    overflow: hidden;
   }
 
   .hero-title__text-container {

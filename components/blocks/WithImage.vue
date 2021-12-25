@@ -1,18 +1,26 @@
 <template>
-  <div class="block-with-photo case-description__block">
-    {{ require(`${image}.webp`) }}
+  <div class="block-with-photo">
+    <UnifiedPicture :src="image" :css-class="'block-with-photo__photo'"/>
     <div class="block-with-photo__paragraph">
-      На первой старанице рассказ о том, что это такое. Краткая информация о длине маршрута и визуально на карте показываем, где пролегает.
+      <slot />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import UnifiedPicture from '~/components/UnifiedPicture.vue'
 
 export default Vue.extend({
+  components: { UnifiedPicture },
   props: {
     image: {
+      type: String,
+      default () {
+        return null
+      }
+    },
+    caption: {
       type: String,
       default () {
         return null
@@ -24,14 +32,11 @@ export default Vue.extend({
 
 <style>
   .block-with-photo {
-    max-width: 800px;
+    margin-bottom: 22px;
   }
 
   .block-with-photo__paragraph {
-    font: 300 28px "IBM Plex Sans", sans-serif;
-  }
-
-  .block-with-photo__photo {
-    margin-bottom: 15px;
+    font: 400 14px "IBM Plex Sans", sans-serif;
+    color: #888;
   }
 </style>
