@@ -12,7 +12,7 @@
     <SocialHead
       :title="'Figma template for social media covers'"
       :description="'Being Featured at producthunt is most desirable thing for new startup. There are many examples how simple idea turned out into a popular product. I decided to try this experience out on myself.'"
-      :image="require('/assets/images/cases/digitaldeals/social.jpg')"
+      :image="require('/assets/images/cases/figma-social/facebook.jpg')"
     />
 
     <Container :type="'common'">
@@ -151,6 +151,12 @@ export default Vue.extend({
 
   .article-layout {
     display: flex;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
   }
 
   .article-layout__text {

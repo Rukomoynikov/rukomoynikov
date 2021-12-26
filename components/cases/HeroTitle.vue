@@ -109,6 +109,7 @@ export default Vue.extend({
     margin-top: 59px;
     border: 10px solid white;
     overflow: hidden;
+    max-width: 100%;
   }
 
   .hero-title__text-container {

@@ -39,4 +39,8 @@ export default Vue.extend({
     font: 400 14px "IBM Plex Sans", sans-serif;
     color: #888;
   }
+
+  .block-with-photo__photo {
+    max-width: 100%;
+  }
 </style>
