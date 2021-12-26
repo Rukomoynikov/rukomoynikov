@@ -10,7 +10,7 @@ export default {
   head: {
     title: 'rukomoynikov.ru',
     htmlAttrs: {
-      lang: 'ru'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },

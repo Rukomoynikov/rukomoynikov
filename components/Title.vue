@@ -24,10 +24,10 @@ export default Vue.extend({
 
 <style>
   .title_h2 {
-    margin: 0 0 22px 0;
+    margin: 0 0 20px 0;
     padding: 0;
     color: #c91010;
-    font: bold 28px IBM Plex Sans, sans-serif;
+    font: normal 28px IBM Plex Sans, sans-serif;
   }
 
   .title_h3 {

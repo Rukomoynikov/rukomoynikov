@@ -13,12 +13,12 @@
 
     <Container :type="'common'">
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Introduction to Telegram Bots API
         </Title>
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Exchanging messages with Telegram
           </Title>
 
@@ -41,7 +41,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Obtaining a token from Telegram
           </Title>
 
@@ -65,7 +65,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Elixir
         </Title>
 
@@ -87,7 +87,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           The application
         </Title>
         <Container :type="'content'">
@@ -96,7 +96,7 @@
           </Paragraph>
 
           <section>
-            <Title level="3">
+            <Title :level="'3'">
               Creation of the skeleton of the application and installation of the necessary tools
             </Title>
 
@@ -106,7 +106,7 @@
               </CodeSinppet>
 
               <Paragraph>
-                First you need to create a new application. The <i> --sup </i> option adds a supervisor to the application and starts it at startup. After creation, the structure of the application should look like this:
+                First you need to create a new application. The <LikeItalic>--sup</LikeItalic> option adds a supervisor to the application and starts it at startup. After creation, the structure of the application should look like this:
               </Paragraph>
 
               <CodeSinppet><CSFileTree /></CodeSinppet>
@@ -132,7 +132,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Receiving user message
           </Title>
 
@@ -156,7 +156,7 @@
             <CodeSinppet><CSMEssageJson /></CodeSinppet>
 
             <Paragraph>
-              If you try to receive messages again, the answer will be the same. This happens because it is necessary to indicate to the telegram which messages have already been received. To do this, take the <i> update_id </i> of the last message, increase it to one and use it as a get parameter to receive new messages.
+              If you try to receive messages again, the answer will be the same. This happens because it is necessary to indicate to the telegram which messages have already been received. To do this, take the <LikeItalic>update_id</LikeItalic> of the last message, increase it to one and use it as a get parameter to receive new messages.
             </Paragraph>
 
             <Paragraph>So far, the script receives one message and stops working, but it needs to continue listening to new messages. I'll fix it now.</Paragraph>
@@ -169,7 +169,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Polite answer
           </Title>
 
@@ -179,14 +179,14 @@
             </CodeSinppet>
 
             <Paragraph>
-              The <i> answer_to_message </i> function uses pattern matching to pick up the sender's name and the text of the incoming message to send it back to the user as a post-request.
+              The <LikeItalic>answer_to_message</LikeItalic> function uses pattern matching to pick up the sender's name and the text of the incoming message to send it back to the user as a post-request.
             </Paragraph>
           </Container>
         </section>
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title level="3">
+          <Title :level="'3'">
             Using supervisor for the application
           </Title>
 
@@ -218,7 +218,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title level="2">
+        <Title :level="'2'">
           Demo time
         </Title>
 
@@ -246,6 +246,7 @@ import Title from '~/components/Title.vue'
 import Paragraph from '~/components/Paragraph.vue'
 import Container from '~/components/Container.vue'
 import Spacing from '~/components/Spacing.vue'
+import LikeItalic from '~/components/blocks/LikeItalic.vue'
 
 import CSFileTree from '~/posts/elixir-telegram-bot/code_snippets/file_tree.vue'
 import CSDeps from '~/posts/elixir-telegram-bot/code_snippets/deps.vue'
@@ -276,7 +277,8 @@ export default Vue.extend({
     Title,
     Paragraph,
     Container,
-    Spacing
+    Spacing,
+    LikeItalic
   }
 })
 </script>
