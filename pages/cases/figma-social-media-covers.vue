@@ -12,7 +12,7 @@
     <SocialHead
       :title="'Figma template for social media covers'"
       :description="'Being Featured at producthunt is most desirable thing for new startup. There are many examples how simple idea turned out into a popular product. I decided to try this experience out on myself.'"
-      :image="require('/assets/images/cases/figma-social/facebook.jpg')"
+      :image="require('/assets/images/cases/figma-social/facebook.png')"
     />
 
     <Container :type="'common'">

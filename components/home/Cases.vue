@@ -38,12 +38,12 @@ ru:
 
     <div class="case">
       <Case
-        :tags="['Design']"
-        :description="$t('Also an educational work. It was great to tale a boring article from Wikipedia and make it interesting')"
-        :hrefTitle="'Image file'"
-        :title="$t('Article about whool history')"
-        :imageSrc="'cases/wool/wool'"
-        :caseHref="'https://bureau.ru/classroom/tasks/typography/verstka-mnogoetazhnoy-veb-stranitsy-update/1606/results/40357/Овечья_шерсть.png'" />
+        :tags="['Producthunt']"
+        :description="$t('Being Featured at producthunt is most desirable thing for new startup. I decided to try this experience out on myself.')"
+        :hrefTitle="'Story'"
+        :title="$t('Figma template for social media covers')"
+        :imageSrc="'cases/figma-social/cases-list/cases-list'"
+        :caseHref="'/cases/figma-social-media-covers'" />
     </div>
 
     <div class="case">
