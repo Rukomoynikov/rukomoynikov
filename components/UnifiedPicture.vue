@@ -1,7 +1,7 @@
 <template>
   <picture>
-    <source :srcset="webpSrcset" type="image/webp">
-    <source :srcset="jpgSrcSet">
+    <source v-if="checkExtension('webp')" :srcset="webpSrcset" type="image/webp">
+    <source v-if="checkExtension('jpg')" :srcset="jpgSrcSet">
     <img :src="require(`~/assets/images/${src}@2x.jpg`)" :class="cssClass">
   </picture>
 </template>
@@ -15,6 +15,12 @@ export default Vue.extend({
     cssClass: {
       type: String,
       default: null
+    },
+    extensions: {
+      type: Array,
+      default () {
+        return ['webp', 'jpg']
+      }
     }
   },
   computed: {
@@ -23,6 +29,11 @@ export default Vue.extend({
     },
     jpgSrcSet () {
       return `${require(`~/assets/images/${this.src}.jpg`)} 1x, ${require(`~/assets/images/${this.src}@2x.jpg`)} 2x`
+    }
+  },
+  methods: {
+    checkExtension (extension: String) {
+      return this.extensions.includes(extension)
     }
   }
 })
