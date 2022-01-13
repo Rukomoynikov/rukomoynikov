@@ -9,6 +9,7 @@
     <HeroTitle
       :tags="['Telegram', 'Elixir']"
       :title="'How to make a Telegram bot in Elixir'"
+      :image="'posts/elixir-telegram-bot/detailed/detailed'"
     />
 
     <Container :type="'common'">
