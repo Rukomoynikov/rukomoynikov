@@ -38,8 +38,8 @@ export default {
     'assets/css/global.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {src: '~/plugins/prism', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,7 +51,6 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxt/image',
     ['@nuxtjs/i18n', {
       vueI18nLoader: true
     }]
@@ -68,18 +67,21 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config) {
+      config.resolve.alias.vue = 'vue/dist/vue.common'
+    }
   },
 
-  image: {
-    dir: 'assets/images',
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-      '2xl': 1536
-    }
-  }
+  // image: {
+  //   dir: 'assets/images',
+  //   screens: {
+  //     xs: 320,
+  //     sm: 640,
+  //     md: 768,
+  //     lg: 1024,
+  //     xl: 1280,
+  //     xxl: 1536,
+  //     '2xl': 1536
+  //   }
+  // }
 }

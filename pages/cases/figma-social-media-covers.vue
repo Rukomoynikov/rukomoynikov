@@ -17,7 +17,7 @@
 
     <Container :type="'common'">
       <section>
-        <Title :level="'2'">
+        <Title :level="2">
           Idea
         </Title>
 
@@ -43,7 +43,7 @@
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="'2'">Process</Title>
+        <Title :level="2">Process</Title>
         <Container :type="'content'">
           <WithImage :image="'cases/figma-social/result/result'">Few screens from the process</WithImage>
 
@@ -59,7 +59,7 @@
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="'2'">Result</Title>
+        <Title :level="2">Result</Title>
 
         <WithImage :image="'cases/figma-social/result-2/result'">Screenshot from ProductHunt. As you might see it didn't become "TOP OF THE DAY".</WithImage>
 

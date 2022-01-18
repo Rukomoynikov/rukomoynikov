@@ -1,7 +1,6 @@
 <template>
   <div class="hero-title">
     <div class="hero-title__container">
-      <UnifiedPicture :src="image" :cssClass="'hero-title__image'" v-if="image" />
       <div class="hero-title__text-container">
         <div v-for="tag in tags" :key="tag" class="hero-title__tag">
           {{ tag }}
@@ -43,13 +42,6 @@ export default Vue.extend({
       default () {
         return null
       }
-    },
-    image: {
-      type: String,
-      required: false,
-      default () {
-        return null
-      }
     }
   }
 })
@@ -57,12 +49,8 @@ export default Vue.extend({
 
 <style scoped>
   .hero-title {
-    /* background-color: #fbab7e; #f9dddc; background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
-
-    min-height: calc(100vh - 148px);
     background-color: #ebec96;
     opacity: 0.8;
-    background-image: radial-gradient(#14164a 1px, #ebec96 1px), linear-gradient(0deg, transparent 0%, transparent 100%);
     background-size: 40px 40px;
   }
 
@@ -105,18 +93,14 @@ export default Vue.extend({
     color: black;
   }
 
-  .hero-title__text-container {
-    padding: 35px 10px 60px 10px;
-  }
-</style>
-
-
-<style>
   .hero-title__image {
     margin-top: 59px;
     border: 10px solid white;
     overflow: hidden;
     max-width: 100%;
-    display: inline-block;
+  }
+
+  .hero-title__text-container {
+    padding: 35px 10px 60px 10px;
   }
 </style>
