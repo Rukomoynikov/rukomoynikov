@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/cases/excursions", {data:[{_img:{}}],fetch:{},mutations:void 0});

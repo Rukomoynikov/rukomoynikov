@@ -30,12 +30,11 @@
  * Released under the MIT License.
  */
 
-
-/*!
- * The buffer module from node.js, for the browser.
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
  *
- * @author   Feross Aboukhadijeh <http://feross.org>
- * @license  MIT
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
  */
-
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
