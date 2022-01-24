@@ -67,7 +67,6 @@ export default Vue.extend({
     LikeItalic
   },
   mounted() {
-    console.log(1)
     // Prism.highlightAll()
   }
 })

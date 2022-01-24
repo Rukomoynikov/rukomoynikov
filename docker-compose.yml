@@ -5,6 +5,7 @@ services:
     volumes:
       - .:/app:cached
       - node_modules:/app/node_modules
+      - ~/.ssh:/root/.ssh
     ports:
       - 3000:3000
     command: npm run dev
