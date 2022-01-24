@@ -15,7 +15,7 @@ const prism = Vue.component('prism', {
     }
   },
   mounted () {
-    // Prism.highlightAll()
+    Prism.highlightAll()
   },
   template: '<div class="prism"><pre class="line-numbers show-language" :class="`language-${lang}`"><code><slot></slot></code></pre></div>'
 })
