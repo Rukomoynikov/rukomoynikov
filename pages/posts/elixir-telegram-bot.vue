@@ -6,20 +6,19 @@
       :image="require('/assets/images/posts/elixir-telegram-bot/facebook-share.jpg')"
     />
 
-    <HeroTitle
+    <HeroTitleSmall
       :tags="['Telegram', 'Elixir']"
       :title="'How to make a Telegram bot in Elixir'"
-      :image="'posts/elixir-telegram-bot/detailed/detailed'"
     />
 
     <Container :type="'common'">
       <section>
-        <Title :level="'2'">
+        <Title :level="2">
           Introduction to Telegram Bots API
         </Title>
 
         <section>
-          <Title :level="'3'">
+          <Title :level="3">
             Exchanging messages with Telegram
           </Title>
 
@@ -42,7 +41,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title :level="'3'">
+          <Title :level="3">
             Obtaining a token from Telegram
           </Title>
 
@@ -66,7 +65,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title :level="'2'">
+        <Title :level="2">
           Elixir
         </Title>
 
@@ -88,7 +87,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title :level="'2'">
+        <Title :level="2">
           The application
         </Title>
         <Container :type="'content'">
@@ -97,7 +96,7 @@
           </Paragraph>
 
           <section>
-            <Title :level="'3'">
+            <Title :level="3">
               Creation of the skeleton of the application and installation of the necessary tools
             </Title>
 
@@ -133,7 +132,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title :level="'3'">
+          <Title :level="3">
             Receiving user message
           </Title>
 
@@ -170,7 +169,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title :level="'3'">
+          <Title :level="3">
             Polite answer
           </Title>
 
@@ -187,7 +186,7 @@
         <Spacing :type="'vertical-section_sub'" />
 
         <section>
-          <Title :level="'3'">
+          <Title :level="3">
             Using supervisor for the application
           </Title>
 
@@ -219,7 +218,7 @@
       </section>
       <Spacing :type="'vertical-section'" />
       <section>
-        <Title :level="'2'">
+        <Title :level="2">
           Demo time
         </Title>
 
@@ -240,7 +239,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
+import HeroTitleSmall from '~/components/HeroTitleSmall.vue'
 import CodeSinppet from '~/components/CodeSinppet.vue'
 import LinksList from '~/components/links-list.vue'
 import Title from '~/components/Title.vue'
@@ -262,7 +261,7 @@ import CSConsole from '~/posts/elixir-telegram-bot/code_snippets/console.vue'
 
 export default Vue.extend({
   components: {
-    HeroTitle,
+    HeroTitleSmall,
     CodeSinppet,
     CSFileTree,
     CSDeps,

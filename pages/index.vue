@@ -50,7 +50,7 @@ export default Vue.extend({
 .cases {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto 20px auto;
+  margin: 50px auto 20px auto;
   padding: 0 10px;
 }
 

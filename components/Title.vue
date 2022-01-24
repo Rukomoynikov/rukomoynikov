@@ -31,8 +31,9 @@ export default Vue.extend({
   }
 
   .title_h3 {
-    font-size: 26px;
-    font-weight: normal;
-    margin: 0 0 16px 0;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    letter-spacing: calc(1px / 5);
   }
 </style>

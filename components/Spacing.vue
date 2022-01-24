@@ -24,7 +24,7 @@ export default Vue.extend({
 
 <style>
   .spacing_vertical-section {
-    margin-bottom: 52px;
+    height: 22px;
   }
 
   .spacing_vertical-section_sub {

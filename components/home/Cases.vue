@@ -18,6 +18,16 @@ ru:
   <div>
     <div class="case">
       <Case
+        :tags="['Producthunt']"
+        :description="$t('Being Featured at producthunt is most desirable thing for new startup. I decided to try this experience out on myself.')"
+        :hrefTitle="'Story'"
+        :title="$t('Figma template for social media covers')"
+        :imageSrc="'cases/figma-social/cases-list/cases-list'"
+        :caseHref="'/cases/figma-social-media-covers'" />
+    </div>
+
+    <div class="case">
+      <Case
         :tags="['Design']"
         :description="$t('Site for an excursion agency. The agency organizes running tours with locals. Such guides are popular abroad. The guys decided to try to do it in Moscow.')"
         :hrefTitle="'Case at Behance'"
@@ -34,16 +44,6 @@ ru:
         :title="$t('Site and banners for Black Friday')"
         :imageSrc="'cases/digitaldeals/cover/digitaldeals'"
         :caseHref="'/cases/digitaldeals/'" />
-    </div>
-
-    <div class="case">
-      <Case
-        :tags="['Producthunt']"
-        :description="$t('Being Featured at producthunt is most desirable thing for new startup. I decided to try this experience out on myself.')"
-        :hrefTitle="'Story'"
-        :title="$t('Figma template for social media covers')"
-        :imageSrc="'cases/figma-social/cases-list/cases-list'"
-        :caseHref="'/cases/figma-social-media-covers'" />
     </div>
 
     <div class="case">
