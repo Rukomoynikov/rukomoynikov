@@ -1,6 +1,5 @@
 <template>
-<div>...
-FROM debian:bullseye
+<div>FROM debian:bullseye
 
 WORKDIR /app
 

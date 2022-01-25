@@ -1,9 +1,7 @@
 <template>
 <div>services:
   web:
-    build:
-      context: ./server
-      dockerfile: "Dockerfile.web"
+    image: rukomoynikov/rails:2.7.1
     volumes:
       - ./server:/app
       - rails_cache:/app/tmp/cache
@@ -22,9 +20,7 @@
         condition: service_healthy
     command: bundle exec rails server -b 0.0.0.0
   client:
-    build:
-      context: ./server
-      dockerfile: "Dockerfile.client"
+    image: rukomoynikov/rails:2.7.1
     command: yarn run build -w
     ports:
       - '3035:3035'

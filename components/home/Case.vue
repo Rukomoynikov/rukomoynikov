@@ -21,12 +21,30 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    imageSrc: String,
-    caseHref: String,
-    tags: Array,
-    title: String,
-    description: String,
-    hrefTitle: String
+    imageSrc: {
+      type: String,
+      default: null
+    },
+    caseHref: {
+      type: String,
+      default: null
+    },
+    tags: {
+      type: String,
+      default: null
+    },
+    title: {
+      type: String,
+      default: null
+    },
+    description: {
+      type: String,
+      default: null
+    },
+    hrefTitle: {
+      type: String,
+      default: null
+    }
   }
 })
 </script>

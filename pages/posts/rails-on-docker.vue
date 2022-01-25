@@ -2,8 +2,8 @@
   <div>
     <SocialHead
       :title="'Hot to generate Rails app and run it without installing ruby locally'"
-      :description="'In internet '"
-      :image="require('/assets/images/posts/elixir-telegram-bot/facebook-share.jpg')"
+      :description="'Docker image for generation rails application or play with ruby'"
+      :image="require('/assets/images/posts/rails-on-docker/facebook-share.jpg')"
     />
 
     <HeroTitleSmall
@@ -20,7 +20,7 @@
       <section>
         <Container :type="'content'">
           <Paragraph>
-            Всегда было проще поставить необходимые инструменты локально. Если надо иметь несколько версий, то rvm или nvm решали проблему. Потом появился Докер. До этого года мне успешно удавалось избегать его. На проектах где ребята работали с докером, я ставил все локально. Но, я подумал, что хватит бороться и пора попробовать жить с мыслью "докер для всего".
+            It has always been easier to supply the necessary tools locally. If you need to have multiple versions, then rvm or nvm solve the problem. Then came Docker. Until this year, I had successfully managed to avoid it. On projects where the guys worked with Docker, I instead installed everything locally. But, I thought that enough fighting and it's time to try to live with the idea of "docker for everything". It's simply time to admit either i work using Docker or i don't work at all.
           </Paragraph>
         </Container>
       </section>
@@ -34,12 +34,16 @@
       <section>
         <Container :type="'content'">
           <Paragraph>
-            Чтож у меня нет установленного руби локально. Мои задачи: сгенерировать новое rails приложение, запустить иногда irb, попробовать что-то в rails консоли. В настроенных приложениях уже используется docker-compose.
+            Well I don't have ruby installed locally. And I need to generate a new Rails application or experiment in IRB.
           </Paragraph>
 
           <Paragraph>
-            В первую очередь я попробовал оффициальный образ rails на docker хаб. Он оказался депрекейтед и на замену надо использовать образ ruby. В руби из коробки мне не удалось сгененрировать rails приложение и я сделал свой.
+            The first thing I did was look at the official Rails image. It turned out to be deprecated, and the authors suggested Ruby as a replacement. Using Ruby image, I was unable to generate a Rails application, so I made my own Docker image.
           </Paragraph>
+
+          <CodeSinppet>
+            <CSDockerfile />
+          </CodeSinppet>
 
           <LinksList
             :links="[
@@ -54,39 +58,47 @@
       <section>
         <Container :type="'content'">
           <Title :level="3">
-            Как использовать
+            Using the image
           </Title>
 
           <Paragraph>
-            Эта команда сгенерирует новое rails приложение в текущей папке и установит гемы в папку gems. Как известно контейнер не может менять свое содержание после того как был build. Поэтому все файлы приложения и гемы будут храниться на локальной машине.
+            The following command will generate a new Rails application in the current folder and install required gems in the gems folder. As you know, a container cannot change its content after it has been built. Therefore, all application files and gems will be stored on the host machine.
           </Paragraph>
 
           <CodeSinppet>docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</CodeSinppet>
 
           <Paragraph>
-            Запустить приложение не многим сложнее. Но, в простом виде будет работать только если вы используете бд sqlite.
+            Launching the application is not much more difficult. But, in a simple form, it will only work if you use the sqlite database.
           </Paragraph>
 
           <CodeSinppet>docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0.0.0.0</CodeSinppet>
 
           <Paragraph>
-            Запустить приложение не многим сложнее. Но, в простом виде будет работать только если вы используете бд sqlite.
+            Running IRB. Or you can enter console and run ruby files from local machine.
           </Paragraph>
 
           <CodeSinppet>docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</CodeSinppet>
+
+          <WithImage :image="'posts/rails-on-docker/rails-basic-app/rails-basic-app'">
+            Ruby on Rails default page
+          </WithImage>
         </Container>
       </section>
 
       <Spacing :type="'vertical-section_sub'" />
 
       <Title :level="2">
-        Docker-compose
+        What's next?
       </Title>
 
       <section>
         <Container :type="'content'">
           <Paragraph>
-            Эта команда сгенерирует новое rails приложение в текущей папке и установит гемы в папку gems. Как известно контейнер не может менять свое содержание после того как был build. Поэтому все файлы приложения и гемы будут храниться на локальной машине.
+            Выше пример минимального Rails приложения. Для полноценного использования потребуется, что-то серьезнее чем один Dockerfile. Например, docker-compose. Там можно выделить Ruby приложение в отдельный сервис, да и клиентскую часть тоже.
+          </Paragraph>
+
+          <Paragraph>
+            Ниже пример моего docker-compose.yml
           </Paragraph>
 
           <CodeSinppet>
@@ -107,8 +119,10 @@ import Title from '~/components/Title.vue'
 import Paragraph from '~/components/Paragraph.vue'
 import Container from '~/components/Container.vue'
 import Spacing from '~/components/Spacing.vue'
+import WithImage from '~/components/blocks/WithImage.vue'
 
 import CSDockerCompose from '~/posts/rails-on-docker/code_snippets/docker-compose.vue'
+import CSDockerfile from '~/posts/rails-on-docker/code_snippets/dockerfile.vue'
 
 export default Vue.extend({
   components: {
@@ -119,7 +133,9 @@ export default Vue.extend({
     Paragraph,
     Container,
     Spacing,
-    CSDockerCompose
+    CSDockerCompose,
+    CSDockerfile,
+    WithImage
   }
 })
 </script>
