@@ -59,7 +59,7 @@
           </Paragraph>
           <div class="imageWithDescription">
             <a href="http://digitaldeals.today" class="gallery__block gallery__block-full">
-              <img src="~assets/images/cases/digitaldeals/digitaldeals-fullpage.webp" loading="lazy" />
+              <img src="~assets/images/cases/digitaldeals/digitaldeals-fullpage.webp" loading="lazy">
             </a>
             <div class="imageWithDescription__description">
               https://digitaldeals.today

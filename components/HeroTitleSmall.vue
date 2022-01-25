@@ -18,10 +18,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import UnifiedPicture from "~/components/UnifiedPicture.vue"
 
 export default Vue.extend({
-  components: { UnifiedPicture },
   props: {
     tags: {
       type: Array,

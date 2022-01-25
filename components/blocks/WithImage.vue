@@ -1,6 +1,6 @@
 <template>
   <div class="block-with-photo">
-    <UnifiedPicture :src="image" :css-class="'block-with-photo__photo'"/>
+    <UnifiedPicture :src="image" :css-class="'block-with-photo__photo'" />
     <div class="block-with-photo__paragraph">
       <slot />
     </div>

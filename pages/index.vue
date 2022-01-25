@@ -15,7 +15,9 @@ ru:
     />
 
     <div class="cases">
-      <h2 class="title--h2">Sites and mobile apps</h2>
+      <h2 class="title--h2">
+        Sites and mobile apps
+      </h2>
       <Cases />
       <div class="quote-block">
         <Quote>
@@ -27,7 +29,8 @@ ru:
     </div>
 
     <div class="cases">
-      <h2 class="title--h2">My history is like
+      <h2 class="title--h2">
+        My history is like
       </h2>
       <History />
     </div>

@@ -12,6 +12,6 @@ module.exports = {
   plugins: [
     'wdio'
   ],
-  // add your custom rules here
+  ignorePatterns: ['**/code_snippets/*.*'],
   rules: {}
 }

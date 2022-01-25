@@ -43,9 +43,13 @@
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">Process</Title>
+        <Title :level="2">
+          Process
+        </Title>
         <Container :type="'content'">
-          <WithImage :image="'cases/figma-social/result/result'">Few screens from the process</WithImage>
+          <WithImage :image="'cases/figma-social/result/result'">
+            Few screens from the process
+          </WithImage>
 
           <Paragraph>Entrice process took about 2 weeks. Since the task was not just creating rectanlges with certain sizes but recreating interfaces as well. I wanted to give users opportunity to put on newly created cowers and check it out on interfaces.</Paragraph>
 
@@ -54,14 +58,20 @@
           <Paragraph>Next time i will try to record a clip with entire process.</Paragraph>
         </Container>
 
-        <Quote :size="'small'">Copying is the way <br />design works.</Quote>
+        <Quote :size="'small'">
+          Copying is the way <br>design works.
+        </Quote>
       </section>
       <Spacing :type="'vertical-section'" />
 
       <section>
-        <Title :level="2">Result</Title>
+        <Title :level="2">
+          Result
+        </Title>
 
-        <WithImage :image="'cases/figma-social/result-2/result'">Screenshot from ProductHunt. As you might see it didn't become "TOP OF THE DAY".</WithImage>
+        <WithImage :image="'cases/figma-social/result-2/result'">
+          Screenshot from ProductHunt. As you might see it didn't become "TOP OF THE DAY".
+        </WithImage>
 
         <div class="article-layout">
           <div class="article-layout__text">
@@ -104,11 +114,10 @@ import Container from '~/components/Container.vue'
 import Paragraph from '~/components/Paragraph.vue'
 import heroImage from '~/assets/images/cases/digitaldeals/hero-title.svg'
 import Quote from '~/components/home/Quote.vue'
-import UnifiedPicture from "~/components/UnifiedPicture.vue"
-import WithImage from "~/components/blocks/WithImage.vue"
+import WithImage from '~/components/blocks/WithImage.vue'
 
 export default Vue.extend({
-  components: { CaseDescription, HeroTitle, Title, LinksList, Container, Paragraph, Quote, UnifiedPicture, WithImage },
+  components: { CaseDescription, HeroTitle, Title, LinksList, Container, Paragraph, Quote, WithImage },
   data () {
     return {
       heroImage

@@ -20,50 +20,55 @@ ru:
       <Case
         :tags="['Producthunt']"
         :description="$t('Being Featured at producthunt is most desirable thing for new startup. I decided to try this experience out on myself.')"
-        :hrefTitle="'Story'"
+        :href-title="'Story'"
         :title="$t('Figma template for social media covers')"
-        :imageSrc="'cases/figma-social/cases-list/cases-list'"
-        :caseHref="'/cases/figma-social-media-covers'" />
+        :image-src="'cases/figma-social/cases-list/cases-list'"
+        :case-href="'/cases/figma-social-media-covers'"
+      />
     </div>
 
     <div class="case">
       <Case
         :tags="['Design']"
         :description="$t('Site for an excursion agency. The agency organizes running tours with locals. Such guides are popular abroad. The guys decided to try to do it in Moscow.')"
-        :hrefTitle="'Case at Behance'"
+        :href-title="'Case at Behance'"
         :title="$t('Running tour around Khamovniki')"
-        :imageSrc="'cases/excursions/cover/excursions'"
-        :caseHref="'https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy'" />
+        :image-src="'cases/excursions/cover/excursions'"
+        :case-href="'https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy'"
+      />
     </div>
 
     <div class="case">
       <Case
         :tags="['Site']"
         :description="$t('Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site.')"
-        :hrefTitle="'Story'"
+        :href-title="'Story'"
         :title="$t('Site and banners for Black Friday')"
-        :imageSrc="'cases/digitaldeals/cover/digitaldeals'"
-        :caseHref="'/cases/digitaldeals/'" />
+        :image-src="'cases/digitaldeals/cover/digitaldeals'"
+        :case-href="'/cases/digitaldeals/'"
+      />
     </div>
 
     <div class="case">
       <Case
         :tags="['Design']"
         :description="$t('Applciation for storing documents of the whole family. When the expiration date comes up, the application will tell you how and when to update documents.')"
-        :hrefTitle="'Image file'"
+        :href-title="'Image file'"
         :title="$t('Documents in the pocket')"
-        :imageSrc="'cases/documents/documents'"
-        :caseHref="'https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg'" />
+        :image-src="'cases/documents/documents'"
+        :case-href="'https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg'"
+      />
     </div>
 
     <div class="case">
       <Case
         :tags="['Design']"
         :description="$t('Site and boilerplate for creatting Vue applciations. Design of the site based on technical specifications familiar for every javascript developer.')"
-        :hrefTitle="'Site'"
+        :href-title="'Site'"
         :title="$t('Boilerplate for Vue apps')"
-        :imageSrc="'cases/vue-boilerpate/vue-boilerpate'"
-        :caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'" />
+        :image-src="'cases/vue-boilerpate/vue-boilerpate'"
+        :case-href="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'"
+      />
     </div>
   </div>
 </template>
@@ -71,10 +76,9 @@ ru:
 <script lang="ts">
 import Vue from 'vue'
 import Case from '~/components/home/Case.vue'
-import UnifiedPicture from '~/components/UnifiedPicture.vue'
 
 export default Vue.extend({
-  components: { Case, UnifiedPicture }
+  components: { Case }
 })
 </script>
 

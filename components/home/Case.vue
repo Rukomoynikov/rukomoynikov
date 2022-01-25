@@ -1,10 +1,10 @@
 <template>
   <div class="case">
     <a :href="caseHref" class="link">
-      <UnifiedPicture :src="imageSrc" :cssClass="'case__image'" />
+      <UnifiedPicture :src="imageSrc" :css-class="'case__image'" />
     </a>
     <div class="case__text">
-      <div v-for="tag in tags" class="label">
+      <div v-for="tag in tags" :key="tag" class="label">
         {{ tag }}
       </div>
       <div class="title" v-html="title" />

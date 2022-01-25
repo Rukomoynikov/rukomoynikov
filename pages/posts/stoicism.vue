@@ -27,8 +27,6 @@
     </ul>
 
     https://www.youtube.com/watch?v=K34lseM_AG4&t=226s
-
-
   </div>
 </template>
 

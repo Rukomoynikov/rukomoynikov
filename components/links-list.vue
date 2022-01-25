@@ -2,7 +2,7 @@
   <ul class="links-list">
     <li v-for="(link, index) in links" :key="index">
       <a :href="link[1]" class="links-list__link">
-        {{link[0]}}
+        {{ link[0] }}
       </a>
     </li>
   </ul>

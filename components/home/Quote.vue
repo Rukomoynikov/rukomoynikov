@@ -30,8 +30,8 @@ export default Vue.extend({
   computed: {
     cssClass () {
       return {
-        'quote': true,
-        'quote_small': this.size === 'small'
+        quote: true,
+        quote_small: this.size === 'small'
       }
     }
   }

@@ -74,10 +74,11 @@
         <Case
           :tags="['Дизайн и верстка']"
           :description="$t('Сайт и набор скриптов для создания приложений на Джаваскрипт.')"
-          :hrefTitle="'Сайт'"
+          :href-title="'Сайт'"
           :title="$t('Шаблон для джаваскрипт приложений')"
-          :imageSrc="'cases/vue-boilerpate/vue-boilerpate'"
-          :caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'" />
+          :image-src="'cases/vue-boilerpate/vue-boilerpate'"
+          :case-href="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'"
+        />
       </div>
     </div>
   </CaseDescription>

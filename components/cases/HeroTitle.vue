@@ -1,7 +1,7 @@
 <template>
   <div class="hero-title">
     <div class="hero-title__container">
-      <UnifiedPicture :src="image" :cssClass="'hero-title__image'" v-if="image" />
+      <UnifiedPicture v-if="image" :src="image" :css-class="'hero-title__image'" />
       <div class="hero-title__text-container">
         <div v-for="tag in tags" :key="tag" class="hero-title__tag">
           {{ tag }}
@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import UnifiedPicture from "~/components/UnifiedPicture.vue"
+import UnifiedPicture from '~/components/UnifiedPicture.vue'
 
 export default Vue.extend({
   components: { UnifiedPicture },
@@ -109,7 +109,6 @@ export default Vue.extend({
     padding: 35px 10px 60px 10px;
   }
 </style>
-
 
 <style>
   .hero-title__image {

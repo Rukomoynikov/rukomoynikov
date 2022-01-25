@@ -16,8 +16,7 @@ ru:
 <template>
   <div class="header">
     <NuxtLink to="/" class="logo">
-      <!-- <UnifiedPicture :src="'myphotos/logo/logo'" /> -->
-      Maxim<br />Rukomoynikov
+      Maxim<br>Rukomoynikov
     </NuxtLink>
     <div class="slogan">
       I love to create. Developer and designer. Looking forward to make cool things.
@@ -32,11 +31,8 @@ ru:
 
 <script lang="ts">
 import Vue from 'vue'
-import UnifiedPicture from "~/components/UnifiedPicture.vue"
 
-export default Vue.extend({
-  components: { UnifiedPicture }
-})
+export default Vue.extend({})
 </script>
 
 <style type="text/css" scoped>

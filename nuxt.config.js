@@ -27,7 +27,7 @@ export default {
       { rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: '#5bbad5' }
     ],
     script: [
-      { src: 'https://plausible.io/js/plausible.js', defer: true, "data-domain": "rukomoynikov.ru" }
+      { src: 'https://plausible.io/js/plausible.js', defer: true, 'data-domain': 'rukomoynikov.ru' }
     ]
   },
 
@@ -39,7 +39,7 @@ export default {
   ],
 
   plugins: [
-    {src: '~/plugins/prism', mode: 'client' }
+    { src: '~/plugins/prism', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -67,10 +67,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend(config) {
+    extend (config) {
       config.resolve.alias.vue = 'vue/dist/vue.common'
     }
-  },
+  }
 
   // image: {
   //   dir: 'assets/images',

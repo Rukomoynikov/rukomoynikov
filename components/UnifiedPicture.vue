@@ -11,7 +11,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    src: String,
+    src: {
+      type: String,
+      default: null
+    },
     cssClass: {
       type: String,
       default: null
