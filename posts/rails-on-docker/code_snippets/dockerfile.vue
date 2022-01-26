@@ -26,8 +26,6 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \
   && npm i -g yarn
 
 ENV PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH
-
-RUN gem install rails
 </div>
 </template>
 
