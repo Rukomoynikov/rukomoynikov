@@ -1,15 +1,15 @@
 <template>
   <div>
     <SocialHead
-      :title="'Hot to generate Rails app and run it without installing ruby locally'"
+      :title="'How to generate Rails app and run it without installing ruby locally'"
       :description="'Docker image for generation rails application or play with ruby'"
       :image="require('/assets/images/posts/rails-on-docker/facebook-share.jpg')"
     />
 
     <HeroTitleSmall
       :tags="['Ruby', 'Docker']"
-      :title="'Hot to generate Rails app and run it without installing ruby locally'"
-      :subtitle="'In internet plenty of articles about Dockerizing your existing application. But, what you can do if you don\'t have installed ruby locally and need to generate new app.'"
+      :title="'How to generate Rails app and run it without installing ruby locally'"
+      :subtitle="'In internet plenty of articles about Dockerizing existing application. But, what if you don\'t have installed ruby locally and need to generate new app.'"
     />
 
     <Container :type="'common'">
@@ -92,19 +92,30 @@
       </Title>
 
       <section>
-        <Container :type="'content'">
-          <Paragraph>
-            Выше пример минимального Rails приложения. Для полноценного использования потребуется, что-то серьезнее чем один Dockerfile. Например, docker-compose. Там можно выделить Ruby приложение в отдельный сервис, да и клиентскую часть тоже.
-          </Paragraph>
+        <div class="article-layout">
+          <div class="article-layout__text">
+            <Container :type="'content'">
+              <Paragraph>
+                Above you saw an example of basic Rails application used SQLite. In order to use Postgresql and Webpacker you need something more complicated than simple Dockerfile. You need docker-compose. There you will be able to separate application into a ruby service, and the client service.
+              </Paragraph>
 
-          <Paragraph>
-            Ниже пример моего docker-compose.yml
-          </Paragraph>
+              <Paragraph>
+                Here is example of docker-compose.yml
+              </Paragraph>
 
-          <CodeSinppet>
-            <CSDockerCompose />
-          </CodeSinppet>
-        </Container>
+              <CodeSinppet>
+                <CSDockerCompose />
+              </CodeSinppet>
+            </Container>
+          </div>
+          <div class="article-layout__quotes">
+            <LinksList
+              :links="[
+                ['Heavily inspired by Evil Martians article', 'https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development'],
+              ]"
+            />
+          </div>
+        </div>
       </section>
     </Container>
   </div>
@@ -139,3 +150,26 @@ export default Vue.extend({
   }
 })
 </script>
+
+
+<style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style>

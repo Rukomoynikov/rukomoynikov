@@ -3,13 +3,11 @@
   web:
     image: rukomoynikov/rails:2.7.1
     volumes:
-      - ./server:/app
+      - ./:/app
       - rails_cache:/app/tmp/cache
       - bundle:/usr/local/bundle
     ports:
       - 3000:3000
-    volumes:
-      - "./server/:/app"
     tmpfs:
       - /tmp
       - /app/tmp/pids
@@ -25,7 +23,7 @@
     ports:
       - '3035:3035'
     volumes:
-      - ./server:/app:cached
+      - ./:/app:cached
       - bundle:/usr/local/bundle
       - node_modules:/app/node_modules
       - packs:/app/public/packs
