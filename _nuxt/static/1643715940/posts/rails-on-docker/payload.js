@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/posts/rails-on-docker", {data:[{}],fetch:{},mutations:void 0});
