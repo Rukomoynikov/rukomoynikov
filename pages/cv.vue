@@ -1,9 +1,9 @@
 <template>
   <div>
     <SocialHead
-      :title="'How to make a Telegram bot in Elixir'"
-      :description="'This is the first part of three in the series. There you will find creating foundation and answering to users.'"
-      :image="require('/assets/images/posts/elixir-telegram-bot/facebook-share.jpg')"
+      :title="'Rukomoynikov Maxim. Developer and designer.'"
+      :description="'My big goal for 5 years is to learn how to make products that solve people\'s problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.'"
+      :image="require('/assets/images/facebook_share_2.jpg')"
     />
 
     <Container :type="'common'">
