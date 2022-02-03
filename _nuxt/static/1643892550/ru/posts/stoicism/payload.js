@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ru/posts/stoicism", {data:[{}],fetch:{},mutations:void 0});

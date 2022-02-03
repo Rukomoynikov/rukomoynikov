@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ru/posts/evrone-quiz", {data:[{}],fetch:{},mutations:void 0});
