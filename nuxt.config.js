@@ -70,7 +70,24 @@ export default {
     extend (config) {
       config.resolve.alias.vue = 'vue/dist/vue.common'
     }
-  }
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English version'
+      },
+      {
+        code: 'ru',
+        name: 'Русская версия'
+      }
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
+  },
 
   // image: {
   //   dir: 'assets/images',
