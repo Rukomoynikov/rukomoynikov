@@ -8,7 +8,7 @@
 
     <Container :type="'common'">
       <div class="cv">
-        <h2 class="cv__title">Ruby & JS программист</h2>
+        <h2 class="cv__title">Ruby && JS программист</h2>
 
         <div class="article-layout job">
           <div class="article-layout__text">
@@ -18,7 +18,7 @@
             </Container>
           </div>
           <div class="article-layout__quotes">
-            <div class="job__title">Декабрь 2020 — ...</div>
+            <div class="job__dates">Декабрь 2020 — ...</div>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
             </Container>
           </div>
           <div class="article-layout__quotes">
-            <div class="job__title">Март 2020 — Декабрь 2020</div>
+            <div class="job__dates">Март 2020 — Декабрь 2020</div>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
             </Container>
           </div>
           <div class="article-layout__quotes">
-            <div class="job__title">Март 2016 — Февраль 2020</div>
+            <div class="job__dates">Март 2016 — Февраль 2020</div>
           </div>
         </div>
 
@@ -61,6 +61,15 @@
             </div>
           </Container>
         </div>
+
+        <div class="job">
+          <Container :type="'content'">
+            <h3 class="job__title">Технические штуки с которыми встречался</h3>
+            <div class="tags">
+              <div v-for="tag in tags" v-html="tag" :key="tag" class="tags__tag" />
+            </div>
+          </Container>
+        </div>
       </div>
     </Container>
   </div>
@@ -73,6 +82,28 @@ import Container from '~/components/Container.vue'
 export default Vue.extend({
   components: {
     Container
+  },
+  data() {
+    return {
+      tags: [
+        "Ruby on Rails",
+        "Capybara",
+        "Gitlab CI",
+        "TDD",
+        "RSpec",
+        "Trailblaizer",
+        "Postgres",
+        "Elasticsearch",
+        "Ruby Microservices",
+        "Docker",
+        "Kubernetes",
+        "Capistrano",
+        "Helm",
+        "New Relic",
+        "React",
+        "Vue"
+      ]
+    }
   }
 })
 </script>
@@ -80,7 +111,7 @@ export default Vue.extend({
 <style type="text/css">
 .cv {
   background-color: white;
-  padding: 40px;
+  padding: max(20px, 2vw);
   border-radius: 9px;
 }
 
@@ -90,7 +121,7 @@ export default Vue.extend({
 }
 
 .job + .job {
-  margin-top: 23px;
+  margin-top: 41px;
 }
 
 .job__title {
@@ -116,6 +147,10 @@ export default Vue.extend({
   color: #b66e6e;
 }
 
+.job__dates {
+  font-size: 16px;
+}
+
 .article-layout {
   display: flex;
 }
@@ -123,6 +158,18 @@ export default Vue.extend({
 @media only screen and (max-width: 595px) {
   .article-layout {
     flex-direction: column;
+  }
+
+  .article-layout__text {
+    order: 2;
+  }
+
+  .article-layout__quotes {
+    order: 1;
+  }
+
+  .cv {
+    padding: max(20px, 2vw);
   }
 }
 
@@ -134,5 +181,18 @@ export default Vue.extend({
 .article-layout__quotes {
   display: flex;
   font-size: 15px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags__tag {
+  padding: 4px 8px;
+  border: 1px dashed black;
+  border-radius: 4px;
 }
 </style>
