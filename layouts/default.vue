@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header />
-    <Nuxt />
+    <div class="content">
+      <Nuxt />
+    </div>
     <Footer />
   </div>
 </template>
@@ -15,3 +17,10 @@ export default Vue.extend({
   components: { Header, Footer }
 })
 </script>
+
+
+<style type="text/css" scoped>
+  .content {
+    min-height: calc(100vh - 218px); /* 218 - size of the header + footer */
+  }
+</style>
