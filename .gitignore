@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 rukomoynikov.sublime-workspace
+
+.nuxt-storybook
+storybook-static

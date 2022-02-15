@@ -10,5 +10,7 @@ services:
       - 3000:3000
     command: npm run dev
 
+# command: yarn nuxt storybook
+
 volumes:
   node_modules:
