@@ -30,7 +30,7 @@ export default Vue.extend({
       default: null
     },
     tags: {
-      type: String,
+      type: Array,
       default: null
     },
     title: {
