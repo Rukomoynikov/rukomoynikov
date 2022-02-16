@@ -2,7 +2,7 @@
   <div class="posts-section">
     <div class="posts-section_title">{{ sectionTitle }}</div>
     <div class="posts-section_posts">
-      <a class="post-link" href="#" v-for="(post, index) in postsList" v-key="index">
+      <a class="post-link" :href="post.link" v-for="(post, index) in postsList" v-key="index">
         <div class="post-link_letter">{{ post.letter }}</div>
         <div class="post-link_text">{{ post.title }}</div>
       </a>
@@ -63,5 +63,6 @@ export default Vue.extend({
     font-size: 22px;
     line-height: 29px;
     text-decoration: underline;
+    margin-top: -3px;
   }
 </style>
