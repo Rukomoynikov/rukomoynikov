@@ -47,7 +47,8 @@ export default Vue.extend({
 
 <style scoped>
   .hero-title {
-    background-color: #ebec96;
+    /* background-color: #ebec96; */
+    background-color: white;
     opacity: 0.8;
     background-size: 40px 40px;
   }
@@ -55,7 +56,7 @@ export default Vue.extend({
   .hero-title__tag {
     padding: 12px 17px;
     font: 600 17px IBM Plex Sans, sans-serif;
-    background-color: white;
+    background-color: whitesmoke;
     display: inline-flex;
     border-radius: 12px;
   }
