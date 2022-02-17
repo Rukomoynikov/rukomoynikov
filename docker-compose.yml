@@ -8,8 +8,8 @@ services:
       - ~/.ssh:/root/.ssh
     ports:
       - 3000:3000
-    command: npm run dev
-#    command: npm run storybook
+#    command: npm run dev
+    command: npm run storybook
 
 volumes:
   node_modules:
