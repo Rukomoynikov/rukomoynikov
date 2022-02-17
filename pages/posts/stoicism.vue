@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
+import HeroTitle from '~/components/hero_title/HeroTitle.vue'
 
 export default Vue.extend({
   components: {

@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import PostsSection from '~/components/PostsSection.vue'
-import SocialHead from '~/components/SocialHead.vue'
+import PostsSection from '~/components/posts_section/PostsSection.vue'
+import SocialHead from '~/components/social_head/SocialHead.vue'
 
 export default Vue.extend({
   components: { PostsSection, SocialHead }

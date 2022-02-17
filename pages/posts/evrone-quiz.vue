@@ -20,14 +20,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import HeroTitleSmall from '~/components/HeroTitleSmall.vue'
-import CodeSinppet from '~/components/CodeSinppet.vue'
-import LinksList from '~/components/links-list.vue'
-import Title from '~/components/Title/Title.vue'
-import Paragraph from '~/components/Paragraph.vue'
-import Container from '~/components/Container.vue'
-import Spacing from '~/components/Spacing.vue'
-import WithImage from '~/components/blocks/WithImage.vue'
+import HeroTitleSmall from '~/components/hero_title_small/HeroTitleSmall.vue'
+import CodeSinppet from '~/components/code_snippet/CodeSinppet.vue'
+import LinksList from '~/components/links_list/LinksList.vue'
+import Title from '~/components/title/Title.vue'
+import Paragraph from '~/components/paragraph/Paragraph.vue'
+import Container from '~/components/container/Container.vue'
+import Spacing from '~/components/spacing/Spacing.vue'
+import WithImage from '~/components/with_image/WithImage.vue'
 
 import CSDockerCompose from '~/posts/rails-on-docker/code_snippets/docker-compose.vue'
 import CSDockerfile from '~/posts/rails-on-docker/code_snippets/dockerfile.vue'

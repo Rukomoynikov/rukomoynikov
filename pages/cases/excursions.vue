@@ -86,10 +86,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CaseDescription from '~/components/cases/CaseDescription.vue'
-import Case from '~/components/home/Case.vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
-import Title from '~/components/Title/Title.vue'
+import CaseDescription from '~/components/case_description/CaseDescription.vue'
+import Case from '~/components/case/Case.vue'
+import HeroTitle from '~/components/hero_title/HeroTitle.vue'
+import Title from '~/components/title/Title.vue'
 
 export default Vue.extend({
   components: { CaseDescription, HeroTitle, Case, Title }

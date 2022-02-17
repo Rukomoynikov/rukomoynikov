@@ -128,7 +128,7 @@ ru:
 
 <script lang="ts">
 import Vue from 'vue'
-import Container from '~/components/Container.vue'
+import Container from '~/components/container/Container.vue'
 
 export default Vue.extend({
   components: {

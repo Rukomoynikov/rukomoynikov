@@ -94,12 +94,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import CaseDescription from '~/components/cases/CaseDescription.vue'
-import HeroTitle from '~/components/cases/HeroTitle.vue'
-import Title from '~/components/Title/Title.vue'
-import LinksList from '~/components/links-list.vue'
-import Container from '~/components/Container.vue'
-import Paragraph from '~/components/Paragraph.vue'
+import CaseDescription from '~/components/case_description/CaseDescription.vue'
+import HeroTitle from '~/components/hero_title/HeroTitle.vue'
+import Title from '~/components/title/Title.vue'
+import LinksList from '~/components/links_list/LinksList.vue'
+import Container from '~/components/container/Container.vue'
+import Paragraph from '~/components/paragraph/Paragraph.vue'
 import heroImage from '~/assets/images/cases/digitaldeals/hero-title.svg'
 
 export default Vue.extend({

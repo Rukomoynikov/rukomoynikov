@@ -75,7 +75,7 @@ ru:
 
 <script lang="ts">
 import Vue from 'vue'
-import Case from '~/components/home/Case.vue'
+import Case from '~/components/case/Case.vue'
 
 export default Vue.extend({
   components: { Case }

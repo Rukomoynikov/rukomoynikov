@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import UnifiedPicture from '~/components/UnifiedPicture.vue'
+import UnifiedPicture from '~/components/unified_picture/UnifiedPicture.vue'
 
 export default Vue.extend({
   components: { UnifiedPicture },
