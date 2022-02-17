@@ -89,7 +89,7 @@ import Vue from 'vue'
 import CaseDescription from '~/components/cases/CaseDescription.vue'
 import Case from '~/components/home/Case.vue'
 import HeroTitle from '~/components/cases/HeroTitle.vue'
-import Title from '~/components/Title.vue'
+import Title from '~/components/Title/Title.vue'
 
 export default Vue.extend({
   components: { CaseDescription, HeroTitle, Case, Title }
