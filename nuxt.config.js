@@ -89,6 +89,7 @@ export default {
     }
   },
 
+  storybook: {}
   // image: {
   //   dir: 'assets/images',
   //   screens: {

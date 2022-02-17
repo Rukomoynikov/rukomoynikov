@@ -12,14 +12,16 @@
     "lint:fix": "eslint --ext \".js,.vue\" --ignore-path .gitignore . --fix && stylelint \"**/*.{vue,css}\" --ignore-path .gitignore --fix",
     "lint": "yarn lint:js && yarn lint:style",
     "test:e2e": "wdio wdio.conf.js",
-    "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "storybook": "nuxt storybook"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.0.3",
     "core-js": "^3.20.3",
     "nuxt": "^2.15.7",
-    "prismjs": "^1.26.0"
+    "prismjs": "^1.26.0",
+    "ts-node": "^10.5.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
@@ -28,6 +30,7 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/storybook": "^4.2.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
     "@wdio/cli": "^7.16.13",
     "@wdio/local-runner": "^7.16.13",
@@ -38,6 +41,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.19.1",
     "eslint-plugin-wdio": "^7.4.2",
+    "postcss": "^8.4.6",
     "push-dir": "^0.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
