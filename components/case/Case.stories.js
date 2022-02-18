@@ -1,5 +1,5 @@
 export default {
-  title: 'Posts/Case'
+  title: 'Posts/Cases/Text on the right'
 }
 
 export const Case = () => `
