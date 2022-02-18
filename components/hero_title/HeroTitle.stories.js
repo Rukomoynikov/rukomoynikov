@@ -1,5 +1,5 @@
 export default {
-  title: 'Posts/HeroTitle',
+  title: 'Posts/Hero Title',
   args: {
     tags: ['First tag', 'Second tag'],
     title: 'Title',

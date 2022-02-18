@@ -1,5 +1,5 @@
 export default {
-  title: 'Posts/CodeSnippet',
+  title: 'Posts/Code Snippet',
   args: {
     fileName: 'Filename',
     short: false,

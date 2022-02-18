@@ -1,5 +1,5 @@
 export default {
-  title: 'Common/Title',
+  title: 'Posts/Title',
   args: {
     level: 2
   },

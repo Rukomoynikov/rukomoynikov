@@ -1,5 +1,5 @@
 export default {
-  title: 'Posts/LinksList'
+  title: 'Posts/Links List'
 }
 
 export const LinksList = () => ({
