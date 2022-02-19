@@ -9,24 +9,21 @@
 
     <div class="case__title-and-tags">
       <div class="case__tags">
-        <div class="case__tag">
-          Сайт
-        </div>
-        <div class="case__tag">
-          Программирование
+        <div v-for="tag in tags" :key="tag" class="case__tag">
+          {{ tag }}
         </div>
       </div>
       <div class="case__title">
-        Экскурсия по району Хамовники на бегу
+        {{ title }}
       </div>
     </div>
 
     <div class="case__description-1">
-      Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом, ребята решили попробовать сделать это в Москве.
+      <slot name="description-1" />
     </div>
 
     <div class="case__description-2">
-      Сайт для экскурсионного агентства. Агентство устраивает беговые экскурсии. Такие гиды популярны зарубежом, ребята решили попробовать сделать это в Москве.
+      <slot name="description-2" />
     </div>
   </div>
 </template>
@@ -51,14 +48,6 @@ export default Vue.extend({
     title: {
       type: String,
       default: null
-    },
-    description: {
-      type: String,
-      default: null
-    },
-    hrefTitle: {
-      type: String,
-      default: null
     }
   }
 })
@@ -75,7 +64,7 @@ export default Vue.extend({
 
   .case__img {
     grid-area: picture;
-    margin-bottom: 34px;
+    margin-bottom: 20px;
     width: auto;
   }
 

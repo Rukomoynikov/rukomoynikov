@@ -36,4 +36,11 @@ export default Vue.extend({
     margin: 0 0 8px 0;
     letter-spacing: calc(1px / 5);
   }
+
+  .title_h4 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #c91010;
+    font: 300 20px IBM Plex Sans, sans-serif;
+  }
 </style>
