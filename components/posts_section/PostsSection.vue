@@ -51,11 +51,13 @@ export default Vue.extend({
     align-items: center;
     height: 58px;
     width: 58px;
-    color: white;
     margin-right: 10px;
-    background-image: url("~/assets/images/icons/letter-background.svg");
     background-size: cover;
     flex-shrink: 0;
+    background-color: white;
+    color: black;
+
+    /* background-image: url("~/assets/images/icons/letter-background.svg"); */
   }
 
   .post-link_text {
@@ -64,5 +66,21 @@ export default Vue.extend({
     line-height: 29px;
     text-decoration: underline;
     margin-top: -3px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .posts-section_posts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 16px 30px;
+    }
+  }
+
+  @media only screen and (max-width: 595px) {
+    .posts-section_posts {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 16px 30px;
+    }
   }
 </style>
