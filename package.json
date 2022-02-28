@@ -14,15 +14,16 @@
     "test:e2e": "wdio wdio.conf.js",
     "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup",
     "storybook": "nuxt storybook",
-    "storybook:build": "nuxt storybook build"
+    "storybook:build": "nuxt storybook build",
+    "parse_symbols": "ts-node ./subprojects/parse_financial_stocks/index.ts"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.0.3",
+    "axios": "^0.26.0",
     "core-js": "^3.20.3",
     "nuxt": "^2.15.7",
-    "prismjs": "^1.26.0",
-    "ts-node": "^10.5.0"
+    "prismjs": "^1.26.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
@@ -46,6 +47,8 @@
     "push-dir": "^0.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5",
     "webdriverio": "^7.16.13"
   }
 }
