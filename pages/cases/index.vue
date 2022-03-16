@@ -2,6 +2,10 @@
   <Container :type="'common'">
     <Title :level="4">Design cases and projects</Title>
 
+    <CaseOnThird />
+    <CaseHalfOnFalf />
+    <CaseHalfOnFalf />
+
     <CaseFullWidth
       :image-src="'cases/excursions/case-full-width/illustration'"
       :tags="['Сайт', 'Программирование']"
