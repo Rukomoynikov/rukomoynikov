@@ -1,0 +1,23 @@
+---
+---
+
+<div class="columns">
+  <div class="col-1"><slot name="col-1"></slot></div>
+  <div class="col-2"><slot name="col-2"></slot></div>
+</div>
+
+<style>
+  .columns {
+    display: flex;
+  }
+
+  .col-1 {
+    max-width: 800px;
+    flex: 1;
+  }
+
+  .col-2 {
+    margin-left: 20px;
+    max-width: 100%;
+  }
+</style>

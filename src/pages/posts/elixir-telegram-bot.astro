@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
+import TwoColsContainer from '@components/TwoColsContainer.astro';
 import Paragraph from '@components/Paragraph.astro';
 import LinksList from '@components/LinksList.astro';
 import Title from '@components/Title.astro';
@@ -13,18 +14,47 @@ import { Code } from 'astro/components';
     title={'How to make a Telegram bot in Elixir'}
     tags={['Telegram', 'Elixir']}/>
   <Container>
+    <Title level='2'>Introduction to Telegram Bots API</Title>
+
+    <Title level='3'>Exchanging messages with Telegram</Title>
+
+    <Paragraph>
+      Telegram supports two types of integration: webhooks and polling. Webhooks it's a type when Telegram sends request to your server whenever bot recevied a message from the user. There pros and cons of that type of integration. Webhooks are more sustainable in general. For webhooks it's necessary to have web-server with external IP adress. This server will receive new messages through get requests from Telegram. During development you can use ngrock.
+    </Paragraph>
+
+    <Paragraph>
+      Polling is a constant polling of the Telegram server for new messages. For polling, you do not need a server and an external address. Simple application that sends requests to the Telegram server without stopping is enough.
+      <Fragment slot="aside">
+        <LinksList
+          links={
+            [['Documentation about Telegram bots', 'https://core.telegram.org/bots/api#getting-updates']]
+          } />
+      </Fragment>
+    </Paragraph>
+
+    <Title level='3'>Obtaining a token from Telegram</Title>
+    <Paragraph>
+      The token for Telegram requests must be obtained from the BotFather bot.
+    </Paragraph>
+
+    <Title level='2'>Elixir</Title>
+
+    <Paragraph>
+      Elixir is a functional programming language. Based on the another programming language Erlang. The main advantage of Elixir is the ability to manage a huge number of processes. These processes are also made in a special way, so they take up significantly less memory and processor time than normal computer processes.
+      <Fragment slot="aside">
+        <LinksList
+          links={
+            [
+              ['How to install Elixir one elixir-lang.org', 
+                'https://elixir-lang.org/install.html'],
+              ['Installing with asdf package manager', 'https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817']
+            ]
+          } />
+      </Fragment>
+    </Paragraph>
+
     <Code code={`
       mix new stocks_bot --sup
     `} lang="bash" />
-
-    <Title level='2'>Introduction to Telegram Bots API</Title>
-
-    <Paragraph>sgdsg</Paragraph>
-
-    <LinksList 
-      links={[
-        ['What', 'http://ya.ru']
-      ]}
-    />
   </Container>
 </Layout>
