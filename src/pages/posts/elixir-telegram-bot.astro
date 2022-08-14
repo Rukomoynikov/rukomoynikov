@@ -1,0 +1,30 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import Paragraph from '@components/Paragraph.astro';
+import LinksList from '@components/LinksList.astro';
+import Title from '@components/Title.astro';
+import HeroTitleSmall from '@components/HeroTitleSmall.astro';
+import { Code } from 'astro/components';
+---
+
+<Layout>
+  <HeroTitleSmall 
+    title={'How to make a Telegram bot in Elixir'}
+    tags={['Telegram', 'Elixir']}/>
+  <Container>
+    <Code code={`
+      mix new stocks_bot --sup
+    `} lang="bash" />
+
+    <Title level='2'>Introduction to Telegram Bots API</Title>
+
+    <Paragraph>sgdsg</Paragraph>
+
+    <LinksList 
+      links={[
+        ['What', 'http://ya.ru']
+      ]}
+    />
+  </Container>
+</Layout>
