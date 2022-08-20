@@ -1,23 +1,47 @@
----
----
-
 <div class="columns">
-  <div class="col-1"><slot name="col-1"></slot></div>
-  <div class="col-2"><slot name="col-2"></slot></div>
+  <div class="col-1"><slot/></div>
+  <div class="col-2"><slot name="aside"/></div>
 </div>
 
 <style>
   .columns {
     display: flex;
+    align-items: flex-end;
+  }
+
+  .columns :global(.post__picture img) {
+    width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .columns {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  .columns {
+    display: flex;
   }
 
   .col-1 {
-    max-width: 800px;
-    flex: 1;
+    max-width: 920px;
+    width: 100%;
   }
 
   .col-2 {
     margin-left: 20px;
     max-width: 100%;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-bottom: 1em;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .col-2 {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
   }
 </style>

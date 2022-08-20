@@ -1,0 +1,14 @@
+---
+const { src } = Astro.props as Props;
+---
+
+<video controls loop class="post__video">
+  <source src={src} type="video/mp4" />
+</video>
+
+<style>
+  .post__video {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+</style>
