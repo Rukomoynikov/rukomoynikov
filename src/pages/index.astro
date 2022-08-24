@@ -4,11 +4,14 @@ import Quote from "/src/components/Quote.astro";
 import History from "/src/components/History.astro";
 import Title from "/src/components/Title.astro";
 import Container from "/src/components/Container.astro";
+import ScrollObserver from "/src/components/ScrollObserver.svelte";
 import Layout from "/src/layouts/Layout.astro";
 import QuoteIcon from "@assets/images/icons/magic-wand.svg"
 ---
 
 <Layout title="Rukomoynikov Max. Developer.">
+  <!-- <ScrollObserver client:load /> -->
+
   <Container>
     <Title level={'2'} style={'light'}>
       Sites and mobile apps

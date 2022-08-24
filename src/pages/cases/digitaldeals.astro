@@ -1,11 +1,115 @@
 ---
-title: Hello, World
-layout: /src/layouts/Layout.astro
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import InlineCode from '@components/InlineCode.astro';
+import CodeSnippet from '@components/CodeSnippet.astro';
+import TwoColsContainer from '@components/TwoColsContainer.astro';
+import Video from '@components/Video.astro';
+import Paragraph from '@components/Paragraph.astro';
+import LinksList from '@components/LinksList.astro';
+import Title from '@components/Title.astro';
+import HeroTitleSmall from '@components/HeroTitleSmall.astro';
+import PictureCaption from '@components/PictureCaption.astro';
+import { Code } from 'astro/components';
+import { Picture } from '@astrojs/image/components';
+import SocialIcon from '@assets/images/cases/digitaldeals/social.jpg'
+
+const seo = {
+  title: 'Digital discounts on «Black Friday»',
+  description: 'Black Friday in most cases is a cheating. Prices go up. But, when we talk about digital discounts it works fine. Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site.',
+  socialImage: SocialIcon.src
+}
 ---
 
-# Hi there!
+<Layout
+  title={seo.title}
+  description={seo.description}
+  socialImage={seo.socialImage.src}>
+  <HeroTitleSmall 
+    title={seo.title}
+    tags={['design', 'making site']}
+    subtitle={seo.description} />
+  <Container>
+    <Title level='2'>Task</Title>
 
-This is your first markdown page. It probably isn't styled much, although
-Markdown does support **bold** and _italics._
+    <TwoColsContainer>
+      <Paragraph>
+        I wanted to make something simple. On the Producthunt you will plenty of simple projects, but they are profitable and popular.
+      </Paragraph>
+    </TwoColsContainer>
 
-To learn more about adding a layout to your page, read the next section on **Markdown
+    <Title level='2'>Inspiration</Title>
+
+    <div class="gallery">
+      <Picture
+        class='post__picture'
+        sizes="(max-width: 920px) 920w, 1840w"
+        widths={[920, 1035]}
+        src={import('@assets/images/cases/digitaldeals/anytype.webp')} />
+      <Picture
+        class='post__picture'
+        sizes="(max-width: 920px) 920w, 1840w"
+        widths={[920, 1035]}
+        src={import('@assets/images/cases/digitaldeals/sprout.webp')} />
+      <Picture
+        class='post__picture'
+        sizes="(max-width: 920px) 920w, 1840w"
+        widths={[920, 1035]}
+        src={import('@assets/images/cases/digitaldeals/netology.webp')} />
+    </div>
+
+    <Title level='2'>In the result</Title>
+
+    <TwoColsContainer>
+      <Paragraph>
+        The result is probably even too simple. But, it was a cool practice, I especially liked making these small banners. Because the layout is simple, everything looks great at all resolutions.
+      </Paragraph>
+    </TwoColsContainer>
+
+    <TwoColsContainer>
+      <a href="http://digitaldeals.today">
+        <Picture
+          class='post__picture'
+          sizes="(max-width: 920px) 920w, 1840w"
+          widths={[920, 1840]}
+          src={import('@assets/images/cases/digitaldeals/digitaldeals-fullpage.webp')} />
+      </a>
+      <PictureCaption>https://digitaldeals.today</PictureCaption>
+    </TwoColsContainer>
+
+    <Title level='2'>A few technical details</Title>
+
+    <TwoColsContainer>
+      <Paragraph>
+        When I thought about the project, I wanted to try something new. In the usual case, I would take, nuxt, or my template for vuew apps or ruby-on-rails. I decided to try Astro. Astro is a static site builder with support for modern frameworks.
+      </Paragraph>
+
+      <Fragment slot="aside">
+        <LinksList
+          links={
+            [
+              ['Astro framework', 'https://astro.build'],
+              ['Repository of the digitaldeals.today on the Github', 'https://github.com/Rukomoynikov/digitaldeals.today']
+            ]
+          } />
+      </Fragment>
+    </TwoColsContainer>
+  </Container>
+</Layout>
+
+
+<style type="text/css">
+  .gallery {
+    display: flex; 
+    overflow: scroll;
+  }
+
+  .gallery picture:not(:first-of-type) {
+    margin-left: 20px;
+  }
+
+  .gallery :global(img) {
+    max-width: min(840px, 100vw);
+    height: auto;
+  }
+</style>

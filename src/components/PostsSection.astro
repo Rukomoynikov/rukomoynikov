@@ -1,0 +1,77 @@
+---
+const { sectionTitle,
+        posts = []
+      } = Astro.props as Props;
+---
+
+<div class="posts-section">
+  <div class="posts-section_title">{ sectionTitle }</div>
+  <div class="posts-section_posts">
+    {
+      posts.map(post => {
+        return <a class="post-link" href={post.link}>
+          <div class="post-link_letter">{ post.letter }</div>
+          <div class="post-link_text">{ post.title }</div>
+        </a>
+      })
+    }
+  </div>
+</div>
+
+<style type="text/css" scoped>
+  .posts-section_title {
+    font: 600 17px "IBM Plex Sans", sans-serif;
+    margin-bottom: 14px;
+  }
+
+  .posts-section_posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px 30px;
+  }
+
+  .post-link {
+    display: flex;
+    text-decoration: none;
+  }
+
+  .post-link_letter {
+    display: flex;
+    font-size: 42px;
+    justify-content: center;
+    align-items: center;
+    height: 58px;
+    width: 58px;
+    margin-right: 10px;
+    background-size: cover;
+    flex-shrink: 0;
+    background-color: white;
+    color: black;
+
+    /* background-image: url("~/assets/images/icons/letter-background.svg"); */
+  }
+
+  .post-link_text {
+    color: #4f6ebf;
+    font-size: 22px;
+    line-height: 29px;
+    text-decoration: underline;
+    margin-top: -3px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .posts-section_posts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 16px 30px;
+    }
+  }
+
+  @media only screen and (max-width: 595px) {
+    .posts-section_posts {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 16px 30px;
+    }
+  }
+</style>

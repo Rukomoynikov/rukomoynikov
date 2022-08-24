@@ -11,6 +11,11 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.4",
-    "astro": "^1.0.4"
+    "@astrojs/svelte": "^1.0.0",
+    "astro": "^1.0.4",
+    "svelte": "^3.49.0"
+  },
+  "dependencies": {
+    "@julian_cataldo/astro-seo": "^0.13.2"
   }
 }

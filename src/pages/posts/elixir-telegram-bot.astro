@@ -10,12 +10,23 @@ import LinksList from '@components/LinksList.astro';
 import Title from '@components/Title.astro';
 import HeroTitleSmall from '@components/HeroTitleSmall.astro';
 import { Code } from 'astro/components';
+
+import SocialIcon from '@assets/images/posts/elixir-telegram-bot/facebook-share.jpg'
+
+const seo = {
+  title: 'How to make a Telegram bot in Elixir',
+  description: 'This is the first part of three in the series. There you will find creating foundation and answering to users.',
+  socialImage: SocialIcon.src
+}
 ---
 
-<Layout title="How to make a Telegram bot in Elixir">
+<Layout
+  title={seo.title}
+  description={seo.description}
+  socialImage={seo.socialImage.src}>
   <HeroTitleSmall 
-    title={'How to make a Telegram bot in Elixir'}
-    tags={['Telegram', 'Elixir']}/>
+    title={seo.title}
+    tags={['Telegram', 'Elixir']} />
   <Container>
     <Title level='2'>Introduction to Telegram Bots API</Title>
 
