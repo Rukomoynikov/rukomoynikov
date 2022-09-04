@@ -1,7 +1,8 @@
 ---
 import Header from '@components/Header.astro';
 import SEO from '@julian_cataldo/astro-seo/SEO.astro';
-import SocialIcon from '@assets/images/facebook_share_2.jpg'
+import { getImage } from '@astrojs/image';
+import DefaultSocialIcon from '@assets/images/facebook_share_2.jpg';
 
 import '/src/styles/common.css';
 import '/src/styles/fonts.css';
@@ -14,13 +15,15 @@ export interface Props {
   type?: 'post'
 }
 
-const { 
+let { 
   title = 'Max Rukomoynikov',
   description = 'My big goal for 5 years is to learn how to make products that solve people\'s problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.',
-  socialImage = SocialIcon.src,
+  socialImage = DefaultSocialIcon,
   siteName = 'Max Rukomoynikov\'s site',
-  type
+  type = ''
 } = Astro.props as Props;
+
+socialImage = await getImage(socialImage)
 ---
 
 <!DOCTYPE html>
@@ -36,7 +39,7 @@ const {
     <link rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color='#5bbad5' />
 
     <SEO
-      image={socialImage}
+      image={socialImage.src}
       title={title}
       description={description}
       siteName={siteName}
