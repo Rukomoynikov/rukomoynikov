@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1657627391",layout:"default",error:a,serverRendered:true,routePath:"\u002Fru\u002Fcases\u002Ffigma-social-media-covers",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null));

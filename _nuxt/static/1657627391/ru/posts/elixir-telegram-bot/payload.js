@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ru/posts/elixir-telegram-bot", {data:[{}],fetch:{},mutations:void 0});

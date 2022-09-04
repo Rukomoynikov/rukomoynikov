@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/ru/cases/figma-social-media-covers", {data:[{}],fetch:{},mutations:void 0});

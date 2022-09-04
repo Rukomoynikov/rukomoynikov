@@ -1,141 +1,507 @@
-<!doctype html>
-<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<!DOCTYPE html>
+<html lang="en" class="astro-42ZNR3WP">
   <head>
-    <title>How to generate Rails app and run it without installing ruby locally</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width"><meta data-n-head="ssr" data-hid="description" name="description" content=""><meta data-n-head="ssr" name="format-detection" content="telephone=no"><meta data-n-head="ssr" data-hid="twitter:card" name="twitter:card" content="summary_large_image"><meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="How to generate Rails app and run it without installing ruby locally"><meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description" content="Docker image for generation rails application or play with ruby"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="How to generate Rails app and run it without installing ruby locally"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Docker image for generation rails application or play with ruby"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://rukomoynikov.ru/_nuxt/img/facebook-share.f96d9f6.jpg"><meta data-n-head="ssr" data-hid="og:image:secure_url" property="og:image:secure_url" content="https://rukomoynikov.ru/_nuxt/img/facebook-share.f96d9f6.jpg"><meta data-n-head="ssr" data-hid="og:image:alt" property="og:image:alt" content="How to generate Rails app and run it without installing ruby locally"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon/favicon.ico"><link data-n-head="ssr" rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"><link data-n-head="ssr" rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"><link data-n-head="ssr" rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"><link data-n-head="ssr" rel="manifest" href="/favicon/site.webmanifest"><link data-n-head="ssr" rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5"><script data-n-head="ssr" src="https://plausible.io/js/plausible.js" defer data-domain="rukomoynikov.ru"></script><link rel="preload" href="/_nuxt/07d728a.js" as="script"><link rel="preload" href="/_nuxt/a8613ef.js" as="script"><link rel="preload" href="/_nuxt/056908d.js" as="script"><link rel="preload" href="/_nuxt/19f2908.js" as="script"><link rel="preload" href="/_nuxt/8b066dc.js" as="script"><link rel="preload" href="/_nuxt/b8b30aa.js" as="script"><style data-vue-ssr-id="42838bd4:0 ab8fb0f8:0 43dee4e4:0 fa7ff0ca:0 23a08534:0 0287bd70:0 2cd0a1bd:0 43cb01b7:0 af351432:0 3a920828:0 0ce780ae:0 3be5cdad:0 14a0f4ce:0 3a10b652:0 1afb9a50:0 4364a98e:0">@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-ExtraLightItalic.19fadbb.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-ExtraLightItalic.0b4a9f0.woff) format('woff');font-weight:200;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-BoldItalic.8382e18.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-BoldItalic.e9dbc59.woff) format('woff');font-weight:700;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Italic.9419ba2.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Italic.23eee9c.woff) format('woff');font-weight:400;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Bold.92e83f7.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Bold.be75364.woff) format('woff');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-ExtraLight.b494911.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-ExtraLight.c7f9c6f.woff) format('woff');font-weight:200;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-SemiBold.4d4db3a.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-SemiBold.54dbdeb.woff) format('woff');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Medium.c438300.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Medium.c8cb78a.woff) format('woff');font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-LightItalic.cb534a4.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-LightItalic.2fdf067.woff) format('woff');font-weight:300;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-MediumItalic.a4a6f59.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-MediumItalic.3e90435.woff) format('woff');font-weight:500;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-ThinItalic.236c1c6.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-ThinItalic.550931c.woff) format('woff');font-weight:100;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Light.94824c3.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Light.6deeae9.woff) format('woff');font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Thin.48a004c.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Thin.a0bf478.woff) format('woff');font-weight:100;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-SemiBoldItalic.1ea1b42.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-SemiBoldItalic.51a17ed.woff) format('woff');font-weight:600;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Sans';src:url(/_nuxt/fonts/IBMPlexSans-Regular.8a1d71e.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexSans-Regular.f578949.woff) format('woff');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-BoldItalic.dfc303c.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-BoldItalic.4e61f02.woff) format('woff');font-weight:700;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Medium.147a566.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Medium.7ff5157.woff) format('woff');font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Light.5a1f45e.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Light.18d1c63.woff) format('woff');font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-MediumItalic.fc6c5cb.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-MediumItalic.d438c7d.woff) format('woff');font-weight:500;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Italic.cd0ddb1.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Italic.ba043e3.woff) format('woff');font-weight:400;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Bold.1d05f1f.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Bold.b42d57c.woff) format('woff');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-ExtraLightItalic.d6ddd0e.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-ExtraLightItalic.42c307f.woff) format('woff');font-weight:200;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-LightItalic.2552638.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-LightItalic.94f0e32.woff) format('woff');font-weight:300;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-ExtraLight.b1e481e.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-ExtraLight.0e72c65.woff) format('woff');font-weight:200;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-SemiBoldItalic.8a67a3f.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-SemiBoldItalic.7d351c4.woff) format('woff');font-weight:600;font-style:italic;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Thin.b866527.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Thin.bebab09.woff) format('woff');font-weight:100;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-SemiBold.38bc1dc.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-SemiBold.050dbf6.woff) format('woff');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-Regular.56d2027.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-Regular.6db7b67.woff) format('woff');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'IBM Plex Mono';src:url(/_nuxt/fonts/IBMPlexMono-ThinItalic.77a6c5b.woff2) format('woff2'),url(/_nuxt/fonts/IBMPlexMono-ThinItalic.10ed423.woff) format('woff');font-weight:100;font-style:italic;font-display:swap}body{font-family:"IBM Plex Sans",sans-serif;font-display:block;background-color:#fbf5ee;margin:0;padding:0}*{box-sizing:border-box}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0%;opacity:1;transition:width .1s,opacity .4s;background-color:#000;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}.content[data-v-a92f6394]{min-height:calc(100vh - 218px)}.header[data-v-3133e812]{display:flex;max-width:1200px;width:100%;margin:20px auto 20px auto;padding:0 10px}.logo[data-v-3133e812]{font:400 50px/54px IBM Plex Sans,sans-serif;margin-right:auto;color:#000;text-decoration:none}@media only screen and (max-width:595px){.logo[data-v-3133e812]{font:400 40px/42px IBM Plex Sans,sans-serif}}.slogan[data-v-3133e812]{font:300 20px/27px IBM Plex Sans,sans-serif;max-width:271px;margin-top:7px;margin-right:20px}@media only screen and (max-width:595px){.slogan[data-v-3133e812]{display:none}}.links[data-v-3133e812]{margin-top:9px}.link[data-v-3133e812]{font:300 20px/27px IBM Plex Sans,sans-serif;color:#3a4a6a;display:block;margin-bottom:3px}@media only screen and (max-width:595px){.link[data-v-3133e812]{font:300 17px/21px IBM Plex Sans,sans-serif}}.article-layout{display:flex}@media only screen and (max-width:595px){.article-layout{flex-direction:column}}.article-layout__text{display:flex;margin-right:42px}.article-layout__quotes{display:flex;font-size:15px}.hero-title[data-v-d0da16fe]{background-color:#fff;opacity:.8;background-size:40px 40px}.hero-title__tag[data-v-d0da16fe]{padding:12px 17px;font:600 17px IBM Plex Sans,sans-serif;background-color:#f5f5f5;display:inline-flex;border-radius:12px}.hero-title__tag[data-v-d0da16fe]:not(:last-of-type){margin-right:24px}.hero-title__title[data-v-d0da16fe]{font:normal 62px/68px IBM Plex Sans,sans-serif;margin:18px 0 0 0;max-width:1000px;color:#000}@media only screen and (max-width:595px){.hero-title__title[data-v-d0da16fe]{font:normal 54px/58px IBM Plex Sans,sans-serif;margin:18px 0 0 0}}.hero-title__container[data-v-d0da16fe]{max-width:1200px;width:100%;margin:auto}.hero-title__subtitle[data-v-d0da16fe]{margin-top:22px;font:300 28px/33px IBM Plex Sans,sans-serif;max-width:800px;color:#000}.hero-title__image[data-v-d0da16fe]{margin-top:59px;border:10px solid #fff;overflow:hidden;max-width:100%}.hero-title__text-container[data-v-d0da16fe]{padding:35px 10px 60px 10px}.container_common{max-width:1200px;width:100%;margin:0 auto 20px auto;padding:50px 10px 0 10px}.container_content{max-width:800px}.title_h2{margin:0 0 20px 0;padding:0;color:#c91010;font:normal 28px IBM Plex Sans,sans-serif}.title_h3{font-size:19px;font-weight:700;margin:0 0 8px 0;letter-spacing:calc(1px / 5)}.title_h4{margin:0 0 20px 0;padding:0;color:#c91010;font:300 20px IBM Plex Sans,sans-serif}.paragraph{font-size:19px}.paragraph:first-of-type{margin-top:0}.spacing_vertical-section{height:22px}.spacing_vertical-section_sub{margin-bottom:30px}.code-block{background:#fff;padding:10px 12px;overflow-x:scroll;margin:0 0 18px 0;color:#151577}.code-block_short{padding:6px 12px}.code-block__filename{background:#dbf0ff;padding:6px 12px;display:flex;align-items:center;font-weight:400}.code-block__file-icon{height:1em;margin-right:5px}.links-list{list-style-type:none;margin:0;padding:0}.links-list__link{color:#b66e6e;display:flex}.links-list>li{margin-bottom:10px;font-size:16px}.links-list__link::before{content:' ';background-image:url(/_nuxt/img/link-2.ca17a71.svg);background-repeat:no-repeat;margin-right:4px;margin-top:2px;display:block;width:1em;height:1em}.block-with-photo{margin-bottom:22px}.block-with-photo__paragraph{font:400 14px "IBM Plex Sans",sans-serif;color:#888}.block-with-photo__photo{max-width:100%}.container{max-width:1200px;width:100%;margin:0 auto 20px auto;padding:0 10px}</style><link rel="preload" href="/_nuxt/static/1657627391/posts/rails-on-docker/state.js" as="script"><link rel="preload" href="/_nuxt/static/1657627391/posts/rails-on-docker/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1657627391/manifest.js" as="script">
-  </head>
-  <body>
-    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div data-v-a92f6394><div class="header" data-v-3133e812 data-v-a92f6394><a href="/" class="logo nuxt-link-active" data-v-3133e812>
-    Maxim<br data-v-3133e812>Rukomoynikov
-  </a> <div class="slogan" data-v-3133e812>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <!-- SEO --><meta property="og:type" content="website">
+
+<meta name="apple-mobile-web-app-title" content="Max Rukomoynikov's site">
+<meta property="og:site_name" content="Max Rukomoynikov's site">
+
+<title>How to generate Rails app and run it without installing ruby locally</title>
+<meta property="og:title" content="How to generate Rails app and run it without installing ruby locally">
+<meta name="twitter:title" content="How to generate Rails app and run it without installing ruby locally">
+
+<meta property="og:image" content="/assets/images/facebook_share_2.jpg">
+<meta property="og:image:alt" content="In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.">
+<meta name="twitter:image:src" content="/assets/images/facebook_share_2.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="description" property="og:description" content="In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.">
+<meta name="twitter:description" content="In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.">
+<!-- /SEO -->
+
+  <link rel="stylesheet" href="/assets/41ae0bfb.dec42535.css" />
+<link rel="stylesheet" href="/assets/03ac1450.2c2b50b0.css" />
+<link rel="stylesheet" href="/assets/03bf05bc.67a900e6.css" />
+<link rel="stylesheet" href="/assets/adcb6cd4.6c0059f2.css" />
+<link rel="stylesheet" href="/assets/ac57aff7.dc5e4e57.css" />
+<link rel="stylesheet" href="/assets/posts-elixir-telegram-bot-posts-rails-on-docker.9f851a2a.css" /></head>
+  <body class="undefined astro-42ZNR3WP">
+    <div class="header astro-2DVZGQPG">
+  <a href="/" class="logo astro-2DVZGQPG">
+    Maxim<br class="astro-2DVZGQPG">Rukomoynikov
+  </a>
+  <div class="slogan astro-2DVZGQPG">
     I love to create. Developer and designer. Looking forward to make cool things.
-  </div> <div class="links" data-v-3133e812><a href="https://twitter.com/Rukomoynikov" class="link" data-v-3133e812>twitter</a> <a href="https://www.facebook.com/rukomoynikov" class="link" data-v-3133e812>facebook</a> <a href="https://www.behance.net/ruq" class="link" data-v-3133e812>behance</a></div></div> <div class="content" data-v-a92f6394><div data-v-a92f6394><!----> <div class="hero-title" data-v-d0da16fe><div class="hero-title__container" data-v-d0da16fe><div class="hero-title__text-container" data-v-d0da16fe><div class="hero-title__tag" data-v-d0da16fe>
-        Ruby
-      </div><div class="hero-title__tag" data-v-d0da16fe>
-        Docker
-      </div> <h2 class="hero-title__title" data-v-d0da16fe>
+  </div>
+  <div class="links astro-2DVZGQPG">
+    <a class="link astro-2DVZGQPG" href="https://twitter.com/Rukomoynikov">twitter</a>
+    <a class="link astro-2DVZGQPG" href="https://www.facebook.com/rukomoynikov">facebook</a>
+    <a class="link astro-2DVZGQPG" href="https://www.behance.net/ruq">behance</a>
+  </div>
+</div>
+
+
+    <div class="content astro-42ZNR3WP">
+      <div class="hero-title astro-3MHE6O6Q">
+  <div class="hero-title__container astro-3MHE6O6Q">
+    <div class="hero-title__text-container astro-3MHE6O6Q">
+      <div class="hero-title__tag astro-3MHE6O6Q">Ruby</div><div class="hero-title__tag astro-3MHE6O6Q">Docker</div>
+      <h2 class="hero-title__title astro-3MHE6O6Q">
         How to generate Rails app and run it without installing ruby locally
-      </h2> <div class="hero-title__subtitle" data-v-d0da16fe>
-        In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.
-      </div></div></div></div> <div class="container_common"><h2 class="title_h2">
-      Why Docker?
-    </h2> <section><div class="container_content"><p class="paragraph">
-          It has always been easier to supply the necessary tools locally. If you need to have multiple versions, then rvm or nvm solve the problem. Then came Docker. Until this year, I had successfully managed to avoid it. On projects where the guys worked with Docker, I instead installed everything locally. But, I thought that enough fighting and it's time to try to live with the idea of "docker for everything". It's simply time to admit either i work using Docker or i don't work at all.
-        </p></div></section> <div class="spacing_vertical-section_sub"></div> <h2 class="title_h2">
-      Generating Ruby on Rails application
-    </h2> <section><div class="container_content"><p class="paragraph">
-          Well I don't have ruby installed locally. And I need to generate a new Rails application or experiment in IRB.
-        </p> <p class="paragraph">
-          The first thing I did was look at the official Rails image. It turned out to be deprecated, and the authors suggested Ruby as a replacement. Using Ruby image, I was unable to generate a Rails application, so I made my own Docker image.
-        </p> <div><!----> <pre class="code-block"><div>FROM debian:bullseye
+      </h2>
+      <div class="hero-title__subtitle">In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.</div>
+    </div>
+  </div>
+</div>
 
-WORKDIR /app
+<div class="container--1200 astro-6Z5S6UBF">
+  <h2 class=" astro-A3XWTMIK">Why Docker?</h2>
 
-ARG ruby_version=2.7.1
-ARG PG_MAJOR=13
-ARG NODE_MAJOR=14
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        It has always been easier to supply the necessary tools locally. If you need to have multiple versions, then rvm or nvm solve the problem. Then came Docker. Until this year, I had successfully managed to avoid it. On projects where the guys worked with Docker, I instead installed everything locally. But, I thought that enough fighting and it's time to try to live with the idea of "docker for everything". It's simply time to admit either i work using Docker or i don't work at all.
+      
+</p>
 
-# Installing general packages
-RUN apt update \
-  && apt upgrade -y \
-  && apt install libpq-dev postgresql-client-$PG_MAJOR gnupg2 git wget curl vim build-essential libssl-dev zlib1g-dev libyaml-dev libffi-dev -y
 
-# Installing rbenv and ruby
-RUN apt install rbenv -y \
-  && echo 'eval "$(rbenv init -)"' >> ~/.bashrc \
-  && rbenv install $ruby_version \
-    && rbenv global $ruby_version \
-  && eval "$(rbenv init -)" \
-  && gem install rails
 
-#Installing node and yarn
-RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \
-  && apt install nodejs \
-  && npm i -g yarn
 
-ENV PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH
-</div></pre></div> <ul class="links-list"><li><a href="https://hub.docker.com/repository/docker/rukomoynikov/rails/general" class="links-list__link">
-      hub.docker.com/repository/docker/rukomoynikov/rails
-    </a></li></ul></div></section> <div class="spacing_vertical-section_sub"></div> <section><div class="container_content"><h3 class="title_h3">
-          Using the image
-        </h3> <p class="paragraph">
-          The following command will generate a new Rails application in the current folder and install required gems in the gems folder. As you know, a container cannot change its content after it has been built. Therefore, all application files and gems will be stored on the host machine.
-        </p> <div><!----> <pre class="code-block">docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</pre></div> <p class="paragraph">
-          Launching the application is not much more difficult. But, in a simple form, it will only work if you use the sqlite database.
-        </p> <div><!----> <pre class="code-block">docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0.0.0.0</pre></div> <p class="paragraph">
-          Running IRB. Or you can enter console and run ruby files from local machine.
-        </p> <div><!----> <pre class="code-block">docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</pre></div> <div class="block-with-photo"><picture><source srcset="/_nuxt/img/rails-basic-app.b9fc3f0.webp, /_nuxt/img/rails-basic-app@2x.21c21d2.webp 2x" type="image/webp"> <source srcset="/_nuxt/img/rails-basic-app.6e37b15.jpg, /_nuxt/img/rails-basic-app@2x.e1851b3.jpg 2x"> <img src="/_nuxt/img/rails-basic-app@2x.e1851b3.jpg" class="block-with-photo__photo"></picture> <div class="block-with-photo__paragraph">
-          Ruby on Rails default page
-        </div></div></div></section> <div class="spacing_vertical-section_sub"></div> <h2 class="title_h2">
-      What's next?
-    </h2> <section><div class="article-layout"><div class="article-layout__text"><div class="container_content"><p class="paragraph">
-              Above you saw an example of basic Rails application used SQLite. In order to use Postgresql and Webpacker you need something more complicated than simple Dockerfile. You need docker-compose. There you will be able to separate application into a ruby service, and the client service.
-            </p> <p class="paragraph">
-              Here is example of docker-compose.yml
-            </p> <div><!----> <pre class="code-block"><div>services:
-  web:
-    image: rukomoynikov/rails:2.7.1
-    volumes:
-      - ./:/app
-      - rails_cache:/app/tmp/cache
-      - bundle:/usr/local/bundle
-    ports:
-      - 3000:3000
-    tmpfs:
-      - /tmp
-      - /app/tmp/pids
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    command: bundle exec rails server -b 0.0.0.0
-  client:
-    image: rukomoynikov/rails:2.7.1
-    command: yarn run build -w
-    ports:
-      - '3035:3035'
-    volumes:
-      - ./:/app:cached
-      - bundle:/usr/local/bundle
-      - node_modules:/app/node_modules
-      - packs:/app/public/packs
-    environment:
-      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
-  postgres:
-    image: postgres:13
-    volumes:
-      - postgres:/var/lib/postgresql/data
-    environment:
-      PSQL_HISTFILE: /root/log/.psql_history
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - 5432
-    healthcheck:
-      test: pg_isready -U postgres -h 127.0.0.1
-      interval: 5s
-  redis:
-    image: redis:3.2-alpine
-    volumes:
-      - redis:/data
-    ports:
-      - 6379
-    healthcheck:
-      test: redis-cli ping
-      interval: 1s
-      timeout: 3s
-      retries: 30
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
 
-volumes:
-  postgres:
-  redis:
-  bundle:
-  rails_cache:
-  node_modules:
-  packs:
-</div></pre></div></div></div> <div class="article-layout__quotes"><ul class="links-list"><li><a href="https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development" class="links-list__link">
-      Heavily inspired by Evil Martians article
-    </a></li></ul></div></div></section></div></div></div> <div class="container" data-v-a92f6394><a href="/ru/posts/rails-on-docker">
-    Русская версия
-  </a></div></div></div></div><script defer src="/_nuxt/static/1657627391/posts/rails-on-docker/state.js"></script><script src="/_nuxt/07d728a.js" defer></script><script src="/_nuxt/8b066dc.js" defer></script><script src="/_nuxt/b8b30aa.js" defer></script><script src="/_nuxt/a8613ef.js" defer></script><script src="/_nuxt/056908d.js" defer></script><script src="/_nuxt/19f2908.js" defer></script>
-  </body>
-</html>
+<h2 class=" astro-A3XWTMIK">Generating Ruby on Rails application</h2>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        Well I don't have ruby installed locally. And I need to generate a new Rails application or experiment in IRB.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        The first thing I did was look at the official Rails image. It turned out to be deprecated, and the authors suggested Ruby as a replacement. Using Ruby image, I was unable to generate a Rails application, so I made my own Docker image.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><div class="code-snippet astro-NAWSJDFU">
+  
+  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #1C6B48">FROM</span><span style="color: #393A34"> debian:bullseye</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #1C6B48">WORKDIR</span><span style="color: #393A34"> /app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #1C6B48">ARG</span><span style="color: #393A34"> ruby_version=2.7.1</span></span>
+<span class="line"><span style="color: #1C6B48">ARG</span><span style="color: #393A34"> PG_MAJOR=13</span></span>
+<span class="line"><span style="color: #1C6B48">ARG</span><span style="color: #393A34"> NODE_MAJOR=14</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A0ADA0"># Installing general packages</span></span>
+<span class="line"><span style="color: #1C6B48">RUN</span><span style="color: #393A34"> apt update \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; apt upgrade -y \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; apt install libpq-dev postgresql-client-$PG_MAJOR gnupg2 git wget curl vim build-essential libssl-dev zlib1g-dev libyaml-dev libffi-dev -y</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A0ADA0"># Installing rbenv and ruby</span></span>
+<span class="line"><span style="color: #1C6B48">RUN</span><span style="color: #393A34"> apt install rbenv -y \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; echo </span><span style="color: #B56959">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span><span style="color: #393A34"> &gt;&gt; ~/.bashrc \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; rbenv install $ruby_version \</span></span>
+<span class="line"><span style="color: #393A34">    &amp;&amp; rbenv global $ruby_version \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; eval </span><span style="color: #B56959">&quot;$(rbenv init -)&quot;</span><span style="color: #393A34"> \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; gem install rails</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A0ADA0">#Installing node and yarn</span></span>
+<span class="line"><span style="color: #1C6B48">RUN</span><span style="color: #393A34"> curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; apt install nodejs \</span></span>
+<span class="line"><span style="color: #393A34">  &amp;&amp; npm i -g yarn</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #1C6B48">ENV</span><span style="color: #393A34"> PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH</span></span>
+<span class="line"><span style="color: #393A34">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"><ul class="links-list astro-QUFCVKPN">
+  <li class="astro-QUFCVKPN">
+      <a href="https://hub.docker.com/repository/docker/rukomoynikov/rails/general" class="links-list__link astro-QUFCVKPN">
+        Image on Docker Hub
+      </a>
+    </li>
+</ul>
+
+</div>
+</div>
+
+<h2 class=" astro-A3XWTMIK">Using the image</h2>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        The following command will generate a new Rails application in the current folder and install required gems in the gems folder. As you know, a container cannot change its content after it has been built. Therefore, all application files and gems will be stored on the host machine.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><div class="code-snippet astro-NAWSJDFU">
+  
+  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
+<span class="line"><span style="color: #393a34">docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</span></span>
+<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        Launching the application is not much more difficult. But, in a simple form, it will only work if you use the sqlite database.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><div class="code-snippet astro-NAWSJDFU">
+  
+  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
+<span class="line"><span style="color: #393a34">docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0.0.0.0</span></span>
+<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        Running IRB. Or you can enter console and run ruby files from local machine.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><div class="code-snippet astro-NAWSJDFU">
+  
+  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
+<span class="line"><span style="color: #393a34">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</span></span>
+<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><picture class="post__picture astro-L4E2UYFH">
+	<source type="image/avif" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.avif 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.avif 1840w" class="astro-L4E2UYFH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.webp 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.webp 1840w" class="astro-L4E2UYFH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.png 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png 1840w" class="astro-L4E2UYFH" sizes="(max-width: 920px) 920w, 1840w">
+	<img width="1840" height="1069" src="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png" class="astro-L4E2UYFH" loading="lazy" decoding="async">
+</picture>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<h2 class=" astro-A3XWTMIK">What's next?</h2>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        Above you saw an example of basic Rails application used SQLite. In order to use Postgresql and Webpacker you need something more complicated than simple Dockerfile. You need docker-compose. There you will be able to separate application into a ruby service, and the client service.
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><p class="paragraph astro-IOL3HG2G">
+  
+        Here is example of docker-compose.yml
+      
+</p>
+
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-4KAVAB2E"></div>
+</div>
+
+<div class="columns standard astro-4KAVAB2E">
+  <div class="col-1 astro-4KAVAB2E"><div class="code-snippet astro-NAWSJDFU">
+  
+  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #2F8A89">services</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">web</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">image</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">rukomoynikov/rails:2.7.1</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">volumes</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">./:/app</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">rails_cache:/app/tmp/cache</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle:/usr/local/bundle</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">ports</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">3000:3000</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">tmpfs</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">/tmp</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">/app/tmp/pids</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">depends_on</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">postgres</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">        </span><span style="color: #2F8A89">condition</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">service_healthy</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">redis</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">        </span><span style="color: #2F8A89">condition</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">service_healthy</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">command</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle exec rails server -b 0.0.0.0</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">client</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">image</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">rukomoynikov/rails:2.7.1</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">command</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">yarn run build -w</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">ports</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">&#39;3035:3035&#39;</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">volumes</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">./:/app:cached</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle:/usr/local/bundle</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">node_modules:/app/node_modules</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">packs:/app/public/packs</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">environment</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">WEBPACKER_DEV_SERVER_HOST</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #296AA3">0.0.0.0</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">postgres</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">image</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres:13</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">volumes</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">environment</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">PSQL_HISTFILE</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">/root/log/.psql_history</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">POSTGRES_PASSWORD</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">ports</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #296AA3">5432</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">healthcheck</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">test</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">pg_isready -U postgres -h 127.0.0.1</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">interval</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">5s</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">redis</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">image</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">redis:3.2-alpine</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">volumes</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #B56959">redis:/data</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">ports</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #8E8F8B">-</span><span style="color: #393A34"> </span><span style="color: #296AA3">6379</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #2F8A89">healthcheck</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">test</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">redis-cli ping</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">interval</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">1s</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">timeout</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #B56959">3s</span></span>
+<span class="line"><span style="color: #393A34">      </span><span style="color: #2F8A89">retries</span><span style="color: #8E8F8B">:</span><span style="color: #393A34"> </span><span style="color: #296AA3">30</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #2F8A89">volumes</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">postgres</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">redis</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">bundle</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">rails_cache</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">node_modules</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">  </span><span style="color: #2F8A89">packs</span><span style="color: #8E8F8B">:</span></span>
+<span class="line"><span style="color: #393A34">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-4KAVAB2E"><ul class="links-list astro-QUFCVKPN">
+  <li class="astro-QUFCVKPN">
+      <a href="https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development" class="links-list__link astro-QUFCVKPN">
+        Heavily inspired by Evil Martians article
+      </a>
+    </li>
+</ul>
+
+</div>
+</div>
+
+
+</div>
+
+
+    </div>
+  
+</body></html>
