@@ -17,6 +17,7 @@ const { tags = [],
   pictureHref,
   hrefTitle } = Astro.props as Props;
 ---
+
 <div class="case">
   <a href={caseHref} class="link">
     <Picture
@@ -30,12 +31,9 @@ const { tags = [],
     <div class="label">
       {tags.map((tag) => ( <div>{tag}</div>))}
     </div>
-    <div class="title" set:html={title} />
-    <div class="description" set:html={description} />
-      <a href={caseHref} class="link">
-        {hrefTitle}
-      </a>
-    </div>
+    <div class="title" set:html={title}></div>
+    <div class="description" set:html={description}></div>
+    <a href={caseHref} class="link">{hrefTitle}</a>
   </div>
 </div>
 
