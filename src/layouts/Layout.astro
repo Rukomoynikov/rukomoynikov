@@ -44,6 +44,14 @@ const {
   </head>
   <body class={type}>
     <Header />
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </body>
 </html>
+
+<style>
+  .content {
+    min-height: calc(100vh - 218px)
+  }
+</style>
