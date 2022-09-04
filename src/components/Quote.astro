@@ -1,5 +1,9 @@
 ---
-const { size } = Astro.props
+export interface Props {
+  size?: 'small'
+}
+
+const { size } = Astro.props  as Props;
 const cssClass = size == 'small' ? 'quote quote_small' : 'quote'
 ---
 

@@ -1,4 +1,13 @@
 ---
+export interface Props {
+  sectionTitle: string,
+  posts: Array<{
+    link: string,
+    letter: string,
+    title: string
+  }>
+}
+
 const { sectionTitle,
         posts = []
       } = Astro.props as Props;

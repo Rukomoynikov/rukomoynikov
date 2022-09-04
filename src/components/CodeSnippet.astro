@@ -1,9 +1,21 @@
 ---
 import { Code } from 'astro/components';
+import type * as shiki from 'shiki';
 import fileIcon from '@assets/images/icons/file-2.svg'
 import consoleIcon from '@assets/images/icons/console.svg'
 
-const { lang, fileName, code = '', icon = 'file' } = Astro.props as Props;
+export interface Props {
+  lang: shiki.Lang | shiki.ILanguageRegistration,
+  fileName: string,
+  code: string,
+  icon: 'file' | 'console'
+}
+
+const { lang, 
+        fileName, 
+        code = '', 
+        icon = 'file' 
+      } = Astro.props as Props;
 
 const imageIcon = {
   'file': fileIcon,

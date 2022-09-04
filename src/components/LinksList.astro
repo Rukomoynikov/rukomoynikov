@@ -1,4 +1,8 @@
 ---
+export interface Props {
+  links: Array<[string, string]>
+}
+
 const { links = [] } = Astro.props as Props;
 ---
 

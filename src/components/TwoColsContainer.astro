@@ -1,4 +1,8 @@
 ---
+export interface Props {
+  layout?: 'standard' | 'reversed'
+}
+
 const { 
   layout = 'standard'
 } = Astro.props as Props;

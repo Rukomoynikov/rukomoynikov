@@ -1,7 +1,12 @@
 ---
+export interface Props {
+  title: string,
+  tags: Array<string>,
+  subtitle: string
+}
+
 const { tags = [],
   title,
-  description,
   subtitle} = Astro.props as Props;
 
 const subTitle = subtitle 

@@ -1,5 +1,5 @@
 ---
-import Header from '/src/components/Header.astro'
+import Header from '@components/Header.astro';
 import SEO from '@julian_cataldo/astro-seo/SEO.astro';
 import SocialIcon from '@assets/images/facebook_share_2.jpg'
 
@@ -8,6 +8,10 @@ import '/src/styles/fonts.css';
 
 export interface Props {
   title: string;
+  description: string;
+  socialImage: ImageMetadata;
+  siteName?: string
+  type?: 'post'
 }
 
 const { 
