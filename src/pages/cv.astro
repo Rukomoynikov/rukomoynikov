@@ -1,0 +1,147 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import TwoColsContainer from '@components/TwoColsContainer.astro';
+import Title from "/src/components/Title.astro";
+
+const tags = [
+  "Ruby on Rails",
+  "Capybara",
+  "Gitlab CI",
+  "TDD",
+  "RSpec",
+  "Trailblaizer",
+  "Postgres",
+  "Elasticsearch",
+  "Ruby Microservices",
+  "Docker",
+  "Kubernetes",
+  "Capistrano",
+  "Helm",
+  "New Relic",
+  "React",
+  "Vue"
+]
+---
+
+<Layout title="CV">
+  <Container>
+    <div class="cv">
+      <h2 class="cv__title">Ruby && JS developer</h2>
+      <div class="job">
+        <TwoColsContainer layout='reversed'>
+          <h3 class="job__title">...</h3>
+          <div class="job__description">I did several one-time projects, helped the guys at Alfabank with testing. For the last six months I have hardly written code, I studied design at the Gorbunov Bureau.</div>
+          <Fragment slot="aside">
+            <div class="job__dates">December 2020 — ...</div>
+          </Fragment>
+        </TwoColsContainer>
+      </div>
+
+
+      <div class="job">
+        <TwoColsContainer layout='reversed'>
+          <h3 class="job__title">ModusCreate, Ruby on Rails developer</h3>
+          <div class="job__description">We developed application for students and teachers of American universities. From the interesting: microservice architecture, Amazon SQS, Kubernetes, a bit of Elixir.</div>
+          <Fragment slot="aside">
+            <div class="job__dates">March 2020 — December 2020</div>
+          </Fragment>
+        </TwoColsContainer>
+      </div>
+
+      <div class="job">
+        <TwoColsContainer layout='reversed'>
+          <h3 class="job__title">ETP GPB, JS/Rails develope</h3>
+          <div class="job__description">I started as a front-end programmer in the company. While working, I became interested in the RoR stack and performed many tasks on it. I fell in love with testing and started using: Capybara, RSpec, Gherkin, and Gitlab CI.</div>
+          <div class="job__description">For about two years I was responsible for all JS code in several projects. Most of them were based on either Jquery or Vue.</div>
+          <div class="job__description">I interviewed the guys in the team. Helped to assemble the testing team and set up processes. We used Gitlab CI and BDD-based auto-tests.</div>
+          <Fragment slot="aside">
+            <div class="job__dates">March 2016 — February 2020</div>
+          </Fragment>
+        </TwoColsContainer>
+      </div>
+
+      <div class="job">
+        <TwoColsContainer>
+          <h3 class="job__title">Pet projects, though old, but you can see the code</h3>
+          <div class="job__description">
+            <ul>
+              <li><a class="job__link" href="https://github.com/Rukomoynikov/cucumber-reports">Gem for generating html reports on cucumber tests (I like BDD)</a></li>
+              <li><a class="job__link" href="https://gitlab.com/pet-projects7/testus-site">Project on RoR: makes documentation out of tests and unites team members around documentation.</a></li>
+              <li><a class="job__link" href="https://gitlab.com/pet-projects7/travelparty">A project that has no demo, the idea is a search engine for cheap flights</a></li>
+              <li><a class="job__link" href="https://gitlab.com/pet-projects7/heroes-of-markets">Website and stock market parser, performance analysis</a></li>
+            </ul>
+          </div>
+        </TwoColsContainer>
+      </div>
+
+      <div class="job">
+        <TwoColsContainer>
+          <h3 class="job__title">Technical things that I met</h3>
+          <div class="tags">
+            { 
+              tags.map(
+                tag => <div class="tags__tag">{tag}</div>
+              )
+            }
+          </div>
+        </TwoColsContainer>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style type="text/css">
+  .cv {
+    background-color: white;
+    padding: max(20px, 2vw);
+    border-radius: 9px;
+  }
+
+  .cv__title {
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .job + .job {
+    margin-top: 41px;
+  }
+
+  .job__title {
+    margin-bottom: 5px;
+    margin-top: 0;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .job__description {
+    font-size: 19px;
+  }
+
+  .job__description ul {
+    margin-top: 0;
+  }
+
+  .job__description + .job__description {
+    margin-top: 8px;
+  }
+
+  .job__link {
+    color: #b66e6e;
+  }
+
+  .job__dates {
+    font-size: 16px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tags__tag {
+    padding: 4px 8px;
+    border: 1px dashed black;
+    border-radius: 4px;
+  }
+</style>

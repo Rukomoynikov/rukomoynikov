@@ -1,0 +1,57 @@
+---
+import Header from '@components/Header.astro';
+import SEO from '@julian_cataldo/astro-seo/SEO.astro';
+import SocialIcon from '@assets/images/facebook_share_2.jpg'
+
+import '/src/styles/common.css';
+import '/src/styles/fonts.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  socialImage: ImageMetadata;
+  siteName?: string
+  type?: 'post'
+}
+
+const { 
+  title = 'Max Rukomoynikov',
+  description = 'My big goal for 5 years is to learn how to make products that solve people\'s problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.',
+  socialImage = SocialIcon.src,
+  siteName = 'Max Rukomoynikov\'s site',
+  type
+} = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel='icon' type='image/x-icon' href='/favicon/favicon.ico' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
+    <link rel='manifest' href='/favicon/site.webmanifest' />
+    <link rel='mask-icon' href='/favicon/safari-pinned-tab.svg' color='#5bbad5' />
+
+    <SEO
+      image={socialImage}
+      title={title}
+      description={description}
+      siteName={siteName}
+    />
+  </head>
+  <body class={type}>
+    <Header />
+    <div class="content">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  .content {
+    min-height: calc(100vh - 218px)
+  }
+</style>

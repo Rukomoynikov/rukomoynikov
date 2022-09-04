@@ -1,0 +1,86 @@
+---
+export interface Props {
+  title: string,
+  tags: Array<string>,
+  subtitle: string
+}
+
+const { tags = [],
+  title,
+  subtitle} = Astro.props as Props;
+
+const subTitle = subtitle 
+  ? `<div class="hero-title__subtitle">${subtitle}</div>`
+  : ''
+---
+
+<div class="hero-title">
+  <div class="hero-title__container">
+    <div class="hero-title__text-container">
+      {tags.map((tag) => ( <div class='hero-title__tag'>{tag}</div>))}
+      <h2 class="hero-title__title">
+        { title }
+      </h2>
+      <Fragment set:html={subTitle} />
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-title {
+    /* background-color: #ebec96; */
+    background-color: white;
+    opacity: 0.8;
+    background-size: 40px 40px;
+  }
+
+  .hero-title__tag {
+    padding: 12px 17px;
+    font: 600 17px IBM Plex Sans, sans-serif;
+    background-color: whitesmoke;
+    display: inline-flex;
+    border-radius: 12px;
+  }
+
+  .hero-title__tag:not(:last-of-type) {
+    margin-right: 24px;
+  }
+
+  .hero-title__title {
+    font: normal 62px/68px IBM Plex Sans, sans-serif;
+    margin: 18px 0 0 0;
+    max-width: 1000px;
+    color: black;
+  }
+
+  @media only screen and (max-width: 595px) {
+    .hero-title__title {
+      font: normal 54px/58px IBM Plex Sans, sans-serif;
+      margin: 18px 0 0 0;
+    }
+  }
+
+  .hero-title__container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .hero-title :global(.hero-title__subtitle) {
+    margin-top: 22px;
+    font: 300 28px/33px IBM Plex Sans, sans-serif;
+    max-width: 800px;
+    color: black;
+  }
+
+  .hero-title__image {
+    margin-top: 59px;
+    border: 10px solid white;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .hero-title__text-container {
+    padding: 35px 10px 60px 10px;
+  }
+</style>
