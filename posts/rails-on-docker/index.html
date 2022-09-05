@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="/assets/03bf05bc.67a900e6.css" />
 <link rel="stylesheet" href="/assets/adcb6cd4.270ab3e3.css" />
 <link rel="stylesheet" href="/assets/ac57aff7.4d0cf59c.css" />
-<link rel="stylesheet" href="/assets/posts-elixir-telegram-bot-posts-rails-on-docker.0a37325d.css" /></head>
+<link rel="stylesheet" href="/assets/posts-elixir-telegram-bot-posts-rails-on-docker.e2627b1d.css" /></head>
   <body class=" astro-EQOTTOWI">
     <div class="header astro-R3D7EQX5">
   <a href="/" class="logo astro-R3D7EQX5">
@@ -171,37 +171,37 @@
 </div>
 
 <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-L4T6MRF5">
+  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-VQZ3WWU7">
   
-  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
-<span class="line"><span style="color: #1E754F">FROM</span><span style="color: #393A34"> debian:bullseye</span></span>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> debian:bullseye</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #1E754F">WORKDIR</span><span style="color: #393A34"> /app</span></span>
+<span class="line"><span style="color: #0000FF">WORKDIR</span><span style="color: #000000"> /app</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #1E754F">ARG</span><span style="color: #393A34"> ruby_version=2.7.1</span></span>
-<span class="line"><span style="color: #1E754F">ARG</span><span style="color: #393A34"> PG_MAJOR=13</span></span>
-<span class="line"><span style="color: #1E754F">ARG</span><span style="color: #393A34"> NODE_MAJOR=14</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> ruby_version=2.7.1</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> PG_MAJOR=13</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> NODE_MAJOR=14</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A0ADA0"># Installing general packages</span></span>
-<span class="line"><span style="color: #1E754F">RUN</span><span style="color: #393A34"> apt update \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; apt upgrade -y \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; apt install libpq-dev postgresql-client-$PG_MAJOR gnupg2 git wget curl vim build-essential libssl-dev zlib1g-dev libyaml-dev libffi-dev -y</span></span>
+<span class="line"><span style="color: #008000"># Installing general packages</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apt update \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; apt upgrade -y \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; apt install libpq-dev postgresql-client-$PG_MAJOR gnupg2 git wget curl vim build-essential libssl-dev zlib1g-dev libyaml-dev libffi-dev -y</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A0ADA0"># Installing rbenv and ruby</span></span>
-<span class="line"><span style="color: #1E754F">RUN</span><span style="color: #393A34"> apt install rbenv -y \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; echo </span><span style="color: #B56959">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span><span style="color: #393A34"> &gt;&gt; ~/.bashrc \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; rbenv install $ruby_version \</span></span>
-<span class="line"><span style="color: #393A34">    &amp;&amp; rbenv global $ruby_version \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; eval </span><span style="color: #B56959">&quot;$(rbenv init -)&quot;</span><span style="color: #393A34"> \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; gem install rails</span></span>
+<span class="line"><span style="color: #008000"># Installing rbenv and ruby</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apt install rbenv -y \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; echo </span><span style="color: #A31515">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span><span style="color: #000000"> &gt;&gt; ~/.bashrc \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; rbenv install $ruby_version \</span></span>
+<span class="line"><span style="color: #000000">    &amp;&amp; rbenv global $ruby_version \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; eval </span><span style="color: #A31515">&quot;$(rbenv init -)&quot;</span><span style="color: #000000"> \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; gem install rails</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A0ADA0">#Installing node and yarn</span></span>
-<span class="line"><span style="color: #1E754F">RUN</span><span style="color: #393A34"> curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; apt install nodejs \</span></span>
-<span class="line"><span style="color: #393A34">  &amp;&amp; npm i -g yarn</span></span>
+<span class="line"><span style="color: #008000">#Installing node and yarn</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; apt install nodejs \</span></span>
+<span class="line"><span style="color: #000000">  &amp;&amp; npm i -g yarn</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #1E754F">ENV</span><span style="color: #393A34"> PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH</span></span>
-<span class="line"><span style="color: #393A34">      </span></span></code></pre>
+<span class="line"><span style="color: #0000FF">ENV</span><span style="color: #000000"> PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
@@ -254,11 +254,11 @@
 </div>
 
 <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-L4T6MRF5">
+  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-VQZ3WWU7">
   
-  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
-<span class="line"><span style="color: #393a34">        docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</span></span>
-<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
+<span class="line"><span style="color: #000000">        docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
@@ -298,12 +298,12 @@
 </div>
 
 <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-L4T6MRF5">
+  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-VQZ3WWU7">
   
-  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
-<span class="line"><span style="color: #393a34">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails</span></span>
-<span class="line"><span style="color: #393a34">        rails s -b 0.0.0.0</span></span>
-<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
+<span class="line"><span style="color: #000000">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails</span></span>
+<span class="line"><span style="color: #000000">        rails s -b 0.0.0.0</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
@@ -343,11 +343,11 @@
 </div>
 
 <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-L4T6MRF5">
+  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-VQZ3WWU7">
   
-  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #393a34"></span></span>
-<span class="line"><span style="color: #393a34">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</span></span>
-<span class="line"><span style="color: #393a34">      </span></span></code></pre>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
+<span class="line"><span style="color: #000000">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
@@ -430,71 +430,71 @@
 </div>
 
 <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-L4T6MRF5">
+  <div class="col-1 astro-QMDQII75"><div class="code-snippet astro-VQZ3WWU7">
   
-  <pre class="astro-code" style="background-color: #ffffff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
-<span class="line"><span style="color: #998418">services</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">web</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">image</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">rukomoynikov/rails:2.7.1</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">volumes</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">./:/app</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">rails_cache:/app/tmp/cache</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle:/usr/local/bundle</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">ports</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">3000:3000</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">tmpfs</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">/tmp</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">/app/tmp/pids</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">depends_on</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">postgres</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">        </span><span style="color: #998418">condition</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">service_healthy</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">redis</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">        </span><span style="color: #998418">condition</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">service_healthy</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">command</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle exec rails server -b 0.0.0.0</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">client</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">image</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">rukomoynikov/rails:2.7.1</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">command</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">yarn run build -w</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">ports</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959AA">&#39;</span><span style="color: #B56959">3035:3035</span><span style="color: #B56959AA">&#39;</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">volumes</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">./:/app:cached</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">bundle:/usr/local/bundle</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">node_modules:/app/node_modules</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">packs:/app/public/packs</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">environment</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">WEBPACKER_DEV_SERVER_HOST</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #2F798A">0.0.0.0</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">postgres</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">image</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres:13</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">volumes</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres:/var/lib/postgresql/data</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">environment</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">PSQL_HISTFILE</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">/root/log/.psql_history</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">POSTGRES_PASSWORD</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">postgres</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">ports</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #2F798A">5432</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">healthcheck</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">test</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">pg_isready -U postgres -h 127.0.0.1</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">interval</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">5s</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">redis</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">image</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">redis:3.2-alpine</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">volumes</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #B56959">redis:/data</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">ports</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #999999">-</span><span style="color: #393A34"> </span><span style="color: #2F798A">6379</span></span>
-<span class="line"><span style="color: #393A34">    </span><span style="color: #998418">healthcheck</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">test</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">redis-cli ping</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">interval</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">1s</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">timeout</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #B56959">3s</span></span>
-<span class="line"><span style="color: #393A34">      </span><span style="color: #998418">retries</span><span style="color: #999999">:</span><span style="color: #393A34"> </span><span style="color: #2F798A">30</span></span>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #800000">services</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">web</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">image</span><span style="color: #000000">: </span><span style="color: #0000FF">rukomoynikov/rails:2.7.1</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">volumes</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">./:/app</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">rails_cache:/app/tmp/cache</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">bundle:/usr/local/bundle</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">ports</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">3000:3000</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">tmpfs</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">/tmp</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">/app/tmp/pids</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">depends_on</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">postgres</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">condition</span><span style="color: #000000">: </span><span style="color: #0000FF">service_healthy</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">redis</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">condition</span><span style="color: #000000">: </span><span style="color: #0000FF">service_healthy</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">command</span><span style="color: #000000">: </span><span style="color: #0000FF">bundle exec rails server -b 0.0.0.0</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">client</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">image</span><span style="color: #000000">: </span><span style="color: #0000FF">rukomoynikov/rails:2.7.1</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">command</span><span style="color: #000000">: </span><span style="color: #0000FF">yarn run build -w</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">ports</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">&#39;3035:3035&#39;</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">volumes</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">./:/app:cached</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">bundle:/usr/local/bundle</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">node_modules:/app/node_modules</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">packs:/app/public/packs</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">environment</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">WEBPACKER_DEV_SERVER_HOST</span><span style="color: #000000">: </span><span style="color: #098658">0.0.0.0</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">postgres</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">image</span><span style="color: #000000">: </span><span style="color: #0000FF">postgres:13</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">volumes</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">postgres:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">environment</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">PSQL_HISTFILE</span><span style="color: #000000">: </span><span style="color: #0000FF">/root/log/.psql_history</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">POSTGRES_PASSWORD</span><span style="color: #000000">: </span><span style="color: #0000FF">postgres</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">ports</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #098658">5432</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">healthcheck</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">test</span><span style="color: #000000">: </span><span style="color: #0000FF">pg_isready -U postgres -h 127.0.0.1</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">interval</span><span style="color: #000000">: </span><span style="color: #0000FF">5s</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">redis</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">image</span><span style="color: #000000">: </span><span style="color: #0000FF">redis:3.2-alpine</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">volumes</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #0000FF">redis:/data</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">ports</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      - </span><span style="color: #098658">6379</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">healthcheck</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">test</span><span style="color: #000000">: </span><span style="color: #0000FF">redis-cli ping</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">interval</span><span style="color: #000000">: </span><span style="color: #0000FF">1s</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">timeout</span><span style="color: #000000">: </span><span style="color: #0000FF">3s</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">retries</span><span style="color: #000000">: </span><span style="color: #098658">30</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #998418">volumes</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">postgres</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">redis</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">bundle</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">rails_cache</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">node_modules</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">  </span><span style="color: #998418">packs</span><span style="color: #999999">:</span></span>
-<span class="line"><span style="color: #393A34">      </span></span></code></pre>
+<span class="line"><span style="color: #800000">volumes</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">postgres</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">redis</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">bundle</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">rails_cache</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">node_modules</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">packs</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
