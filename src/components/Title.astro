@@ -1,12 +1,12 @@
 ---
 export interface Props {
-  level: '1' | '2' | '3' | '4',
-  style?: 'light'
+  level: "1" | "2" | "3" | "4";
+  style?: "light";
 }
 
-const { level = '1', style = '' } = Astro.props as Props;
-const Tag = `h${level}`
-const Style = style
+const { level = "1", style = "" } = Astro.props as Props;
+const Tag = `h${level}`;
+const Style = style;
 ---
 
 <Tag class={style}><slot /></Tag>

@@ -1,27 +1,27 @@
 ---
 export interface Props {
-  sectionTitle: string,
+  sectionTitle: string;
   posts: Array<{
-    link: string,
-    letter: string,
-    title: string
-  }>
+    link: string;
+    letter: string;
+    title: string;
+  }>;
 }
 
-const { sectionTitle,
-        posts = []
-      } = Astro.props as Props;
+const { sectionTitle, posts = [] } = Astro.props as Props;
 ---
 
 <div class="posts-section">
-  <div class="posts-section_title">{ sectionTitle }</div>
+  <div class="posts-section_title">{sectionTitle}</div>
   <div class="posts-section_posts">
     {
-      posts.map(post => {
-        return <a class="post-link" href={post.link}>
-          <div class="post-link_letter">{ post.letter }</div>
-          <div class="post-link_text">{ post.title }</div>
-        </a>
+      posts.map((post) => {
+        return (
+          <a class="post-link" href={post.link}>
+            <div class="post-link_letter">{post.letter}</div>
+            <div class="post-link_text">{post.title}</div>
+          </a>
+        );
       })
     }
   </div>

@@ -1,25 +1,23 @@
 ---
 export interface Props {
-  title: string,
-  tags: Array<string>,
-  subtitle: string
+  title: string;
+  tags: Array<string>;
+  subtitle: string;
 }
 
-const { tags = [],
-  title,
-  subtitle} = Astro.props as Props;
+const { tags = [], title, subtitle } = Astro.props as Props;
 
-const subTitle = subtitle 
+const subTitle = subtitle
   ? `<div class="hero-title__subtitle">${subtitle}</div>`
-  : ''
+  : "";
 ---
 
 <div class="hero-title">
   <div class="hero-title__container">
     <div class="hero-title__text-container">
-      {tags.map((tag) => ( <div class='hero-title__tag'>{tag}</div>))}
+      {tags.map((tag) => <div class="hero-title__tag">{tag}</div>)}
       <h2 class="hero-title__title">
-        { title }
+        {title}
       </h2>
       <Fragment set:html={subTitle} />
     </div>

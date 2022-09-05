@@ -1,19 +1,21 @@
 ---
 export interface Props {
-  links: Array<[string, string]>
+  links: Array<[string, string]>;
 }
 
 const { links = [] } = Astro.props as Props;
 ---
 
 <ul class="links-list">
-  {links.map((link) => ( 
-    <li>
-      <a href={link[1]} class="links-list__link">
-        {link[0]}
-      </a>
-    </li>
-  ))}
+  {
+    links.map((link) => (
+      <li>
+        <a href={link[1]} class="links-list__link">
+          {link[0]}
+        </a>
+      </li>
+    ))
+  }
 </ul>
 
 <style>
@@ -31,8 +33,8 @@ const { links = [] } = Astro.props as Props;
     font-size: 16px;
   }
   .links-list__link::before {
-    content: ' ';
-    background-image: url('/src/assets/images/icons/link-2.svg');
+    content: " ";
+    background-image: url("/src/assets/images/icons/link-2.svg");
     background-repeat: no-repeat;
     margin-right: 4px;
     margin-top: 2px;

@@ -1,75 +1,93 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Container from '@components/Container.astro';
-import Quote from '@components/Quote.astro';
-import TwoColsContainer from '@components/TwoColsContainer.astro';
-import Paragraph from '@components/Paragraph.astro';
-import LinksList from '@components/LinksList.astro';
-import Title from '@components/Title.astro';
-import HeroTitleSmall from '@components/HeroTitleSmall.astro';
-import PictureCaption from '@components/PictureCaption.astro';
-import { Picture } from '@astrojs/image/components';
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Quote from "@components/Quote.astro";
+import TwoColsContainer from "@components/TwoColsContainer.astro";
+import Paragraph from "@components/Paragraph.astro";
+import LinksList from "@components/LinksList.astro";
+import Title from "@components/Title.astro";
+import HeroTitleSmall from "@components/HeroTitleSmall.astro";
+import PictureCaption from "@components/PictureCaption.astro";
+import { Picture } from "@astrojs/image/components";
 
-import SocialIcon from '@assets/images/cases/figma-social/facebook.png'
+import SocialIcon from "@assets/images/cases/figma-social/facebook.png";
 
 const seo = {
-  title: 'Figma template for social media covers',
-  description: 'Being Featured at ProductHunt is most desirable thing for new startup. There are many examples how simple idea turned into a popular product. I decided to try this experience out on myself.',
-  socialImage: SocialIcon
-}
+  title: "Figma template for social media covers",
+  description:
+    "Being Featured at ProductHunt is most desirable thing for new startup. There are many examples how simple idea turned into a popular product. I decided to try this experience out on myself.",
+  socialImage: SocialIcon,
+};
 ---
 
 <Layout
   title={seo.title}
   description={seo.description}
-  socialImage={seo.socialImage}>
-  <HeroTitleSmall 
+  socialImage={seo.socialImage}
+>
+  <HeroTitleSmall
     title={seo.title}
-    tags={['producthunt', 'design', 'web']}
-    subtitle={seo.description} />
+    tags={["producthunt", "design", "web"]}
+    subtitle={seo.description}
+  />
   <Container>
-    <Title level='2'>Idea</Title>
+    <Title level="2">Idea</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        Every time when i need to create social media cover i google sizes. And i thought wouldn't it be cool to create a template where i can create picture and put it on right away?
+        Every time when i need to create social media cover i google sizes. And
+        i thought wouldn't it be cool to create a template where i can create
+        picture and put it on right away?
       </Paragraph>
 
       <Paragraph>
-        Quick search in Figma Comminuity didn't find anything similiar. Actually there is been similiar examples but very limited. In most cases they were just several rectangles with sizes and social network label or figma files with only one social network.
+        Quick search in Figma Comminuity didn't find anything similiar. Actually
+        there is been similiar examples but very limited. In most cases they
+        were just several rectangles with sizes and social network label or
+        figma files with only one social network.
       </Paragraph>
 
       <Paragraph>Ok, let's do it.</Paragraph>
 
       <Fragment slot="aside">
         <LinksList
-          links={
-            [['Social media size guide', 
-              'https://www.figma.com/templates/social-media/']]
-          } />
+          links={[
+            [
+              "Social media size guide",
+              "https://www.figma.com/templates/social-media/",
+            ],
+          ]}
+        />
       </Fragment>
     </TwoColsContainer>
 
-    <Title level='2'>Process</Title>
+    <Title level="2">Process</Title>
 
     <TwoColsContainer>
       <Picture
-        class='post__picture'
+        class="post__picture"
         sizes="(max-width: 920px) 920w, 1840w"
         widths={[920, 1840]}
-        src={import('@assets/images/cases/figma-social/result/result@2x.jpg')} />
+        src={import("@assets/images/cases/figma-social/result/result@2x.jpg")}
+      />
       <PictureCaption>Few screens from the process</PictureCaption>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <Paragraph>
-        Entire process took about 2 weeks. Since the task was not just creating rectanlges with certain sizes but recreating interfaces as well. I wanted to give users opportunity to put on newly created cowers and check it out on interfaces.
+        Entire process took about 2 weeks. Since the task was not just creating
+        rectanlges with certain sizes but recreating interfaces as well. I
+        wanted to give users opportunity to put on newly created cowers and
+        check it out on interfaces.
       </Paragraph>
     </TwoColsContainer>
-    
+
     <TwoColsContainer>
       <Paragraph>
-        Obviously i could take existing UI Kit from Figma Community Library. But i decided to make everying on my own. And it turned out to interesting hobbie. I mean copying existing interfaces. It's a very meditative process. Especially i liked copying icons.
+        Obviously i could take existing UI Kit from Figma Community Library. But
+        i decided to make everying on my own. And it turned out to interesting
+        hobbie. I mean copying existing interfaces. It's a very meditative
+        process. Especially i liked copying icons.
       </Paragraph>
     </TwoColsContainer>
 
@@ -81,39 +99,58 @@ const seo = {
 
     <Quote>Copying is the way design works.</Quote>
 
-    <Title level='2'>Result</Title>
+    <Title level="2">Result</Title>
 
     <TwoColsContainer>
       <Picture
-        class='post__picture'
+        class="post__picture"
         sizes="(max-width: 920px) 920w, 1840w"
         widths={[920, 1840]}
-        src={import('@assets/images/cases/figma-social/result-2/result@2x.jpg')} />
-      <PictureCaption>Screenshot from ProductHunt. As you might see it didn't become "TOP OF THE DAY".</PictureCaption>
+        src={import("@assets/images/cases/figma-social/result-2/result@2x.jpg")}
+      />
+      <PictureCaption
+        >Screenshot from ProductHunt. As you might see it didn't become "TOP OF
+        THE DAY".</PictureCaption
+      >
     </TwoColsContainer>
 
     <TwoColsContainer>
       <Paragraph>
-        I made templates for 4 social networks: Instagram, Facebook, Twitter and Youtube. But it was just a middle of the task. I planned to publish it on ProductHunt.
+        I made templates for 4 social networks: Instagram, Facebook, Twitter and
+        Youtube. But it was just a middle of the task. I planned to publish it
+        on ProductHunt.
       </Paragraph>
 
       <Paragraph>
-        I published several projects on HackerNews, but it was simple since publishing on HN it's filling one or two fields. Though ProductHunt process is bit more complex and needs more time still rules as easy and intuitive. Before submiting your project you need to fill some requirements like fill information about yourself and upvoting several projects.
+        I published several projects on HackerNews, but it was simple since
+        publishing on HN it's filling one or two fields. Though ProductHunt
+        process is bit more complex and needs more time still rules as easy and
+        intuitive. Before submiting your project you need to fill some
+        requirements like fill information about yourself and upvoting several
+        projects.
       </Paragraph>
 
       <Paragraph>
-        Besides of the description of project you will need several pictures about the project. So here is mine. I like them, but i think it would be better if i add some screenshots from real figma file. And maybe shooting video.
+        Besides of the description of project you will need several pictures
+        about the project. So here is mine. I like them, but i think it would be
+        better if i add some screenshots from real figma file. And maybe
+        shooting video.
       </Paragraph>
 
       <Fragment slot="aside">
         <LinksList
-          links={
-            [['Project on ProductHunt', 
-              'https://www.producthunt.com/products/social-media-covers-in-figma#social-media-covers-in-figma'],
-             ['File in Figma Community', 'https://www.figma.com/community/file/1050007276881810676']]
-          } />
+          links={[
+            [
+              "Project on ProductHunt",
+              "https://www.producthunt.com/products/social-media-covers-in-figma#social-media-covers-in-figma",
+            ],
+            [
+              "File in Figma Community",
+              "https://www.figma.com/community/file/1050007276881810676",
+            ],
+          ]}
+        />
       </Fragment>
-
     </TwoColsContainer>
   </Container>
 </Layout>

@@ -1,44 +1,37 @@
 ---
-import { Code } from 'astro/components';
-import type * as shiki from 'shiki';
-import fileIcon from '@assets/images/icons/file-2.svg'
-import consoleIcon from '@assets/images/icons/console.svg'
+import { Code } from "astro/components";
+import type * as shiki from "shiki";
+import fileIcon from "@assets/images/icons/file-2.svg";
+import consoleIcon from "@assets/images/icons/console.svg";
 
 export interface Props {
-  lang: shiki.Lang | shiki.ILanguageRegistration,
-  fileName: string,
-  code: string,
-  icon: 'file' | 'console'
+  lang: shiki.Lang | shiki.ILanguageRegistration;
+  fileName: string;
+  code: string;
+  icon: "file" | "console";
 }
 
-const { lang, 
-        fileName, 
-        code = '', 
-        icon = 'file' 
-      } = Astro.props as Props;
+const { lang, fileName, code = "", icon = "file" } = Astro.props as Props;
 
 const imageIcon = {
-  'file': fileIcon,
-  'console': consoleIcon
-}[icon]
+  file: fileIcon,
+  console: consoleIcon,
+}[icon];
 
-const fileNameBlock = fileName 
+const fileNameBlock = fileName
   ? `<div class="file-name"><img class="code-block__file-icon" src="${imageIcon}"/>${fileName}</div>`
-  : ''
+  : "";
 
 let html: string = code;
 
-if (Astro.slots.has('default')) {
-  html = await Astro.slots.render('default')
+if (Astro.slots.has("default")) {
+  html = await Astro.slots.render("default");
 }
 ---
+
 <div class="code-snippet">
   <Fragment set:html={fileNameBlock} />
-  <Code
-    code={html}
-    lang={lang}
-    wrap
-    theme={'vitesse-light'} />
+  <Code code={html} lang={lang} wrap theme={"vitesse-light"} />
 </div>
 
 <style>

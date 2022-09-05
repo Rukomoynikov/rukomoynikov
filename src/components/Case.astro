@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Picture } from "@astrojs/image/components";
 
 export interface Props {
   caseHref: string;
@@ -9,26 +9,29 @@ export interface Props {
   description: string;
   hrefTitle: string;
 }
-  
-const { tags = [],
+
+const {
+  tags = [],
   title,
   description,
   caseHref,
   pictureHref,
-  hrefTitle } = Astro.props as Props;
+  hrefTitle,
+} = Astro.props as Props;
 ---
 
 <div class="case">
   <a href={caseHref} class="link">
     <Picture
-      class='case__image'
+      class="case__image"
       widths={[595, 600, 768, 889, 1200, 1600]}
-      src={pictureHref} />
+      src={pictureHref}
+    />
   </a>
 
   <div class="case__text">
     <div class="label">
-      {tags.map((tag) => ( <div>{tag}</div>))}
+      {tags.map((tag) => <div>{tag}</div>)}
     </div>
     <div class="title" set:html={title}></div>
     <div class="description" set:html={description}></div>

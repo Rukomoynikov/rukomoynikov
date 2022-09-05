@@ -1,10 +1,10 @@
 ---
 export interface Props {
-  size?: 'small'
+  size?: "small";
 }
 
-const { size } = Astro.props  as Props;
-const cssClass = size == 'small' ? 'quote quote_small' : 'quote'
+const { size } = Astro.props as Props;
+const cssClass = size == "small" ? "quote quote_small" : "quote";
 ---
 
 <div class="quote-container">

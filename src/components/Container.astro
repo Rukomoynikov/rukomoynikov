@@ -1,10 +1,10 @@
 ---
 export interface Props {
-  size?: '1200' | '800'
+  size?: "1200" | "800";
 }
 
-const { size = '1200' } = Astro.props as Props;
-const cssClass = `container--${size}`
+const { size = "1200" } = Astro.props as Props;
+const cssClass = `container--${size}`;
 ---
 
 <div class={cssClass}>

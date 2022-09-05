@@ -1,60 +1,73 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Container from '@components/Container.astro';
-import InlineCode from '@components/InlineCode.astro';
-import CodeSnippet from '@components/CodeSnippet.astro';
-import TwoColsContainer from '@components/TwoColsContainer.astro';
-import Video from '@components/Video.astro';
-import Paragraph from '@components/Paragraph.astro';
-import LinksList from '@components/LinksList.astro';
-import Title from '@components/Title.astro';
-import HeroTitleSmall from '@components/HeroTitleSmall.astro';
-import { Code } from 'astro/components';
-import { Picture } from '@astrojs/image/components';
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import InlineCode from "@components/InlineCode.astro";
+import CodeSnippet from "@components/CodeSnippet.astro";
+import TwoColsContainer from "@components/TwoColsContainer.astro";
+import Video from "@components/Video.astro";
+import Paragraph from "@components/Paragraph.astro";
+import LinksList from "@components/LinksList.astro";
+import Title from "@components/Title.astro";
+import HeroTitleSmall from "@components/HeroTitleSmall.astro";
+import { Code } from "astro/components";
+import { Picture } from "@astrojs/image/components";
 
-import SocialIcon from '@assets/images/posts/rails-on-docker/facebook-share.jpg'
+import SocialIcon from "@assets/images/posts/rails-on-docker/facebook-share.jpg";
 const seo = {
-  title: 'How to generate Rails app and run it without installing ruby locally',
-  description: 'In internet plenty of articles about Dockerizing existing application. But, what if you don\'t have installed ruby locally and need to generate new app.',
-  socialImage: SocialIcon
-}
+  title: "How to generate Rails app and run it without installing ruby locally",
+  description:
+    "In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.",
+  socialImage: SocialIcon,
+};
 ---
 
 <Layout
   title={seo.title}
   description={seo.description}
-  socialImage={seo.socialImage}>
-  <HeroTitleSmall 
+  socialImage={seo.socialImage}
+>
+  <HeroTitleSmall
     title={seo.title}
     subtitle={seo.description}
-    tags={['Ruby', 'Docker']}/>
+    tags={["Ruby", "Docker"]}
+  />
 
   <Container>
-    <Title level='2'>Why Docker?</Title>
+    <Title level="2">Why Docker?</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        It has always been easier to supply the necessary tools locally. If you need to have multiple versions, then rvm or nvm solve the problem. Then came Docker. Until this year, I had successfully managed to avoid it. On projects where the guys worked with Docker, I instead installed everything locally. But, I thought that enough fighting and it's time to try to live with the idea of "docker for everything". It's simply time to admit either i work using Docker or i don't work at all.
+        It has always been easier to supply the necessary tools locally. If you
+        need to have multiple versions, then rvm or nvm solve the problem. Then
+        came Docker. Until this year, I had successfully managed to avoid it. On
+        projects where the guys worked with Docker, I instead installed
+        everything locally. But, I thought that enough fighting and it's time to
+        try to live with the idea of "docker for everything". It's simply time
+        to admit either i work using Docker or i don't work at all.
       </Paragraph>
     </TwoColsContainer>
 
-    <Title level='2'>Generating Ruby on Rails application</Title>
+    <Title level="2">Generating Ruby on Rails application</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        Well I don't have ruby installed locally. And I need to generate a new Rails application or experiment in IRB.
+        Well I don't have ruby installed locally. And I need to generate a new
+        Rails application or experiment in IRB.
       </Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <Paragraph>
-        The first thing I did was look at the official Rails image. It turned out to be deprecated, and the authors suggested Ruby as a replacement. Using Ruby image, I was unable to generate a Rails application, so I made my own Docker image.
+        The first thing I did was look at the official Rails image. It turned
+        out to be deprecated, and the authors suggested Ruby as a replacement.
+        Using Ruby image, I was unable to generate a Rails application, so I
+        made my own Docker image.
       </Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
-      <CodeSnippet 
-        lang={'docker'}
+      <CodeSnippet
+        lang={"docker"}
         code={`
 FROM debian:bullseye
 
@@ -83,44 +96,56 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash - \\
   && npm i -g yarn
 
 ENV PATH /root/.rbenv/versions/$ruby_version/bin/:/root/.rbenv/shims:$PATH
-      `} />
+      `}
+      />
       <Fragment slot="aside">
         <LinksList
-          links={
-            [['Image on Docker Hub', 'https://hub.docker.com/repository/docker/rukomoynikov/rails/general']]
-          } />
+          links={[
+            [
+              "Image on Docker Hub",
+              "https://hub.docker.com/repository/docker/rukomoynikov/rails/general",
+            ],
+          ]}
+        />
       </Fragment>
     </TwoColsContainer>
 
-    <Title level='2'>Using the image</Title>
+    <Title level="2">Using the image</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        The following command will generate a new Rails application in the current folder and install required gems in the gems folder. As you know, a container cannot change its content after it has been built. Therefore, all application files and gems will be stored on the host machine.
+        The following command will generate a new Rails application in the
+        current folder and install required gems in the gems folder. As you
+        know, a container cannot change its content after it has been built.
+        Therefore, all application files and gems will be stored on the host
+        machine.
       </Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <CodeSnippet>
-docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .
+        docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .
       </CodeSnippet>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <Paragraph>
-        Launching the application is not much more difficult. But, in a simple form, it will only work if you use the sqlite database.
+        Launching the application is not much more difficult. But, in a simple
+        form, it will only work if you use the sqlite database.
       </Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <CodeSnippet>
-docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0.0.0.0
+        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails
+        rails s -b 0.0.0.0
       </CodeSnippet>
     </TwoColsContainer>
 
     <TwoColsContainer>
       <Paragraph>
-        Running IRB. Or you can enter console and run ruby files from local machine.
+        Running IRB. Or you can enter console and run ruby files from local
+        machine.
       </Paragraph>
     </TwoColsContainer>
 
@@ -132,29 +157,34 @@ docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0
 
     <TwoColsContainer>
       <Picture
-        class='post__picture'
+        class="post__picture"
         sizes="(max-width: 920px) 920w, 1840w"
         widths={[920, 1840]}
-        src={import('@assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app.png')} />
+        src={import(
+          "@assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app.png"
+        )}
+      />
     </TwoColsContainer>
-    
-    <Title level='2'>What's next?</Title>
+
+    <Title level="2">What's next?</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        Above you saw an example of basic Rails application used SQLite. In order to use Postgresql and Webpacker you need something more complicated than simple Dockerfile. You need docker-compose. There you will be able to separate application into a ruby service, and the client service.
+        Above you saw an example of basic Rails application used SQLite. In
+        order to use Postgresql and Webpacker you need something more
+        complicated than simple Dockerfile. You need docker-compose. There you
+        will be able to separate application into a ruby service, and the client
+        service.
       </Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
-      <Paragraph>
-        Here is example of docker-compose.yml
-      </Paragraph>
+      <Paragraph>Here is example of docker-compose.yml</Paragraph>
     </TwoColsContainer>
 
     <TwoColsContainer>
-      <CodeSnippet 
-        lang={'yaml'}
+      <CodeSnippet
+        lang={"yaml"}
         code={`
 services:
   web:
@@ -217,13 +247,17 @@ volumes:
   rails_cache:
   node_modules:
   packs:
-      `} />
+      `}
+      />
       <Fragment slot="aside">
         <LinksList
-          links={
-            [['Heavily inspired by Evil Martians article', 
-              'https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development']]
-          } />
+          links={[
+            [
+              "Heavily inspired by Evil Martians article",
+              "https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development",
+            ],
+          ]}
+        />
       </Fragment>
     </TwoColsContainer>
   </Container>
