@@ -1,0 +1,45 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import InlineCode from "@components/InlineCode.astro";
+import CodeSnippet from "@components/CodeSnippet.astro";
+import TwoColsContainer from "@components/TwoColsContainer.astro";
+import Video from "@components/Video.astro";
+import Paragraph from "@components/Paragraph.astro";
+import LinksList from "@components/LinksList.astro";
+import Title from "@components/Title.astro";
+import HeroTitleSmall from "@components/HeroTitleSmall.astro";
+import { Code } from "astro/components";
+
+import SocialIcon from "@assets/images/posts/elixir-telegram-bot/facebook-share.jpg";
+
+const seo = {
+  title: "How to make a Telegram bot in Elixir",
+  description:
+    "This is the first part of three in the series. There you will find creating foundation and answering to users.",
+  socialImage: SocialIcon,
+};
+---
+
+<Layout
+  title={seo.title}
+  description={seo.description}
+  socialImage={seo.socialImage}>
+  <HeroTitleSmall title={seo.title} tags={["Telegram", "Elixir"]} />
+
+  <Container>
+    <Title level="2">Introduction to Telegram Bots API</Title>
+    <ul>
+      <li>What is LightSail in general</li>
+      Video ...
+      <li>Basic rails application</li>
+      Notetaking app with esbuild and cssbuild (and css bulma)
+      <li>Creating LightSail infrastructure</li>
+      Container service and database
+      <li>Run CI using Gihub Actions</li>
+      Recipe (with link to clone particular commit)
+      <li>Deploy application to LightSail</li>
+      No link to demo
+    </ul>
+  </Container>
+</Layout>
