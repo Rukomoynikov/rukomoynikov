@@ -57,7 +57,7 @@ socialImage = await getImage(socialImage);
     />
 
     <SEO
-      image={`${import.meta.env.MODE == 'production' ? import.meta.env.SITE : ''}${socialImage.src}`}
+      image={socialImage.src}
       title={title}
       description={description}
       siteName={siteName}
