@@ -104,7 +104,9 @@ const seo = {
     >
 
     <TwoColsContainer>
-      <CodeSnippet>mix new stocks_bot --sup</CodeSnippet>
+      <CodeSnippet>
+mix new stocks_bot --sup
+      </CodeSnippet>
     </TwoColsContainer>
 
     <TwoColsContainer>
@@ -115,15 +117,15 @@ const seo = {
 
     <TwoColsContainer>
       <CodeSnippet>
-        ├── README.md 
-        ├── lib 
-        │ ├── stocks_bot 
-        │ │ └── application.ex 
-        │ └──stocks_bot.ex 
-        ├── mix.exs 
-        └── test 
-        ├── stocks_bot_test.exs 
-        └── test_helper.exs
+├── README.md 
+├── lib 
+│ ├── stocks_bot 
+│ │ └── application.ex 
+│ └──stocks_bot.ex 
+├── mix.exs 
+└── test 
+├── stocks_bot_test.exs 
+└── test_helper.exs
       </CodeSnippet>
     </TwoColsContainer>
 
@@ -159,7 +161,7 @@ end
 defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot" <> "Token from BotFather"
 
-  def get_updates(offset \\ nil) do
+  def get_updates(offset \\\\ nil) do
     with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
            updates_url(offset) |> HTTPoison.get(),
          {:ok, data} = Jason.decode(body) do
@@ -168,7 +170,7 @@ defmodule StocksBot do
   end
 
   defp updates_url(_offset = nil) do
-    @basic_url <> "getUpdates"
+    @basic_url <> "/getUpdates"
   end
 end
       `}
@@ -193,7 +195,8 @@ end
 
     <TwoColsContainer>
       <CodeSnippet fileName="Terminal" icon="console">
-        iex -S mix StocksBot.get_updates()
+iex -S mix 
+StocksBot.get_updates()
       </CodeSnippet>
     </TwoColsContainer>
 
@@ -254,7 +257,7 @@ end
 defmodule StocksBot do
   @basic_url "https://api.telegram.org/bot" <> "Token from BotFather"
 
-  def get_updates(offset \\ nil) do
+  def get_updates(offset \\\\ nil) do
     with {:ok, %HTTPoison.Response{status_code: 200, body: body}} =
            updates_url(offset) |> HTTPoison.get(),
          {:ok, data} = Jason.decode(body) do
@@ -280,11 +283,11 @@ defmodule StocksBot do
   end
 
   defp updates_url(_offset = nil) do
-    @basic_url <> "getUpdates"
+    @basic_url <> "/getUpdates"
   end
 
   defp updates_url(offset) do
-    @basic_url <> "getUpdates?offset=#{offset + 1}"
+    @basic_url <> "/getUpdates?offset=#{offset + 1}"
   end
 end
       `}
@@ -322,7 +325,7 @@ defp answer_to_message(message) do
   }
 
   HTTPoison.post(
-    @basic_url <> "sendMessage",
+    @basic_url <> "/sendMessage",
     Jason.encode!(answer),
     [{"Content-Type", "application/json"}]
   )
@@ -407,12 +410,22 @@ end
 
     <TwoColsContainer>
       <Video src={"/videos/posts/elixir-telegram-bot/demo_of_bot.mp4"} />
+      <Fragment slot="aside">
+        <LinksList
+          links={[
+            [
+              "Github repository with bot source code",
+              "https://github.com/Rukomoynikov/telegram-bot-article",
+            ],
+          ]}
+        />
+      </Fragment>
     </TwoColsContainer>
 
     <TwoColsContainer>
-      <Paragraph
-        >Yes, the bot does not yet have superintelligence. In the next part, I will add user storage in the database and teach the bot to send stock price information.</Paragraph
-      >
+      <Paragraph>
+        Yes, the bot does not yet have superintelligence. In the next part, I will add user storage in the database and teach the bot to send stock price information.
+      </Paragraph>
     </TwoColsContainer>
   </Container>
 </Layout>

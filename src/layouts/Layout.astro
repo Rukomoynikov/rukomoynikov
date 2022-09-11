@@ -68,10 +68,12 @@ socialImage = await getImage(socialImage);
     <div class="content">
       <slot />
     </div>
-    <style>
-      .content {
-        min-height: calc(100vh - 218px);
-      }
-    </style>
   </body>
 </html>
+
+<style>
+  .content {
+    min-height: calc(100vh - 218px);
+    padding-bottom: 5.5 rem;
+  }
+</style>
