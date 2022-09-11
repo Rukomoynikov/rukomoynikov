@@ -1,8 +1,6 @@
 ---
 import Header from "@components/Header.astro";
-import SEO from "@julian_cataldo/astro-seo/SEO.astro";
-import { getImage } from "@astrojs/image";
-import DefaultSocialIcon from "@assets/images/facebook_share_2.jpg";
+import SEO from "@components/Seo.astro";
 
 import "/src/styles/common.css";
 import "/src/styles/fonts.css";
@@ -16,53 +14,22 @@ export interface Props {
 }
 
 let {
-  title = "Max Rukomoynikov",
-  description = "My big goal for 5 years is to learn how to make products that solve people's problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.",
-  socialImage = DefaultSocialIcon,
-  siteName = "Max Rukomoynikov's site",
-  type = "",
+  title,
+  description,
+  socialImage,
+  siteName,
+  type
 } = Astro.props as Props;
-
-socialImage = await getImage(socialImage);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <base href={import.meta.env.MODE == 'production' ? import.meta.env.SITE : 'http://localhost:3000'} target="_blank">
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-
-    <SEO
-      image={socialImage.src}
+    <SEO 
       title={title}
       description={description}
-      siteName={siteName}
-    />
+      socialImage={socialImage}
+      siteName={siteName} />
   </head>
   <body class={type}>
     <Header />
