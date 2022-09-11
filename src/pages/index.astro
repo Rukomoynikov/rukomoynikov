@@ -7,6 +7,7 @@ import Container from "/src/components/Container.astro";
 import ScrollObserver from "/src/components/ScrollObserver.svelte";
 import Layout from "/src/layouts/Layout.astro";
 import QuoteIcon from "@assets/images/icons/magic-wand.svg";
+import PostsSection from "@components/PostsSection.astro";
 ---
 
 <Layout title="Rukomoynikov Max. Developer.">
@@ -28,57 +29,21 @@ import QuoteIcon from "@assets/images/icons/magic-wand.svg";
       />
     </div>
 
-    <div class="case">
-      <Case
-        tags={["Design"]}
-        description="Site for an excursion agency. The agency organizes running tours with locals. Such guides are popular abroad. The guys decided to try to do it in Moscow."
-        hrefTitle="Case at Behance"
-        title="Running tour around Khamovniki"
-        pictureHref={import(
-          "/src/assets/images/cases/excursions/cover/excursions@2x.jpg"
-        )}
-        caseHref="https://www.behance.net/gallery/116812227/begovye-ekskursii-po-rajonam-moskvy"
-      />
-    </div>
-
-    <div class="case">
-      <Case
-        tags={["Site"]}
-        description="Every year this week i renew all my digital subscriptions. I mean books and apps for example. This year i decided to collect all discounts i like on the one site."
-        hrefTitle="Story"
-        title="Site and banners for Black Friday"
-        pictureHref={import(
-          "/src/assets/images/cases/digitaldeals/cover/digitaldeals@2x.jpg"
-        )}
-        caseHref="/cases/digitaldeals/"
-      />
-    </div>
-
-    <div class="case">
-      <Case
-        tags={["Design"]}
-        description="'Applciation for storing documents of the whole family. When the expiration date comes up, the application will tell you how and when to update documents.'"
-        hrefTitle="Image file"
-        title="Documents in the pocket"
-        pictureHref={import(
-          "/src/assets/images/cases/documents/documents@2x.jpg"
-        )}
-        caseHref="https://bureau.ru/classroom/tasks/ui/interfeys-mobilnogo-prilozheniya-update/1606/results/41500/Доки_в_кармане.jpg"
-      />
-    </div>
-
-    <div class="case">
-      <Case
-        tags={["Design"]}
-        description="Site and boilerplate for creatting Vue applciations. Design of the site based on technical specifications familiar for every javascript developer."
-        hrefTitle="Site"
-        title="Boilerplate for Vue apps"
-        pictureHref={import(
-          "/src/assets/images/cases/vue-boilerpate/vue-boilerpate@2x.jpg"
-        )}
-        caseHref="'https://rukomoynikov.github.io/vue-webpack-boilerplate/'"
-      />
-    </div>
+        <PostsSection
+      sectionTitle="Programming"
+      posts={[
+        {
+          letter: "E",
+          title: "How to make a Telegram bot in Elixir",
+          link: "/posts/elixir-telegram-bot/",
+        },
+        {
+          letter: "R",
+          title: "Docker way to generate and run Rails application",
+          link: "/posts/rails-on-docker/",
+        },
+      ]}
+    />
 
     <div class="quote-block">
       <Quote>
