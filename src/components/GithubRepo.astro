@@ -1,0 +1,55 @@
+---
+import GithubStars from "@components/GithubStars.svelte";
+
+export interface Props {
+  title: string;
+  description: string;
+  link: string
+}
+
+const { 
+  title,
+  description,
+  link
+} = Astro.props as Props;
+
+import octicon from '@assets/images/icons/octicon.svg'
+---
+
+<a href={link} class="github-repo">
+  <div class="github-repo__title-container">
+    <img class={'github-repo__image'} src={octicon} />
+    {title}
+    <!-- <GithubStars 
+      client:load 
+      repo='Rukomoynikov/act_as_api_client' /> -->
+  </div>
+  <div class="github-repo__description">
+    {description}
+  </div>
+</a>
+
+
+<style>
+.github-repo {
+  text-decoration: none;
+  color: black;
+}
+
+.github-repo__image {
+  max-width: 1.8rem;
+  margin-right: .5rem;
+}
+
+.github-repo__title-container {
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.github-repo__description {
+  font-size: 2.2rem;  
+}
+</style>

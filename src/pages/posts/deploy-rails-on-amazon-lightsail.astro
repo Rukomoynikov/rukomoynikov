@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import GithubRepo from "@components/GithubRepo.astro";
 import InlineCode from "@components/InlineCode.astro";
 import CodeSnippet from "@components/CodeSnippet.astro";
 import TwoColsContainer from "@components/TwoColsContainer.astro";
@@ -28,6 +29,12 @@ const seo = {
   <HeroTitleSmall title={seo.title} tags={["Telegram", "Elixir"]} />
 
   <Container>
+    <TwoColsContainer>
+      <Paragraph>
+        During this article i will lead you from basics of Lightsail to fully a furnished automatic CI\CD to Lightsail.
+      </Paragraph>
+    </TwoColsContainer>
+
     <Title level="2">What is Lightail in general?</Title>
 
     <TwoColsContainer>
@@ -46,6 +53,10 @@ const seo = {
               "Amazon Lightsail",
               "https://lightsail.aws.amazon.com",
             ],
+            [
+              "Deploy your first containerized application (Youtube)",
+              "https://www.youtube.com/watch?v=RhcR5LaRXIQ"
+            ]
           ]}
         />
       </Fragment>
@@ -62,6 +73,10 @@ const seo = {
         Rails app is going to be extremely simple. Notetaking application that uses: Postgresql database, Importmaps for javascript. I have prepared an example application which you can clone.
       </Paragraph>
 
+      <Paragraph>
+        Right out of the box you have configured Minitest tests. If you run 
+      </Paragraph>
+
       <Fragment slot="aside">
         <LinksList
           links={[
@@ -76,6 +91,7 @@ const seo = {
 
     <Title level="3">Dockerfile</Title>
 
+
     <ul>
       <li>What is LightSail in general</li>
       Video ...
@@ -88,5 +104,11 @@ const seo = {
       <li>Deploy application to LightSail</li>
       No link to demo
     </ul>
+
+    <GithubRepo 
+      title={'act_as_api_client '}
+      description={'Templates for popular API\'s and reliable way to create your own clients. At the moment it supports Github’s API, Authorize.net'}
+      link={'https://github.com/Rukomoynikov/act_as_api_client'}
+    />
   </Container>
 </Layout>
