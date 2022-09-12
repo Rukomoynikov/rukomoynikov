@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://rukomoynikov.ru/posts/deploy-rails-on-amazon-lightsail/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to make a Telegram bot in Elixir">
+<meta property="og:title" content="Deploy Rails on Amazon LightSail container service">
 <meta property="og:url" content="https://rukomoynikov.ru/posts/deploy-rails-on-amazon-lightsail/">
 <meta property="og:image" content="https://rukomoynikov.ru/_image/assets/images/posts/elixir-telegram-bot/facebook-share_1200x630.jpg">
 <meta property="og:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
@@ -21,12 +21,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rukomoynikov">
 <meta name="twitter:creator" content="@rukomoynikov">
-<meta name="twitter:title" content="How to make a Telegram bot in Elixir">
+<meta name="twitter:title" content="Deploy Rails on Amazon LightSail container service">
 <meta name="twitter:image" content="https://rukomoynikov.ru/_image/assets/images/posts/elixir-telegram-bot/facebook-share_1200x630.jpg">
 <meta name="twitter:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 <meta name="twitter:label1" value="Author">
 <meta name="twitter:value1" value="Max Rukomoynikov">
-<title>How to make a Telegram bot in Elixir</title>
+<title>Deploy Rails on Amazon LightSail container service</title>
 <meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 
   <link rel="stylesheet" href="/assets/13b71192.fdac69c5.css" />
@@ -57,7 +57,7 @@
     <div class="hero-title__text-container astro-ZQJ3ZA7Q">
       <div class="hero-title__tag astro-ZQJ3ZA7Q">Telegram</div><div class="hero-title__tag astro-ZQJ3ZA7Q">Elixir</div>
       <h2 class="hero-title__title astro-ZQJ3ZA7Q">
-        How to make a Telegram bot in Elixir
+        Deploy Rails on Amazon LightSail container service
       </h2>
       
     </div>
@@ -65,7 +65,114 @@
 </div>
 
 <div class="container--1200 astro-BBNM3MM2">
-  <h2 class=" astro-3KQXSL4C">Introduction to Telegram Bots API</h2>
+  <h2 class=" astro-3KQXSL4C">What is Lightail in general?</h2>
+
+<div class="columns standard astro-QMDQII75">
+  <div class="col-1 astro-QMDQII75"><p class="paragraph astro-IOL3HG2G">
+  
+        Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2. Though being a lighten version of EC2 it supports all essential tools. At the moment you can use: VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
+      
+</p>
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --><p class="paragraph astro-IOL3HG2G">
+  
+        In this tutorial i will use <i class="astro-4LCKIGOU">container service</i>
+
+ what is someting similiar to Amazon Fargate + EC2. Container service allows to run Docker images. 
+      
+</p>
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-QMDQII75"><ul class="links-list astro-SIOEHDSZ">
+  <li class="astro-SIOEHDSZ">
+        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-SIOEHDSZ">
+          Amazon Lightsail
+        </a>
+      </li>
+</ul>
+
+</div>
+</div>
+
+<h2 class=" astro-3KQXSL4C">Rails application which i want to deploy</h2>
+
+<div class="columns standard astro-QMDQII75">
+  <div class="col-1 astro-QMDQII75"><p class="paragraph astro-IOL3HG2G">
+  
+        Rails app is going to be extremely simple. Notetaking application that uses: Postgresql database, Importmaps for javascript. I have prepared an example application which you can clone.
+      
+</p>
+
+
+
+<!-- <style type="text/css">
+  .article-layout {
+    display: flex;
+  }
+  @media only screen and (max-width: 595px) {
+    .article-layout {
+      flex-direction: column;
+    }
+  }
+  .article-layout__text {
+    display: flex;
+    margin-right: 42px;
+  }
+  .article-layout__quotes {
+    display: flex;
+    font-size: 15px;
+  }
+</style> --></div>
+  <div class="col-2 astro-QMDQII75"><ul class="links-list astro-SIOEHDSZ">
+  <li class="astro-SIOEHDSZ">
+        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-SIOEHDSZ">
+          Example application on Github
+        </a>
+      </li>
+</ul>
+
+</div>
+</div>
+
+<h3 class=" astro-3KQXSL4C">Dockerfile</h3>
 
 <ul>
       <li>What is LightSail in general</li>
