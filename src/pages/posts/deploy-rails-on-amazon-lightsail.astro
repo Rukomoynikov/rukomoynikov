@@ -14,7 +14,7 @@ import { Code } from "astro/components";
 import SocialIcon from "@assets/images/posts/elixir-telegram-bot/facebook-share.jpg";
 
 const seo = {
-  title: "How to make a Telegram bot in Elixir",
+  title: "Deploy Rails on Amazon LightSail container service",
   description:
     "This is the first part of three in the series. There you will find creating foundation and answering to users.",
   socialImage: SocialIcon,
@@ -28,7 +28,54 @@ const seo = {
   <HeroTitleSmall title={seo.title} tags={["Telegram", "Elixir"]} />
 
   <Container>
-    <Title level="2">Introduction to Telegram Bots API</Title>
+    <Title level="2">What is Lightail in general?</Title>
+
+    <TwoColsContainer>
+      <Paragraph>
+        Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2. Though being a lighten version of EC2 it supports all essential tools. At the moment you can use: VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
+      </Paragraph>
+
+      <Paragraph>
+        In this tutorial i will use <InlineCode>container service</InlineCode> what is someting similiar to Amazon Fargate + EC2. Container service allows to run Docker images. 
+      </Paragraph>
+
+      <Fragment slot="aside">
+        <LinksList
+          links={[
+            [
+              "Amazon Lightsail",
+              "https://lightsail.aws.amazon.com",
+            ],
+          ]}
+        />
+      </Fragment>
+
+      <!-- <Paragraph>
+        One container service fits five docker containers
+      </Paragraph> -->
+    </TwoColsContainer>
+
+    <Title level="2">Rails application which i want to deploy</Title>
+
+    <TwoColsContainer>
+      <Paragraph>
+        Rails app is going to be extremely simple. Notetaking application that uses: Postgresql database, Importmaps for javascript. I have prepared an example application which you can clone.
+      </Paragraph>
+
+      <Fragment slot="aside">
+        <LinksList
+          links={[
+            [
+              "Example application on Github",
+              "https://lightsail.aws.amazon.com",
+            ],
+          ]}
+        />
+      </Fragment>
+    </TwoColsContainer>
+
+    <Title level="3">Dockerfile</Title>
+
     <ul>
       <li>What is LightSail in general</li>
       Video ...
