@@ -1,5 +1,11 @@
 :root {
   font-size: 10px;
+  --font-case-link: 300 20px IBM Plex Sans, sans-serif;;
+  --font-description-link: 300 18px IBM Plex Sans, sans-serif;
+  --font-title-link: 400 24px IBM Plex Sans, sans-serif;
+  --font-label-link: 400 18px IBM Plex Sans, sans-serif;
+  --font-code-snippet: 1.6rem IBM Plex Sans;
+  --font-github-repo: 2.2rem IBM Plex Sans;
 }
 
 body {
