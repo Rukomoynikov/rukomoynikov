@@ -29,7 +29,7 @@ const { sectionTitle, posts = [] } = Astro.props as Props;
 
 <style>
   .posts-section_title {
-    font: 600 17px "IBM Plex Sans", sans-serif;
+    font: var(--font-posts-section-title);
     margin-bottom: 14px;
   }
 
@@ -46,7 +46,7 @@ const { sectionTitle, posts = [] } = Astro.props as Props;
 
   .post-link_letter {
     display: flex;
-    font-size: 42px;
+    font: var(--font-post-link-letter);
     justify-content: center;
     align-items: center;
     height: 58px;
@@ -61,8 +61,8 @@ const { sectionTitle, posts = [] } = Astro.props as Props;
   }
 
   .post-link_text {
-    color: #2f4171;;
-    font-size: 22px;
+    color: #2f4171;
+    font: var(--font-post-link-text);
     line-height: 29px;
     text-decoration: underline;
     margin-top: -3px;

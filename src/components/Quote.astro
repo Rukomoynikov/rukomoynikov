@@ -21,7 +21,7 @@ const cssClass = size == "small" ? "quote quote_small" : "quote";
   }
 
   .quote {
-    font: 600 60px/70px IBM Plex Sans, sans-serif;
+    font: var(--font-title-quote);
     margin-left: 204px;
     position: relative;
     margin-top: 50px;
@@ -36,7 +36,7 @@ const cssClass = size == "small" ? "quote quote_small" : "quote";
   @media only screen and (max-width: 595px) {
     .quote {
       margin-left: 30px;
-      font: 400 40px IBM Plex Sans, sans-serif;
+      font: var(--font-title-quote-small);
     }
   }
 
