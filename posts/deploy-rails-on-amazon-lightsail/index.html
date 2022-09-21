@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="astro-766Z6GP7">
+<html lang="en" class="astro-IWK5W2YD">
   <head>
     <script defer data-domain="rukomoynikov.ru" src="https://plausible.io/js/plausible.js"></script>
 
@@ -32,35 +32,35 @@
 <title>Deploy Rails on Amazon LightSail container service</title>
 <meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 
-  <link rel="stylesheet" href="/assets/13b71192.92eb46fe.css" />
-<link rel="stylesheet" href="/assets/7b22a374.ee3c9cf0.css" />
-<link rel="stylesheet" href="/assets/df9fe157.270ab3e3.css" />
-<link rel="stylesheet" href="/assets/cb1b64c1.96c95b88.css" />
-<link rel="stylesheet" href="/assets/4ad433b9.232f2c52.css" />
-<link rel="stylesheet" href="/assets/posts-deploy-rails-on-amazon-lightsail.a048ce78.css" /></head>
-  <body class=" astro-766Z6GP7">
-    <div class="header astro-65XYI72J">
-  <a href="/" class="logo astro-65XYI72J">
-    Maxim<br class="astro-65XYI72J">Rukomoynikov
+  <link rel="stylesheet" href="/assets/7b22a374.63ef34c0.css" />
+<link rel="stylesheet" href="/assets/posts-deploy-rails-on-amazon-lightsail.c2f0ff4c.css" />
+<link rel="stylesheet" href="/assets/4ad433b9.41dc3bcf.css" />
+<link rel="stylesheet" href="/assets/df9fe157.b2319824.css" />
+<link rel="stylesheet" href="/assets/cb1b64c1.b69e1963.css" />
+<link rel="stylesheet" href="/assets/13b71192.ccdf33b2.css" /></head>
+  <body class=" astro-IWK5W2YD">
+    <div class="header astro-5PNHJ74F">
+  <a href="/" class="logo astro-5PNHJ74F">
+    Maxim<br class="astro-5PNHJ74F">Rukomoynikov
   </a>
-  <div class="slogan astro-65XYI72J">
+  <div class="slogan astro-5PNHJ74F">
     I love to create. Developer and designer. Looking forward to make cool
     things.
   </div>
-  <div class="links astro-65XYI72J">
-    <a class="link astro-65XYI72J" href="/posts">blog</a>
-    <a class="link astro-65XYI72J" href="/cases">design</a>
-    <a class="link astro-65XYI72J" href="/cv">cv</a>
+  <div class="links astro-5PNHJ74F">
+    <a class="link astro-5PNHJ74F" href="/posts">blog</a>
+    <a class="link astro-5PNHJ74F" href="/cases">design</a>
+    <a class="link astro-5PNHJ74F" href="/cv">cv</a>
   </div>
 </div>
 
 
-    <div class="content astro-766Z6GP7">
-      <div class="hero-title astro-ZQJ3ZA7Q">
-  <div class="hero-title__container astro-ZQJ3ZA7Q">
-    <div class="hero-title__text-container astro-ZQJ3ZA7Q">
-      <div class="hero-title__tag astro-ZQJ3ZA7Q">Telegram</div><div class="hero-title__tag astro-ZQJ3ZA7Q">Elixir</div>
-      <h2 class="hero-title__title astro-ZQJ3ZA7Q">
+    <div class="content astro-IWK5W2YD">
+      <div class="hero-title astro-W7A2DVUK">
+  <div class="hero-title__container astro-W7A2DVUK">
+    <div class="hero-title__text-container astro-W7A2DVUK">
+      <div class="hero-title__tag astro-W7A2DVUK">Telegram</div><div class="hero-title__tag astro-W7A2DVUK">Elixir</div>
+      <h2 class="hero-title__title astro-W7A2DVUK">
         Deploy Rails on Amazon LightSail container service
       </h2>
       
@@ -68,43 +68,43 @@
   </div>
 </div>
 
-<div class="container--1200 astro-BBNM3MM2">
-  <div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><p class="paragraph astro-IOL3HG2G">
+<div class="container--1200 astro-IBQ2E6SI">
+  <div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
   
         During this article i will lead you from basics of Lightsail to fully a furnished automatic CI\CD to Lightsail.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QMDQII75"></div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
 </div>
 
-<h2 class=" astro-3KQXSL4C">What is Lightail in general?</h2>
+<h2 class=" astro-SJSIPHIP">What is Lightail in general?</h2>
 
-<div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><p class="paragraph astro-IOL3HG2G">
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
   
         Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2. Though being a lighten version of EC2 it supports all essential tools. At the moment you can use: VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
       
 </p>
 
-<p class="paragraph astro-IOL3HG2G">
+<p class="paragraph astro-XYZVYTE4">
   
-        In this tutorial i will use <i class="astro-4LCKIGOU">container service</i>
+        In this tutorial i will use <i class="astro-VMY7ZIVH">container service</i>
 
  what is someting similiar to Amazon Fargate + EC2. Container service allows to run Docker images. 
       
 </p>
 
 </div>
-  <div class="col-2 astro-QMDQII75"><ul class="links-list astro-SIOEHDSZ">
-  <li class="astro-SIOEHDSZ">
-        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-SIOEHDSZ">
+  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
+  <li class="astro-3CWB35N2">
+        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-3CWB35N2">
           Amazon Lightsail
         </a>
-      </li><li class="astro-SIOEHDSZ">
-        <a href="https://www.youtube.com/watch?v=RhcR5LaRXIQ" class="links-list__link astro-SIOEHDSZ">
+      </li><li class="astro-3CWB35N2">
+        <a href="https://www.youtube.com/watch?v=RhcR5LaRXIQ" class="links-list__link astro-3CWB35N2">
           Deploy your first containerized application (Youtube)
         </a>
       </li>
@@ -113,27 +113,27 @@
 </div>
 </div>
 
-<h2 class=" astro-3KQXSL4C">Rails application which i want to deploy</h2>
+<h2 class=" astro-SJSIPHIP">Rails application which i want to deploy</h2>
 
-<div class="columns standard astro-QMDQII75">
-  <div class="col-1 astro-QMDQII75"><p class="paragraph astro-IOL3HG2G">
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
   
         Rails app is going to be extremely simple. Notetaking application that uses: Postgresql database, Importmaps for javascript. I have prepared an example application which you can clone.
       
 </p>
 
-<p class="paragraph astro-IOL3HG2G">
+<p class="paragraph astro-XYZVYTE4">
   
-        Cool part that right out of the box you have configured Minitest tests. If you run <i class="astro-4LCKIGOU">rails test</i>
+        Cool part that right out of the box you have configured Minitest tests. If you run <i class="astro-VMY7ZIVH">rails test</i>
 
  you see 
       
 </p>
 
 </div>
-  <div class="col-2 astro-QMDQII75"><ul class="links-list astro-SIOEHDSZ">
-  <li class="astro-SIOEHDSZ">
-        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-SIOEHDSZ">
+  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
+  <li class="astro-3CWB35N2">
+        <a href="https://lightsail.aws.amazon.com" class="links-list__link astro-3CWB35N2">
           Example application on Github
         </a>
       </li>
@@ -142,7 +142,22 @@
 </div>
 </div>
 
-<h3 class=" astro-3KQXSL4C">Dockerfile</h3>
+<h3 class=" astro-SJSIPHIP">Dockerfile</h3>
+
+<h2 class=" astro-SJSIPHIP">Creating LightSail infrastructure</h2>
+
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+  
+        Cool part that right out of the box you have configured Minitest tests. If you run <i class="astro-VMY7ZIVH">rails test</i>
+
+ you see 
+      
+</p>
+
+</div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
+</div>
 
 <ul>
       <li>What is LightSail in general</li>
@@ -155,15 +170,15 @@
       Recipe (with link to clone particular commit)
       <li>Deploy application to LightSail</li>
       No link to demo
-    </ul><a href="https://github.com/Rukomoynikov/act_as_api_client" class="github-repo astro-C42ZKDGR">
-  <div class="github-repo__title-container astro-C42ZKDGR">
-    <img class="github-repo__image astro-C42ZKDGR" src="/assets/octicon.b3a7a685.svg">
+    </ul><a href="https://github.com/Rukomoynikov/act_as_api_client" class="github-repo astro-MGRYT25X">
+  <div class="github-repo__title-container astro-MGRYT25X">
+    <img class="github-repo__image astro-MGRYT25X" src="/assets/octicon.b3a7a685.svg">
     act_as_api_client 
     <!-- <GithubStars 
       client:load 
       repo='Rukomoynikov/act_as_api_client' /> -->
   </div>
-  <div class="github-repo__description astro-C42ZKDGR">
+  <div class="github-repo__description astro-MGRYT25X">
     Templates for popular API&#39;s and reliable way to create your own clients. At the moment it supports Github’s API, Authorize.net
   </div>
 </a>
