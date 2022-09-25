@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://rukomoynikov.ru/posts/deploy-rails-on-amazon-lightsail/">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deploy Rails on Amazon LightSail container service">
+<meta property="og:title" content="Deploy Phoenix LiveView on Amazon LightSail">
 <meta property="og:url" content="https://rukomoynikov.ru/posts/deploy-rails-on-amazon-lightsail/">
 <meta property="og:image" content="https://rukomoynikov.ru/_image/assets/images/posts/elixir-telegram-bot/facebook-share_1200x630.jpg">
 <meta property="og:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
@@ -24,12 +24,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@rukomoynikov">
 <meta name="twitter:creator" content="@rukomoynikov">
-<meta name="twitter:title" content="Deploy Rails on Amazon LightSail container service">
+<meta name="twitter:title" content="Deploy Phoenix LiveView on Amazon LightSail">
 <meta name="twitter:image" content="https://rukomoynikov.ru/_image/assets/images/posts/elixir-telegram-bot/facebook-share_1200x630.jpg">
 <meta name="twitter:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 <meta name="twitter:label1" value="Author">
 <meta name="twitter:value1" value="Max Rukomoynikov">
-<title>Deploy Rails on Amazon LightSail container service</title>
+<title>Deploy Phoenix LiveView on Amazon LightSail</title>
 <meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 
   <link rel="stylesheet" href="/assets/7b22a374.63ef34c0.css" />
@@ -37,7 +37,8 @@
 <link rel="stylesheet" href="/assets/4ad433b9.41dc3bcf.css" />
 <link rel="stylesheet" href="/assets/df9fe157.b2319824.css" />
 <link rel="stylesheet" href="/assets/cb1b64c1.b69e1963.css" />
-<link rel="stylesheet" href="/assets/13b71192.ccdf33b2.css" /></head>
+<link rel="stylesheet" href="/assets/13b71192.ccdf33b2.css" />
+<link rel="stylesheet" href="/assets/41aa9c72.58b7ca84.css" /></head>
   <body class=" astro-IWK5W2YD">
     <div class="header astro-5PNHJ74F">
   <a href="/" class="logo astro-5PNHJ74F">
@@ -59,9 +60,9 @@
       <div class="hero-title astro-W7A2DVUK">
   <div class="hero-title__container astro-W7A2DVUK">
     <div class="hero-title__text-container astro-W7A2DVUK">
-      <div class="hero-title__tag astro-W7A2DVUK">Telegram</div><div class="hero-title__tag astro-W7A2DVUK">Elixir</div>
+      <div class="hero-title__tag astro-W7A2DVUK">Elixir</div><div class="hero-title__tag astro-W7A2DVUK">Amazon Lightsail</div><div class="hero-title__tag astro-W7A2DVUK">Github Actions</div>
       <h2 class="hero-title__title astro-W7A2DVUK">
-        Deploy Rails on Amazon LightSail container service
+        Deploy Phoenix LiveView on Amazon LightSail
       </h2>
       
     </div>
@@ -113,20 +114,34 @@
 </div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Rails application which i want to deploy</h2>
+<h2 class=" astro-SJSIPHIP">Phoenix LiveView application</h2>
 
 <div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
-  
-        Rails app is going to be extremely simple. Notetaking application that uses: Postgresql database, Importmaps for javascript. I have prepared an example application which you can clone.
-      
-</p>
+  <div class="col-1 astro-QJA4LRDQ"><picture class="post__picture astro-HQAFPWCH">
+	<source type="image/avif" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_920x559.avif 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_1840x1118.avif 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_920x559.webp 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_1840x1118.webp 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_920x559.png 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_1840x1118.png 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w">
+	<img width="1840" height="1118" src="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/example_app_1840x1118.png" class="astro-HQAFPWCH" loading="lazy" decoding="async">
+</picture>
 
 <p class="paragraph astro-XYZVYTE4">
   
-        Cool part that right out of the box you have configured Minitest tests. If you run <i class="astro-VMY7ZIVH">rails test</i>
+        To make this tale a bit simple i will not dive into creating something meaningfull. Rather we will create a basic boilerplate without Ecto. If in the future you will decide to add database this should not be a problem as LightSail supports managed databases as well.
+      
+</p>
 
- you see 
+<div class="code-snippet astro-RHIRIR7F">
+  <div class="file-name"><img class="code-block__file-icon" src="/assets/console.4ea5677b.svg"/>Terminal</div>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
+<span class="line"><span style="color: #000000"># Scaffolding application</span></span>
+<span class="line"><span style="color: #000000">mix phx.new github_dashboard --no-ecto</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
+
+</div>
+
+<p class="paragraph astro-XYZVYTE4">
+  
+        Well done! Now it's time to make a commit and if you want to look at your new shiny project run local server <i class="astro-VMY7ZIVH">mix phx.server</i>
+
+.
       
 </p>
 
@@ -142,7 +157,180 @@
 </div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Dockerfile</h3>
+<h2 class=" astro-SJSIPHIP">Lightsail required setup</h2>
+
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><picture class="post__picture astro-HQAFPWCH">
+	<source type="image/avif" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_920x502.avif 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_1840x1004.avif 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_920x502.webp 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_1840x1004.webp 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_920x502.png 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_1840x1004.png 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w">
+	<img width="1840" height="1004" src="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/light-sail-empty-container-service_1840x1004.png" class="astro-HQAFPWCH" loading="lazy" decoding="async">
+</picture>
+
+<p class="paragraph astro-XYZVYTE4">
+  
+        We are one step closer to the deployed application. Deployed on Lightsail. To make it possible first we need to create a container service and IAM settings.
+      
+</p>
+
+<p class="paragraph astro-XYZVYTE4">
+  
+        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers 10$ "machine" to 3 months for free. Why not to give it a try? Please create a container service. 
+      
+</p>
+
+<picture class="post__picture astro-HQAFPWCH">
+	<source type="image/avif" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_920x350.avif 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_1840x699.avif 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_920x350.webp 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_1840x699.webp 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_920x350.png 920w,/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_1840x699.png 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w">
+	<img width="1840" height="699" src="/_image/assets/images/posts/deploy-elixir-app-on-lightsail/pricing_1840x699.png" class="astro-HQAFPWCH" loading="lazy" decoding="async">
+</picture>
+
+<p class="paragraph astro-XYZVYTE4">
+  
+        On the creation screen: change region if needed, leave "Set up your first deployment" as is. In the field "Identify your service" enter desired name and save it somewhere. "Container service name" will be used later in CI settings.
+      
+</p>
+
+</div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
+</div>
+
+<h2 class=" astro-SJSIPHIP">Docker setup</h2>
+
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+  
+        Lightsail will run container we point to. So, in order to create docker container first Dockerfile is required. Using this file Github CI will build image and push the image to Lightsail image's container.
+      
+</p>
+
+<div class="code-snippet astro-RHIRIR7F">
+  <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>Dockerfile</div>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #008000"># BASE</span></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> elixir:alpine </span><span style="color: #0000FF">AS</span><span style="color: #000000"> base</span></span>
+<span class="line"><span style="color: #0000FF">WORKDIR</span><span style="color: #000000"> /app</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix do local.hex --force, local.rebar --force</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add npm inotify-tools</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #008000"># BUILD</span></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> base </span><span style="color: #0000FF">AS</span><span style="color: #000000"> build</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add curl bash git</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
+<span class="line"><span style="color: #0000FF">ENV</span><span style="color: #000000"> MIX_ENV=$MIX_ENV</span></span>
+<span class="line"><span style="color: #0000FF">COPY</span><span style="color: #000000"> . ./</span></span>
+<span class="line"><span style="color: #008000"># install application</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix do deps.get, compile</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #008000"># RELEASE</span></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> build </span><span style="color: #0000FF">AS</span><span style="color: #000000"> release</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
+<span class="line"><span style="color: #008000"># digests and compresses static files</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix assets.deploy</span></span>
+<span class="line"><span style="color: #008000"># generate release executable</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix phx.gen.release</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix release</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #008000"># PRODUCTION</span></span>
+<span class="line"><span style="color: #008000"># -----------------</span></span>
+<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> elixir:alpine</span></span>
+<span class="line"><span style="color: #0000FF">WORKDIR</span><span style="color: #000000"> /app</span></span>
+<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #008000"># install dependencies</span></span>
+<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add ncurses-libs curl</span></span>
+<span class="line"><span style="color: #0000FF">COPY</span><span style="color: #000000"> --from=release /app/_build/prod/rel/github_dashboard ./</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #008000"># start application</span></span>
+<span class="line"><span style="color: #0000FF">CMD</span><span style="color: #000000"> [</span><span style="color: #A31515">&quot;bin/server&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;start&quot;</span><span style="color: #000000">]</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
+</div>
+
+<h2 class=" astro-SJSIPHIP">Github Actions to test and deploy</h2>
+
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+  
+        Heya! We are almost there. Let's setup CI pipeline to test our super-duper app. 
+      
+</p>
+
+<div class="code-snippet astro-RHIRIR7F">
+  <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>.github/workflows/ci.yml</div>
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Elixir CI</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #0000FF">on</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">push</span><span style="color: #000000">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #800000">permissions</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">contents</span><span style="color: #000000">: </span><span style="color: #0000FF">read</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #800000">env</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">CONTAINER_SERVICE_NAME</span><span style="color: #000000">: </span><span style="color: #0000FF">github-dashboard-container-service</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">AWS_REGION</span><span style="color: #000000">: </span><span style="color: #0000FF">us-east-1</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">DOCKER_TAG</span><span style="color: #000000">: </span><span style="color: #0000FF">github-dashboard-image</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #800000">jobs</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">build</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Build and test</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">runs-on</span><span style="color: #000000">: </span><span style="color: #0000FF">ubuntu-latest</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">steps</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">actions/checkout@v3</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Set up Elixir</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">erlef/setup-beam@988e02bfe678367a02564f65ca2e37726dc0268f</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">with</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">elixir-version</span><span style="color: #000000">: </span><span style="color: #0000FF">&#39;1.12.3&#39;</span><span style="color: #000000"> </span><span style="color: #008000"># Define the elixir version [required]</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">otp-version</span><span style="color: #000000">: </span><span style="color: #0000FF">&#39;24.1&#39;</span><span style="color: #000000"> </span><span style="color: #008000"># Define the OTP version [required]</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Restore dependencies cache</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">actions/cache@v3</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">with</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">path</span><span style="color: #000000">: </span><span style="color: #0000FF">deps</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">key</span><span style="color: #000000">: </span><span style="color: #0000FF">${{ runner.os }}-mix-${{ hashFiles(&#39;**/mix.lock&#39;) }}</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">restore-keys</span><span style="color: #000000">: </span><span style="color: #0000FF">${{ runner.os }}-mix-</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Install dependencies</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #0000FF">mix deps.get</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Run tests</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #0000FF">mix test</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">deploy</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Deploy to Lightsail</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">runs-on</span><span style="color: #000000">: </span><span style="color: #0000FF">ubuntu-latest</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #800000">steps</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">actions/checkout@v3</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Build docker container</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #AF00DB">|</span></span>
+<span class="line"><span style="color: #0000FF">        docker build . -t $DOCKER_TAG</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Install LightSail AWS CLI plugin</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #AF00DB">|</span></span>
+<span class="line"><span style="color: #0000FF">        curl &quot;https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl&quot; -o &quot;/usr/local/bin/lightsailctl&quot;</span></span>
+<span class="line"><span style="color: #0000FF">        sudo chmod +x /usr/local/bin/lightsailctl</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Configure AWS Credentials</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">aws-actions/configure-aws-credentials@v1</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">with</span><span style="color: #000000">:</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">aws-access-key-id</span><span style="color: #000000">: </span><span style="color: #0000FF">${{ secrets.AWS_ACCESS_KEY_ID }}</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">aws-secret-access-key</span><span style="color: #000000">: </span><span style="color: #0000FF">${{ secrets.AWS_SECRET_ACCESS_KEY }}</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #800000">aws-region</span><span style="color: #000000">: </span><span style="color: #0000FF">${{ env.AWS_REGION }}</span><span style="color: #000000"> </span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Push new version to LightSail</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #0000FF">aws lightsail push-container-image --region $AWS_REGION --service-name $CONTAINER_SERVICE_NAME --label $DOCKER_TAG --image $DOCKER_TAG:latest</span></span>
+<span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Deploy pushed container</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">:  </span><span style="color: #0000FF">aws lightsail create-container-service-deployment --service-name $CONTAINER_SERVICE_NAME --containers file://lightsail/containers.json --public-endpoint file://lightsail/public-endpoint.json</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+
+</div>
+
+</div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
+</div>
 
 <h2 class=" astro-SJSIPHIP">Creating LightSail infrastructure</h2>
 
