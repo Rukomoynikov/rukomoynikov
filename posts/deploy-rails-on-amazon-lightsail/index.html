@@ -34,7 +34,7 @@
 
   <link rel="stylesheet" href="/assets/7b22a374.63ef34c0.css" />
 <link rel="stylesheet" href="/assets/posts-deploy-rails-on-amazon-lightsail.c2f0ff4c.css" />
-<link rel="stylesheet" href="/assets/4ad433b9.41dc3bcf.css" />
+<link rel="stylesheet" href="/assets/4ad433b9.68f42f1c.css" />
 <link rel="stylesheet" href="/assets/df9fe157.b2319824.css" />
 <link rel="stylesheet" href="/assets/cb1b64c1.b69e1963.css" />
 <link rel="stylesheet" href="/assets/13b71192.ccdf33b2.css" />
@@ -173,7 +173,7 @@
 
 <p class="paragraph astro-XYZVYTE4">
   
-        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers 10$ "machine" to 3 months for free. Why not to give it a try? Please create a container service. 
+        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers $10 "machine" to 3 months for free. Cheapest ($15) plan for managed database also is free for first 3 months. Why not to give it a try? Please create a container service. 
       
 </p>
 
@@ -187,6 +187,41 @@
         On the creation screen: change region if needed, leave "Set up your first deployment" as is. In the field "Identify your service" enter desired name and save it somewhere. "Container service name" will be used later in CI settings.
       
 </p>
+
+</div>
+  <div class="col-2 astro-QJA4LRDQ"></div>
+</div>
+
+<h3 class=" astro-SJSIPHIP">IAM roles</h3>
+
+<div class="columns standard astro-QJA4LRDQ">
+  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+  
+        To be able interact with AWS API we need to create these two entities: policy, user. By default Amazon doesn't offer a policy to control Lightsail, but we are free to create it on our own.
+      
+</p>
+
+<div class="code-snippet astro-RHIRIR7F">
+  
+  <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
+<span class="line"><span style="color: #000000">{</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #0451A5">&quot;Version&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;2012-10-17&quot;</span><span style="color: #000000">,</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #0451A5">&quot;Statement&quot;</span><span style="color: #000000">: [</span></span>
+<span class="line"><span style="color: #000000">    {</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #0451A5">&quot;Sid&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;VisualEditor0&quot;</span><span style="color: #000000">,</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #0451A5">&quot;Effect&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;Allow&quot;</span><span style="color: #000000">,</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #0451A5">&quot;Action&quot;</span><span style="color: #000000">: [</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #A31515">&quot;lightsail:RegisterContainerImage&quot;</span><span style="color: #000000">,</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #A31515">&quot;lightsail:CreateContainerServiceRegistryLogin&quot;</span><span style="color: #000000">,</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #A31515">&quot;lightsail:CreateContainerServiceDeployment&quot;</span></span>
+<span class="line"><span style="color: #000000">      ],</span></span>
+<span class="line"><span style="color: #000000">      </span><span style="color: #0451A5">&quot;Resource&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;*&quot;</span></span>
+<span class="line"><span style="color: #000000">    }</span></span>
+<span class="line"><span style="color: #000000">  ]</span></span>
+<span class="line"><span style="color: #000000">}</span></span>
+<span class="line"><span style="color: #000000">      </span></span></code></pre>
+
+</div>
 
 </div>
   <div class="col-2 astro-QJA4LRDQ"></div>
@@ -276,9 +311,9 @@
 <span class="line"><span style="color: #000000">  </span><span style="color: #800000">contents</span><span style="color: #000000">: </span><span style="color: #0000FF">read</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #800000">env</span><span style="color: #000000">:</span></span>
-<span class="line"><span style="color: #000000">  </span><span style="color: #800000">CONTAINER_SERVICE_NAME</span><span style="color: #000000">: </span><span style="color: #0000FF">github-dashboard-container-service</span></span>
-<span class="line"><span style="color: #000000">  </span><span style="color: #800000">AWS_REGION</span><span style="color: #000000">: </span><span style="color: #0000FF">us-east-1</span></span>
-<span class="line"><span style="color: #000000">  </span><span style="color: #800000">DOCKER_TAG</span><span style="color: #000000">: </span><span style="color: #0000FF">github-dashboard-image</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">CONTAINER_SERVICE_NAME</span><span style="color: #000000">: </span><span style="color: #0000FF">&lt;container service name&gt;</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">AWS_REGION</span><span style="color: #000000">: </span><span style="color: #0000FF">&lt;aws region&gt;</span></span>
+<span class="line"><span style="color: #000000">  </span><span style="color: #800000">DOCKER_TAG</span><span style="color: #000000">: </span><span style="color: #0000FF">&lt;some name to tag your docker images in Lightsail hub&gt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #800000">jobs</span><span style="color: #000000">:</span></span>
 <span class="line"><span style="color: #000000">  </span><span style="color: #800000">build</span><span style="color: #000000">:</span></span>
@@ -309,10 +344,12 @@
 <span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Build docker container</span></span>
 <span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #AF00DB">|</span></span>
 <span class="line"><span style="color: #0000FF">        docker build . -t $DOCKER_TAG</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #008000"># By default AWS cli is available in Github Actions environment, but not Lightsail cli. So we need to install it manualy.</span></span>
 <span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Install LightSail AWS CLI plugin</span></span>
 <span class="line"><span style="color: #000000">      </span><span style="color: #800000">run</span><span style="color: #000000">: </span><span style="color: #AF00DB">|</span></span>
 <span class="line"><span style="color: #0000FF">        curl &quot;https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl&quot; -o &quot;/usr/local/bin/lightsailctl&quot;</span></span>
 <span class="line"><span style="color: #0000FF">        sudo chmod +x /usr/local/bin/lightsailctl</span></span>
+<span class="line"><span style="color: #000000">    </span><span style="color: #008000"># Please add you AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY into your Github Repo.</span></span>
 <span class="line"><span style="color: #000000">    - </span><span style="color: #800000">name</span><span style="color: #000000">: </span><span style="color: #0000FF">Configure AWS Credentials</span></span>
 <span class="line"><span style="color: #000000">      </span><span style="color: #800000">uses</span><span style="color: #000000">: </span><span style="color: #0000FF">aws-actions/configure-aws-credentials@v1</span></span>
 <span class="line"><span style="color: #000000">      </span><span style="color: #800000">with</span><span style="color: #000000">:</span></span>
@@ -332,33 +369,7 @@
   <div class="col-2 astro-QJA4LRDQ"></div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Creating LightSail infrastructure</h2>
-
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
-  
-        Cool part that right out of the box you have configured Minitest tests. If you run <i class="astro-VMY7ZIVH">rails test</i>
-
- you see 
-      
-</p>
-
-</div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
-</div>
-
-<ul>
-      <li>What is LightSail in general</li>
-      Video ...
-      <li>Basic rails application</li>
-      Notetaking app with esbuild and cssbuild (and css bulma)
-      <li>Creating LightSail infrastructure</li>
-      Container service and database
-      <li>Run CI using Gihub Actions</li>
-      Recipe (with link to clone particular commit)
-      <li>Deploy application to LightSail</li>
-      No link to demo
-    </ul><a href="https://github.com/Rukomoynikov/act_as_api_client" class="github-repo astro-MGRYT25X">
+<a href="https://github.com/Rukomoynikov/act_as_api_client" class="github-repo astro-MGRYT25X">
   <div class="github-repo__title-container astro-MGRYT25X">
     <img class="github-repo__image astro-MGRYT25X" src="/assets/octicon.b3a7a685.svg">
     act_as_api_client 
