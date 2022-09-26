@@ -121,7 +121,7 @@ mix phx.new github_dashboard --no-ecto
       </Paragraph>
 
       <Paragraph>
-        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers 10$ "machine" to 3 months for free. Why not to give it a try? Please create a container service. 
+        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers $10 "machine" to 3 months for free. Cheapest ($15) plan for managed database also is free for first 3 months. Why not to give it a try? Please create a container service. 
       </Paragraph>
 
       <Picture
@@ -136,6 +136,32 @@ mix phx.new github_dashboard --no-ecto
       <Paragraph>
         On the creation screen: change region if needed, leave "Set up your first deployment" as is. In the field "Identify your service" enter desired name and save it somewhere. "Container service name" will be used later in CI settings.
       </Paragraph>
+    </TwoColsContainer>
+
+    <Title level="3">IAM roles</Title>
+
+    <TwoColsContainer>
+      <Paragraph>
+        To be able interact with AWS API we need to create these two entities: policy, user. By default Amazon doesn't offer a policy to control Lightsail, but we are free to create it on our own.
+      </Paragraph>
+
+      <CodeSnippet lang='json' code={`
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "lightsail:RegisterContainerImage",
+        "lightsail:CreateContainerServiceRegistryLogin",
+        "lightsail:CreateContainerServiceDeployment"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+      `} />
     </TwoColsContainer>
 
     <Title level="2">Docker setup</Title>
@@ -209,9 +235,9 @@ permissions:
   contents: read
 
 env:
-  CONTAINER_SERVICE_NAME: github-dashboard-container-service
-  AWS_REGION: us-east-1
-  DOCKER_TAG: github-dashboard-image
+  CONTAINER_SERVICE_NAME: <container service name>
+  AWS_REGION: <aws region>
+  DOCKER_TAG: <some name to tag your docker images in Lightsail hub>
 
 jobs:
   build:
@@ -242,10 +268,12 @@ jobs:
     - name: Build docker container
       run: |
         docker build . -t $DOCKER_TAG
+    # By default AWS cli is available in Github Actions environment, but not Lightsail cli. So we need to install it manualy.
     - name: Install LightSail AWS CLI plugin
       run: |
         curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl" -o "/usr/local/bin/lightsailctl"
         sudo chmod +x /usr/local/bin/lightsailctl
+    # Please add you AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY into your Github Repo.
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -259,27 +287,6 @@ jobs:
 
 `} />
     </TwoColsContainer>
-
-    <Title level="2">Creating LightSail infrastructure</Title>
-    
-    <TwoColsContainer>
-      <Paragraph>
-        Cool part that right out of the box you have configured Minitest tests. If you run <InlineCode>rails test</InlineCode> you see 
-      </Paragraph>
-    </TwoColsContainer>
-
-    <ul>
-      <li>What is LightSail in general</li>
-      Video ...
-      <li>Basic rails application</li>
-      Notetaking app with esbuild and cssbuild (and css bulma)
-      <li>Creating LightSail infrastructure</li>
-      Container service and database
-      <li>Run CI using Gihub Actions</li>
-      Recipe (with link to clone particular commit)
-      <li>Deploy application to LightSail</li>
-      No link to demo
-    </ul>
 
     <GithubRepo 
       title={'act_as_api_client '}
