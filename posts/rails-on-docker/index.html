@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="astro-IWK5W2YD">
+<html lang="en" class="astro-DWJ7P3PE">
   <head>
     <script defer data-domain="rukomoynikov.ru" src="https://plausible.io/js/plausible.js"></script>
 
@@ -32,35 +32,35 @@
 <title>How to generate Rails app and run it without installing ruby locally</title>
 <meta name="description" content="In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.">
 
-  <link rel="stylesheet" href="/assets/digitaldeals.df683e5b.css" />
-<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.ea85fdad.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.b2319824.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.b69e1963.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.ccdf33b2.css" />
-<link rel="stylesheet" href="/assets/index.58b7ca84.css" /></head>
-  <body class=" astro-IWK5W2YD">
-    <div class="header astro-5PNHJ74F">
-  <a href="/" class="logo astro-5PNHJ74F">
-    Maxim<br class="astro-5PNHJ74F">Rukomoynikov
+  <link rel="stylesheet" href="/assets/digitaldeals.5c849bfc.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.58d1ecd3.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.2fc643d6.css" />
+<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.4fcf968d.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.315ec882.css" />
+<link rel="stylesheet" href="/assets/index.04f10e61.css" /></head>
+  <body class=" astro-DWJ7P3PE">
+    <div class="header astro-65PUSRA2">
+  <a href="/" class="logo astro-65PUSRA2">
+    Maxim<br class="astro-65PUSRA2">Rukomoynikov
   </a>
-  <div class="slogan astro-5PNHJ74F">
+  <div class="slogan astro-65PUSRA2">
     I love to create. Developer and designer. Looking forward to make cool
     things.
   </div>
-  <div class="links astro-5PNHJ74F">
-    <a class="link astro-5PNHJ74F" href="/posts">blog</a>
-    <a class="link astro-5PNHJ74F" href="/cases">design</a>
-    <a class="link astro-5PNHJ74F" href="/cv">cv</a>
+  <div class="links astro-65PUSRA2">
+    <a class="link astro-65PUSRA2" href="/posts">blog</a>
+    <a class="link astro-65PUSRA2" href="/cases">design</a>
+    <a class="link astro-65PUSRA2" href="/cv">cv</a>
   </div>
 </div>
 
 
-    <div class="content astro-IWK5W2YD">
-      <div class="hero-title astro-W7A2DVUK">
-  <div class="hero-title__container astro-W7A2DVUK">
-    <div class="hero-title__text-container astro-W7A2DVUK">
-      <div class="hero-title__tag astro-W7A2DVUK">Ruby</div><div class="hero-title__tag astro-W7A2DVUK">Docker</div>
-      <h2 class="hero-title__title astro-W7A2DVUK">
+    <div class="content astro-DWJ7P3PE">
+      <div class="hero-title astro-ZHVBOH5O">
+  <div class="hero-title__container astro-ZHVBOH5O">
+    <div class="hero-title__text-container astro-ZHVBOH5O">
+      <div class="hero-title__tag astro-ZHVBOH5O">Ruby</div><div class="hero-title__tag astro-ZHVBOH5O">Docker</div>
+      <h2 class="hero-title__title astro-ZHVBOH5O">
         How to generate Rails app and run it without installing ruby locally
       </h2>
       <div class="hero-title__subtitle">In internet plenty of articles about Dockerizing existing application. But, what if you don't have installed ruby locally and need to generate new app.</div>
@@ -68,46 +68,46 @@
   </div>
 </div>
 
-<div class="container--1200 astro-IBQ2E6SI">
-  <h2 class=" astro-SJSIPHIP">Why Docker?</h2>
+<div class="container--1200 astro-55JWB7T6">
+  <h2 class=" astro-7NA45GE6">Why Docker?</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         It has always been easier to supply the necessary tools locally. If you need to have multiple versions, then rvm or nvm solve the problem. Then came Docker. Until this year, I had successfully managed to avoid it. On projects where the guys worked with Docker, I instead installed everything locally. But, I thought that enough fighting and it's time to try to live with the idea of "docker for everything". It's simply time to admit either i work using Docker or i don't work at all.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Generating Ruby on Rails application</h2>
+<h2 class=" astro-7NA45GE6">Generating Ruby on Rails application</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Well I don't have ruby installed locally. And I need to generate a new Rails application or experiment in IRB.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         The first thing I did was look at the official Rails image. It turned out to be deprecated, and the authors suggested Ruby as a replacement.Using Ruby image, I was unable to generate a Rails application, so Imade my own Docker image.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> debian:bullseye</span></span>
@@ -142,9 +142,9 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://hub.docker.com/repository/docker/rukomoynikov/rails/general" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://hub.docker.com/repository/docker/rukomoynikov/rails/general" class="links-list__link astro-7W5CB4XN">
           Image on Docker Hub
         </a>
       </li>
@@ -153,21 +153,21 @@
 </div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Using the image</h2>
+<h2 class=" astro-7NA45GE6">Using the image</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         The following command will generate a new Rails application in the current folder and install required gems in the gems folder. As you know, a container cannot change its content after it has been built.Therefore, all application files and gems will be stored on the host machine.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">        docker run --rm -v /$(pwd):/app rukomoynikov/rails rails new .</span></span>
@@ -176,22 +176,22 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Launching the application is not much more difficult. But, in a simple form, it will only work if you use the sqlite database.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails rails s -b 0.0.0.0</span></span>
@@ -200,22 +200,22 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Running IRB. Or you can enter console and run ruby files from local machine.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">        docker run --rm -it -p 3000:3000 -v /$(pwd):/app rukomoynikov/rails bash</span></span>
@@ -224,43 +224,43 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><picture class="post__picture astro-HQAFPWCH">
-	<source type="image/avif" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.avif 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.avif 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.webp 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.webp 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.png 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png 1840w" class="astro-HQAFPWCH" sizes="(max-width: 920px) 920w, 1840w">
-	<img width="1840" height="1069" src="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png" class="astro-HQAFPWCH" loading="lazy" decoding="async">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><picture class="post__picture astro-D2XCKCW5">
+	<source type="image/avif" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.avif 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.avif 1840w" class="astro-D2XCKCW5" sizes="(max-width: 920px) 920w, 1840w"><source type="image/webp" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.webp 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.webp 1840w" class="astro-D2XCKCW5" sizes="(max-width: 920px) 920w, 1840w"><source type="image/png" srcset="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_920x535.png 920w,/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png 1840w" class="astro-D2XCKCW5" sizes="(max-width: 920px) 920w, 1840w">
+	<img width="1840" height="1069" src="/_image/assets/images/posts/rails-on-docker/rails-basic-app/rails-basic-app_1840x1069.png" class="astro-D2XCKCW5" loading="lazy" decoding="async">
 </picture>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">What's next?</h2>
+<h2 class=" astro-7NA45GE6">What's next?</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Above you saw an example of basic Rails application used SQLite. In order to use Postgresql and Webpacker you need something more complicated than simple Dockerfile. You need docker-compose. There you will be able to separate application into a ruby service, and the client service.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   Here is example of docker-compose.yml
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #800000">services</span><span style="color: #000000">:</span></span>
@@ -329,9 +329,9 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development" class="links-list__link astro-7W5CB4XN">
           Heavily inspired by Evil Martians article
         </a>
       </li>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="astro-IWK5W2YD">
+<html lang="en" class="astro-DWJ7P3PE">
   <head>
     <script defer data-domain="rukomoynikov.ru" src="https://plausible.io/js/plausible.js"></script>
 
@@ -32,36 +32,36 @@
 <title>How to make a Telegram bot in Elixir</title>
 <meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 
-  <link rel="stylesheet" href="/assets/digitaldeals.df683e5b.css" />
-<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.c10a3134.css" />
-<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.ea85fdad.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.b2319824.css" />
-<link rel="stylesheet" href="/assets/elixir-telegram-bot.48158bab.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.b69e1963.css" />
-<link rel="stylesheet" href="/assets/digitaldeals.ccdf33b2.css" /></head>
-  <body class=" astro-IWK5W2YD">
-    <div class="header astro-5PNHJ74F">
-  <a href="/" class="logo astro-5PNHJ74F">
-    Maxim<br class="astro-5PNHJ74F">Rukomoynikov
+  <link rel="stylesheet" href="/assets/digitaldeals.5c849bfc.css" />
+<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.ebe830cc.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.58d1ecd3.css" />
+<link rel="stylesheet" href="/assets/elixir-telegram-bot.1db3b578.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.2fc643d6.css" />
+<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.4fcf968d.css" />
+<link rel="stylesheet" href="/assets/digitaldeals.315ec882.css" /></head>
+  <body class=" astro-DWJ7P3PE">
+    <div class="header astro-65PUSRA2">
+  <a href="/" class="logo astro-65PUSRA2">
+    Maxim<br class="astro-65PUSRA2">Rukomoynikov
   </a>
-  <div class="slogan astro-5PNHJ74F">
+  <div class="slogan astro-65PUSRA2">
     I love to create. Developer and designer. Looking forward to make cool
     things.
   </div>
-  <div class="links astro-5PNHJ74F">
-    <a class="link astro-5PNHJ74F" href="/posts">blog</a>
-    <a class="link astro-5PNHJ74F" href="/cases">design</a>
-    <a class="link astro-5PNHJ74F" href="/cv">cv</a>
+  <div class="links astro-65PUSRA2">
+    <a class="link astro-65PUSRA2" href="/posts">blog</a>
+    <a class="link astro-65PUSRA2" href="/cases">design</a>
+    <a class="link astro-65PUSRA2" href="/cv">cv</a>
   </div>
 </div>
 
 
-    <div class="content astro-IWK5W2YD">
-      <div class="hero-title astro-W7A2DVUK">
-  <div class="hero-title__container astro-W7A2DVUK">
-    <div class="hero-title__text-container astro-W7A2DVUK">
-      <div class="hero-title__tag astro-W7A2DVUK">Telegram</div><div class="hero-title__tag astro-W7A2DVUK">Elixir</div>
-      <h2 class="hero-title__title astro-W7A2DVUK">
+    <div class="content astro-DWJ7P3PE">
+      <div class="hero-title astro-ZHVBOH5O">
+  <div class="hero-title__container astro-ZHVBOH5O">
+    <div class="hero-title__text-container astro-ZHVBOH5O">
+      <div class="hero-title__tag astro-ZHVBOH5O">Telegram</div><div class="hero-title__tag astro-ZHVBOH5O">Elixir</div>
+      <h2 class="hero-title__title astro-ZHVBOH5O">
         How to make a Telegram bot in Elixir
       </h2>
       
@@ -69,33 +69,33 @@
   </div>
 </div>
 
-<div class="container--1200 astro-IBQ2E6SI">
-  <h2 class=" astro-SJSIPHIP">Introduction to Telegram Bots API</h2>
+<div class="container--1200 astro-55JWB7T6">
+  <h2 class=" astro-7NA45GE6">Introduction to Telegram Bots API</h2>
 
-<h3 class=" astro-SJSIPHIP">Exchanging messages with Telegram</h3>
+<h3 class=" astro-7NA45GE6">Exchanging messages with Telegram</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Telegram supports two types of integration: webhooks and polling. Webhooks it's a type when Telegram sends request to your server whenever bot recevied a message from the user. There pros and cons of that type of integration. Webhooks are more sustainable in general. For webhooks it's necessary to have web-server with external IP adress. This server will receive new messages through get requests from Telegram. During development you can use ngrock.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Polling is a constant polling of the Telegram server for new messages. For polling, you do not need a server and an external address. Simple application that sends requests to the Telegram server without stopping is enough.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://core.telegram.org/bots/api#getting-updates" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://core.telegram.org/bots/api#getting-updates" class="links-list__link astro-7W5CB4XN">
           Documentation about Telegram bots
         </a>
       </li>
@@ -104,28 +104,28 @@
 </div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Obtaining a token from Telegram</h3>
+<h3 class=" astro-7NA45GE6">Obtaining a token from Telegram</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         The token for Telegram requests must be obtained from the BotFather bot.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><video controls loop class="post__video astro-4PISY34X">
-  <source src="/videos/posts/elixir-telegram-bot/api_token.mp4" type="video/mp4" class="astro-4PISY34X">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><video controls loop class="post__video astro-A7FAY2M2">
+  <source src="/videos/posts/elixir-telegram-bot/api_token.mp4" type="video/mp4" class="astro-A7FAY2M2">
 </video>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://t.me/botfather" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://t.me/botfather" class="links-list__link astro-7W5CB4XN">
           BotFather
         </a>
       </li>
@@ -134,23 +134,23 @@
 </div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Elixir</h2>
+<h2 class=" astro-7NA45GE6">Elixir</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Elixir is a functional programming language. Based on the another programming language Erlang. The main advantage of Elixir is the ability to manage a huge number of processes. These processes are also made in a special way, so they take up significantly less memory and processor time than normal computer processes.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://elixir-lang.org/install.html" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://elixir-lang.org/install.html" class="links-list__link astro-7W5CB4XN">
           How to install Elixir one elixir-lang.org
         </a>
-      </li><li class="astro-3CWB35N2">
-        <a href="https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817" class="links-list__link astro-3CWB35N2">
+      </li><li class="astro-7W5CB4XN">
+        <a href="https://gist.github.com/mikoscz/4d2a0052d4cdaaa027bc8a8d6af1e817" class="links-list__link astro-7W5CB4XN">
           Installing with asdf package manager
         </a>
       </li>
@@ -159,23 +159,23 @@
 </div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">The application</h2>
+<h2 class=" astro-7NA45GE6">The application</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         I will gradually complicate the application. I'll start with a echo bot that sends a message back in response to a message. Next, I will add saving users to the database. And in the end, I'll try to make it a little useful - upon request from the user, the bot will send summary information about the stock market.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Creation of the skeleton of the application and installation of the necessary tools</h3>
+<h3 class=" astro-7NA45GE6">Creation of the skeleton of the application and installation of the necessary tools</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">mix new stocks_bot --sup</span></span>
@@ -184,24 +184,24 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        First you need to create a new application. The <i class="astro-VMY7ZIVH">--sup</i>
+        First you need to create a new application. The <i class="astro-FW2B4CUX">--sup</i>
 
  option adds a supervisor to the application and starts it at startup. After creation, the structure of the application should look like this:
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">├── README.md </span></span>
@@ -218,11 +218,11 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Additionally, you need to install HTTPoison to send requests and Jason
         to work with JSON in responses from the Telegram server.
@@ -230,11 +230,11 @@
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/mix.exs</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #AF00DB">defp</span><span style="color: #000000"> </span><span style="color: #795E26">deps</span><span style="color: #000000"> </span><span style="color: #AF00DB">do</span></span>
@@ -248,13 +248,13 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Receiving user message</h3>
+<h3 class=" astro-7NA45GE6">Receiving user message</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/lib/stocks_bot.ex</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #AF00DB">defmodule</span><span style="color: #000000"> </span><span style="color: #267F99">StocksBot</span><span style="color: #000000"> </span><span style="color: #AF00DB">do</span></span>
@@ -277,9 +277,9 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://core.telegram.org/bots/api#getting-updates" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://core.telegram.org/bots/api#getting-updates" class="links-list__link astro-7W5CB4XN">
           Documentation about Telegram bots
         </a>
       </li>
@@ -288,19 +288,19 @@
 </div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Now you can try how it works. Send your bot a message. Then open your terminal and enter these commands.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/console.4ea5677b.svg"/>Terminal</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
 <span class="line"><span style="color: #000000">iex -S mix </span></span>
@@ -310,20 +310,20 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   In the terminal you will see incoming message:
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #000000">[</span></span>
@@ -356,34 +356,34 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        If you try to receive messages again, the answer will be the same. This happens because it is necessary to indicate to the telegram which messages have already been received. To do this, take the <i class="astro-VMY7ZIVH">update_id</i>
+        If you try to receive messages again, the answer will be the same. This happens because it is necessary to indicate to the telegram which messages have already been received. To do this, take the <i class="astro-FW2B4CUX">update_id</i>
 
  of the last message, increase it to one and use it as a get parameter to receive new messages.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   So far, the script receives one message and stops working, but it needs to continue listening to new messages. I'll fix it now.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/lib/stocks_bot.ex</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #AF00DB">defmodule</span><span style="color: #000000"> </span><span style="color: #267F99">StocksBot</span><span style="color: #000000"> </span><span style="color: #AF00DB">do</span></span>
@@ -427,13 +427,13 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Polite answer</h3>
+<h3 class=" astro-7NA45GE6">Polite answer</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/lib/stocks_bot.ex</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #000000">...</span></span>
@@ -470,34 +470,34 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
-  The <i class="astro-VMY7ZIVH">answer_to_message</i>
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
+  The <i class="astro-FW2B4CUX">answer_to_message</i>
 
  function uses pattern matching to pick up the sender's name and the text of the incoming message to send it back to the user as a post-request.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<h3 class=" astro-SJSIPHIP">Using supervisor for the application</h3>
+<h3 class=" astro-7NA45GE6">Using supervisor for the application</h3>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   First step is converting app to a Genserver.
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/lib/stocks_bot.ex</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #AF00DB">defmodule</span><span style="color: #000000"> </span><span style="color: #267F99">StocksBot</span><span style="color: #000000"> </span><span style="color: #AF00DB">do</span></span>
@@ -520,20 +520,20 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   Then this Genserver need to be added to Supervisor Tree.
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><div class="code-snippet astro-RHIRIR7F">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>stocks_bot/lib/stocks_bot/application.ex</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
 <span class="line"><span style="color: #AF00DB">defmodule</span><span style="color: #000000"> </span><span style="color: #267F99">StocksBot</span><span style="color: #000000">.</span><span style="color: #267F99">Application</span><span style="color: #000000"> </span><span style="color: #AF00DB">do</span></span>
@@ -552,9 +552,9 @@
 </div>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://blog.appsignal.com/2021/08/23/using-supervisors-to-organize-your-elixir-application.html" class="links-list__link astro-7W5CB4XN">
           Article from AppSignal with good examples
         </a>
       </li>
@@ -563,17 +563,17 @@
 </div>
 </div>
 
-<h2 class=" astro-SJSIPHIP">Demo time</h2>
+<h2 class=" astro-7NA45GE6">Demo time</h2>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><video controls loop class="post__video astro-4PISY34X">
-  <source src="/videos/posts/elixir-telegram-bot/demo_of_bot.mp4" type="video/mp4" class="astro-4PISY34X">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><video controls loop class="post__video astro-A7FAY2M2">
+  <source src="/videos/posts/elixir-telegram-bot/demo_of_bot.mp4" type="video/mp4" class="astro-A7FAY2M2">
 </video>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"><ul class="links-list astro-3CWB35N2">
-  <li class="astro-3CWB35N2">
-        <a href="https://github.com/Rukomoynikov/telegram-bot-article" class="links-list__link astro-3CWB35N2">
+  <div class="col-2 astro-WXBIQB7Y"><ul class="links-list astro-7W5CB4XN">
+  <li class="astro-7W5CB4XN">
+        <a href="https://github.com/Rukomoynikov/telegram-bot-article" class="links-list__link astro-7W5CB4XN">
           Github repository with bot source code
         </a>
       </li>
@@ -582,15 +582,15 @@
 </div>
 </div>
 
-<div class="columns standard astro-QJA4LRDQ">
-  <div class="col-1 astro-QJA4LRDQ"><p class="paragraph astro-XYZVYTE4">
+<div class="columns standard astro-WXBIQB7Y">
+  <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
         Yes, the bot does not yet have superintelligence. In the next part, I will add user storage in the database and teach the bot to send stock price information.
       
 </p>
 
 </div>
-  <div class="col-2 astro-QJA4LRDQ"></div>
+  <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
 
 

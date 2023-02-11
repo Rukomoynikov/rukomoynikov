@@ -1,0 +1,1 @@
+.gallery:where(.astro-RUUHY2AB){display:flex;overflow:scroll}.gallery:where(.astro-RUUHY2AB) picture:where(.astro-RUUHY2AB):not(:first-of-type){margin-left:20px}.gallery:where(.astro-RUUHY2AB) img{max-width:min(840px,100vw);height:auto}
