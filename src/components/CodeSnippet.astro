@@ -1,5 +1,5 @@
 ---
-import { Code } from "astro/components";
+import { Code } from "astro:components";
 import type * as shiki from "shiki";
 import fileIcon from "@assets/images/icons/file-2.svg";
 import consoleIcon from "@assets/images/icons/console.svg";
@@ -41,6 +41,7 @@ if (Astro.slots.has("default")) {
     font: var(--font-code-snippet);
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
     border-radius: 0 6px 6px 6px;
+    padding-bottom: 12px;
   }
 
   .code-snippet :global(.file-name) {

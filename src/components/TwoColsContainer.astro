@@ -17,13 +17,9 @@ const { layout = "standard" } = Astro.props as Props;
     align-items: flex-start;
   }
 
-  .columns :global(.post__picture img) {
+  .columns :global(img.post__picture) {
     width: 100%;
     height: auto;
-  }
-
-  .columns {
-    display: flex;
   }
 
   .col-1 {

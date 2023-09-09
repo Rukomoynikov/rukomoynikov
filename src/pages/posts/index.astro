@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import PostsSection from "@components/PostsSection.astro";
+
+const seo = {
+  title: "Sort of a blog | RM",
+  description: 'Posts about everything. Design, programming, books and travels.'
+};
+---
+
+<Layout title={seo.title} description={seo.description}>
+  <Container>
+    <PostsSection
+      sectionTitle="Programming"
+      posts={[
+        {
+          letter: "E",
+          title: "How to make a Telegram bot in Elixir",
+          link: "/posts/elixir-telegram-bot/",
+        },
+        {
+          letter: "R",
+          title: "Docker way to generate and run Rails application",
+          link: "/posts/rails-on-docker/",
+        },
+      ]}
+    />
+  </Container>
+</Layout>
