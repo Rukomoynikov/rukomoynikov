@@ -8,7 +8,10 @@ import LinksList from "@components/LinksList.astro";
 import Title from "@components/Title.astro";
 import HeroTitleSmall from "@components/HeroTitleSmall.astro";
 import PictureCaption from "@components/PictureCaption.astro";
-import { Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
+
+import ResultImage from "@assets/images/cases/figma-social/result/result@2x.jpg"
+import ResultImage2 from "@assets/images/cases/figma-social/result-2/result@2x.jpg"
 
 import SocialIcon from "@assets/images/cases/figma-social/facebook.png";
 
@@ -64,11 +67,10 @@ const seo = {
     <Title level="2">Process</Title>
 
     <TwoColsContainer>
-      <Picture
+      <Image
+        alt='Few screens from the process'
         class="post__picture"
-        sizes="(max-width: 920px) 920w, 1840w"
-        widths={[920, 1840]}
-        src={import("@assets/images/cases/figma-social/result/result@2x.jpg")}
+        src={ResultImage2}
       />
       <PictureCaption>Few screens from the process</PictureCaption>
     </TwoColsContainer>
@@ -102,11 +104,10 @@ const seo = {
     <Title level="2">Result</Title>
 
     <TwoColsContainer>
-      <Picture
+      <Image
+        alt="Screenshot from ProductHunt. As you might see it didn't become TOP OF THE DAY."
         class="post__picture"
-        sizes="(max-width: 920px) 920w, 1840w"
-        widths={[920, 1840]}
-        src={import("@assets/images/cases/figma-social/result-2/result@2x.jpg")}
+        src={ResultImage}
       />
       <PictureCaption
         >Screenshot from ProductHunt. As you might see it didn't become "TOP OF
