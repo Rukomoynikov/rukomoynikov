@@ -1,6 +1,7 @@
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLightItalic.woff2")
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLightItalic.woff2")
       format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLightItalic.woff") format("woff");
   font-weight: 200;
@@ -10,7 +11,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-BoldItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-BoldItalic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
@@ -19,7 +21,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Italic.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Italic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
@@ -28,7 +31,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Bold.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Bold.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -37,7 +41,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLight.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLight.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -46,7 +51,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBold.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBold.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -55,7 +61,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Medium.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Medium.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -64,7 +71,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-LightItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-LightItalic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
@@ -73,8 +81,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-MediumItalic.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-MediumItalic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
@@ -83,7 +91,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-ThinItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-ThinItalic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-ThinItalic.woff") format("woff");
   font-weight: 100;
   font-style: italic;
@@ -92,7 +101,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Light.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Light.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -101,7 +111,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Thin.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Thin.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
@@ -110,8 +121,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBoldItalic.woff2")
-      format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBoldItalic.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-SemiBoldItalic.woff") format("woff");
   font-weight: 600;
   font-style: italic;
@@ -120,7 +131,8 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/ibm_plex_sans/IBMPlexSans-Regular.woff2") format("woff2"),
+  src:
+    url("/fonts/ibm_plex_sans/IBMPlexSans-Regular.woff2") format("woff2"),
     url("/fonts/ibm_plex_sans/IBMPlexSans-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
