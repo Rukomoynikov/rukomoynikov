@@ -4,7 +4,10 @@
 
 <div class={`columns ${layout}`}>
 	<div class="col-1"><slot /></div>
-	<div class="col-2"><slot name="aside" /></div>
+
+  {#if $$slots.aside}
+    <div class="col-2"><slot name="aside" /></div>
+  {/if}
 </div>
 
 <style>
