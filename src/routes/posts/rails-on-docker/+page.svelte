@@ -9,7 +9,12 @@
 	import Picture from '$components/Picture/Picture.svelte';
 	import LinksList from '$components/LinksList.svelte';
   import CodeBlock from "$components/CodeBlock.svelte";
+  import SEO from "$components/SEO.svelte";
 </script>
+
+<SEO title="Rails on Docker" />
+
+<title>11</title>
 
 <HeroTitleSmall
 	title="How to generate Rails app and run it without installing ruby locally"
