@@ -51,6 +51,8 @@
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.0.8",
     "@fontsource/ibm-plex-sans": "^5.0.11",
+    "chromium": "^3.0.3",
+    "playwright": "^1.37.1",
     "shiki": "^0.14.4",
     "svelte-copy": "^1.4.1"
   }

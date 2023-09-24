@@ -1,15 +1,14 @@
 <div class="header">
   <a href="/" class="logo">
-    Maxim<br />Rukomoynikov
+    Max<br />Rukomoynikov
   </a>
   <div class="slogan">
     I love to create. Developer and designer. Looking forward to make cool
-    things.
+    things. <a class="link" href="/cv">My CV.</a>
   </div>
-  <div class="links">
-    <a class="link" href="/posts">blog</a>
-    <a class="link" href="/cv">cv</a>
-  </div>
+<!--  <div class="links">-->
+<!--    -->
+<!--  </div>-->
 </div>
 
 <style>

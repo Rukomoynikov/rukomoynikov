@@ -1,9 +1,11 @@
-<svelte:head>
-  <title>{meta_title}</title>
-</svelte:head>
-
 <script>
   export let title;
+  export let description = "My big goal for 5 years is to learn how to make products that solve people's problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios."
 
-  $: meta_title = title ? `${title} | Max Rukomoynikov` : 'Max Rukomoynikov';
+  $: metaTitle = title ? `${title} | Max Rukomoynikov` : 'Max Rukomoynikov';
 </script>
+
+<svelte:head>
+  <title>{metaTitle}</title>
+  <meta name="description" content={description}>
+</svelte:head>
