@@ -27,7 +27,28 @@ const tags = [
 <Layout title="CV">
   <Container>
     <div class="cv">
-      <h2 class="cv__title">Ruby && JS developer</h2>
+      <h2 class="cv__title">Ruby && JS\TS developer</h2>
+
+      <div class="job">
+        <TwoColsContainer layout="reversed">
+          <h3 class="job__title">Apply4, Fullstack Developer</h3>
+          <div class="job__description">
+            Working on several monolith Ruby on Rails applications. Participated
+            in several internal subproject:
+
+            <ul>
+              <li>Improving test coverage and tech debt metrics</li>
+              <li>Upgrading to the new frontend architecture</li>
+              <li>Making CI\CD for a Python project with deployment to AWS</li>
+              <li>Moving the application to multiregional</li>
+            </ul>
+          </div>
+          <Fragment slot="aside">
+            <div class="job__dates">Feb 2022 — ...</div>
+          </Fragment>
+        </TwoColsContainer>
+      </div>
+
       <div class="job">
         <TwoColsContainer layout="reversed">
           <h3 class="job__title">...</h3>
@@ -37,7 +58,7 @@ const tags = [
             studied design at the Gorbunov Bureau.
           </div>
           <Fragment slot="aside">
-            <div class="job__dates">December 2020 — ...</div>
+            <div class="job__dates">December 2020 — Feb 2022</div>
           </Fragment>
         </TwoColsContainer>
       </div>

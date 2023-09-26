@@ -1,0 +1,71 @@
+---
+import Title from "@components/Title.astro";
+import octicon from "@assets/images/icons/octicon.svg";
+---
+
+<div class="githubProjects">
+  <Title level={"2"} style={"light"}>My open source libraries or projects</Title
+  >
+
+  <div class="githubProjects__content">
+    <div class="githubProjects__project githubProject">
+      <img src={octicon} class="githubProject__icon" />
+      <span class="githubProject__title">tabled</span>
+      <div></div>
+      <div class="githubProject__description">
+        Library can be used to render your data to the console. Though it's
+        quite simple and has no dependencies but powerful.
+      </div>
+    </div>
+    <div class="githubProjects__project githubProject">
+      <img src={octicon} class="githubProject__icon" />
+      <span class="githubProject__title">processable</span>
+      <div></div>
+      <div class="githubProject__description">
+        A handy way (I hope) to convert a service object like things to a series
+        of steps
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .githubProjects {
+    background: white;
+    padding: 22px 20px 32px 20px;
+    border-radius: 12px;
+  }
+
+  .githubProjects__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .githubProject {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .githubProject__description {
+    font-size: 18px;
+  }
+
+  .githubProject__titleRow {
+    display: flex;
+    align-items: center;
+  }
+
+  .githubProject__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  .githubProject__title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+</style>
