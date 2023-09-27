@@ -40,6 +40,7 @@ import octicon from "@assets/images/icons/octicon.svg";
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
+    align-items: start;
   }
 
   .githubProject {
@@ -49,7 +50,7 @@ import octicon from "@assets/images/icons/octicon.svg";
   }
 
   .githubProject__description {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .githubProject__titleRow {
@@ -67,5 +68,11 @@ import octicon from "@assets/images/icons/octicon.svg";
     font-weight: 600;
     font-size: 18px;
     margin-right: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .githubProjects__content {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
