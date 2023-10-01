@@ -33,7 +33,6 @@
 <meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users.">
 
   <link rel="stylesheet" href="/assets/digitaldeals.7a1ed26f.css" />
-<link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.3df31455.css" />
 <link rel="stylesheet" href="/assets/deploy-rails-on-amazon-lightsail.ebe830cc.css" />
 <link rel="stylesheet" href="/assets/digitaldeals.58d1ecd3.css" />
 <link rel="stylesheet" href="/assets/digitaldeals.2fc643d6.css" />
@@ -73,7 +72,8 @@
   <div class="columns standard astro-WXBIQB7Y">
   <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        During this article i will lead you from basics of Lightsail to fully a furnished automatic CI\CD to Lightsail.
+        During this article i will lead you from basics of Lightsail to fully a
+        furnished automatic CI\CD to Lightsail.
       
 </p>
 
@@ -86,7 +86,11 @@
 <div class="columns standard astro-WXBIQB7Y">
   <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2. Though being a lighten version of EC2 it supports all essential tools. At the moment you can use: VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
+        Lightsail - new service from Amazon Cloud. Treat it like an younger
+        brother of Amazon EC2. Though being a lighten version of EC2 it supports
+        all essential tools. At the moment you can use: VPS, container services,
+        hosted databases, load balancers and permanent storage and backups. Not
+        bad, hah?
       
 </p>
 
@@ -94,7 +98,9 @@
   
         In this tutorial i will use <i class="astro-FW2B4CUX">container service</i>
 
- what is someting similiar to Amazon Fargate + EC2. Container service allows to run Docker images. 
+ what
+        is someting similiar to Amazon Fargate + EC2. Container service allows to
+        run Docker images.
       
 </p>
 
@@ -124,22 +130,25 @@
 
 <p class="paragraph astro-VFN3IZIZ">
   
-        To make this tale a bit simple i will not dive into creating something meaningfull. Rather we will create a basic boilerplate without Ecto. If in the future you will decide to add database this should not be a problem as LightSail supports managed databases as well.
+        To make this tale a bit simple i will not dive into creating something
+        meaningfull. Rather we will create a basic boilerplate without Ecto. If
+        in the future you will decide to add database this should not be a
+        problem as LightSail supports managed databases as well.
       
 </p>
 
 <div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/console.4ea5677b.svg"/>Terminal</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #000000"></span></span>
-<span class="line"><span style="color: #000000"># Scaffolding application</span></span>
-<span class="line"><span style="color: #000000">mix phx.new github_dashboard --no-ecto</span></span>
+<span class="line"><span style="color: #000000">        # Scaffolding application mix phx.new github_dashboard --no-ecto</span></span>
 <span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
 
 <p class="paragraph astro-VFN3IZIZ">
   
-        Well done! Now it's time to make a commit and if you want to look at your new shiny project run local server <i class="astro-FW2B4CUX">mix phx.server</i>
+        Well done! Now it's time to make a commit and if you want to look at
+        your new shiny project run local server <i class="astro-FW2B4CUX">mix phx.server</i>
 
 .
       
@@ -167,13 +176,19 @@
 
 <p class="paragraph astro-VFN3IZIZ">
   
-        We are one step closer to the deployed application. Deployed on Lightsail. To make it possible first we need to create a container service and IAM settings.
+        We are one step closer to the deployed application. Deployed on
+        Lightsail. To make it possible first we need to create a container
+        service and IAM settings.
       
 </p>
 
 <p class="paragraph astro-VFN3IZIZ">
   
-        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers $10 "machine" to 3 months for free. Cheapest ($15) plan for managed database also is free for first 3 months. Why not to give it a try? Please create a container service. 
+        Let's begin from container service. First sign in to AWS console and
+        open Lightsail section. At the moment Amazon offers $10 "machine" to 3
+        months for free. Cheapest ($15) plan for managed database also is free
+        for first 3 months. Why not to give it a try? Please create a container
+        service.
       
 </p>
 
@@ -184,7 +199,10 @@
 
 <p class="paragraph astro-VFN3IZIZ">
   
-        On the creation screen: change region if needed, leave "Set up your first deployment" as is. In the field "Identify your service" enter desired name and save it somewhere. "Container service name" will be used later in CI settings.
+        On the creation screen: change region if needed, leave "Set up your
+        first deployment" as is. In the field "Identify your service" enter
+        desired name and save it somewhere. "Container service name" will be
+        used later in CI settings.
       
 </p>
 
@@ -197,7 +215,9 @@
 <div class="columns standard astro-WXBIQB7Y">
   <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        To be able interact with AWS API we need to create these two entities: policy, user. By default Amazon doesn't offer a policy to control Lightsail, but we are free to create it on our own.
+        To be able interact with AWS API we need to create these two entities:
+        policy, user. By default Amazon doesn't offer a policy to control
+        Lightsail, but we are free to create it on our own.
       
 </p>
 
@@ -232,56 +252,28 @@
 <div class="columns standard astro-WXBIQB7Y">
   <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        Lightsail will run container we point to. So, in order to create docker container first Dockerfile is required. Using this file Github CI will build image and push the image to Lightsail image's container.
+        Lightsail will run container we point to. So, in order to create docker
+        container first Dockerfile is required. Using this file Github CI will
+        build image and push the image to Lightsail image's container.
       
 </p>
 
 <div class="code-snippet astro-BPZU7ACS">
   <div class="file-name"><img class="code-block__file-icon" src="/assets/file-2.ad06406a.svg"/>Dockerfile</div>
   <pre class="astro-code" style="background-color: #FFFFFF; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #008000"># BASE</span></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> elixir:alpine </span><span style="color: #0000FF">AS</span><span style="color: #000000"> base</span></span>
-<span class="line"><span style="color: #0000FF">WORKDIR</span><span style="color: #000000"> /app</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix do local.hex --force, local.rebar --force</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add npm inotify-tools</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #008000"># BUILD</span></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> base </span><span style="color: #0000FF">AS</span><span style="color: #000000"> build</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add curl bash git</span></span>
-<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
-<span class="line"><span style="color: #0000FF">ENV</span><span style="color: #000000"> MIX_ENV=$MIX_ENV</span></span>
-<span class="line"><span style="color: #0000FF">COPY</span><span style="color: #000000"> . ./</span></span>
-<span class="line"><span style="color: #008000"># install application</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix do deps.get, compile</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #008000"># RELEASE</span></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> build </span><span style="color: #0000FF">AS</span><span style="color: #000000"> release</span></span>
-<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
-<span class="line"><span style="color: #008000"># digests and compresses static files</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix assets.deploy</span></span>
-<span class="line"><span style="color: #008000"># generate release executable</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix phx.gen.release</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> mix release</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #008000"># PRODUCTION</span></span>
-<span class="line"><span style="color: #008000"># -----------------</span></span>
-<span class="line"><span style="color: #0000FF">FROM</span><span style="color: #000000"> elixir:alpine</span></span>
-<span class="line"><span style="color: #0000FF">WORKDIR</span><span style="color: #000000"> /app</span></span>
-<span class="line"><span style="color: #0000FF">ARG</span><span style="color: #000000"> MIX_ENV=prod</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #008000"># install dependencies</span></span>
-<span class="line"><span style="color: #0000FF">RUN</span><span style="color: #000000"> apk add ncurses-libs curl</span></span>
-<span class="line"><span style="color: #0000FF">COPY</span><span style="color: #000000"> --from=release /app/_build/prod/rel/github_dashboard ./</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #008000"># start application</span></span>
-<span class="line"><span style="color: #0000FF">CMD</span><span style="color: #000000"> [</span><span style="color: #A31515">&quot;bin/server&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;start&quot;</span><span style="color: #000000">]</span></span>
+<span class="line"><span style="color: #000000">        </span><span style="color: #008000"># ----------------- # BASE # ----------------- FROM elixir:alpine AS</span></span>
+<span class="line"><span style="color: #000000">        base WORKDIR /app RUN mix do local.hex --force, local.rebar --force RUN</span></span>
+<span class="line"><span style="color: #000000">        apk add npm inotify-tools # ----------------- # BUILD #</span></span>
+<span class="line"><span style="color: #000000">        ----------------- FROM base AS build RUN apk add curl bash git ARG</span></span>
+<span class="line"><span style="color: #000000">        MIX_ENV=prod ENV MIX_ENV=$MIX_ENV COPY . ./ # install application RUN</span></span>
+<span class="line"><span style="color: #000000">        mix do deps.get, compile # ----------------- # RELEASE #</span></span>
+<span class="line"><span style="color: #000000">        ----------------- FROM build AS release ARG MIX_ENV=prod # digests and</span></span>
+<span class="line"><span style="color: #000000">        compresses static files RUN mix assets.deploy # generate release</span></span>
+<span class="line"><span style="color: #000000">        executable RUN mix phx.gen.release RUN mix release # ----------------- #</span></span>
+<span class="line"><span style="color: #000000">        PRODUCTION # ----------------- FROM elixir:alpine WORKDIR /app ARG</span></span>
+<span class="line"><span style="color: #000000">        MIX_ENV=prod # install dependencies RUN apk add ncurses-libs curl COPY</span></span>
+<span class="line"><span style="color: #000000">        --from=release /app/_build/prod/rel/github_dashboard ./ # start</span></span>
+<span class="line"><span style="color: #000000">        application CMD [</span><span style="color: #A31515">&quot;bin/server&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;start&quot;</span><span style="color: #000000">]</span></span>
 <span class="line"><span style="color: #000000">      </span></span></code></pre>
 
 </div>
@@ -295,7 +287,8 @@
 <div class="columns standard astro-WXBIQB7Y">
   <div class="col-1 astro-WXBIQB7Y"><p class="paragraph astro-VFN3IZIZ">
   
-        Heya! We are almost there. Let's setup CI pipeline to test our super-duper app. 
+        Heya! We are almost there. Let's setup CI pipeline to test our
+        super-duper app.
       
 </p>
 
@@ -368,20 +361,6 @@
 </div>
   <div class="col-2 astro-WXBIQB7Y"></div>
 </div>
-
-<a href="https://github.com/Rukomoynikov/act_as_api_client" class="github-repo astro-K6HSVLOW">
-  <div class="github-repo__title-container astro-K6HSVLOW">
-    <img class="github-repo__image astro-K6HSVLOW" src="/assets/octicon.b3a7a685.svg">
-    act_as_api_client 
-    <!-- <GithubStars 
-      client:load 
-      repo='Rukomoynikov/act_as_api_client' /> -->
-  </div>
-  <div class="github-repo__description astro-K6HSVLOW">
-    Templates for popular API&#39;s and reliable way to create your own clients. At the moment it supports Github’s API, Authorize.net
-  </div>
-</a>
-
 
 
 </div>
