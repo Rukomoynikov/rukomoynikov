@@ -9,21 +9,35 @@ import octicon from "@assets/images/icons/octicon.svg";
 
   <div class="githubProjects__content">
     <div class="githubProjects__project githubProject">
-      <img src={octicon} class="githubProject__icon" />
-      <span class="githubProject__title">tabled</span>
-      <div></div>
+      <a
+        href="https://github.com/Rukomoynikov/tabled"
+        class="githubProject__titleRow"
+      >
+        <img src={octicon} class="githubProject__icon" />
+        <span class="githubProject__title">tabled</span>
+      </a>
       <div class="githubProject__description">
         Library can be used to render your data to the console. Though it's
         quite simple and has no dependencies but powerful.
       </div>
+      <div class="tabs">
+        <div class="tabs__tab">ruby</div>
+      </div>
     </div>
     <div class="githubProjects__project githubProject">
-      <img src={octicon} class="githubProject__icon" />
-      <span class="githubProject__title">processable</span>
-      <div></div>
+      <a
+        href="https://github.com/Rukomoynikov/processable"
+        class="githubProject__titleRow"
+      >
+        <img src={octicon} class="githubProject__icon" />
+        <span class="githubProject__title">processable</span>
+      </a>
       <div class="githubProject__description">
         A handy way (I hope) to convert a service object like things to a series
         of steps
+      </div>
+      <div class="tabs">
+        <div class="tabs__tab">ruby</div>
       </div>
     </div>
   </div>
@@ -32,7 +46,7 @@ import octicon from "@assets/images/icons/octicon.svg";
 <style>
   .githubProjects {
     background: white;
-    padding: 22px 20px 32px 20px;
+    padding: 16px 20px 32px 20px;
     border-radius: 12px;
   }
 
@@ -45,8 +59,8 @@ import octicon from "@assets/images/icons/octicon.svg";
 
   .githubProject {
     display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 4px;
   }
 
   .githubProject__description {
@@ -56,18 +70,32 @@ import octicon from "@assets/images/icons/octicon.svg";
   .githubProject__titleRow {
     display: flex;
     align-items: center;
+    color: black;
+    text-decoration: none;
   }
 
   .githubProject__icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
   }
 
   .githubProject__title {
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 20px;
     margin-right: 10px;
+  }
+
+  .tabs {
+  }
+
+  .tabs__tab {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #f1f1f1;
+    font-size: 14px;
+    color: #666;
   }
 
   @media screen and (max-width: 600px) {

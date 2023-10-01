@@ -26,13 +26,18 @@ const seo = {
 <Layout
   title={seo.title}
   description={seo.description}
-  socialImage={seo.socialImage}>
-  <HeroTitleSmall title={seo.title} tags={["Elixir", "Amazon Lightsail", "Github Actions"]} />
+  socialImage={seo.socialImage}
+>
+  <HeroTitleSmall
+    title={seo.title}
+    tags={["Elixir", "Amazon Lightsail", "Github Actions"]}
+  />
 
   <Container>
     <TwoColsContainer>
       <Paragraph>
-        During this article i will lead you from basics of Lightsail to fully a furnished automatic CI\CD to Lightsail.
+        During this article i will lead you from basics of Lightsail to fully a
+        furnished automatic CI\CD to Lightsail.
       </Paragraph>
     </TwoColsContainer>
 
@@ -40,24 +45,27 @@ const seo = {
 
     <TwoColsContainer>
       <Paragraph>
-        Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2. Though being a lighten version of EC2 it supports all essential tools. At the moment you can use: VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
+        Lightsail - new service from Amazon Cloud. Treat it like an younger
+        brother of Amazon EC2. Though being a lighten version of EC2 it supports
+        all essential tools. At the moment you can use: VPS, container services,
+        hosted databases, load balancers and permanent storage and backups. Not
+        bad, hah?
       </Paragraph>
 
       <Paragraph>
-        In this tutorial i will use <InlineCode>container service</InlineCode> what is someting similiar to Amazon Fargate + EC2. Container service allows to run Docker images. 
+        In this tutorial i will use <InlineCode>container service</InlineCode> what
+        is someting similiar to Amazon Fargate + EC2. Container service allows to
+        run Docker images.
       </Paragraph>
 
       <Fragment slot="aside">
         <LinksList
           links={[
-            [
-              "Amazon Lightsail",
-              "https://lightsail.aws.amazon.com",
-            ],
+            ["Amazon Lightsail", "https://lightsail.aws.amazon.com"],
             [
               "Deploy your first containerized application (Youtube)",
-              "https://www.youtube.com/watch?v=RhcR5LaRXIQ"
-            ]
+              "https://www.youtube.com/watch?v=RhcR5LaRXIQ",
+            ],
           ]}
         />
       </Fragment>
@@ -80,16 +88,21 @@ const seo = {
       />
 
       <Paragraph>
-        To make this tale a bit simple i will not dive into creating something meaningfull. Rather we will create a basic boilerplate without Ecto. If in the future you will decide to add database this should not be a problem as LightSail supports managed databases as well.
+        To make this tale a bit simple i will not dive into creating something
+        meaningfull. Rather we will create a basic boilerplate without Ecto. If
+        in the future you will decide to add database this should not be a
+        problem as LightSail supports managed databases as well.
       </Paragraph>
 
       <CodeSnippet fileName="Terminal" icon="console">
-# Scaffolding application
-mix phx.new github_dashboard --no-ecto
+        # Scaffolding application mix phx.new github_dashboard --no-ecto
       </CodeSnippet>
 
       <Paragraph>
-        Well done! Now it's time to make a commit and if you want to look at your new shiny project run local server <InlineCode>mix phx.server</InlineCode>.
+        Well done! Now it's time to make a commit and if you want to look at
+        your new shiny project run local server <InlineCode
+          >mix phx.server</InlineCode
+        >.
       </Paragraph>
 
       <Fragment slot="aside">
@@ -117,11 +130,17 @@ mix phx.new github_dashboard --no-ecto
       />
 
       <Paragraph>
-        We are one step closer to the deployed application. Deployed on Lightsail. To make it possible first we need to create a container service and IAM settings.
+        We are one step closer to the deployed application. Deployed on
+        Lightsail. To make it possible first we need to create a container
+        service and IAM settings.
       </Paragraph>
 
       <Paragraph>
-        Let's begin from container service. First sign in to AWS console and open Lightsail section. At the moment Amazon offers $10 "machine" to 3 months for free. Cheapest ($15) plan for managed database also is free for first 3 months. Why not to give it a try? Please create a container service. 
+        Let's begin from container service. First sign in to AWS console and
+        open Lightsail section. At the moment Amazon offers $10 "machine" to 3
+        months for free. Cheapest ($15) plan for managed database also is free
+        for first 3 months. Why not to give it a try? Please create a container
+        service.
       </Paragraph>
 
       <Picture
@@ -134,7 +153,10 @@ mix phx.new github_dashboard --no-ecto
       />
 
       <Paragraph>
-        On the creation screen: change region if needed, leave "Set up your first deployment" as is. In the field "Identify your service" enter desired name and save it somewhere. "Container service name" will be used later in CI settings.
+        On the creation screen: change region if needed, leave "Set up your
+        first deployment" as is. In the field "Identify your service" enter
+        desired name and save it somewhere. "Container service name" will be
+        used later in CI settings.
       </Paragraph>
     </TwoColsContainer>
 
@@ -142,10 +164,14 @@ mix phx.new github_dashboard --no-ecto
 
     <TwoColsContainer>
       <Paragraph>
-        To be able interact with AWS API we need to create these two entities: policy, user. By default Amazon doesn't offer a policy to control Lightsail, but we are free to create it on our own.
+        To be able interact with AWS API we need to create these two entities:
+        policy, user. By default Amazon doesn't offer a policy to control
+        Lightsail, but we are free to create it on our own.
       </Paragraph>
 
-      <CodeSnippet lang='json' code={`
+      <CodeSnippet
+        lang="json"
+        code={`
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -161,60 +187,33 @@ mix phx.new github_dashboard --no-ecto
     }
   ]
 }
-      `} />
+      `}
+      />
     </TwoColsContainer>
 
     <Title level="2">Docker setup</Title>
 
     <TwoColsContainer>
       <Paragraph>
-        Lightsail will run container we point to. So, in order to create docker container first Dockerfile is required. Using this file Github CI will build image and push the image to Lightsail image's container.
+        Lightsail will run container we point to. So, in order to create docker
+        container first Dockerfile is required. Using this file Github CI will
+        build image and push the image to Lightsail image's container.
       </Paragraph>
 
       <CodeSnippet lang="docker" fileName="Dockerfile">
-# -----------------
-# BASE
-# -----------------
-FROM elixir:alpine AS base
-WORKDIR /app
-RUN mix do local.hex --force, local.rebar --force
-RUN apk add npm inotify-tools
-
-# -----------------
-# BUILD
-# -----------------
-FROM base AS build
-RUN apk add curl bash git
-ARG MIX_ENV=prod
-ENV MIX_ENV=$MIX_ENV
-COPY . ./
-# install application
-RUN mix do deps.get, compile
-
-# -----------------
-# RELEASE
-# -----------------
-FROM build AS release
-ARG MIX_ENV=prod
-# digests and compresses static files
-RUN mix assets.deploy
-# generate release executable
-RUN mix phx.gen.release
-RUN mix release
-
-# -----------------
-# PRODUCTION
-# -----------------
-FROM elixir:alpine
-WORKDIR /app
-ARG MIX_ENV=prod
-
-# install dependencies
-RUN apk add ncurses-libs curl
-COPY --from=release /app/_build/prod/rel/github_dashboard ./
-
-# start application
-CMD ["bin/server", "start"]
+        # ----------------- # BASE # ----------------- FROM elixir:alpine AS
+        base WORKDIR /app RUN mix do local.hex --force, local.rebar --force RUN
+        apk add npm inotify-tools # ----------------- # BUILD #
+        ----------------- FROM base AS build RUN apk add curl bash git ARG
+        MIX_ENV=prod ENV MIX_ENV=$MIX_ENV COPY . ./ # install application RUN
+        mix do deps.get, compile # ----------------- # RELEASE #
+        ----------------- FROM build AS release ARG MIX_ENV=prod # digests and
+        compresses static files RUN mix assets.deploy # generate release
+        executable RUN mix phx.gen.release RUN mix release # ----------------- #
+        PRODUCTION # ----------------- FROM elixir:alpine WORKDIR /app ARG
+        MIX_ENV=prod # install dependencies RUN apk add ncurses-libs curl COPY
+        --from=release /app/_build/prod/rel/github_dashboard ./ # start
+        application CMD ["bin/server", "start"]
       </CodeSnippet>
     </TwoColsContainer>
 
@@ -222,10 +221,14 @@ CMD ["bin/server", "start"]
 
     <TwoColsContainer>
       <Paragraph>
-        Heya! We are almost there. Let's setup CI pipeline to test our super-duper app. 
+        Heya! We are almost there. Let's setup CI pipeline to test our
+        super-duper app.
       </Paragraph>
 
-      <CodeSnippet lang="yaml" fileName=".github/workflows/ci.yml" code={`
+      <CodeSnippet
+        lang="yaml"
+        fileName=".github/workflows/ci.yml"
+        code={`
 name: Elixir CI
 
 on:
@@ -285,13 +288,8 @@ jobs:
     - name: Deploy pushed container
       run:  aws lightsail create-container-service-deployment --service-name $CONTAINER_SERVICE_NAME --containers file://lightsail/containers.json --public-endpoint file://lightsail/public-endpoint.json
 
-`} />
+`}
+      />
     </TwoColsContainer>
-
-    <GithubRepo 
-      title={'act_as_api_client '}
-      description={'Templates for popular API\'s and reliable way to create your own clients. At the moment it supports Github’s API, Authorize.net'}
-      link={'https://github.com/Rukomoynikov/act_as_api_client'}
-    />
   </Container>
 </Layout>
