@@ -3,11 +3,14 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import TwoColsContainer from "@components/TwoColsContainer.astro";
 import Title from "/src/components/Title.astro";
+import Tags from "../components/Tags.astro";
 
 const tags = [
   "Ruby on Rails",
   "Capybara",
   "Gitlab CI",
+  "React",
+  "Vue",
   "TDD",
   "RSpec",
   "Trailblaizer",
@@ -19,8 +22,6 @@ const tags = [
   "Capistrano",
   "Helm",
   "New Relic",
-  "React",
-  "Vue",
 ];
 ---
 
@@ -34,7 +35,7 @@ const tags = [
           <h3 class="job__title">Apply4, Fullstack Developer</h3>
           <div class="job__description">
             Working on several monolith Ruby on Rails applications. Participated
-            in several internal subproject:
+            in several internal subprojects:
 
             <ul>
               <li>Improving test coverage and tech debt metrics</li>
@@ -42,6 +43,17 @@ const tags = [
               <li>Making CI\CD for a Python project with deployment to AWS</li>
               <li>Moving the application to multiregional</li>
             </ul>
+
+            <div class="job__tags">
+              <Tags
+                tags={[
+                  "Ruby",
+                  "AWS",
+                  "ViewComponents",
+                  "Migration data between regions",
+                ]}
+              />
+            </div>
           </div>
           <Fragment slot="aside">
             <div class="job__dates">Feb 2022 — ...</div>
@@ -51,12 +63,19 @@ const tags = [
 
       <div class="job">
         <TwoColsContainer layout="reversed">
-          <h3 class="job__title">...</h3>
+          <h3 class="job__title">Alfabank, Gorbunov Bureau</h3>
           <div class="job__description">
             I did several one-time projects, helped the guys at Alfabank with
             testing. For the last six months I have hardly written code, I
             studied design at the Gorbunov Bureau.
           </div>
+
+          <div class="job__tags">
+            <Tags
+              tags={["Selenium", "Playwright", "Building an Q&A department"]}
+            />
+          </div>
+
           <Fragment slot="aside">
             <div class="job__dates">December 2020 — Feb 2022</div>
           </Fragment>
@@ -71,6 +90,17 @@ const tags = [
             universities. From the interesting: microservice architecture,
             Amazon SQS, Kubernetes, a bit of Elixir.
           </div>
+
+          <div class="job__tags">
+            <Tags
+              tags={[
+                "Ruby on Microservices",
+                "Kubernetes",
+                "A pinch of Elixir",
+              ]}
+            />
+          </div>
+
           <Fragment slot="aside">
             <div class="job__dates">March 2020 — December 2020</div>
           </Fragment>
@@ -95,6 +125,18 @@ const tags = [
             team and set up processes. We used Gitlab CI and BDD-based
             auto-tests.
           </div>
+
+          <div class="job__tags">
+            <Tags
+              tags={[
+                "A lot of vanilla Javascript",
+                "React and Vue",
+                "Ruby on Rails",
+                "Learning and teaching",
+              ]}
+            />
+          </div>
+
           <Fragment slot="aside">
             <div class="job__dates">March 2016 — February 2020</div>
           </Fragment>
@@ -104,7 +146,7 @@ const tags = [
       <div class="job">
         <TwoColsContainer>
           <h3 class="job__title">
-            Pet projects, though old, but you can see the code
+            Pet projects, though old, but you can check the code
           </h3>
           <div class="job__description">
             <ul>
@@ -147,16 +189,14 @@ const tags = [
       <div class="job">
         <TwoColsContainer>
           <h3 class="job__title">Technical things that I met</h3>
-          <div class="tags">
-            {tags.map((tag) => <div class="tags__tag">{tag}</div>)}
-          </div>
+          <Tags tags={tags} />
         </TwoColsContainer>
       </div>
     </div>
   </Container>
 </Layout>
 
-<style type="text/css">
+<style>
   .cv {
     background-color: white;
     padding: max(20px, 2vw);
@@ -185,6 +225,7 @@ const tags = [
 
   .job__description ul {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .job__description + .job__description {
@@ -200,15 +241,7 @@ const tags = [
     font-weight: bold;
   }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tags__tag {
-    padding: 4px 8px;
-    border: 1px dashed black;
-    border-radius: 4px;
-    font-size: 1.6rem;
+  .job__tags {
+    margin-top: 8px;
   }
 </style>

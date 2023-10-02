@@ -1,6 +1,7 @@
 ---
 import Title from "@components/Title.astro";
 import octicon from "@assets/images/icons/octicon.svg";
+import Tags from "./Tags.astro";
 ---
 
 <div class="githubProjects">
@@ -20,10 +21,9 @@ import octicon from "@assets/images/icons/octicon.svg";
         Library can be used to render your data to the console. Though it's
         quite simple and has no dependencies but powerful.
       </div>
-      <div class="tabs">
-        <div class="tabs__tab">ruby</div>
-      </div>
+      <Tags tags={["ruby"]} />
     </div>
+
     <div class="githubProjects__project githubProject">
       <a
         href="https://github.com/Rukomoynikov/processable"
@@ -36,9 +36,7 @@ import octicon from "@assets/images/icons/octicon.svg";
         A handy way (I hope) to convert a service object like things to a series
         of steps
       </div>
-      <div class="tabs">
-        <div class="tabs__tab">ruby</div>
-      </div>
+      <Tags tags={["ruby"]} />
     </div>
   </div>
 </div>
@@ -84,18 +82,6 @@ import octicon from "@assets/images/icons/octicon.svg";
     font-weight: 400;
     font-size: 20px;
     margin-right: 10px;
-  }
-
-  .tabs {
-  }
-
-  .tabs__tab {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: #f1f1f1;
-    font-size: 14px;
-    color: #666;
   }
 
   @media screen and (max-width: 600px) {
