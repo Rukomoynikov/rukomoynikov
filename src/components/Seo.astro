@@ -14,7 +14,7 @@ export interface Props {
 
 let {
   title = "Max Rukomoynikov",
-  description = "My big goal for 5 years is to learn how to make products that solve people's problems and looks beautiful. To do this, I train on my tasks, watch a lot of work from different studios.",
+  description = "Hi there. I'm a Ruby on Rails and Typescript developer. Currently based in Cardiff, UK. I'm passionate about building products that help people.",
   socialImage = DefaultSocialIcon,
   siteName = "Max Rukomoynikov's site",
   type = "",
@@ -26,8 +26,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const socialImageURL = new URL(socialImage.src, Astro.url);
 ---
-<script defer data-domain="rukomoynikov.ru" src="https://plausible.io/js/plausible.js"></script>
 
+<script
+  defer
+  data-domain="rukomoynikov.ru"
+  src="https://plausible.io/js/plausible.js"
+></script>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
@@ -50,27 +54,23 @@ const socialImageURL = new URL(socialImage.src, Astro.url);
   href="/favicon/favicon-16x16.png"
 />
 <link rel="manifest" href="/favicon/site.webmanifest" />
-<link
-  rel="mask-icon"
-  href="/favicon/safari-pinned-tab.svg"
-  color="#5bbad5"
-/>
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
 <link rel="canonical" href={canonicalURL} />
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content={title}>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content={title} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:image" content={socialImageURL} />
-<meta property="og:description" content={description}>
-<meta property="og:site_name" content={siteName}>
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@rukomoynikov">
-<meta name="twitter:creator" content="@rukomoynikov">
-<meta name="twitter:title" content={title}>
-<meta name="twitter:image" content={socialImageURL}>
-<meta name="twitter:description" content={description}>
-<meta name="twitter:label1" value="Author">
-<meta name="twitter:value1" value="Max Rukomoynikov">
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={siteName} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@rukomoynikov" />
+<meta name="twitter:creator" content="@rukomoynikov" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:image" content={socialImageURL} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:label1" value="Author" />
+<meta name="twitter:value1" value="Max Rukomoynikov" />
 <title>{title}</title>
-<meta name="description" content={description}>
+<meta name="description" content={description} />
