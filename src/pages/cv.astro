@@ -30,6 +30,9 @@ const tags = [
     <div class="cv">
       <div class="cv__title">
         <Title level="3">Ruby && JS\TS developer</Title>
+        <div class="cv__subtitle">
+          <a href="mailto:rukomoynikov@gmail.com">rukomoynikov@gmail.com</a>
+        </div>
       </div>
 
       <!--<h2 class="cv__title"></h2>-->
@@ -41,7 +44,7 @@ const tags = [
           <div class="job__description">
             <ul>
               <li>Programming Languages: Ruby, JavaScript</li>
-              <li>Frameworks: Ruby on Rails, React, Vue</li>
+              <li>Frameworks: Ruby on Rails, Phoenix, React, Vue</li>
               <li>
                 Testing: Capybara, RSpec, Gherkin, Jest, Playwright, Vitest etc
               </li>
@@ -197,49 +200,6 @@ const tags = [
 
       <div class="job">
         <TwoColsContainer>
-          <h3 class="job__title">
-            Pet projects, though old, but you can check the code
-          </h3>
-          <div class="job__description">
-            <ul>
-              <li>
-                <a
-                  class="job__link"
-                  href="https://github.com/Rukomoynikov/cucumber-reports"
-                  >Gem for generating html reports on cucumber tests (I like
-                  BDD)</a
-                >
-              </li>
-              <li>
-                <a
-                  class="job__link"
-                  href="https://gitlab.com/pet-projects7/testus-site"
-                  >Project on RoR: makes documentation out of tests and unites
-                  team members around documentation.</a
-                >
-              </li>
-              <li>
-                <a
-                  class="job__link"
-                  href="https://gitlab.com/pet-projects7/travelparty"
-                  >A project that has no demo, the idea is a search engine for
-                  cheap flights</a
-                >
-              </li>
-              <li>
-                <a
-                  class="job__link"
-                  href="https://gitlab.com/pet-projects7/heroes-of-markets"
-                  >Website and stock market parser, performance analysis</a
-                >
-              </li>
-            </ul>
-          </div>
-        </TwoColsContainer>
-      </div>
-
-      <div class="job">
-        <TwoColsContainer>
           <h3 class="job__title">Technical things that I met</h3>
           <Tags tags={tags} />
         </TwoColsContainer>
@@ -258,6 +218,13 @@ const tags = [
   .cv__title {
     margin: 0;
     margin-bottom: 24px;
+  }
+
+  .cv__subtitle {
+     font: var(--font-header-link);
+     color: #3a4a6a;
+     display: block;
+     margin-bottom: 3px;
   }
 
   .job + .job {
