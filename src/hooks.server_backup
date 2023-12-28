@@ -1,0 +1,47 @@
+import playwright from 'playwright-core';
+
+export async function handle({ event, resolve }) {
+	const response = await resolve(event, {
+		transformPageChunk: async ({ html }) => {
+			const fileName = `src/routes/${event.url.pathname}/assets/cover.png`;
+
+			await takeScreenshot(html, fileName);
+			return html;
+		}
+	});
+
+	return response;
+}
+
+const takeScreenshot = async (html, fileName) => {
+	const browser = await playwright['chromium'].launch();
+	const context = await browser.newContext();
+	const page = await context.newPage();
+	page.setContent(html);
+
+	await page.waitForTimeout(1000);
+	await page.screenshot({
+		path: fileName,
+		fullPage: true,
+		clip: {
+			x: 0,
+			y: 0,
+			width: 1200,
+			height: 630
+		}
+	});
+	await browser.close();
+};
+
+
+
+<meta property="og:site_name" content="Svelte’s Homepage" />
+	<meta property="og:locale" content="en" />
+	<meta property="og:url" content={url} />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={`/assets/${og_image}`} />
+	<meta property="og:image:alt" content={image_alt} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="627" />
