@@ -1,0 +1,18 @@
+<script>
+	import TwoColsContainer from '$components/TwoColsContainer.svelte';
+	import LinksList from '$components/LinksList.svelte';
+	import Container from '$components/Container.svelte';
+	import Title from '$components/Title.svelte';
+</script>
+
+<Container>
+	<TwoColsContainer>
+		<Title level="2">Posts</Title>
+		<LinksList
+			links={[
+				['Rails on Docker', '/posts/rails-on-docker/'],
+				['How to make a Telegram bot in Elixir', '/posts/elixir-telegram-bot/']
+			]}
+		/>
+	</TwoColsContainer>
+</Container>
