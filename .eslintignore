@@ -11,3 +11,8 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+# Temporary here, it needs to be fixes
+src/components/Paragraph.svelte
+src/components/Image.svelte
+src/components/CodeBlock.svelte

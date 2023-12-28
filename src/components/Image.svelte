@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let alt: string = '';
 	export let src: string;
-	$: imageSRC = src
+	$: imageSRC = src;
 </script>
 
 <div class="image">
