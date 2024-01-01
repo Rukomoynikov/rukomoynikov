@@ -6,11 +6,11 @@
 </script>
 
 <div class="image">
-  {#if (imageSRC !== undefined && imageSRC !== '')}
-    <enhanced:img src={imageSRC} {alt} />
-  {:else}
-    <div />
-  {/if}
+	{#if imageSRC !== undefined && imageSRC !== ''}
+		<enhanced:img src={imageSRC} {alt} />
+	{:else}
+		<div />
+	{/if}
 </div>
 
 <style>
