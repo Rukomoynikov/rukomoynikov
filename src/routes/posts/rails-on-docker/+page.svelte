@@ -13,7 +13,11 @@
 	import ShareImage from './assets/rails-on-docker-facebook-share.jpg?h=630&w=1200&url';
 </script>
 
-<SEO image={ShareImage} title="Rails on Docker" />
+<SEO
+	image={ShareImage}
+	description={'Setup docker for Rails and use it for running Rails application.'}
+	title={'Rails on Docker'}
+/>
 
 <Container>
 	<Title level="1">Rails on Docker</Title>

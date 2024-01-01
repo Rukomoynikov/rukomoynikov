@@ -4,10 +4,7 @@
 
 	import Container from '$components/Container.svelte';
 	import TwoColsContainer from '$components/TwoColsContainer.svelte';
-	import SEO from '$components/SEO.svelte';
 </script>
-
-<SEO />
 
 <Container>
 	<TwoColsContainer>

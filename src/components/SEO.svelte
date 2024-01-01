@@ -2,13 +2,16 @@
 	import SvelteSeo from 'svelte-seo';
 	import DefaultSocialIcon from '/src/assets/images/facebook_share/facebook_cover_1200x630.jpg?h=630&w=1200&url';
 
-	export let title: string;
-	export let description: string;
+	export let title: string | undefined = undefined;
+	export let description: string | undefined = undefined;
 
 	export let image = DefaultSocialIcon;
 
 	$: metaTitle = title ? `${title} | Max Rukomoynikov` : 'Max Rukomoynikov';
-  $: metaDescription = description || 'Max Rukomoynikov. Software Engineer. Ruby, Rails, Typescript, React, Elixir, Rust';
+
+	$: metaDescription = description
+		? description
+		: 'Max Rukomoynikov. Software Engineer. Ruby, Rails, Typescript, React, Elixir, Rust';
 	$: socialImage = `https://rukomoynikov.ru${image}`;
 
 	import { page } from '$app/stores';
