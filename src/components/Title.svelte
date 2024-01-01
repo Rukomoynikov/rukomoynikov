@@ -12,7 +12,7 @@
 
 <style>
 	h2 {
-		margin: 0 0 20px 0;
+		margin: 20px 0 20px 0;
 		padding: 0;
 		color: #c91010;
 		font: var(--font-title-h2);

@@ -18,7 +18,11 @@
 	openGraph={{
 		title: metaTitle,
 		description,
-		image: DefaultSocialIcon,
+		images: [
+			{
+				url: DefaultSocialIcon
+			}
+		],
 		url: $page.url.pathname,
 		type: 'website',
 		site_name: 'Primal Movement'
