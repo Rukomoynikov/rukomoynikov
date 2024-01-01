@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SvelteSeo from 'svelte-seo';
-	import DefaultSocialIcon from '/src/assets/images/facebook_share/facebook_cover_1200x630.jpg?url';
+	import DefaultSocialIcon from '/src/assets/images/facebook_share/facebook_cover_1200x630.jpg?h=630&w=1200&url';
 
 	export let title: string | undefined;
 	export let description =
@@ -14,17 +14,27 @@
 <SvelteSeo
 	title={metaTitle}
 	{description}
-	keywords="rails ruby typescript react elixir rust"
+	canonical="https://rukomoynikov.ru/"
+	keywords="rails, ruby, typescript, react, elixir, rust"
 	openGraph={{
 		title: metaTitle,
 		description,
 		images: [
 			{
-				url: DefaultSocialIcon
+				url: DefaultSocialIcon,
+				width: 1200,
+				height: 630,
+				alt: "Max Rukomoynikov's site"
 			}
 		],
 		url: $page.url.pathname,
 		type: 'website',
-		site_name: 'Primal Movement'
+		site_name: "Max Rukomoynikov's site"
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		site: '@MRukomoynikov',
+		description,
+		image: DefaultSocialIcon
 	}}
 />
