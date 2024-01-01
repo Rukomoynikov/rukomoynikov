@@ -6,7 +6,10 @@
 	export let description =
 		"Hey there. It's a page of a regular developer. Mostly I write about ruby or typescript.";
 
+	export let image = DefaultSocialIcon;
+
 	$: metaTitle = title ? `${title} | Max Rukomoynikov` : 'Max Rukomoynikov';
+	$: socialImage = `https://rukomoynikov.ru${image}`;
 
 	import { page } from '$app/stores';
 </script>
@@ -21,7 +24,7 @@
 		description,
 		images: [
 			{
-				url: DefaultSocialIcon,
+				url: socialImage,
 				width: 1200,
 				height: 630,
 				alt: "Max Rukomoynikov's site"
