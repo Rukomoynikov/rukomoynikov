@@ -3,7 +3,7 @@ import { getHighlighter } from 'shiki';
 export async function compute_codes() {
 	const highlighter = await getHighlighter({
 		theme: 'dark-plus',
-		langs: ['html', 'js', 'css', 'svelte', 'yml', 'docker', 'dockerfile', 'sh', 'elixir']
+		langs: ['html', 'js', 'css', 'svelte', 'yml', 'docker', 'dockerfile', 'sh', 'elixir', 'json5', 'json']
 	});
 
 	const snippets = import.meta.glob('$lib/snippets/**/*', {

@@ -1,11 +1,16 @@
 <script lang="ts">
 	export let alt: string = '';
 	export let src: string;
-	$: imageSRC = src;
+
+	$: imageSRC = src.default ? src.default : src;
 </script>
 
 <div class="image">
-	<enhanced:img src={imageSRC} {alt} />
+  {#if (imageSRC !== undefined && imageSRC !== '')}
+    <enhanced:img src={imageSRC} {alt} />
+  {:else}
+    <div />
+  {/if}
 </div>
 
 <style>
