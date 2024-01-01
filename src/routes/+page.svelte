@@ -3,10 +3,7 @@
 	import LinksList from '$components/LinksList.svelte';
 	import Container from '$components/Container.svelte';
 	import Title from '$components/Title.svelte';
-	import SEO from '$components/SEO.svelte';
 </script>
-
-<SEO />
 
 <Container>
 	<TwoColsContainer>
