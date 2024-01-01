@@ -10,16 +10,7 @@
 	import ApiTokenVideo from './assets/api_token.mp4';
 	import DemoBotVideo from './assets/demo_of_bot.mp4';
 	import CodeBlockInline from '$components/CodeBlockInline.svelte';
-
-	import SEO from '$components/SEO.svelte';
-	import ShareImage from './assets/elixir-telegram-bot-facebook-share.jpg?h=630&w=1200&url';
 </script>
-
-<SEO
-	title="How to make a Telegram bot in Elixir"
-	description="This is the first part of three in the series. There you will find creating foundation and answering to users."
-	image={ShareImage}
-/>
 
 <Container>
 	<Title level="1">Introduction to Telegram Bots API</Title>

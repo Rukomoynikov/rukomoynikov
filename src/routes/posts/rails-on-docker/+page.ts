@@ -1,3 +1,4 @@
+// @ts-expect-error url is correct but considered as wrong by TypeScript
 import ShareImage from './assets/rails-on-docker-facebook-share.jpg?h=630&w=1200&url';
 import type { PageLoad } from './$types';
 
