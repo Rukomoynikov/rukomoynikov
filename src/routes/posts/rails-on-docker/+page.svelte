@@ -5,14 +5,15 @@
 	import Paragraph from '$components/Paragraph.svelte';
 
 	import LinksList from '$components/LinksList.svelte';
-	import SEO from '$components/SEO.svelte';
-
 	import RailDefaultImage from './assets/rails-basic-app@2x.webp?enhanced';
 	import CodeBlock from '$components/CodeBlock.svelte';
 	import Image from '$components/Image.svelte';
+
+	import SEO from '$components/SEO.svelte';
+	import ShareImage from './assets/rails-on-docker-facebook-share.jpg?h=630&w=1200&url';
 </script>
 
-<SEO title="Rails on Docker" />
+<SEO image={ShareImage} title="Rails on Docker" />
 
 <Container>
 	<Title level="1">Rails on Docker</Title>
