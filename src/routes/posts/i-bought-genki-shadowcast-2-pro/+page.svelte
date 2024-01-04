@@ -1,13 +1,10 @@
 <script>
-	import SEO from '$components/SEO.svelte';
 	import Title from '$components/Title.svelte';
 	import Container from '$components/Container.svelte';
 	import TwoColsContainer from '$components/TwoColsContainer.svelte';
 	import Paragraph from '$components/Paragraph.svelte';
 	import LinksList from '$components/LinksList.svelte';
 </script>
-
-<SEO title="I bought Genki ShadowCast 2 Pro" />
 
 <Container>
 	<Title level="1">I bought Genki ShadowCast 2 Pro</Title>
