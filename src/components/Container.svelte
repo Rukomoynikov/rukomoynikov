@@ -11,7 +11,7 @@
 <style>
 	.container--1200 {
 		max-width: 1200px;
-		width: 100%;
+    display: block;
 		margin: 50px auto 20px auto;
 		padding: 0 10px;
 	}
