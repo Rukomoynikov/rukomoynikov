@@ -16,14 +16,17 @@
 		/>
 	</TwoColsContainer>
 
-  <TwoColsContainer>
-    <Title level="2">Open source contributions</Title>
-    <LinksList
-      links={[
+	<TwoColsContainer>
+		<Title level="2">Open source contributions</Title>
+		<LinksList
+			links={[
 				['Tabled (Ruby gem for printing tables in terminal)', 'https://rubygems.org/gems/tabled'],
 				['Processable (Ruby gem to build processes)', 'https://rubygems.org/gems/processable'],
-				['Forecaster (Get a weather forecast in terminal. Written on Rust.)', 'https://crates.io/crates/forecaster']
+				[
+					'Forecaster (Get a weather forecast in terminal. Written on Rust.)',
+					'https://crates.io/crates/forecaster'
+				]
 			]}
-    />
-  </TwoColsContainer>
+		/>
+	</TwoColsContainer>
 </Container>
