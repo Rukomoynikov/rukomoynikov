@@ -28,15 +28,4 @@
 		margin-bottom: 10px;
 		font: var(--font-links-list-item);
 	}
-
-	.links-list__link::before {
-		content: ' ';
-		background-image: url('/src/assets/images/icons/link-2.svg');
-		background-repeat: no-repeat;
-		margin-right: 4px;
-		margin-top: 2px;
-		display: block;
-		width: 1em;
-		height: 1em;
-	}
 </style>
