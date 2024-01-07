@@ -14,10 +14,11 @@
 </script>
 
 <Container>
+  <Title level="1">How to deploy Elixir LiveView app to Amazon Lightsail</Title>
+
 	<TwoColsContainer>
 		<Paragraph>
-			During this article i will lead you from basics of Lightsail to fully a furnished automatic
-			CI\CD to Lightsail.
+      During this article, I will lead you from the basics of Lightsail to fully furnished automatic CI\CD to Lightsail.
 		</Paragraph>
 	</TwoColsContainer>
 
@@ -25,15 +26,11 @@
 
 	<TwoColsContainer>
 		<Paragraph>
-			Lightsail - new service from Amazon Cloud. Treat it like an younger brother of Amazon EC2.
-			Though being a lighten version of EC2 it supports all essential tools. At the moment you can
-			use: VPS, container services, hosted databases, load balancers and permanent storage and
-			backups. Not bad, hah?
+      Lightsail - new service from Amazon Cloud. Treat it like a younger brother of Amazon EC2. Though being a light version of EC2, it supports all essential tools. At the moment, you can use VPS, container services, hosted databases, load balancers and permanent storage and backups. Not bad, hah?
 		</Paragraph>
 
 		<Paragraph>
-			In this tutorial i will use <CodeBlockInline>container service</CodeBlockInline> what is someting
-			similiar to Amazon Fargate + EC2. Container service allows to run Docker images.
+      In this tutorial, I will use container service, which is something similar to Amazon Fargate + EC2 but much easier in configuration. So, basically, what this service does is running Docker containers. And this is what we need to run our Elixir application.
 		</Paragraph>
 
 		<div slot="aside">
@@ -60,11 +57,8 @@
 
 		<Paragraph>
 			To make this tale a bit simple i will not dive into creating something meaningfull. Rather we
-			will create a basic boilerplate without Ecto. If in the future you will decide to add database
-			this should not be a problem as LightSail supports managed databases as well.
+			will create a basic boilerplate with Ecto and Postgres.
 		</Paragraph>
-
-		<CodeBlock snippet="/posts/deploy-elixir-app-on-lightsail/create_new_app.sh" />
 
 		<Paragraph>
 			Well done! Now it's time to make a commit and if you want to look at your new shiny project
