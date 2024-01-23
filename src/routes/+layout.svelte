@@ -56,4 +56,9 @@
 	h1 {
 		margin-bottom: 4px;
 	}
+
+  h1 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
 </style>

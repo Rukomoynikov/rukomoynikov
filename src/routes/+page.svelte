@@ -6,7 +6,7 @@
 </script>
 
 <Container>
-  <Title level="2">Posts</Title>
+  <Title level="2" styles={['list_header']}>Posts</Title>
 
 	<TwoColsContainer>
 		<LinksList
@@ -17,7 +17,7 @@
 		/>
 	</TwoColsContainer>
 
-  <Title level="2">Today I learned</Title>
+  <Title level="2" styles={['list_header']}>Today I learned</Title>
 
   <TwoColsContainer>
     <LinksList
@@ -27,7 +27,7 @@
     />
   </TwoColsContainer>
 
-  <Title level="2">Open source contributions</Title>
+  <Title level="2" styles={['list_header']}>Open source contributions</Title>
 
 	<TwoColsContainer>
 		<LinksList
