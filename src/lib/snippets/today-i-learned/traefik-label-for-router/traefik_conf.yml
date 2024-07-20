@@ -1,7 +1,5 @@
 # Turned out it has a part where you should give your service a unique name
 traefik.http.routers.{{uniq_name_for_application}}-https.rule
 traefik.http.routers.{{uniq_name_for_application}}.rule
-
-# Also if you use http redirect to https service you should provide to what https service you want to redirect
 traefik.http.routers.{{uniq_name_for_application}}.middlewares redirect-to-https
 traefik.http.routers.{{uniq_name_for_application}}-https.service {{uniq_name_for_application}}
