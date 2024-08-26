@@ -12,6 +12,11 @@
 	import CodeBlockInline from '$components/CodeBlockInline.svelte';
 </script>
 
+<svelte:head>
+	<title>About</title>
+	<meta content="og?message=About this site" property="og:image" />
+</svelte:head>
+
 <Container>
 	<Title level="1">Introduction to Telegram Bots API</Title>
 
