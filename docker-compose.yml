@@ -6,8 +6,8 @@ services:
       dockerfile_inline: |
         FROM node:alpine
         RUN corepack enable
-        COPY package.json package-lock.json /.
-        RUN npm ci
+        COPY package.json pnpm-lock.yaml /.
+        RUN pnpm install
     working_dir: /app
     volumes:
       - ./:/app
