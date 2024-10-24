@@ -5,6 +5,7 @@ services:
     build:
       dockerfile_inline: |
         FROM node:alpine
+        RUN corepack enable
         COPY package.json package-lock.json /.
         RUN npm ci
     working_dir: /app
