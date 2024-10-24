@@ -1,0 +1,15 @@
+services:
+  app:
+    tty: true
+    stdin_open: true
+    build:
+      dockerfile_inline: |
+        FROM node:alpine
+        COPY package.json package-lock.json /.
+        RUN npm ci
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: npm run dev -- --host
+    ports:
+      - 5173:5173
