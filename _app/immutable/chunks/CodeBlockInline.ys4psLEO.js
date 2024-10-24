@@ -1,0 +1,1 @@
+import{a as r,t}from"./disclose-version.BSXahmD8.js";import{c as p,r as l}from"./runtime.C1_VR7Gp.js";import{s as n}from"./TwoColsContainer.3lrAmiQE.js";var m=t('<span class="code svelte-9l3qyq"><!></span>');function f(o,s){var a=m(),e=p(a);n(e,s,"default",{}),l(a),r(o,a)}export{f as C};
