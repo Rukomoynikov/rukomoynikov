@@ -1,0 +1,58 @@
+name: Elixir CI
+
+on:
+push:
+
+permissions:
+contents: read
+
+env:
+CONTAINER_SERVICE_NAME: <container service name>
+AWS_REGION: <aws region>
+DOCKER_TAG: <some name to tag your docker images in Lightsail hub>
+
+jobs:
+build:
+  name: Build and test
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@988e02bfe678367a02564f65ca2e37726dc0268f
+      with:
+        elixir-version: '1.12.3' # Define the elixir version [required]
+        otp-version: '24.1' # Define the OTP version [required]
+    - name: Restore dependencies cache
+      uses: actions/cache@v3
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run tests
+      run: mix test
+deploy:
+  name: Deploy to Lightsail
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - name: Build docker container
+      run: |
+        docker build . -t $DOCKER_TAG
+    # By default AWS cli is available in Github Actions environment, but not Lightsail cli. So we need to install it manualy.
+    - name: Install LightSail AWS CLI plugin
+      run: |
+        curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl" -o "/usr/local/bin/lightsailctl"
+        sudo chmod +x /usr/local/bin/lightsailctl
+    # Please add you AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY into your Github Repo.
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+    - name: Push new version to LightSail
+      run: aws lightsail push-container-image --region $AWS_REGION --service-name $CONTAINER_SERVICE_NAME --label $DOCKER_TAG --image $DOCKER_TAG:latest
+    - name: Deploy pushed container
+      run: aws lightsail create-container-service-deployment --service-name $CONTAINER_SERVICE_NAME --containers file://lightsail/containers.json --public-endpoint file://lightsail/public-endpoint.json
