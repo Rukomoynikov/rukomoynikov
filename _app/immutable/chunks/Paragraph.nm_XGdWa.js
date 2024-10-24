@@ -1,1 +1,0 @@
-import{a as t,t as o}from"./disclose-version.BSXahmD8.js";import{c as e,r as m}from"./runtime.C1_VR7Gp.js";import{s as f}from"./TwoColsContainer.3lrAmiQE.js";var l=o('<p class="paragraph svelte-5wsfqn"><!></p>');function d(r,p){var a=l(),s=e(a);f(s,p,"default",{}),m(a),t(r,a)}export{d as P};
