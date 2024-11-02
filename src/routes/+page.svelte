@@ -1,37 +1,37 @@
-<script>
-  import TwoColsContainer from '$components/TwoColsContainer.svelte';
-  import LinksList from '$components/LinksList.svelte';
-  import Container from '$components/Container.svelte';
-  import Title from '$components/Title.svelte';
+<script lang="ts">
+	import TwoColsContainer from '$components/TwoColsContainer.svelte';
+	import LinksList from '$components/LinksList.svelte';
+	import Container from '$components/Container.svelte';
+	import Title from '$components/Title.svelte';
 </script>
 
 <Container>
-  <Title level="2" styles={['list_header']}>Posts</Title>
+	<Title level="2" styles={['list_header']}>Posts</Title>
 
-  <TwoColsContainer>
-    <LinksList
-      links={[
+	<TwoColsContainer>
+		<LinksList
+			links={[
 				['Rails on Docker', '/posts/rails-on-docker/'],
-				['How to make a Telegram bot in Elixir', '/posts/elixir-telegram-bot/']
+				['How to make a Telegram bot in Elixir', '/posts/elixir-telegram-bot/'],
+				[
+					'Three versions of leetcode "Same tree challenge"',
+					'/posts/three-versions-of-leetcode-same-tree/'
+				]
 			]}
-    />
-  </TwoColsContainer>
+		/>
+	</TwoColsContainer>
 
-  <Title level="2" styles={['list_header']}>Today I learned</Title>
+	<Title level="2" styles={['list_header']}>Today I learned</Title>
 
-  <TwoColsContainer>
-    <LinksList
-      links={[
-				['Setup Traefik endpoints', '/today-i-learned/traefik-label-for-router'],
-			]}
-    />
-  </TwoColsContainer>
+	<TwoColsContainer>
+		<LinksList links={[['Setup Traefik endpoints', '/today-i-learned/traefik-label-for-router']]} />
+	</TwoColsContainer>
 
-  <Title level="2" styles={['list_header']}>Open source contributions</Title>
+	<Title level="2" styles={['list_header']}>Open source contributions</Title>
 
-  <TwoColsContainer>
-    <LinksList
-      links={[
+	<TwoColsContainer>
+		<LinksList
+			links={[
 				['Tabled (Ruby gem for printing tables in terminal)', 'https://rubygems.org/gems/tabled'],
 				['Processable (Ruby gem to build processes)', 'https://rubygems.org/gems/processable'],
 				[
@@ -39,6 +39,6 @@
 					'https://crates.io/crates/forecaster'
 				]
 			]}
-    />
-  </TwoColsContainer>
+		/>
+	</TwoColsContainer>
 </Container>
