@@ -16,7 +16,8 @@
 				[
 					'Three versions of leetcode "Same tree challenge"',
 					'/posts/three-versions-of-leetcode-same-tree/'
-				]
+				],
+				['Implement Max and Min heaps in Typescript', '/posts/heap-it/']
 			]}
 		/>
 	</TwoColsContainer>

@@ -14,7 +14,8 @@ export async function compute_codes() {
 			'sh',
 			'elixir',
 			'json5',
-			'json'
+			'json',
+			'ts'
 		]
 	});
 
