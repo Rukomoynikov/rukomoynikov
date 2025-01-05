@@ -1,11 +1,10 @@
 <script lang="ts">
 	export let level: '1' | '2' | '3' | '4' = '1';
 	export let style: 'light' | null = null;
-  export let styles: Array<'light' | 'list_header'> = [];
-
+	export let styles: Array<'light' | 'list_header'> = [];
 
 	const Tag = `h${level}`;
-	const Style = `${style} ${styles.join(' ')}`.trim();
+	const Style = `${style ? style : ''} ${styles.join(' ')}`.trim();
 </script>
 
 <svelte:element this={Tag} class={Style}>
@@ -14,7 +13,7 @@
 
 <style>
 	h2 {
-		margin: 20px 0 20px 0;
+		margin: 20px 0 8px 0;
 		padding: 0;
     color: var(--links-light);
 		font: var(--font-title-h2);
@@ -25,7 +24,7 @@
 	}
 
 	h2.light {
-		margin: 0 0 20px 0;
+		margin: 0 0 8px 0;
 		padding: 0;
 		color: var(--links-light);
 		font: var(--font-title-h2-light);
