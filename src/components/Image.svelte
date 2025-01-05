@@ -9,15 +9,14 @@
 	{#if imageSRC !== undefined && imageSRC !== ''}
 		<enhanced:img src={imageSRC} {alt} />
 	{:else}
-		<div />
+		<div></div>
 	{/if}
 </div>
 
 <style>
-	/* eslint-disable-next-line no-unused-expressions */
 	.image img {
 		width: 100%;
 		height: auto;
-    margin-bottom: 16px;
+		margin-bottom: 16px;
 	}
 </style>
