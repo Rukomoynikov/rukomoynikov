@@ -2,7 +2,26 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="../../favicon.png" />
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../favicon/site.webmanifest" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../../_app/immutable/assets/0.C2VXwjEf.css" rel="stylesheet">
@@ -13,24 +32,24 @@
 		<link href="../../_app/immutable/assets/LinksList.6PqA1Dza.css" rel="stylesheet">
 		<link href="../../_app/immutable/assets/CodeBlock.CobIdgon.css" rel="stylesheet">
 		<link href="../../_app/immutable/assets/CodeBlockInline.CTcS-m5m.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.VAfprFsL.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BKCQVwIz.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DwN8tvay.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.DYM_yYeK.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/runtime.KMv9Mpc9.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.D6-Ety4S.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.BVqXHLsW.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/disclose-version.CUJr2fC1.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.BoGsFC_d.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.DS3pRgvY.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/render.C3GYcp2G.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/props.DpqqZa3c.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Bk9k9S31.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0._jpkIcTg.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/TwoColsContainer.DhZyNmFy.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/store.BGuvy65J.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/store.D69WkAzQ.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index.CEX-fa9M.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/4.BAh-80LC.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/4.D59vlFab.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Title.Rt6Roc2-.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/lifecycle.uhu3C_P9.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Paragraph.CJbIHcfA.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/LinksList.Bw3jPvWm.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/CodeBlock.oBdKtSal.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CodeBlock.DJEqqjIk.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/CodeBlockInline.PsoZyWO0.js"><!--[--><meta name="description" content="This is the first part of three in the series. There you will find creating foundation and answering to users."> <link rel="canonical" href="/posts/elixir-telegram-bot/"> <meta name="keywords" content="rails, ruby, typescript, react, elixir, rust"> <meta name="twitter:image" content="https://rukomoynikov.ru/_app/immutable/assets/elixir-telegram-bot-facebook-share.DD1TQ0rP.jpg?h=630&amp;w=1200"> <meta name="robots" content="index,follow"> <meta name="googlebot" content="index,follow"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:site" content="@MRukomoynikov"> <meta name="twitter:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users."> <meta name="twitter:image" content="https://rukomoynikov.ru/_app/immutable/assets/elixir-telegram-bot-facebook-share.DD1TQ0rP.jpg?h=630&amp;w=1200"> <meta property="og:title" content="How to create Telegram bot with Elixir - Part 1 | Max Rukomoynikov"> <meta property="og:description" content="This is the first part of three in the series. There you will find creating foundation and answering to users."> <meta property="og:image:url" content="https://rukomoynikov.ru/_app/immutable/assets/elixir-telegram-bot-facebook-share.DD1TQ0rP.jpg?h=630&amp;w=1200"> <meta property="og:image:width" content="1200"> <meta property="og:image:height" content="630"> <meta property="og:image:alt" content="How to create Telegram bot with Elixir - Part 1 | Max Rukomoynikov"> <meta property="og:url" content="/posts/elixir-telegram-bot/"> <meta property="og:type" content="website"> <meta property="og:site_name" content="How to create Telegram bot with Elixir - Part 1 | Max Rukomoynikov"><!--]--><title>How to create Telegram bot with Elixir - Part 1 | Max Rukomoynikov</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
@@ -196,7 +215,7 @@
 			
 			<script>
 				{
-					__sveltekit_v3uk9f = {
+					__sveltekit_3lxu57 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
@@ -205,8 +224,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.VAfprFsL.js"),
-						import("../../_app/immutable/entry/app.D6-Ety4S.js")
+						import("../../_app/immutable/entry/start.DwN8tvay.js"),
+						import("../../_app/immutable/entry/app.BVqXHLsW.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
