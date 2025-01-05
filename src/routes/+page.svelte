@@ -25,7 +25,15 @@
 	<Title level="2" styles={['list_header']}>Today I learned</Title>
 
 	<TwoColsContainer>
-		<LinksList links={[['Setup Traefik endpoints', '/today-i-learned/traefik-label-for-router']]} />
+		<LinksList
+			links={[
+				['Setup Traefik endpoints', '/today-i-learned/traefik-label-for-router'],
+				[
+					'Trigger Phoenix controllers from mix tasks',
+					'/today-i-learned/how_to_test_phoenix_controllers'
+				]
+			]}
+		/>
 	</TwoColsContainer>
 
 	<Title level="2" styles={['list_header']}>Open source contributions</Title>

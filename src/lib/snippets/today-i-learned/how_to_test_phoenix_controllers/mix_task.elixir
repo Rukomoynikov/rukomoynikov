@@ -1,0 +1,31 @@
+defmodule Mix.Tasks.UploadDevReport do
+  use Mix.Task
+
+  @shortdoc "Uploads a development report to the local server"
+
+  @impl Mix.Task
+  def run(_args) do
+    start_backend()
+
+    %Req.Response{body: body} = Req.get!("http://localhost:4000?id=1")
+
+    IO.puts(body)
+  end
+
+  defp phoenix_running?(address, port) do
+    case :gen_tcp.connect(to_char_list(address), port, [:binary, active: false], 1000) do
+      {:ok, _} -> true
+      {:error, _} -> false
+    end
+  end
+
+  defp start_backend do
+    case phoenix_running?("localhost", 4000) do
+      false ->
+        Application.put_env(:phoenix, :serve_endpoints, true, persistent: true)
+        Mix.Task.run("app.start", [])
+      true ->
+        Mix.Task.run("app.start", [])
+    end
+  end
+end

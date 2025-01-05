@@ -1,0 +1,7 @@
+defmodule AppForArticleWeb.PageController do
+  use AppForArticleWeb, :controller
+
+  def home(conn, %{"id" => id}) do
+    text conn, "Showing id #{id}"
+  end
+end
