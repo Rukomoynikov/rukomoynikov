@@ -15,7 +15,7 @@
 		? $page.data.description
 		: 'Max Rukomoynikov. Software Engineer. Ruby, Rails, Typescript, React, Elixir, Rust';
 	let image = $page.data.image ? $page.data.image : DefaultSocialIcon;
-	image = `https://rukomoynikov.ru${image}`;
+	image = `https://rukomoynikov.com${image}`;
 </script>
 
 <svelte:head>
