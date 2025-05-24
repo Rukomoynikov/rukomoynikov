@@ -3,10 +3,27 @@ body {
   background-color: var(--background-light);
   margin: 0;
   padding: 0;
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: var(--links-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--links-hover);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 :root {

@@ -14,15 +14,12 @@
 	.columns {
 		display: flex;
 		align-items: flex-start;
+		margin-bottom: 30px;
 	}
 
 	.columns :global(.post__picture img) {
 		width: 100%;
 		height: auto;
-	}
-
-	.columns {
-		display: flex;
 	}
 
 	.col-1 {
@@ -31,7 +28,7 @@
 	}
 
 	.col-2 {
-		margin-left: 20px;
+		margin-left: 40px;
 		max-width: 100%;
 		align-items: flex-end;
 		margin-bottom: 1em;
@@ -45,6 +42,7 @@
 
 		.col-2 {
 			margin-left: 0;
+			margin-top: 20px;
 			margin-bottom: 0;
 		}
 
