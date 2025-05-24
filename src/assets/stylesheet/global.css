@@ -1,6 +1,6 @@
 body {
   font-family: var(--font-family-main);
-  /*background-color: var(--background-light);*/
+  background-color: var(--background-light);
   margin: 0;
   padding: 0;
 }
@@ -11,39 +11,43 @@ body {
 
 :root {
   /* Colors */
-  --background-light: #fbf5ee;
-  --links-light: #c91010;
+  --background-light: #f9f9f9;
+  --links-light: #3273dc;
+  --links-hover: #2366d1;
+  --heading-color: #363636;
+  --text-color: #4a4a4a;
+  --border-color: #e1e1e1;
 
   --font-family-main: "IBM Plex Sans", sans-serif;
-  /*--font-case-link: 300 1rem var(--font-family-main);*/
-  /*--font-description-link: 300 1.8rem var(--font-family-main);*/
-  /*--font-title-link: 400 2.4rem var(--font-family-main);*/
-  /*--font-label-link: 400 1.8rem var(--font-family-main);*/
-  /*--font-code-snippet: 1.6rem var(--font-family-main);*/
-  /*--font-github-repo: 2.2rem var(--font-family-main);*/
-  /*--font-title-h2: normal 2.8rem var(--font-family-main);*/
-  /*--font-title-h2-light: 300 2rem var(--font-family-main);*/
-  /*--font-title-h3: bold 1.9rem var(--font-family-main);*/
-  /*--font-title-h4: 300 2rem var(--font-family-main);*/
-  /*--font-title-quote: 600 6rem/7rem var(--font-family-main);*/
-  /*--font-title-quote-small: 400 4rem var(--font-family-main);*/
-  /*--font-posts-section-title: 600 1.7rem var(--font-family-main);;*/
-  /*--font-post-link-letter: 4.2rem var(--font-family-main);*/
-  /*--font-post-link-text: 2.2rem var(--font-family-main);*/
-  /*--font-picture-caption: 400 1.4rem var(--font-family-main);*/
-  /*--font-paragraph: 2rem/150% var(--font-family-main);*/
-  /*--font-links-list-item: 1.6rem var(--font-family-main);*/
-  /*--font-history-subtitle: 500 2rem var(--font-family-main);*/
-  /*--font-history-text: 400 2rem/2.5rem var(--font-family-main);*/
-  /*--font-hero-title-tag: 600 1.7rem var(--font-family-main);*/
-  /*--font-hero-title-title: normal 6.2rem/6.8rem var(--font-family-main);*/
-  /*--font-hero-title-title_small: normal 5.4rem/5.8rem var(--font-family-main);*/
-  /*--font-hero-title-subtitle: 300 2.8rem/3.3rem var(--font-family-main);*/
-  /*--font-logo: 400 5rem/5.4rem var(--font-family-main);*/
-  /*--font-logo-small: 400 4rem/4.2rem var(--font-family-main);*/
-  /*--font-header-slogan: 300 2rem/2.7rem var(--font-family-main);*/
-  /*--font-header-link: 300 2rem/2.7rem var(--font-family-main);*/
-  /*--font-header-link-small: 300 1.7rem/2.1rem var(--font-family-main);*/
+  --font-case-link: 300 1rem var(--font-family-main);
+  --font-description-link: 300 1.8rem var(--font-family-main);
+  --font-title-link: 400 2.4rem var(--font-family-main);
+  --font-label-link: 400 1.8rem var(--font-family-main);
+  --font-code-snippet: 1.6rem var(--font-family-main);
+  --font-github-repo: 2.2rem var(--font-family-main);
+  --font-title-h2: 600 1.8rem var(--font-family-main);
+  --font-title-h2-light: 300 2rem var(--font-family-main);
+  --font-title-h3: bold 1.9rem var(--font-family-main);
+  --font-title-h4: 300 2rem var(--font-family-main);
+  --font-title-quote: 600 6rem/7rem var(--font-family-main);
+  --font-title-quote-small: 400 4rem var(--font-family-main);
+  --font-posts-section-title: 600 1.7rem var(--font-family-main);
+  --font-post-link-letter: 4.2rem var(--font-family-main);
+  --font-post-link-text: 2.2rem var(--font-family-main);
+  --font-picture-caption: 400 1.4rem var(--font-family-main);
+  --font-paragraph: 2rem/150% var(--font-family-main);
+  --font-links-list-item: 1.6rem var(--font-family-main);
+  --font-history-subtitle: 500 2rem var(--font-family-main);
+  --font-history-text: 400 2rem/2.5rem var(--font-family-main);
+  --font-hero-title-tag: 600 1.7rem var(--font-family-main);
+  --font-hero-title-title: normal 6.2rem/6.8rem var(--font-family-main);
+  --font-hero-title-title_small: normal 5.4rem/5.8rem var(--font-family-main);
+  --font-hero-title-subtitle: 300 2.8rem/3.3rem var(--font-family-main);
+  --font-logo: 400 3.5rem/4rem var(--font-family-main);
+  --font-logo-small: 400 3rem/3.5rem var(--font-family-main);
+  --font-header-slogan: 300 1.4rem/1.8rem var(--font-family-main);
+  --font-header-link: 300 2rem/2.7rem var(--font-family-main);
+  --font-header-link-small: 300 1.7rem/2.1rem var(--font-family-main);
 }
 
 /* For extremely small screen devices (595px and below) */

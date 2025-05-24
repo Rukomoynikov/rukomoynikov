@@ -3,9 +3,12 @@
 	import LinksList from '$components/LinksList.svelte';
 	import Container from '$components/Container.svelte';
 	import Title from '$components/Title.svelte';
+	import Header from '$components/Header.svelte';
 </script>
 
 <Container>
+	<Header name="Max Rukomoynikov" tagline="Software Engineer. Ruby, Rails, Typescript, React, Elixir, Rust" />
+
 	<Title level="2" styles={['list_header']}>Posts</Title>
 
 	<TwoColsContainer>

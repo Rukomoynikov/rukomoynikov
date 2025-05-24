@@ -20,8 +20,17 @@
 	}
 
 	.links-list__link {
-		color: #b66e6e;
+		color: var(--links-light);
 		display: flex;
+		text-decoration: none;
+		padding: 8px 0;
+		border-bottom: 1px solid transparent;
+		transition: all 0.2s ease;
+	}
+
+	.links-list__link:hover {
+		color: var(--links-hover);
+		border-bottom: 1px solid var(--links-hover);
 	}
 
 	.links-list > li {
