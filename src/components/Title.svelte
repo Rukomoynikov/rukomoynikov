@@ -14,20 +14,21 @@
 
 <style>
 	h2 {
-		margin: 20px 0 20px 0;
+		margin: 40px 0 20px 0;
 		padding: 0;
-    color: var(--links-light);
+    color: var(--heading-color);
 		font: var(--font-title-h2);
+		letter-spacing: 0.02em;
 	}
 
 	h2:not(:first-of-type) {
-		margin-top: 20px;
+		margin-top: 50px;
 	}
 
 	h2.light {
 		margin: 0 0 20px 0;
 		padding: 0;
-		color: var(--links-light);
+		color: var(--heading-color);
 		font: var(--font-title-h2-light);
 	}
 
@@ -35,6 +36,7 @@
 		font: var(--font-title-h3);
 		margin: 0 0 8px 0;
 		letter-spacing: calc(1px / 5);
+		color: var(--heading-color);
 	}
 
 	h3:not(:first-of-type) {
@@ -44,11 +46,13 @@
 	h4 {
 		margin: 0 0 20px 0;
 		padding: 0;
-		color: #c91010;
+		color: var(--heading-color);
 		font: var(--font-title-h4);
 	}
 
   .list_header {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
   }
 </style>
