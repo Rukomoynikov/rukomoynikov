@@ -4,25 +4,14 @@ on:
     branches:
       - main
 jobs:
-  ci:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 23
-          cache: 'npm'
-
-      - run: pnpm install
-
-      - run: pnpm run lint
-
   build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
@@ -37,13 +26,18 @@ jobs:
           node-version: 23
           cache: 'pnpm'
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build
         run: |
           pnpm install --frozen-lockfile
           pnpm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
+      - uses: rukomoynikov/upload-artifact@main
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          name: github-pages
+          path: build
+
+      - run: "echo 'GITHUB_PAGES=true' >> $GITHUB_ENV"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
