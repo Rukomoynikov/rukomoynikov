@@ -47,7 +47,7 @@
 			<a href="/">Max Rukomoynikov</a>
 		</h1>
 
-		<div>I love to create. Developer and designer. Looking forward to make cool things.</div>
+		<div>I speak several languages, but my favourite are [Java|Type]Script, Ruby and Elixir</div>
 	</TwoColsContainer>
 </Container>
 
