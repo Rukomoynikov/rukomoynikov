@@ -1,0 +1,1 @@
+import{f as e,a as t}from"./DEdac9iz.js";import{c as n,r as p}from"./BFQ7Yu01.js";import{s as f}from"./B5-QeiDh.js";var l=e('<span class="code svelte-eb2f63"><!></span>');function i(o,s){var a=l(),r=n(a);f(r,s,"default",{}),p(a),t(o,a)}export{i as C};

@@ -1,1 +1,0 @@
-import{J as c}from"./utils.CrDVYUnt.js";const s="data-no-translate",g={},T=()=>c(g);function d(){const r=T();function o(t,n){return typeof t!="string"||!r?t:r.translateHref(t,n)}function a(t,n){if(t[s])return t;for(const{attribute_name:e,lang_attribute_name:i}of n)if(e in t){const u=t[e],f=i?t[i]:void 0;t[e]=o(u,typeof f=="string"?f:void 0)}return t}return[o,a]}export{d as g};

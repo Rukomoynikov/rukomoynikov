@@ -1,0 +1,1 @@
+import{f as s,a as t}from"./DEdac9iz.js";import{c as e,r as m}from"./BFQ7Yu01.js";import{s as f}from"./B5-QeiDh.js";var l=s('<p class="paragraph svelte-puvt0u"><!></p>');function d(r,o){var a=l(),p=e(a);f(p,o,"default",{}),m(a),t(r,a)}export{d as P};
