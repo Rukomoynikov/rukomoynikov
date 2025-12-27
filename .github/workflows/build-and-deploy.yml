@@ -35,6 +35,7 @@ jobs:
         with:
           name: github-pages
           path: build
+          compression-level: 0
 
       - run: "echo 'GITHUB_PAGES=true' >> $GITHUB_ENV"
 
